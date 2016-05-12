@@ -1,0 +1,23 @@
+aspectRatio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+
+  > .item-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+navItemStyles() {
+    background-color: white;
+    box-shadow: $boxShadow;
+    border-radius: 5px;
+}

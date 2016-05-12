@@ -1,0 +1,23 @@
+include /partials/module
+
+doctype
+html
+  head
+    title Marc Deely's Portfolio Website
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
+    script(src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js")
+    script(src="/scripts/jquery.lazyload.min.js")
+    script(src="/scripts/script.js")
+    //- script(src="/scripts/googleAnalytics.js")
+    link(rel='stylesheet' href='/stylesheets/style.css')
+    link(href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="description" content="This is the portfolio website of Marc Deely. Designed and coded by yours truly.")
+  body
+
+    block navigation
+
+    block masthead
+
+    block content
+    +scrollToTop

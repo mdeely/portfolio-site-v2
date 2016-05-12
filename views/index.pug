@@ -1,8 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-</head>
-<body>
-    <h1>This Is Heroku Awesome!</h1>
-</body>
-</html>
+extend layout
+
+block content
+  +backgroundMenuFade()
+  .container.fade
+    .project-list
+      //- +listProjects()
+
+block navigation
+  +masthead()
+  +navigation(false, true)
