@@ -21,7 +21,7 @@ mixin navigation(back, home, about)
 mixin masthead(hero, project)
     - if (hero)
         nav.masthead.project-header
-            .hero(style="background-color: #{projects[projectName].theme}")
+            .hero(style='background-color:'+projects[projectName].theme)
     - else
         nav.masthead
             ul
@@ -62,5 +62,5 @@ mixin scrollToTop
     button.scrollToTop Scroll to top
 
 mixin backgroundMenuFade(color)
-    - color = color || ""
+    - color = color || ''
     .menu-fader(style='background-color:'+color)

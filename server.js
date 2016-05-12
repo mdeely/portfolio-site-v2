@@ -20,15 +20,15 @@ app.get('/', function (req, res) {
   res.render( 'index', obj );
 })
 
+app.get('/about', function (req, res) {
+  res.render( 'about' );
+})
+
 app.get('/:projectName', function (req, res) {
   var projectName = req.params.projectName;
 
   res.locals.projectName = projectName;
   res.render( 'project', obj );
-})
-
-app.get('/about', function (req, res) {
-  res.render( 'about' );
 })
 
 app.listen(port, function() {

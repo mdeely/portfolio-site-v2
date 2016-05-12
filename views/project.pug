@@ -1,8 +1,8 @@
 extend layout
 
-//- block navigation
-//-     +masthead(true, projects[projectName] )
-//-     +navigation(true)
+block navigation
+    +masthead(true, projects[projectName] )
+    +navigation(true)
 
 block content
     +backgroundMenuFade(projects[projectName].theme)
