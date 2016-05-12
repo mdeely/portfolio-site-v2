@@ -1,0 +1,368 @@
+{
+    "projects": {
+        "graphics": {
+            "id": 1,
+            "title":"Graphics",
+            "subtitle":"A collection of various graphic illustrations.",
+            "theme":"#463857",
+            "name":"graphics",
+            "type":["design"],
+            "images": {
+                "thumb":"trois_thumb.png",
+                "collection": [
+                    {
+                        "fileName" : "trois.png",
+                        "description" : "A birthday present to a friend.",
+                        "end" : true
+                    },
+                    {
+                        "fileName" : "PeppermintpimpsMistlhoes.png",
+                        "description" : "An invitation to a Christmas party my roommates and I never had.",
+                        "end" : true
+                    },
+                    {
+                        "fileName" : "phoenix-drawing.png",
+                        "description" : "An album cover I made for my brother.",
+                        "end" : true
+                    },
+                    {
+                        "fileName" : "gameboy.png",
+                        "description" : "GameBoy vector",
+                        "end" : true
+                    },
+                    {
+                        "fileName" : "infinity-running-logo.png",
+                        "description" : "Logo and font made for a running service.",
+                        "end" : true
+                    },
+                    {
+                        "fileName" : "bitter-haze-logo.png",
+                        "description" : "Logo made for the Tokyo-based band 'Bitter Haze'"
+                    }
+                ]
+            }
+        },
+        "moving-company-reviews": {
+            "id" : 6,
+            "title":"Moving Company Reviews",
+            "subtitle":"A site that provides verfied user reviews of moving companies.",
+            "theme":"#99b942",
+            "name":"moving-company-reviews",
+            "type":["design", "code"],
+            "images": {
+                "thumb" : "mcr-thumb.png",
+                "collection": [
+                    {
+                        "fileName" : "mcr-hero.png",
+                        "description" : "",
+                        "hero" : true
+                    },
+                    {
+                        "fileName" : "mcr-search-results-oldVsNew.png",
+                        "description" : "My first two notable projects were redesigns of our navigation bar and search results page, the latter of which was our most visited page. The point of the resdesign was to make each section cleaner and responsive so the site would look great at any screen width. Once the design phase was done, I jumped into our Ruby on Rails application, ripped out the old HTML and CSS and completely recoded each piece. <br><br>Top: Old design. Bottom: New design."
+                    },
+                    {
+                        "fileName" : "mcr-search-results-oldVsNew-mobile.png",
+                        "description" : "Mobile version of the old vs new navigation bar and search results page. The old version was hardly mobile-friendly and overly cluttered with information that was not neccesary for the user to immediatley see. With the redesign, some information was eliminated to accommodate a more aestheitcally pleasing search result card.<br><br>Left: Old design. Right: New design.",
+                        "end": true
+                    },
+                    {
+                        "fileName" : "mcr-email-screenshot.png",
+                        "description" : "When I joined the team, our emails were a little clunky. We decided that better looking emails could help legitimize our company in the eyes of customers. After a lengthy design process, we finally had nicer, cleaner looking emails that were more in line with our brand. Next, I had to code the email as a resuable email template. Honestly, coding email HTML is one of the most frusterating things due to the fact that it's like coding HTML 30 years ago."
+                    },
+                    {
+                        "fileName" : "mcr-emails.png",
+                        "description" : "Here is a display of all the email header images I illustrated.",
+                        "end": true
+                    },
+                    {
+                        "fileName" : "mcr-style-guide.png",
+                        "description" : "At MovingCompanyReviews, I was both the front-end developer and the graphic designer. Those two diciplines overlap each other frequently. I noticed that our styling in the code was inconsitent with our style guide...which was nonexistent! A few weeks later, I designed and coded a new branding guide from scratch. Unfrotunatley, we did not have time to implement it before the company was sold and priorities shifted. Despite that let down, it was a great learning experience for me."
+                    },
+                    {
+                        "fileName" : "mcr-homepage-oldVsNew.png",
+                        "description" : "My very last project was to A/B test a new homepage using the newly created style guide. The new design showed a higher conversion rate. The lesson here? Don't underestimate the power of a well desgined website!"
+                    }
+                ]
+            }
+        },
+        "open-home-pro": {
+            "id": 5,
+            "title":"Open Home Pro®",
+            "subtitle":"A service that gives agents and brokers an easy way to manage their leads, listings, and open houses.",
+            "theme":"#2f9bdd",
+            "name":"open-home-pro",
+            "type":["design", "code"],
+            "images": {
+                "thumb":"openHomePro-thumb.png",
+                "collection": [
+                    {
+                        "fileName" : "openHomePro-hero.png",
+                        "description" : "",
+                        "hero" : true
+                    },
+                    {
+                        "fileName" : "openHomePro-style-guide.png",
+                        "description" : "My first project with the Open Home Pro team was to create a unified design guideline that designers and developers could use- AKA a style guide. I collaborated with the graphic designer to consolidate and create design elements and create a functional guide using HTML, CSS, and JavaScript. This was beneficial for designers so they could preview their designs in a functional environment which helped reduce back-and-forth between development and design. Developers could inspect the code to retreive HTML structure or CSS styling to apply to the site an no longer had to guess hex codes or font sizes. When completed, I then plugged in the style guide to the site; upgrading and consolidating HTML and CSS to make our site faster and more efficient.",
+                        "end" : true
+                    },
+                    {
+                        "fileName" : "openHomePro-1.png",
+                        "description" : "My next notable project was to redesign OHP's iOS app. This is a screenshot of our new 'Leads view'."
+                    },
+                    {
+                        "fileName" : "openHomePro-1-old.png",
+                        "description" : "This is the old version of our Leads view. Very plain and not the most inteuitive at times. Definitley in need of a UX and UI upgrade."
+                    },
+                    {
+                        "fileName" : "openHomePro-2.png",
+                        "description" : "Lead detail view. Here is where an agent can view details of a lead that visited a particular listing."
+                    },
+                    {
+                        "fileName" : "openHomePro-3.png",
+                        "description" : "Listings view. This view allows an agent to see all their listings and quickly see how many leads they've received from a particular listing."
+                    },
+                    {
+                        "fileName" : "openHomePro-4.png",
+                        "description" : "Listing detail view. Here the agent can update their listing's information and begin their open house.",
+                        "end" : true
+                    },
+                    {
+                        "fileName" : "openHomePro-appDownloads.gif",
+                        "description" : "We needed a way for users to download an app or email a link to themselves for later. I designed app store badges that looked reminicent of traditional badges but added a dropdown that allows the user to email the link to a specified email address or download the app directly. I wanted to the interaction to be smooth and modern so I used some CSS3 techniques to spice up the display."
+                    }
+                ]
+            }
+        },
+        "rise-and-shine": {
+            "id": 2,
+            "title":"Rise & Shine",
+            "subtitle":"An alarm clock app that won't stop until you smile in to the camera.",
+            "theme":"#F4964E",
+            "name":"rise-and-shine",
+            "type":["design"],
+            "images": {
+                "thumb":"riseAndShine.png",
+                "collection" : [
+                    {
+                        "fileName" : "riseAndShine-hero.png",
+                        "description" : "Designing this app was a ton of fun. It's concept is unque and beneficial to those who have a hard time waking up happy. Studies show that being forced to smile in the morning makes your day much better. I made that up.",
+                        "hero" : true
+                    },
+                    {
+                        "fileName" : "riseAndShine.png",
+                        "description" : "Loading screen design."
+                    },
+                    {
+                        "fileName" : "riseAndShine-1.png",
+                        "description" : "Main screen. Easily select which days the alarm will repeat and quickly access app settings as well as your not-so-glamorous morning photos."
+                    },
+                    {
+                        "fileName" : "riseAndShine-2.png",
+                        "description" : "Set your phone to strobe, vibrate, play audio, or all of the above! Clicking the trash button removes the alarm altogether."
+                    },
+                    {
+                        "fileName" : "riseAndShine-5.png",
+                        "description" : "Although this feature was never implemented, I designed a modal where the user could record custom alarm sounds."
+                    },
+                    {
+                        "fileName" : "riseAndShine-3.png",
+                        "description" : "We save each smiling mug you used to stop the alarm. A pull-down action reveals your bed-head photos. You can view and edit or opt out of saving each photo."
+                    },
+                    {
+                        "fileName" : "riseAndShine-4.png",
+                        "description" : "Save each photo to your phone or share via social media."
+                    },
+                    {
+                        "fileName" : "riseAndShine-6.png",
+                        "description" : "When it's time to wake up, the front facing camera is automatically activated and detects your smile. After smiling for 12 consecutive seconds, the moon goes away and the sun congratulates you for waking up!"
+                    }
+                ]
+            }
+        },
+        "flyleaf" : {
+            "id": 3,
+            "title":"Flyleaf",
+            "subtitle":"A service aimed at distributing paper copies of short stories from emerging authors.",
+            "theme":"#111111",
+            "name":"flyleaf",
+            "type":["design", "code"],
+            "images": {
+                "thumb":"flyleaf-thumb.png",
+                "collection": [
+                    {
+                        "fileName" : "flyleaf-hero.png",
+                        "description" : "My initial task was to create a logo and color scheme for Flyleaf which later evolved in to designing, coding, and launching their website.",
+                        "hero" : true
+                    },
+                    {
+                        "fileName" : "flyleaf-notebook.png",
+                        "description" : "Initial sketching phase."
+                    },
+                    {
+                        "fileName" : "flyleaf-logos.png",
+                        "description" : "I picked a handful of concepts and drew with them in Adobe Illustrator. These were the three logos I pitched.",
+                        "end" : true
+                    },
+                    {
+                        "fileName" : "flyleaf-1-story.png",
+                        "description" : "At this point in my career, I had yet to utilize the power of templating or databases. After teaching myself some PHP and how to incorporate a SQL database, I was able to quickly create a small yet scaleable site."
+                    },
+                    {
+                        "fileName" : "flyleaf-2-about.png",
+                        "description" : "New members were frequently added to the team. With a database and a template file, I was able to efficiently add members in seconds instead of hard-coding a new page for each new entry."
+                    },
+                    {
+                        "fileName" : "flyleaf-3-submit.png",
+                        "description" : "Subscription page."
+                    },
+                    {
+                        "fileName" : "flyleaf-4-contact.png",
+                        "description" : "Contact page. Each page was 100% mobile friendly; responsive with retina-display graphics."
+                    }
+                ]
+            }
+        },
+        "mu-optics" : {
+            "id": 4,
+            "title":"Mu Optics",
+            "subtitle":"Thermal imaging at consumer friendly prices.",
+            "theme":"#580061",
+            "name":"mu-optics",
+            "type":["design", "code"],
+            "images": {
+                "thumb":"mu-thumb.png",
+                "collection": [
+                    {
+                        "fileName" : "mu.png",
+                        "description" : "Mu Optics set out to build an affordable thermal imaging device that interfaced with your smartphone or laptop. I was hired to create Mu Optic's brand and design their website and mobile app.",
+                        "hero" : true
+                    },
+                    {
+                        "fileName" : "mu-logos-notebook.png",
+                        "description" : "Sketching phase."
+                    },
+                    {
+                        "fileName" : "mu-logos.png",
+                        "description" : "A small selection of logos that made it to the final round.",
+                        "end" : true
+                    },
+                    {
+                        "fileName" : "muOptics-1.png",
+                        "description" : "This layout that allows for quick access to all features and important settings. Easily adjust the viewing mode on the lefthand side. Change the infrared gradient by clicking on the thermal range indicator at the bottom of the screen. Switch infrared capture mode from photo to video at the bottom right. Initiate capture with the big red button."
+                    },
+                    {
+                        "fileName" : "muOptics-2.png",
+                        "description" : "When in Crosshair mode, you can pinpoint a section of the live infrared feed to receive a temperature reading."
+                    },
+                    {
+                        "fileName" : "muOptics-3.png",
+                        "description" : "Projects view."
+                    },
+                    {
+                        "fileName" : "muOptics-4.png",
+                        "description" : "Edit mode. Here you can select one or more projects and export or delete them."
+                    },
+                    {
+                        "fileName" : "muOptics-5.png",
+                        "description" : "Photos listed in a project. Each item contains the original photo as well as the infrared image so they can be easily compared after the thermal image is captured."
+                    },
+                    {
+                        "fileName" : "muOptics-6.png",
+                        "description" : "Edit mode for infrared photos and videos.",
+                        "end" : true
+                    },
+                    {
+                        "fileName" : "muOptics-web-1.png",
+                        "description" : "Mu Optic's website."
+                    },
+                    {
+                        "fileName" : "muOptics-web-2.png",
+                        "description" : "Initial website concept."
+                    }
+                ]
+            }
+        },
+        "scrybe" : {
+            "id": 5,
+            "title":"Scrybe",
+            "subtitle":"A simple app for translating text to various languages",
+            "theme":"#464646",
+            "name":"scrybe",
+            "type":["design"],
+            "images": {
+                "thumb":"scrybe.png",
+                "collection": [
+                    {
+                        "fileName" : "scrybe-hero.png",
+                        "description" : "",
+                        "hero" : true
+                    },
+                    {
+                        "fileName" : "scrybe-1.png",
+                        "description" : "A simple concept called for a simple interface. This was my first attempt at flat design inspired by iOS7's newly introduced design principles."
+                    },
+                    {
+                        "fileName" : "scrybe-2.png",
+                        "description" : "Clicking on the top right menu reveals saved translations ready to be played or edited."
+                    },
+                    {
+                        "fileName" : "scrybe-3.png",
+                        "description" : ""
+                    }
+                ]
+            }
+        },
+        "sqipp" : {
+            "id": 6,
+            "title":"Sqipp",
+            "subtitle":"A mobile app designed to allow a quick ordering experience for pickup.",
+            "theme":"#B3291A",
+            "name":"sqipp",
+            "type":["design", "code"],
+            "images": {
+                "thumb":"sqipp-thumb.png",
+                "collection": [
+                    {
+                        "fileName" : "sqipp-thumb.png",
+                        "description" : "",
+                        "hero" : true
+                    },
+                    {
+                        "fileName" : "sqipp-logos.png",
+                        "description" : "Different logo considerations. Quality ranging from 'acceptable' to 'just awful'",
+                        "end" : true
+                    },
+                    {
+                        "fileName" : "sqipp-1.png",
+                        "description" : "Log in screen for native iOS app."
+                    },
+                    {
+                        "fileName" : "sqipp-2.jpg",
+                        "description" : " At this pont in time, iPhones had not expanded past the 640x960 screen size. Arranging and consolidating as much information and features while retaining a readable and useful view proved to be quite a challenge."
+                    },
+                    {
+                        "fileName" : "sqipp-3.png",
+                        "description" : "View more information about a restaurant by selecting the hamburger menu to the right of the name. View restaurant hours or get directions. Addiontally, you can add to favorites or call the restaurant."
+                    },
+                    {
+                        "fileName" : "sqipp-4.jpg",
+                        "description" : "View of the full menu. The bottom bar found on most screens allows for quick access to account settings, current order and total, and your favorites list."
+                    },
+                    {
+                        "fileName" : "sqipp-5.jpg",
+                        "description" : "Choose additional options and view pricing for extras."
+                    },
+                    {
+                        "fileName" : "sqipp-6.jpg",
+                        "description" : "Account page. Update your account name and email, modify payment methods, and view previous orders."
+                    },
+                    {
+                        "fileName" : "sqipp-ipad.png",
+                        "description" : "I also designed an iPad app for vendors to use. Here they would receive orders from the Sqipp iPhone app and process them accordingly."
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -14,11 +14,10 @@ app.locals.basedir = app.get('views');
 app.use(express.static(__dirname + '/public'));
 
 // set the home page route
-app.get('/', function(req, res) {
-
-    // pug render automatically looks in the views folder
-    res.render('index');
-});
+app.get('/', function (req, res) {
+  var obj = require('./views/db.json');
+  res.render( 'index', obj );
+})
 
 app.get('/about', function (req, res) {
   res.render( 'about' );
