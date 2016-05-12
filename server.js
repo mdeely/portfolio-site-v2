@@ -13,10 +13,18 @@ app.locals.basedir = app.get('views');
 // make express look in the public directory for assets (css/js/img)
 app.use(express.static(__dirname + '/public'));
 
+var obj = require('./views/db.json');
+
 // set the home page route
 app.get('/', function (req, res) {
-  var obj = require('./views/db.json');
   res.render( 'index', obj );
+})
+
+app.get('/:projectName', function (req, res) {
+  var projectName = req.params.projectName;
+
+  res.locals.projectName = projectName;
+  res.render( 'project', obj );
 })
 
 app.get('/about', function (req, res) {
