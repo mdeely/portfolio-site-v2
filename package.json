@@ -1,0 +1,30 @@
+{
+  "name": "marcdeely-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio site for Marc Deely",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdeely/portfolio-site-v2"
+  },
+  "keywords": [
+    "Marc",
+    "Deely",
+    "Portfolio"
+  ],
+  "author": "Marc Deely",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdeely/portfolio-site-v2/issues"
+  },
+  "dependencies": {
+    "express": "~4.9.8",
+    "pug": "2.0.0-alpha6",
+    "stylus": "^0.49.1",
+    "nib": "^1.0.4"
+  },
+  "homepage": "https://github.com/mdeely/portfolio-site-v2"
+}
