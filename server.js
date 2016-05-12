@@ -1,5 +1,14 @@
-var express = require('express');
-var app = express();
+var express = require('express'),
+    stylus  = require('stylus'),
+    nib = require('nib')
+
+var app     = express();
+
+function compile(str, path) {
+  return stylus(str)
+    .set('filename', path)
+    .use(nib())
+}
 
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
@@ -12,6 +21,12 @@ app.locals.basedir = app.get('views');
 
 // make express look in the public directory for assets (css/js/img)
 app.use(express.static(__dirname + '/public'));
+
+app.use(stylus.middleware(
+  { src: __dirname + '/public'
+  , compile: compile
+  }
+))
 
 var obj = require('./views/db.json');
 

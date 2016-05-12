@@ -436,10 +436,10 @@ ul.menu-container li a {
   padding: 20px;
 }
 ul.menu-container li a.current {
-  color: #ffd0d0;
+  color: #ddd;
 }
 ul.menu-container li a.current:hover {
-  color: #ffd0d0;
+  color: #ddd;
 }
 ul.menu-container li a:hover {
   color: #92c3ff;
