@@ -15,13 +15,13 @@ mixin navigation(back, home, about)
         - else
             li: a(href="/about") About
         li: a(href="mailto:themarcusdeely@gmail.com")  Contact
-        li: a(href="/photography")  Photography
+        //- li: a(href="/photography")  Photography
 
 
 mixin masthead(hero, project)
     - if (hero)
         nav.masthead.project-header
-            .hero(style='background-color:'+projects[projectName].theme)
+            .hero(style='background-color:'+project.theme)
     - else
         nav.masthead
             ul

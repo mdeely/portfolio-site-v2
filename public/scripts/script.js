@@ -18,7 +18,7 @@ $(document).ready(function() {
       this.$menuFader      = $('.menu-fader');
       this.$projectFilters = $('li.design, li.code');
       this.$projects       = $('.portfolioLink');
-      this.$images          = $('img');
+      this.$images         = $('img');
       this.$fsImage        = $('.fullscreen-image');
       this.$scrollToTop    = $(".scrollToTop");
     }
@@ -32,13 +32,12 @@ $(document).ready(function() {
     }
 
     function filterProjects() {
-
-      console.log(this.$projects);
       if ($(this).hasClass('activated')) {
         showAllProjects();
         return;
       }
 
+      showAllProjects();
       var filterClass = $(this).attr('class');
       $(this).addClass('activated');
       showProjects(filterClass);

@@ -414,6 +414,9 @@ ul.menu-container.open li:nth-child(4) {
   -ms-transition-delay: 0.45s;
   transition-delay: 0.45s;
 }
+ul.menu-container.open li a {
+  cursor: pointer;
+}
 ul.menu-container li {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -437,6 +440,7 @@ ul.menu-container li a {
 }
 ul.menu-container li a.current {
   color: #ddd;
+  text-decoration: line-through;
 }
 ul.menu-container li a.current:hover {
   color: #ddd;
@@ -509,8 +513,8 @@ nav.masthead ul li.activated {
   -o-transition: all 0.1s ease-in-out;
   -ms-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
-  -webkit-box-shadow: 0 0 0 2px #92c3ff, -1px 1px 6px rgba(0,0,0,0.1), -4px 2px 17px rgba(0,0,0,0.1);
-  box-shadow: 0 0 0 2px #92c3ff, -1px 1px 6px rgba(0,0,0,0.1), -4px 2px 17px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 0 0 2px #92c3ff, 1px 1px 2px rgba(0,0,0,0.2), -2px 2px 9px rgba(0,0,0,0.2);
+  box-shadow: 0 0 0 2px #92c3ff, 1px 1px 2px rgba(0,0,0,0.2), -2px 2px 9px rgba(0,0,0,0.2);
 }
 .menu-fader {
   position: fixed;

@@ -1,43 +1,47 @@
 {
     "projects": {
-        "graphics": {
-            "id": 1,
-            "title":"Graphics",
-            "subtitle":"A collection of various graphic illustrations.",
-            "theme":"#463857",
-            "name":"graphics",
+        "rise-and-shine": {
+            "id": 2,
+            "title":"Rise & Shine",
+            "subtitle":"An alarm clock app that won't stop until you smile in to the camera.",
+            "theme":"#F4964E",
+            "name":"rise-and-shine",
             "type":["design"],
             "images": {
-                "thumb":"trois_thumb.png",
-                "collection": [
+                "thumb":"riseAndShine.png",
+                "collection" : [
                     {
-                        "fileName" : "trois.png",
-                        "description" : "A birthday present to a friend.",
-                        "end" : true
+                        "fileName" : "riseAndShine-hero.png",
+                        "description" : "Designing this app was a ton of fun. It's concept is unque and beneficial to those who have a hard time waking up happy. Studies show that being forced to smile in the morning makes your day much better. I made that up.",
+                        "hero" : true
                     },
                     {
-                        "fileName" : "PeppermintpimpsMistlhoes.png",
-                        "description" : "An invitation to a Christmas party my roommates and I never had.",
-                        "end" : true
+                        "fileName" : "riseAndShine.png",
+                        "description" : "Loading screen design."
                     },
                     {
-                        "fileName" : "phoenix-drawing.png",
-                        "description" : "An album cover I made for my brother.",
-                        "end" : true
+                        "fileName" : "riseAndShine-1.png",
+                        "description" : "Main screen. Easily select which days the alarm will repeat and quickly access app settings as well as your not-so-glamorous morning photos."
                     },
                     {
-                        "fileName" : "gameboy.png",
-                        "description" : "GameBoy vector",
-                        "end" : true
+                        "fileName" : "riseAndShine-2.png",
+                        "description" : "Set your phone to strobe, vibrate, play audio, or all of the above! Clicking the trash button removes the alarm altogether."
                     },
                     {
-                        "fileName" : "infinity-running-logo.png",
-                        "description" : "Logo and font made for a running service.",
-                        "end" : true
+                        "fileName" : "riseAndShine-5.png",
+                        "description" : "Although this feature was never implemented, I designed a modal where the user could record custom alarm sounds."
                     },
                     {
-                        "fileName" : "bitter-haze-logo.png",
-                        "description" : "Logo made for the Tokyo-based band 'Bitter Haze'"
+                        "fileName" : "riseAndShine-3.png",
+                        "description" : "We save each smiling mug you used to stop the alarm. A pull-down action reveals your bed-head photos. You can view and edit or opt out of saving each photo."
+                    },
+                    {
+                        "fileName" : "riseAndShine-4.png",
+                        "description" : "Save each photo to your phone or share via social media."
+                    },
+                    {
+                        "fileName" : "riseAndShine-6.png",
+                        "description" : "When it's time to wake up, the front facing camera is automatically activated and detects your smile. After smiling for 12 consecutive seconds, the moon goes away and the sun congratulates you for waking up!"
                     }
                 ]
             }
@@ -94,7 +98,7 @@
             "name":"open-home-pro",
             "type":["design", "code"],
             "images": {
-                "thumb":"openHomePro-thumb.png",
+                "thumb":"ohp-thumb.png",
                 "collection": [
                     {
                         "fileName" : "openHomePro-hero.png",
@@ -130,52 +134,6 @@
                     {
                         "fileName" : "openHomePro-appDownloads.gif",
                         "description" : "We needed a way for users to download an app or email a link to themselves for later. I designed app store badges that looked reminicent of traditional badges but added a dropdown that allows the user to email the link to a specified email address or download the app directly. I wanted to the interaction to be smooth and modern so I used some CSS3 techniques to spice up the display."
-                    }
-                ]
-            }
-        },
-        "rise-and-shine": {
-            "id": 2,
-            "title":"Rise & Shine",
-            "subtitle":"An alarm clock app that won't stop until you smile in to the camera.",
-            "theme":"#F4964E",
-            "name":"rise-and-shine",
-            "type":["design"],
-            "images": {
-                "thumb":"riseAndShine.png",
-                "collection" : [
-                    {
-                        "fileName" : "riseAndShine-hero.png",
-                        "description" : "Designing this app was a ton of fun. It's concept is unque and beneficial to those who have a hard time waking up happy. Studies show that being forced to smile in the morning makes your day much better. I made that up.",
-                        "hero" : true
-                    },
-                    {
-                        "fileName" : "riseAndShine.png",
-                        "description" : "Loading screen design."
-                    },
-                    {
-                        "fileName" : "riseAndShine-1.png",
-                        "description" : "Main screen. Easily select which days the alarm will repeat and quickly access app settings as well as your not-so-glamorous morning photos."
-                    },
-                    {
-                        "fileName" : "riseAndShine-2.png",
-                        "description" : "Set your phone to strobe, vibrate, play audio, or all of the above! Clicking the trash button removes the alarm altogether."
-                    },
-                    {
-                        "fileName" : "riseAndShine-5.png",
-                        "description" : "Although this feature was never implemented, I designed a modal where the user could record custom alarm sounds."
-                    },
-                    {
-                        "fileName" : "riseAndShine-3.png",
-                        "description" : "We save each smiling mug you used to stop the alarm. A pull-down action reveals your bed-head photos. You can view and edit or opt out of saving each photo."
-                    },
-                    {
-                        "fileName" : "riseAndShine-4.png",
-                        "description" : "Save each photo to your phone or share via social media."
-                    },
-                    {
-                        "fileName" : "riseAndShine-6.png",
-                        "description" : "When it's time to wake up, the front facing camera is automatically activated and detects your smile. After smiling for 12 consecutive seconds, the moon goes away and the sun congratulates you for waking up!"
                     }
                 ]
             }
@@ -283,6 +241,7 @@
                 ]
             }
         },
+
         "scrybe" : {
             "id": 5,
             "title":"Scrybe",
@@ -360,6 +319,48 @@
                     {
                         "fileName" : "sqipp-ipad.png",
                         "description" : "I also designed an iPad app for vendors to use. Here they would receive orders from the Sqipp iPhone app and process them accordingly."
+                    }
+                ]
+            }
+        },
+        "graphics": {
+            "id": 1,
+            "title":"Graphics",
+            "subtitle":"A collection of various graphic illustrations.",
+            "theme":"#463857",
+            "name":"graphics",
+            "type":["design"],
+            "images": {
+                "thumb":"trois_thumb.png",
+                "collection": [
+                    {
+                        "fileName" : "trois.png",
+                        "description" : "A birthday present to a friend.",
+                        "end" : true
+                    },
+                    {
+                        "fileName" : "PeppermintpimpsMistlhoes.png",
+                        "description" : "An invitation to a Christmas party my roommates and I never had.",
+                        "end" : true
+                    },
+                    {
+                        "fileName" : "phoenix-drawing.png",
+                        "description" : "An album cover I made for my brother.",
+                        "end" : true
+                    },
+                    {
+                        "fileName" : "gameboy.png",
+                        "description" : "GameBoy vector",
+                        "end" : true
+                    },
+                    {
+                        "fileName" : "infinity-running-logo.png",
+                        "description" : "Logo and font made for a running service.",
+                        "end" : true
+                    },
+                    {
+                        "fileName" : "bitter-haze-logo.png",
+                        "description" : "Logo made for the Tokyo-based band 'Bitter Haze'"
                     }
                 ]
             }

@@ -287,6 +287,10 @@ ul.menu-container {
             &:nth-child(2) { transition-delay: .25s; };
             &:nth-child(3) { transition-delay: .35s; };
             &:nth-child(4) { transition-delay: .45s; };
+
+            a {
+                cursor: pointer;
+            }
         }
     }
 
@@ -304,6 +308,7 @@ ul.menu-container {
 
             &.current {
                 color: #DDD;
+                text-decoration: line-through;
 
                 &:hover {
                     color: #DDD;
@@ -358,7 +363,7 @@ nav.masthead {
 
             &.activated {
                 transition: all .1s ease-in-out;
-                box-shadow: 0 0 0 2px $blue, -1px 1px 6px rgba(0,0,0,0.1), -4px 2px 17px rgba(0,0,0,0.1);
+                box-shadow: 0 0 0 2px $blue, 1px 1px 2px rgba(0,0,0,0.2), -2px 2px 9px rgba(0,0,0,0.2);
             }
         }
     }

@@ -19,14 +19,14 @@ app.set('view engine', 'pug');
 
 app.locals.basedir = app.get('views');
 
-// make express look in the public directory for assets (css/js/img)
-app.use(express.static(__dirname + '/public'));
-
 app.use(stylus.middleware(
   { src: __dirname + '/public'
   , compile: compile
   }
 ))
+
+// make express look in the public directory for assets (css/js/img)
+app.use(express.static(__dirname + '/public'));
 
 var obj = require('./views/db.json');
 
