@@ -1,20 +1,20 @@
-mixin navigation(back, home, about)
+mixin navigation(back, page)
     - if (back)
-        a.nav-item.back(href="/")
+        a.nav-item.back(href="/" onclick="window.history.back();")
             span
     button.nav-item.menu
       .menu-trigger
         span
       ul.menu-container
-        - if (home)
+        - if (page === "home")
             li: a.current Home
         - else
             li: a(href="/") Home
-        - if (about)
+        - if (page === "about")
             li: a.current About
         - else
             li: a(href="/about") About
-        li: a(href="mailto:themarcusdeely@gmail.com")  Contact
+        li: a(href="mailto:themarcusdeely@gmail.com") Contact
         //- li: a(href="/photography")  Photography
 
 
@@ -25,9 +25,9 @@ mixin masthead(hero, project)
     - else
         nav.masthead
             ul
-                li.design(data-type="Design"): a Design
+                li.design(data-type="Design"): a
                 li.name: a(href="/about") Marc Deely
-                li.code(data-type="Code"): a Code
+                li.code(data-type="Code"): a
 
 mixin listProjects()
     for project in projects

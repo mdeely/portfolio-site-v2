@@ -134,10 +134,19 @@ h1 {
   font-size: 44px;
   text-transform: capitalize;
 }
+h2 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 40px;
+}
 p {
   font-size: 16px;
   line-height: 1.5em;
   padding: 0 20px;
+}
+a {
+  color: #56a2ff;
+  text-decoration: none;
 }
 .nav-item {
   position: fixed;
@@ -545,6 +554,15 @@ nav.masthead ul li.code:hover:after {
   -ms-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
+nav.masthead ul li.design a,
+nav.masthead ul li.code a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+}
 nav.masthead ul li.code {
   background-image: url("../images/portfolio-code.png");
 }
@@ -586,6 +604,7 @@ nav.masthead ul li.activated {
   z-index: 998;
 }
 .container {
+  margin-bottom: 10%;
   padding: 14px;
   position: relative;
   background-color: #f9f9f9;
@@ -594,6 +613,18 @@ nav.masthead ul li.activated {
   -o-transition: opacity 0.3s;
   -ms-transition: opacity 0.3s;
   transition: opacity 0.3s;
+}
+.container.about .masthead {
+  pointer-events: none;
+}
+.container.about h1 {
+  margin: 40px auto;
+}
+.container.about p {
+  max-width: 620px;
+  margin: 0 auto 40px auto;
+  line-height: 2.2;
+  color: #555;
 }
 .container.fade {
   pointer-events: none;
@@ -927,7 +958,7 @@ nav.masthead ul li.activated {
     position: absolute;
     width: 33%;
     margin-top: 0;
-    top: 40%;
+    top: 20%;
   }
   .container .collection-container .collection p span {
     padding: 0 30px;
