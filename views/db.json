@@ -8,7 +8,7 @@
             "name":"rise-and-shine",
             "type":["design"],
             "images": {
-                "thumb":"riseAndShine.png",
+                "thumb":"rise-and-shine-thumb.png",
                 "collection" : [
                     {
                         "fileName" : "riseAndShine-hero.png",
@@ -250,7 +250,7 @@
             "name":"scrybe",
             "type":["design"],
             "images": {
-                "thumb":"scrybe.png",
+                "thumb":"scrybe-thumb.png",
                 "collection": [
                     {
                         "fileName" : "scrybe-hero.png",
