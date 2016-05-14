@@ -440,6 +440,12 @@ nav.masthead {
     }
 }
 
+.noClick {
+    .masthead {
+        pointer-events: none;
+    }
+}
+
 .container {
     margin-bottom: 10%;
     padding: 14px;
@@ -448,9 +454,6 @@ nav.masthead {
     transition: opacity .3s;
 
     &.about {
-        .masthead {
-            pointer-events: none;
-        }
 
         h1 {
             margin: 40px auto;

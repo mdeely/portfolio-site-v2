@@ -1,11 +1,12 @@
 extend layout
 
 block navigation
-  +navigation(true, "about")
+    .noClick
+        +masthead()
+    +navigation(true, "about")
 
 block content
     .container.about
-        +masthead()
         h1(style="text-align:center") Hello!
         h2 I'm Marc and I like making things.
 

@@ -1,6 +1,6 @@
 mixin navigation(back, page)
     - if (back)
-        a.nav-item.back(href="#" onclick="window.history.back();")
+        a.nav-item.back(href="#" onclick="window.history.go(-1);")
             span
     button.nav-item.menu
       .menu-trigger
