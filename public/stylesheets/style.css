@@ -478,11 +478,11 @@ nav.masthead ul li {
   animation: hover 40s ease-in-out infinite;
   -webkit-box-shadow: -3px 3px 10px rgba(0,0,0,0.1), -10px 5px 29px rgba(0,0,0,0.1);
   box-shadow: -3px 3px 10px rgba(0,0,0,0.1), -10px 5px 29px rgba(0,0,0,0.1);
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: box-shadow 0.2s ease-in-out;
+  -moz-transition: box-shadow 0.2s ease-in-out;
+  -o-transition: box-shadow 0.2s ease-in-out;
+  -ms-transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
 }
 nav.masthead ul li:nth-child(2n) {
   -webkit-animation: hover 30s ease-in-out infinite reverse;
@@ -507,12 +507,24 @@ nav.masthead ul li.name {
 nav.masthead ul li.name a {
   color: transparent;
 }
+nav.masthead ul li.design,
+nav.masthead ul li.code {
+  background-image: url("../images/portfolio-design.png");
+  background-position: center;
+  -webkit-background-size: 58%;
+  -moz-background-size: 58%;
+  background-size: 58%;
+  background-repeat: no-repeat;
+}
+nav.masthead ul li.code {
+  background-image: url("../images/portfolio-code.png");
+}
 nav.masthead ul li.activated {
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
+  -webkit-transition: box-shadow 0.1s ease-in-out;
+  -moz-transition: box-shadow 0.1s ease-in-out;
+  -o-transition: box-shadow 0.1s ease-in-out;
+  -ms-transition: box-shadow 0.1s ease-in-out;
+  transition: box-shadow 0.1s ease-in-out;
   -webkit-box-shadow: 0 0 0 2px #92c3ff, 1px 1px 2px rgba(0,0,0,0.2), -2px 2px 9px rgba(0,0,0,0.2);
   box-shadow: 0 0 0 2px #92c3ff, 1px 1px 2px rgba(0,0,0,0.2), -2px 2px 9px rgba(0,0,0,0.2);
 }
