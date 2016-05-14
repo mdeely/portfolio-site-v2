@@ -96,7 +96,7 @@
             "subtitle":"A service that gives agents and brokers an easy way to manage their leads, listings, and open houses.",
             "theme":"#2f9bdd",
             "name":"open-home-pro",
-            "type":["design", "code"],
+            "type":["code"],
             "images": {
                 "thumb":"ohp-thumb.png",
                 "collection": [
@@ -144,7 +144,7 @@
             "subtitle":"A service aimed at distributing paper copies of short stories from emerging authors.",
             "theme":"#111111",
             "name":"flyleaf",
-            "type":["design", "code"],
+            "type":["code"],
             "images": {
                 "thumb":"flyleaf-thumb.png",
                 "collection": [
@@ -278,7 +278,7 @@
             "subtitle":"A mobile app designed to allow a quick ordering experience for pickup.",
             "theme":"#B3291A",
             "name":"sqipp",
-            "type":["design", "code"],
+            "type":["design"],
             "images": {
                 "thumb":"sqipp-thumb.png",
                 "collection": [

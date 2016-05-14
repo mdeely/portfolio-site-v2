@@ -338,7 +338,6 @@ nav.masthead {
             font-size: 1em;
             vertical-align: middle;
             background-color: white;
-            box-shadow: 0 1px 2px rgba(0,0,0,.25);
             height: 65px;
             width: 65px;
             border-radius: 5em;
@@ -363,10 +362,32 @@ nav.masthead {
 
             &.design,
             &.code {
+                position: relative;
                 background-image: url("../images/portfolio-design.png");
                 background-position: center;
                 background-size: 58%;
                 background-repeat: no-repeat;
+
+                &:after {
+                    content: attr(data-type);
+                    padding: 4px;
+                    color: #666;
+                    border-radius: 4px;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 68px;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    font-size: 10px;
+                    opacity: 0;
+                }
+
+                &:hover:after {
+                    opacity: 1;
+                    top: 75px;
+                    transition: all .2s ease-out;
+                }
             }
 
             &.code {
@@ -585,23 +606,6 @@ nav.masthead {
     }
     &:nth-child(5n) {
         transition-delay: .35s;
-    }
-
-    &.filterHide {
-        pointer-events: none;
-        opacity: 0;
-        width: 0%;
-        padding: 0%;
-        transition:
-            all .2s ease-in-out,
-            width .2s ease-in-out .8s,
-            padding .2s ease-in-out .8s,
-            opacity .4s ease-in-out .2s;
-
-        .item-content {
-            transform: scale(.8);
-            box-shadow: 0px 0px 8px -3px rgba(0,0,0,0.7), -1px 1px 10px rgba(0,0,0,0.4);
-        }
     }
 
     // &:nth-child(2n) {

@@ -32,31 +32,43 @@ $(document).ready(function() {
     }
 
     function filterProjects() {
-      if ($(this).hasClass('activated')) {
-        showAllProjects();
-        return;
+      handleFilterDisplay( this );
+    }
+
+    function handleFilterDisplay( filter ) {
+      if ( $(filter).hasClass('activated') ) {
+        $(filter).removeClass('activated');
+        showHiddenProjects();
+      }
+      else {
+        var filterClass = $(filter).attr('class');
+        $( this.$projectFilters ).removeClass('activated');
+        $(filter).addClass('activated');
+
+        displayFilteredProjects( filterClass );
+        // hide all non-relevant projects
+        // show all relevant projects
       }
 
-      showAllProjects();
-      var filterClass = $(this).attr('class');
-      $(this).addClass('activated');
-      showProjects(filterClass);
     }
 
-    function showAllProjects() {
-      $(this.$projectFilters).removeClass('activated');
-      $(this.$projects).removeClass('filterHide');
-    }
-
-    function showProjects(filterClass) {
+    function displayFilteredProjects(filterClass) {
       this.$projects.each( function(index, project) {
-        if ( $(project).hasClass( filterClass ) ) {
-          $(project).removeClass('filterHide');
+        if ( !$(project).hasClass( filterClass ) ) {
+          $(project).hide({ effect: "scale"});
         }
         else {
-          $(project).addClass('filterHide');
+          $(project).show({ effect: "scale"});
         }
       });
+    }
+
+    function showHiddenProjects() {
+      this.$projects.each( function(index, project) {
+        if ( !$(project).is('visible') ) {
+          $( project ).show({ effect: "scale"});
+        }
+       });
     }
 
     function projectListLoadBehavior() {
@@ -87,14 +99,14 @@ $(document).ready(function() {
       });
     }
 
-    function imageSlideshow(navigation) {
-      if (navigation == "next") {
-        alert("you pressed next!");
-      }
-      else if (navigation == "previous") {
-        alert("you pressed previous!");
-      }
-    }
+    // function imageSlideshow(navigation) {
+    //   if (navigation == "next") {
+    //     alert("you pressed next!");
+    //   }
+    //   else if (navigation == "previous") {
+    //     alert("you pressed previous!");
+    //   }
+    // }
 
     function handleFsImageClick(fsImage) {
       var $fsImage = $(fsImage.target);
