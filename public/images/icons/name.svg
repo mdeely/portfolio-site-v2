@@ -11,13 +11,15 @@
 		c-6.5-0.6-12.9,1.7-17.5,6.4L397.9,518.2c-8.6,8.6-22.5,8.6-31.1,0L205.5,356.9c-8.6-8.6-8.6-22.5,0-31.1l11.3-11.3
 		c8.6-8.6,22.5-8.6,31.1,0l118.9,118.9c8.6,8.6,22.5,8.6,31.1,0l265.6-265.6c4.1-4.1,9.7-6.4,15.6-6.4h3.3
 		c81.8,0,164.4,33.9,226.9,93c66.5,63,103.1,147.1,103.1,237c0,89.8-36.6,174-103.1,237C846.8,787.4,764.1,821.4,682.4,821.4z"/>
+	<path fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M784.7,692.5c17-9.7,33-21.6,47.5-35.3c46.8-44.3,72.5-103.2,72.5-165.8c0-45.7-13.7-89.4-39.3-126.9"/>
 	
 		<line fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="5" y1="640.5" x2="5" y2="37.4"/>
 	
 		<line fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="606.4" y1="792" x2="606.4" y2="377.8"/>
 	
 		<line fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="459" y1="310.5" x2="612.4" y2="157.2"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="172.5" y1="301.8" x2="195" y2="279.3"/>
 </g>
-<path fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
-	M784.7,692.5c17-9.7,33-21.6,47.5-35.3c46.8-44.3,72.5-103.2,72.5-165.8c0-45.7-13.7-89.4-39.3-126.9"/>
 </svg>
