@@ -21,9 +21,6 @@ mixin navigation(back, page)
                 img(src="../images/icons/linkedin.svg" width="24px" height="24px")
             a.email(href="mailto:themarcusdeely@gmail.com")
                 img(src="../images/icons/email.svg" width="24px" height="24px")
-
-
-        //- li: a(href="mailto:themarcusdeely@gmail.com") Contact
         //- li: a(href="/photography")  Photography
 
 
@@ -44,7 +41,7 @@ mixin listProjects()
         - var klass = project.type.join(' ')
         - var thumb = project.images.thumb
 
-        a.portfolioLink(href='/'+ name + '' class=klass onclick='ga("send", "event", "Project", "click", ' + name)
+        a.portfolioLink(href='/'+ name + '' class=klass onclick='ga("send", "event", "Project", "click", "' +name + '"')
             .item-content
                 img(src='https://s3.amazonaws.com/mdeely-portfolio-assets/images/'+name+'/'+thumb)
             .item-details #{project.title}
