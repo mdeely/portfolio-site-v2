@@ -39,11 +39,11 @@
                     },
                     {
                         "fileName" : "riseAndShine.png",
-                        "description" : "Loading screen design."
+                        "description" : "Loading screen design. I wanted to create an illustration that captured the best parts of waking up; colors from the sun and the sky, the smell of grass, and the overall simplicity and aesthetics of nature."
                     },
                     {
                         "fileName" : "riseAndShine-1.png",
-                        "description" : "Main screen. Easily select which days the alarm will repeat and quickly access app settings as well as your not-so-glamorous morning photos."
+                        "description" : "This is the main screen. Easily select which days the alarm will repeat and quickly access app settings as well as your not-so-glamorous morning photos."
                     },
                     {
                         "fileName" : "riseAndShine-2.png",
@@ -71,7 +71,7 @@
         "moving-company-reviews": {
             "id" : 6,
             "title":"Moving Company Reviews",
-            "subtitle":"A site that provides verified user reviews of moving companies.",
+            "subtitle":"A site that provides verified user reviews for moving companies.",
             "theme":"#99b942",
             "name":"moving-company-reviews",
             "type":["design", "code"],
@@ -85,16 +85,16 @@
                     },
                     {
                         "fileName" : "mcr-search-results-oldVsNew.png",
-                        "description" : "Redesigns of the navigation bar and search results page, the latter of which was our most visited page. The point of the redesign was to make each section cleaner and responsive so the site would look great at any screen width. Once the design phase was done, I jumped into our Ruby on Rails application, ripped out the old HTML and CSS and completely recoded each piece. <br><br>Top: Old design. Bottom: New design."
+                        "description" : "Redesigns of the navigation bar and search results page. This redesign aimed to remedy our unresponsive and cluttered pages. Once the design phase was done, I jumped into our Ruby on Rails application, ripped out the old HTML and CSS and completely recoded each piece. <br><br>Top: Old design. Bottom: New design."
                     },
                     {
                         "fileName" : "mcr-search-results-oldVsNew-mobile.png",
-                        "description" : "Mobile version of the old vs new navigation bar and search results page. The old version was hardly mobile-friendly and overly cluttered with information that was not necessary for the user to immediately see. With the redesign, some information was eliminated to accommodate a more aesthetically pleasing search result card.<br><br>Left: Old design. Right: New design.",
+                        "description" : "Mobile version of the old vs new navigation bar and search results page. The old version was not mobile-friendly and overly cluttered with information that was not necessary for the user to view. With the redesign, some information was eliminated to accommodate a more aesthetically pleasing search result card.<br><br>Left: Old design. Right: New design.",
                         "end": true
                     },
                     {
                         "fileName" : "mcr-email-screenshot.png",
-                        "description" : "When I joined the team, our emails were a little clunky. We decided that better looking emails could help legitimize our company in the eyes of customers. After a lengthy design process, we finally had nicer, cleaner looking emails that were more in line with our brand. Next, I had to code the email as a reusable email template. Honestly, coding email HTML is one of the most frustrating things due to the fact that it's like coding HTML 30 years ago."
+                        "description" : "When I joined the team, our emails were a little out of date. We decided that better looking emails could help legitimize our company in the eyes of customers. After a lengthy design process, we finally had nicer, cleaner looking emails that were more in line with our brand. Next, I had to code the email as a reusable email template. Honestly, coding email HTML is one of the most frustrating things due to the fact that it's like coding HTML 30 years ago."
                     },
                     {
                         "fileName" : "mcr-emails.png",
@@ -103,7 +103,7 @@
                     },
                     {
                         "fileName" : "mcr-style-guide.png",
-                        "description" : "At MovingCompanyReviews, I was both the front-end developer and the graphic designer. Those two disciplines overlap each other frequently. I noticed that our styling in the code was inconsistent with our style guide...which was nonexistent! A few weeks later, I designed and coded a new branding guide from scratch. Unfortunately, we did not have time to implement it before the company was sold and priorities shifted. Despite that let down, it was a great learning experience for me."
+                        "description" : "At MovingCompanyReviews, I was both the front-end developer and the graphic designer. Those two disciplines overlap each other frequently. I noticed that our styling in the code was inconsistent with our design guide...which didn't exist! A few weeks later, I designed and coded an entirely new branding guide. Unfortunately, we did not have time to implement it before the company was sold and priorities shifted. Despite that let down, it was a great learning experience."
                     },
                     {
                         "fileName" : "mcr-homepage-oldVsNew.png",
@@ -115,7 +115,7 @@
         "open-home-pro": {
             "id": 5,
             "title":"Open Home Pro®",
-            "subtitle":"A service that gives agents and brokers an easy way to manage their leads, listings, and open houses.",
+            "subtitle":"A service that gives agents and brokers simple way to manage their leads, listings, and open houses.",
             "theme":"#2f9bdd",
             "name":"open-home-pro",
             "type":["code"],
@@ -129,7 +129,7 @@
                     },
                     {
                         "fileName" : "openHomePro-style-guide.png",
-                        "description" : "My first project with the Open Home Pro team was to create a unified design guideline that designers and developers could use- AKA a style guide. I collaborated with the graphic designer to consolidate and create design elements and create a functional guide using HTML, CSS, and JavaScript. This was beneficial for designers so they could preview their designs in a functional environment which helped reduce back-and-forth between development and design. Developers could inspect the code to retrieve HTML structure or CSS styling to apply to the site an no longer had to guess hex codes or font sizes. When completed, I then plugged in the style guide to the site; upgrading and consolidating HTML and CSS to make our site faster and more efficient.",
+                        "description" : "My first project with the Open Home Pro team was to create a unified design guide that designers and developers could use to keep our look in sync. I collaborated with the graphic designer to consolidate design elements and create a interactive guide using HTML, CSS, and JavaScript. This was beneficial for designers so they could preview their designs in a real environment which helped reduce back-and-forth between dev and design. Developers could inspect the code to retrieve HTML structure or CSS styling to apply to the site an no longer had to guess hex codes or font sizes. Next I plugged in the style guide to the site; upgrading and consolidating HTML and CSS to make our site faster and more efficient.",
                         "end" : true
                     },
                     {
