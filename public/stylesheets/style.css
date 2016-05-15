@@ -510,6 +510,8 @@ nav.masthead {
   padding: 24px;
   color: transparent;
   background-color: #f9f9f9;
+  position: relative;
+  z-index: 10;
 }
 nav.masthead ul {
   margin: 15px auto 0 auto;
@@ -633,6 +635,7 @@ nav.masthead ul li a {
   cursor: pointer;
 }
 .menu-fader {
+  visibility: hidden;
   position: fixed;
   background-color: #92c3ff;
   left: 0;
@@ -642,22 +645,23 @@ nav.masthead ul li a {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
-  -webkit-transition: opacity 0.4s, z-index 0s linear 0.4s;
-  -moz-transition: opacity 0.4s, z-index 0s linear 0.4s;
-  -o-transition: opacity 0.4s, z-index 0s linear 0.4s;
-  -ms-transition: opacity 0.4s, z-index 0s linear 0.4s;
-  transition: opacity 0.4s, z-index 0s linear 0.4s;
+  -webkit-transition: opacity 0.4s, z-index 0s linear 0.4s, visibility 0s linear 0.4s;
+  -moz-transition: opacity 0.4s, z-index 0s linear 0.4s, visibility 0s linear 0.4s;
+  -o-transition: opacity 0.4s, z-index 0s linear 0.4s, visibility 0s linear 0.4s;
+  -ms-transition: opacity 0.4s, z-index 0s linear 0.4s, visibility 0s linear 0.4s;
+  transition: opacity 0.4s, z-index 0s linear 0.4s, visibility 0s linear 0.4s;
   z-index: -999;
 }
 .menu-fader.active {
+  visibility: visible;
   opacity: 0.75;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
   filter: alpha(opacity=75);
-  -webkit-transition: opacity 0.4s;
-  -moz-transition: opacity 0.4s;
-  -o-transition: opacity 0.4s;
-  -ms-transition: opacity 0.4s;
-  transition: opacity 0.4s;
+  -webkit-transition: opacity 0.4s ease-in-out 0.01s, visibility 0s;
+  -moz-transition: opacity 0.4s ease-in-out 0.01s, visibility 0s;
+  -o-transition: opacity 0.4s ease-in-out 0.01s, visibility 0s;
+  -ms-transition: opacity 0.4s ease-in-out 0.01s, visibility 0s;
+  transition: opacity 0.4s ease-in-out 0.01s, visibility 0s;
   z-index: 998;
 }
 .noClick nav.masthead {

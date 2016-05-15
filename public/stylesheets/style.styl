@@ -370,6 +370,8 @@ nav.masthead {
     padding: 24px;
     color: transparent;
     background-color: $backgroundColor;
+    position: relative;
+    z-index: 10;
 
     ul {
         margin: 15px auto 0 auto;
@@ -462,6 +464,7 @@ nav.masthead {
 }
 
 .menu-fader {
+    visibility: hidden;
     position: fixed;
     background-color: $blue;
     left: 0;
@@ -469,12 +472,13 @@ nav.masthead {
     top: 0;
     bottom: 0;
     opacity: 0;
-    transition: opacity .4s, z-index 0s linear .4s;
+    transition: opacity .4s, z-index 0s linear .4s, visibility 0s linear .4s;
     z-index: -(zIndexMax);
 
     &.active {
+        visibility: visible;
         opacity: .75;
-        transition: opacity .4s;
+        transition: opacity .4s ease-in-out .01s, visibility 0s;
         z-index: zIndexMax - 1;
     }
 }
