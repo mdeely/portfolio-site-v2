@@ -393,6 +393,7 @@ nav.masthead {
             &:nth-child(3n) { animation: hover 20s ease-in-out infinite alternate; }
 
             &.name {
+                background-image: url("../images/icons/name.svg");
                 font-size: 2em;
                 margin: 6px 4%;
                 width: 100px;
@@ -403,13 +404,18 @@ nav.masthead {
                 }
             }
 
-            &.design,
-            &.code {
-                position: relative;
-                background-image: url("../images/icons/design-filter.png");
+            &.name,
+            &.code,
+            &.design {
                 background-position: center;
                 background-size: 58%;
                 background-repeat: no-repeat;
+            }
+
+            &.design,
+            &.code {
+                background-image: url("../images/icons/design-filter.png");
+                position: relative;
 
                 &:after {
                     content: attr(data-type);
@@ -588,6 +594,8 @@ nav.masthead {
 }
 
 .masthead {
+    position: relative;
+
     &.project-header {
         height: 0px;
         position: relative;

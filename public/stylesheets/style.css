@@ -552,6 +552,7 @@ nav.masthead ul li:nth-child(3n) {
   animation: hover 20s ease-in-out infinite alternate;
 }
 nav.masthead ul li.name {
+  background-image: url("../images/icons/name.svg");
   font-size: 2em;
   margin: 6px 4%;
   width: 100px;
@@ -560,15 +561,19 @@ nav.masthead ul li.name {
 nav.masthead ul li.name a {
   color: transparent;
 }
-nav.masthead ul li.design,
-nav.masthead ul li.code {
-  position: relative;
-  background-image: url("../images/icons/design-filter.png");
+nav.masthead ul li.name,
+nav.masthead ul li.code,
+nav.masthead ul li.design {
   background-position: center;
   -webkit-background-size: 58%;
   -moz-background-size: 58%;
   background-size: 58%;
   background-repeat: no-repeat;
+}
+nav.masthead ul li.design,
+nav.masthead ul li.code {
+  background-image: url("../images/icons/design-filter.png");
+  position: relative;
 }
 nav.masthead ul li.design:after,
 nav.masthead ul li.code:after {
@@ -753,6 +758,9 @@ nav.masthead ul li a {
   padding: 0 30px;
   font-weight: 300;
   font-style: italic;
+}
+.masthead {
+  position: relative;
 }
 .masthead.project-header {
   height: 0px;
