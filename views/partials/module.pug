@@ -14,6 +14,7 @@ mixin navigation(back, page)
             li: a.current About
         - else
             li: a(href="/about") About
+        li: a(href="/photography")  Photography
         li.social
             a(href="https://www.instagram.com/marcusdeely/")
                 img(src="../images/icons/instagram.svg" width="24px" height="24px")
@@ -21,7 +22,6 @@ mixin navigation(back, page)
                 img(src="../images/icons/linkedin.svg" width="24px" height="24px")
             a.email(href="mailto:themarcusdeely@gmail.com")
                 img(src="../images/icons/email.svg" width="24px" height="24px")
-        //- li: a(href="/photography")  Photography
 
 
 mixin masthead(hero, project)

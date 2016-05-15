@@ -518,11 +518,17 @@ nav.masthead {
 }
 
 .container {
-    margin-bottom: 10%;
-    padding: 14px;
+    padding: 14px 14px 10% 14px;
     position: relative;
     background-color: $backgroundColor;
     transition: opacity .3s;
+
+    &.photography {
+        .collection-container .collection img {
+            width:80%;
+            max-width: 800px;
+        }
+    }
 
     &.about {
 

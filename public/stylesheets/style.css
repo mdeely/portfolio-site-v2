@@ -697,8 +697,7 @@ nav.masthead ul li a {
   display: none;
 }
 .container {
-  margin-bottom: 10%;
-  padding: 14px;
+  padding: 14px 14px 10% 14px;
   position: relative;
   background-color: #f9f9f9;
   -webkit-transition: opacity 0.3s;
@@ -706,6 +705,10 @@ nav.masthead ul li a {
   -o-transition: opacity 0.3s;
   -ms-transition: opacity 0.3s;
   transition: opacity 0.3s;
+}
+.container.photography .collection-container .collection img {
+  width: 80%;
+  max-width: 800px;
 }
 .container.about h1 {
   margin: 40px auto;

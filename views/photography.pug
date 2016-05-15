@@ -1,0 +1,18 @@
+extend layout
+
+block navigation
+    +navigation(true)
+
+block masthead
+    +masthead(true, photography )
+
+block content
+    +backgroundMenuFade(photography.theme)
+    .container.photography
+        .fullscreen-image
+            .previous
+            .next
+        .project-title(style='color:'+photography.theme)
+            h1 #{photography.title}
+            p #{photography.subtitle}
+        +imageCollection(photography)

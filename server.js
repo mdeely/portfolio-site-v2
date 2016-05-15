@@ -39,6 +39,13 @@ app.get('/about', function (req, res) {
   res.render( 'about' );
 })
 
+app.get('/photography', function (req, res) {
+  var projectName = req.params.projectName;
+
+  res.locals.projectName = projectName;
+  res.render( 'photography', obj );
+})
+
 app.get('/:projectName', function (req, res) {
   var projectName = req.params.projectName;
 

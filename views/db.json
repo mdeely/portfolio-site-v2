@@ -1,4 +1,22 @@
 {
+    "photography": {
+        "title":"Photography",
+        "theme":"#134684",
+        "name":"photography",
+        "type":["photography"],
+        "images": {
+            "collection": [
+                { "fileName":"limekiln-bench.png" },
+                { "fileName":"buildings.png" },
+                { "fileName":"cars.png" },
+                { "fileName":"city-through-curtains.png" },
+                { "fileName":"limekiln-stream.png" },
+                { "fileName":"munroe-street-bridge.png" },
+                { "fileName":"nature-vs-man.png" },
+                { "fileName":"uic-building.png" }
+            ]
+        }
+    },
     "projects": {
         "rise-and-shine": {
             "id": 2,
