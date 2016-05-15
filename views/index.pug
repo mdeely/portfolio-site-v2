@@ -1,10 +1,12 @@
 extend layout
 
 block content
-  +backgroundMenuFade()
-  .container.fade
+    .comingsoon-overlay
+        h1 New site coming very soon!
+    +backgroundMenuFade()
+    .container.fade
     .project-list
-      +listProjects()
+        +listProjects()
 
 block navigation
   +navigation(false, "home")
