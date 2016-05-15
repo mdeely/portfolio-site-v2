@@ -1,5 +1,8 @@
 extend layout
 
+block title
+    - var title = projects[projectName].title + " | Marc Deely"
+
 block navigation
     +navigation(true)
 
