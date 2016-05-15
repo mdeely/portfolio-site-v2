@@ -35,7 +35,7 @@ mixin masthead(hero, project)
         nav.masthead
             ul
                 li.design(data-type="Design"): a
-                li.name: a(href="/about")
+                li.name(data-type="About"): a(href="/about")
                 li.code(data-type="Code"): a
 
 mixin listProjects()

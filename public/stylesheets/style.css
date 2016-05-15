@@ -569,14 +569,11 @@ nav.masthead ul li.design {
   -moz-background-size: 58%;
   background-size: 58%;
   background-repeat: no-repeat;
-}
-nav.masthead ul li.design,
-nav.masthead ul li.code {
-  background-image: url("../images/icons/design-filter.png");
   position: relative;
 }
-nav.masthead ul li.design:after,
-nav.masthead ul li.code:after {
+nav.masthead ul li.name:after,
+nav.masthead ul li.code:after,
+nav.masthead ul li.design:after {
   content: attr(data-type);
   padding: 4px;
   color: #666;
@@ -585,7 +582,7 @@ nav.masthead ul li.code:after {
   position: absolute;
   left: 0;
   right: 0;
-  top: 68px;
+  bottom: -22px;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-size: 10px;
@@ -593,17 +590,21 @@ nav.masthead ul li.code:after {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
 }
-nav.masthead ul li.design:hover:after,
-nav.masthead ul li.code:hover:after {
+nav.masthead ul li.name:hover:after,
+nav.masthead ul li.code:hover:after,
+nav.masthead ul li.design:hover:after {
   opacity: 1;
   -ms-filter: none;
   filter: none;
-  top: 75px;
+  bottom: -26px;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   -ms-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
+}
+nav.masthead ul li.design {
+  background-image: url("../images/icons/design-filter.png");
 }
 nav.masthead ul li.code {
   background-image: url("../images/icons/code-filter.png");
@@ -638,11 +639,11 @@ nav.masthead ul li a {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
-  -webkit-transition: opacity 0.4s, z-index 0.1s linear 0.4s;
-  -moz-transition: opacity 0.4s, z-index 0.1s linear 0.4s;
-  -o-transition: opacity 0.4s, z-index 0.1s linear 0.4s;
-  -ms-transition: opacity 0.4s, z-index 0.1s linear 0.4s;
-  transition: opacity 0.4s, z-index 0.1s linear 0.4s;
+  -webkit-transition: opacity 0.4s, z-index 0s linear 0.4s;
+  -moz-transition: opacity 0.4s, z-index 0s linear 0.4s;
+  -o-transition: opacity 0.4s, z-index 0s linear 0.4s;
+  -ms-transition: opacity 0.4s, z-index 0s linear 0.4s;
+  transition: opacity 0.4s, z-index 0s linear 0.4s;
   z-index: -999;
 }
 .menu-fader.active {
@@ -663,15 +664,17 @@ nav.masthead ul li a {
   -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.05), -2px 1px 11px rgba(0,0,0,0.05);
   box-shadow: 0px 1px 3px rgba(0,0,0,0.05), -2px 1px 11px rgba(0,0,0,0.05);
 }
-.noClick nav.masthead ul li.name,
-.noClick nav.masthead ul li.design,
-.noClick nav.masthead ul li.code {
+.noClick nav.masthead ul li.name {
   -webkit-animation-duration: 0s;
   -moz-animation-duration: 0s;
   -o-animation-duration: 0s;
   -ms-animation-duration: 0s;
   animation-duration: 0s;
   -webkit-animation-duration: 0s;
+}
+.noClick nav.masthead ul li.design,
+.noClick nav.masthead ul li.code {
+  display: none;
 }
 .container {
   margin-bottom: 10%;

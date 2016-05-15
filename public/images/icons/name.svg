@@ -2,19 +2,20 @@
 <!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1012.4 824.2" enable-background="new 0 0 1012.4 824.2" xml:space="preserve">
+	 viewBox="0 0 1013 821.4" enable-background="new 0 0 1013 821.4" xml:space="preserve">
 <g>
-	<path d="M92.4,674.2h-20c-11,0-20-9-20-20V20c0-17.8,21.5-26.7,34.1-14.1L410.6,330c7.8,7.8,7.8,20.5,0,28.3l-14.1,14.1
-		c-7.8,7.8-20.5,7.8-28.3,0L146.5,150.8c-12.6-12.6-34.1-3.7-34.1,14.1v489.3C112.4,665.2,103.4,674.2,92.4,674.2z"/>
-	<path d="M682.4,824.2h-10c-11,0-20-9-20-20V363c0-11,9-20,20-20h20c11,0,20,9,20,20v374.4c0,13.2,12.5,22.7,25.2,19.3
-		c45.9-12.2,91.3-39,129.8-77.5c54-54,85-121.4,85-185s-31-131-85-185c-47.9-47.9-106.3-77.6-163.3-83.8c-6-0.6-12,1.5-16.3,5.8
-		L396.5,522.5c-7.8,7.8-20.5,7.8-28.3,0L204.1,358.3c-7.8-7.8-7.8-20.5,0-28.3l14.1-14.1c7.8-7.8,20.5-7.8,28.3,0l121.7,121.7
-		c7.8,7.8,20.5,7.8,28.3,0L664.1,170c3.8-3.8,8.8-5.9,14.1-5.9h4.1c166.5,0,330,163.5,330,330S848.9,824.2,682.4,824.2z"/>
+	<path d="M90.7,671.4h-16c-12.2,0-22-9.8-22-22V22c0-19.6,23.7-29.4,37.6-15.6l319.3,319.3c8.6,8.6,8.6,22.5,0,31.1l-11.3,11.3
+		c-8.6,8.6-22.5,8.6-31.1,0L150.2,151.3c-13.9-13.9-37.6-4-37.6,15.6v482.5C112.7,661.5,102.8,671.4,90.7,671.4z"/>
+	<path d="M682.7,821.4h-8c-12.2,0-22-9.8-22-22V362.2c0-12.2,9.8-22,22-22h16c12.2,0,22,9.8,22,22v371c0,14.2,13.2,24.7,27,21.4
+		c46.9-11,91.9-35.2,128.6-69.9c54.4-51.5,84.4-120.2,84.4-193.4s-30-141.9-84.4-193.4c-45.6-43.2-104-70-163.1-75.5
+		c-6.5-0.6-12.9,1.7-17.5,6.4L398.2,518.2c-8.6,8.6-22.5,8.6-31.1,0L205.8,356.9c-8.6-8.6-8.6-22.5,0-31.1l11.3-11.3
+		c8.6-8.6,22.5-8.6,31.1,0l118.9,118.9c8.6,8.6,22.5,8.6,31.1,0l265.6-265.6c4.1-4.1,9.7-6.4,15.6-6.4h3.3
+		c81.8,0,164.4,33.9,226.9,93c66.5,63,103.1,147.1,103.1,237c0,89.8-36.6,174-103.1,237C847.1,787.4,764.4,821.4,682.7,821.4z"/>
 	
-		<line fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="5" y1="635.7" x2="5" y2="32.6"/>
+		<line fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="5.3" y1="640.5" x2="5.3" y2="37.4"/>
 	
-		<line fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="606.4" y1="787.2" x2="606.4" y2="373"/>
+		<line fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="606.7" y1="792" x2="606.7" y2="377.8"/>
 	
-		<line fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="459" y1="305.7" x2="612.4" y2="152.4"/>
+		<line fill="none" stroke="#000000" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="459.3" y1="310.5" x2="612.7" y2="157.2"/>
 </g>
 </svg>

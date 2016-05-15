@@ -410,11 +410,6 @@ nav.masthead {
                 background-position: center;
                 background-size: 58%;
                 background-repeat: no-repeat;
-            }
-
-            &.design,
-            &.code {
-                background-image: url("../images/icons/design-filter.png");
                 position: relative;
 
                 &:after {
@@ -425,7 +420,7 @@ nav.masthead {
                     position: absolute;
                     left: 0;
                     right: 0;
-                    top: 68px;
+                    bottom: -22px;
                     letter-spacing: 2px;
                     text-transform: uppercase;
                     font-size: 10px;
@@ -434,9 +429,13 @@ nav.masthead {
 
                 &:hover:after {
                     opacity: 1;
-                    top: 75px;
+                    bottom: -26px;
                     transition: all .2s ease-out;
                 }
+            }
+
+            &.design {
+                background-image: url("../images/icons/design-filter.png");
             }
 
             &.code {
@@ -469,7 +468,7 @@ nav.masthead {
     top: 0;
     bottom: 0;
     opacity: 0;
-    transition: opacity .4s, z-index .1s linear .4s;
+    transition: opacity .4s, z-index 0s linear .4s;
     z-index: -(zIndexMax);
 
     &.active {
@@ -486,11 +485,14 @@ nav.masthead {
         ul li {
             box-shadow: 0px 1px 3px rgba(0,0,0,0.05), -2px 1px 11px rgba(0,0,0,0.05);
 
-            &.name,
-            &.design,
-            &.code {
+            &.name {
                 animation-duration: 0s;
                 -webkit-animation-duration: 0s;
+            }
+
+            &.design,
+            &.code {
+                display: none;
             }
         }
     }
