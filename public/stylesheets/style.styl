@@ -285,7 +285,7 @@ ul.menu-container {
     &.open {
         box-shadow: $boxShadow;
         opacity: 1;
-        padding: 20px;
+        padding: 20px 20px 0 20px;
         transition: all .25s ease-in-out;
         transform: initial;
 
@@ -319,7 +319,6 @@ ul.menu-container {
 
             &.current {
                 color: #DDD;
-                text-decoration: line-through;
 
                 &:hover {
                     color: #DDD;
@@ -328,6 +327,39 @@ ul.menu-container {
 
             &:hover {
                 color: $triggerColor;
+            }
+        }
+
+        &.social {
+            border-top: 1px dashed #bbb;
+            margin-top: 20px;
+            text-align: right;
+            transform: translate(0, 0);
+            transition-duration: 0;
+
+            a {
+                display: inline-block;
+                margin-right: 12px;
+                opacity: .5;
+                transition-duration: .2s;
+
+                img {
+                    height: 16px;
+                    width: auto;
+                }
+
+                &.email img {
+                    height: 13px;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &:hover {
+                    opacity: 1;
+                    transition-duration: .2s;
+                }
             }
         }
     }
@@ -374,7 +406,7 @@ nav.masthead {
             &.design,
             &.code {
                 position: relative;
-                background-image: url("../images/portfolio-design.png");
+                background-image: url("../images/icons/design-filter.png");
                 background-position: center;
                 background-size: 58%;
                 background-repeat: no-repeat;
@@ -399,24 +431,25 @@ nav.masthead {
                     top: 75px;
                     transition: all .2s ease-out;
                 }
-
-                a {
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    cursor: pointer;
-                }
             }
 
             &.code {
-                background-image: url("../images/portfolio-code.png");
+                background-image: url("../images/icons/code-filter.png");
+                background-size: 52%;
             }
 
             &.activated {
                 transition: box-shadow .1s ease-in-out;
                 box-shadow: 0 0 0 2px $blue, 1px 1px 2px rgba(0,0,0,0.2), -2px 2px 9px rgba(0,0,0,0.2);
+            }
+
+            a {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                cursor: pointer;
             }
         }
     }
@@ -441,8 +474,19 @@ nav.masthead {
 }
 
 .noClick {
-    .masthead {
+    nav.masthead {
         pointer-events: none;
+
+        ul li {
+            box-shadow: 0px 1px 3px rgba(0,0,0,0.05), -2px 1px 11px rgba(0,0,0,0.05);
+
+            &.name,
+            &.design,
+            &.code {
+                animation-duration: 0s;
+                -webkit-animation-duration: 0s;
+            }
+        }
     }
 }
 
@@ -633,7 +677,7 @@ nav.masthead {
     opacity: 1;
     z-index: 10;
     display: inline-block;
-    transition: opacity .3s ease-in-out;
+    transition: opacity .2s ease-in-out;
 
     &:nth-child(2n) {
         transition-delay: .4s;
@@ -818,6 +862,26 @@ nav.masthead {
                     right: 0;
                     left: initial;
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  {
+    .portfolioLink {
+        .item-details {
+            opacity: 1;
+            top: initial;
+            position: relative;
+            margin: 15px 0 0 0;
+            padding: 15px 0 0 0;
+        }
+
+        &:hover,
+        &:focus {
+            .item-details {
+                opacity: 1;
+                top: initial;
             }
         }
     }

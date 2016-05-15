@@ -14,7 +14,16 @@ mixin navigation(back, page)
             li: a.current About
         - else
             li: a(href="/about") About
-        li: a(href="mailto:themarcusdeely@gmail.com") Contact
+        li.social
+            a(href="https://www.instagram.com/marcusdeely/")
+                img(src="../images/icons/instagram.svg" width="24px" height="24px")
+            a(href="https://www.linkedin.com/in/marcdeely")
+                img(src="../images/icons/linkedin.svg" width="24px" height="24px")
+            a.email(href="mailto:themarcusdeely@gmail.com")
+                img(src="../images/icons/email.svg" width="24px" height="24px")
+
+
+        //- li: a(href="mailto:themarcusdeely@gmail.com") Contact
         //- li: a(href="/photography")  Photography
 
 
@@ -26,7 +35,7 @@ mixin masthead(hero, project)
         nav.masthead
             ul
                 li.design(data-type="Design"): a
-                li.name: a(href="/about") Marc Deely
+                li.name: a(href="/about")
                 li.code(data-type="Code"): a
 
 mixin listProjects()
@@ -43,7 +52,7 @@ mixin listProjects()
 mixin imageCollection(project)
     - if (project.images.collection && project.images.collection.length)
         .collection-container
-            for image in project.images.collection
+            each image, index in project.images.collection
                 - var name = project.name
                 - var fileName = image.fileName
 

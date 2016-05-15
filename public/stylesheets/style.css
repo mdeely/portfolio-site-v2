@@ -370,7 +370,7 @@ ul.menu-container.open {
   opacity: 1;
   -ms-filter: none;
   filter: none;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
@@ -449,13 +449,59 @@ ul.menu-container li a {
 }
 ul.menu-container li a.current {
   color: #ddd;
-  text-decoration: line-through;
 }
 ul.menu-container li a.current:hover {
   color: #ddd;
 }
 ul.menu-container li a:hover {
   color: #92c3ff;
+}
+ul.menu-container li.social {
+  border-top: 1px dashed #bbb;
+  margin-top: 20px;
+  text-align: right;
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  -webkit-transition-duration: 0;
+  -moz-transition-duration: 0;
+  -o-transition-duration: 0;
+  -ms-transition-duration: 0;
+  transition-duration: 0;
+}
+ul.menu-container li.social a {
+  display: inline-block;
+  margin-right: 12px;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -ms-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+ul.menu-container li.social a img {
+  height: 16px;
+  width: auto;
+}
+ul.menu-container li.social a.email img {
+  height: 13px;
+}
+ul.menu-container li.social a:last-child {
+  margin-right: 0;
+}
+ul.menu-container li.social a:hover {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -ms-transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 nav.masthead {
   padding: 24px;
@@ -517,7 +563,7 @@ nav.masthead ul li.name a {
 nav.masthead ul li.design,
 nav.masthead ul li.code {
   position: relative;
-  background-image: url("../images/portfolio-design.png");
+  background-image: url("../images/icons/design-filter.png");
   background-position: center;
   -webkit-background-size: 58%;
   -moz-background-size: 58%;
@@ -554,17 +600,11 @@ nav.masthead ul li.code:hover:after {
   -ms-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
-nav.masthead ul li.design a,
-nav.masthead ul li.code a {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  cursor: pointer;
-}
 nav.masthead ul li.code {
-  background-image: url("../images/portfolio-code.png");
+  background-image: url("../images/icons/code-filter.png");
+  -webkit-background-size: 52%;
+  -moz-background-size: 52%;
+  background-size: 52%;
 }
 nav.masthead ul li.activated {
   -webkit-transition: box-shadow 0.1s ease-in-out;
@@ -574,6 +614,14 @@ nav.masthead ul li.activated {
   transition: box-shadow 0.1s ease-in-out;
   -webkit-box-shadow: 0 0 0 2px #92c3ff, 1px 1px 2px rgba(0,0,0,0.2), -2px 2px 9px rgba(0,0,0,0.2);
   box-shadow: 0 0 0 2px #92c3ff, 1px 1px 2px rgba(0,0,0,0.2), -2px 2px 9px rgba(0,0,0,0.2);
+}
+nav.masthead ul li a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
 }
 .menu-fader {
   position: fixed;
@@ -603,8 +651,22 @@ nav.masthead ul li.activated {
   transition: opacity 0.4s;
   z-index: 998;
 }
-.noClick .masthead {
+.noClick nav.masthead {
   pointer-events: none;
+}
+.noClick nav.masthead ul li {
+  -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.05), -2px 1px 11px rgba(0,0,0,0.05);
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.05), -2px 1px 11px rgba(0,0,0,0.05);
+}
+.noClick nav.masthead ul li.name,
+.noClick nav.masthead ul li.design,
+.noClick nav.masthead ul li.code {
+  -webkit-animation-duration: 0s;
+  -moz-animation-duration: 0s;
+  -o-animation-duration: 0s;
+  -ms-animation-duration: 0s;
+  animation-duration: 0s;
+  -webkit-animation-duration: 0s;
 }
 .container {
   margin-bottom: 10%;
@@ -777,11 +839,11 @@ nav.masthead ul li.activated {
   filter: none;
   z-index: 10;
   display: inline-block;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -moz-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
-  -ms-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 .portfolioLink:nth-child(2n) {
   -webkit-transition-delay: 0.4s;
@@ -967,6 +1029,24 @@ nav.masthead ul li.activated {
     text-align: left;
     right: 0;
     left: initial;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .portfolioLink .item-details {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    top: initial;
+    position: relative;
+    margin: 15px 0 0 0;
+    padding: 15px 0 0 0;
+  }
+  .portfolioLink:hover .item-details,
+  .portfolioLink:focus .item-details {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    top: initial;
   }
 }
 @media screen and (min-width: 1024px) {

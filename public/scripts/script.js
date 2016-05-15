@@ -55,10 +55,10 @@ $(document).ready(function() {
     function displayFilteredProjects(filterClass) {
       this.$projects.each( function(index, project) {
         if ( !$(project).hasClass( filterClass ) ) {
-          $(project).hide({ effect: "scale"});
+          $(project).hide();
         }
         else {
-          $(project).show({ effect: "scale"});
+          $(project).show();
         }
       });
     }
@@ -66,7 +66,7 @@ $(document).ready(function() {
     function showHiddenProjects() {
       this.$projects.each( function(index, project) {
         if ( !$(project).is('visible') ) {
-          $( project ).show({ effect: "scale"});
+          $( project ).show();
         }
        });
     }
