@@ -13,6 +13,8 @@
                 { "fileName":"limekiln-stream.png" },
                 { "fileName":"munroe-street-bridge.png" },
                 { "fileName":"nature-vs-man.png" },
+                { "fileName":"crow.png" },
+                { "fileName":"red-sea-of-chairs.png" },
                 { "fileName":"uic-building.png" },
                 { "fileName":"logan-square-monument.png" }
             ]
@@ -31,7 +33,7 @@
                 "collection" : [
                     {
                         "fileName" : "riseAndShine-hero.png",
-                        "description" : "Designing this app was a lot of fun. It's concept is unque and beneficial to those who have a hard time waking up in a good mood. Studies show that being forced to smile in the morning makes your day 90% better. I made that up.",
+                        "description" : "Designing this app was a lot of fun. It's concept is unique and beneficial to those who have a hard time waking up in a good mood. Studies show that being forced to smile in the morning makes your day 90% better. I made that up.",
                         "hero" : true
                     },
                     {
@@ -68,7 +70,7 @@
         "moving-company-reviews": {
             "id" : 6,
             "title":"Moving Company Reviews",
-            "subtitle":"A site that provides verfied user reviews of moving companies.",
+            "subtitle":"A site that provides verified user reviews of moving companies.",
             "theme":"#99b942",
             "name":"moving-company-reviews",
             "type":["design", "code"],
@@ -82,16 +84,16 @@
                     },
                     {
                         "fileName" : "mcr-search-results-oldVsNew.png",
-                        "description" : "Redesigns of the navigation bar and search results page, the latter of which was our most visited page. The point of the resdesign was to make each section cleaner and responsive so the site would look great at any screen width. Once the design phase was done, I jumped into our Ruby on Rails application, ripped out the old HTML and CSS and completely recoded each piece. <br><br>Top: Old design. Bottom: New design."
+                        "description" : "Redesigns of the navigation bar and search results page, the latter of which was our most visited page. The point of the redesign was to make each section cleaner and responsive so the site would look great at any screen width. Once the design phase was done, I jumped into our Ruby on Rails application, ripped out the old HTML and CSS and completely recoded each piece. <br><br>Top: Old design. Bottom: New design."
                     },
                     {
                         "fileName" : "mcr-search-results-oldVsNew-mobile.png",
-                        "description" : "Mobile version of the old vs new navigation bar and search results page. The old version was hardly mobile-friendly and overly cluttered with information that was not neccesary for the user to immediatley see. With the redesign, some information was eliminated to accommodate a more aestheitcally pleasing search result card.<br><br>Left: Old design. Right: New design.",
+                        "description" : "Mobile version of the old vs new navigation bar and search results page. The old version was hardly mobile-friendly and overly cluttered with information that was not necessary for the user to immediately see. With the redesign, some information was eliminated to accommodate a more aesthetically pleasing search result card.<br><br>Left: Old design. Right: New design.",
                         "end": true
                     },
                     {
                         "fileName" : "mcr-email-screenshot.png",
-                        "description" : "When I joined the team, our emails were a little clunky. We decided that better looking emails could help legitimize our company in the eyes of customers. After a lengthy design process, we finally had nicer, cleaner looking emails that were more in line with our brand. Next, I had to code the email as a resuable email template. Honestly, coding email HTML is one of the most frusterating things due to the fact that it's like coding HTML 30 years ago."
+                        "description" : "When I joined the team, our emails were a little clunky. We decided that better looking emails could help legitimize our company in the eyes of customers. After a lengthy design process, we finally had nicer, cleaner looking emails that were more in line with our brand. Next, I had to code the email as a reusable email template. Honestly, coding email HTML is one of the most frustrating things due to the fact that it's like coding HTML 30 years ago."
                     },
                     {
                         "fileName" : "mcr-emails.png",
@@ -100,11 +102,11 @@
                     },
                     {
                         "fileName" : "mcr-style-guide.png",
-                        "description" : "At MovingCompanyReviews, I was both the front-end developer and the graphic designer. Those two diciplines overlap each other frequently. I noticed that our styling in the code was inconsitent with our style guide...which was nonexistent! A few weeks later, I designed and coded a new branding guide from scratch. Unfrotunatley, we did not have time to implement it before the company was sold and priorities shifted. Despite that let down, it was a great learning experience for me."
+                        "description" : "At MovingCompanyReviews, I was both the front-end developer and the graphic designer. Those two disciplines overlap each other frequently. I noticed that our styling in the code was inconsistent with our style guide...which was nonexistent! A few weeks later, I designed and coded a new branding guide from scratch. Unfortunately, we did not have time to implement it before the company was sold and priorities shifted. Despite that let down, it was a great learning experience for me."
                     },
                     {
                         "fileName" : "mcr-homepage-oldVsNew.png",
-                        "description" : "My very last project was to A/B test a new homepage using the newly created style guide. The new design showed a higher conversion rate. The lesson here? Don't underestimate the power of a well desgined website!"
+                        "description" : "My very last project was to A/B test a new homepage using the newly created style guide. The new design showed a higher conversion rate which supported the idea that a clean UI will in fact intice users to use our site."
                     }
                 ]
             }
@@ -126,7 +128,7 @@
                     },
                     {
                         "fileName" : "openHomePro-style-guide.png",
-                        "description" : "My first project with the Open Home Pro team was to create a unified design guideline that designers and developers could use- AKA a style guide. I collaborated with the graphic designer to consolidate and create design elements and create a functional guide using HTML, CSS, and JavaScript. This was beneficial for designers so they could preview their designs in a functional environment which helped reduce back-and-forth between development and design. Developers could inspect the code to retreive HTML structure or CSS styling to apply to the site an no longer had to guess hex codes or font sizes. When completed, I then plugged in the style guide to the site; upgrading and consolidating HTML and CSS to make our site faster and more efficient.",
+                        "description" : "My first project with the Open Home Pro team was to create a unified design guideline that designers and developers could use- AKA a style guide. I collaborated with the graphic designer to consolidate and create design elements and create a functional guide using HTML, CSS, and JavaScript. This was beneficial for designers so they could preview their designs in a functional environment which helped reduce back-and-forth between development and design. Developers could inspect the code to retrieve HTML structure or CSS styling to apply to the site an no longer had to guess hex codes or font sizes. When completed, I then plugged in the style guide to the site; upgrading and consolidating HTML and CSS to make our site faster and more efficient.",
                         "end" : true
                     },
                     {
@@ -135,7 +137,7 @@
                     },
                     {
                         "fileName" : "openHomePro-1-old.png",
-                        "description" : "This is the old version of our Leads view. Very plain and not the most inteuitive at times. Definitley in need of a UX and UI upgrade."
+                        "description" : "This is the old version of our Leads view. Very plain and not the most intuitive at times. Definitely in need of a UX and UI upgrade."
                     },
                     {
                         "fileName" : "openHomePro-2.png",
@@ -152,7 +154,7 @@
                     },
                     {
                         "fileName" : "openHomePro-appDownloads.gif",
-                        "description" : "We needed a way for users to download an app or email a link to themselves for later. I designed app store badges that looked reminicent of traditional badges but added a dropdown that allows the user to email the link to a specified email address or download the app directly. I wanted to the interaction to be smooth and modern so I used some CSS3 techniques to spice up the display."
+                        "description" : "We needed a way for users to download an app or email a link to themselves for later. I designed app store badges that looked reminiscent of traditional badges but added a dropdown that allows the user to email the link to a specified email address or download the app directly. I wanted to the interaction to be smooth and modern so I used some CSS3 techniques to spice up the display."
                     }
                 ]
             }
@@ -183,7 +185,7 @@
                     },
                     {
                         "fileName" : "flyleaf-1-story.png",
-                        "description" : "At this point in my career, I had yet to utilize the power of templating or databases. After teaching myself some PHP and how to incorporate a SQL database, I was able to quickly create a small yet scaleable site."
+                        "description" : "At this point in my career, I had yet to utilize the power of templating or databases. After teaching myself some PHP and how to incorporate a SQL database, I was able to quickly create a small yet scalable site."
                     },
                     {
                         "fileName" : "flyleaf-2-about.png",
@@ -222,7 +224,7 @@
                     },
                     {
                         "fileName" : "muOptics-1.png",
-                        "description" : "This layout that allows for quick access to all features and important settings. Easily adjust the viewing mode on the lefthand side. Change the infrared gradient by clicking on the thermal range indicator at the bottom of the screen. Switch infrared capture mode from photo to video at the bottom right. Initiate capture with the big red button."
+                        "description" : "This layout that allows for quick access to all features and important settings. Easily adjust the viewing mode on the left-hand side. Change the infrared gradient by clicking on the thermal range indicator at the bottom of the screen. Switch infrared capture mode from photo to video at the bottom right. Initiate capture with the big red button."
                     },
                     {
                         "fileName" : "muOptics-2.png",
@@ -313,11 +315,11 @@
                     },
                     {
                         "fileName" : "sqipp-2.jpg",
-                        "description" : " At this pont in time, iPhones had not expanded past the 640x960 screen size. Arranging and consolidating as much information and features while retaining a readable and useful view proved to be quite a challenge."
+                        "description" : " At this point in time, iPhones had not expanded past the 640x960 screen size. Arranging and consolidating as much information and features while retaining a readable and useful view proved to be quite a challenge."
                     },
                     {
                         "fileName" : "sqipp-3.png",
-                        "description" : "View more information about a restaurant by selecting the hamburger menu to the right of the name. View restaurant hours or get directions. Addiontally, you can add to favorites or call the restaurant."
+                        "description" : "View more information about a restaurant by selecting the hamburger menu to the right of the name. View restaurant hours or get directions. Additionally, you can add to favorites or call the restaurant."
                     },
                     {
                         "fileName" : "sqipp-4.jpg",
