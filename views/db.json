@@ -197,10 +197,6 @@
                         "hero" : true
                     },
                     {
-                        "fileName" : "mu-logos-notebook.png",
-                        "description" : "Sketching phase."
-                    },
-                    {
                         "fileName" : "mu-logos.png",
                         "description" : "A small selection of logos that made it to the final round.",
                         "end" : true
