@@ -17,7 +17,7 @@ mixin navigation(back, page)
         - if (page === "photography")
             li: a.current(href="/photography")  Photography
         - else
-            li: a(href="/photography")  Photography
+            li: a(onclick='ga("send", "event", "Menu", "click", "Photography")' href="/photography")  Photography
         li.social
             a(href="https://www.instagram.com/marcusdeely/")
                 img(src="../images/icons/instagram.svg" width="24px" height="24px")
