@@ -382,8 +382,8 @@ nav.masthead {
             font-size: 1em;
             vertical-align: middle;
             background-color: white;
-            height: 65px;
-            width: 65px;
+            height: 54px;
+            width: 54px;
             border-radius: 5em;
             -webkit-animation: hover 9s infinite;
             animation: hover 40s ease-in-out infinite;
@@ -810,8 +810,16 @@ nav.masthead {
 
     nav.masthead {
         ul {
-            li.name {
-                margin: 6px 7%;
+            li {
+                &.name {
+                    margin: 6px 7%;
+                }
+
+                &.design,
+                &.code {
+                    width: 65px;
+                    height: 65px;
+                }
             }
         }
     }

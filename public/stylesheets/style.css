@@ -470,6 +470,9 @@ ul.menu-container li.social {
   -o-transition-duration: 0;
   -ms-transition-duration: 0;
   transition-duration: 0;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
 }
 ul.menu-container li.social a {
   display: inline-block;
@@ -519,8 +522,8 @@ nav.masthead ul li {
   font-size: 1em;
   vertical-align: middle;
   background-color: #fff;
-  height: 65px;
-  width: 65px;
+  height: 54px;
+  width: 54px;
   -webkit-border-radius: 5em;
   border-radius: 5em;
   -webkit-animation: hover 9s infinite;
@@ -995,6 +998,11 @@ nav.masthead ul li a {
 @media screen and (min-width: 480px) {
   nav.masthead ul li.name {
     margin: 6px 7%;
+  }
+  nav.masthead ul li.design,
+  nav.masthead ul li.code {
+    width: 65px;
+    height: 65px;
   }
   .portfolioLink {
     width: 50%;
