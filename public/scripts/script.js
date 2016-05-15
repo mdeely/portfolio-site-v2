@@ -29,6 +29,7 @@ $(document).ready(function() {
       $( this.$projectFilters ).bind( 'click', filterProjects );
       $( this.$images         ).bind( 'click', handleImageClick );
       $( this.$fsImage        ).bind( 'click', handleFsImageClick );
+      $( this.$images         ).bind( 'contextmenu', function(evt) { return false });
     }
 
     function filterProjects() {
