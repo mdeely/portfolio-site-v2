@@ -12,7 +12,7 @@
                 "collection" : [
                     {
                         "fileName" : "riseAndShine-hero.png",
-                        "description" : "Designing this app was a ton of fun. It's concept is unque and beneficial to those who have a hard time waking up happy. Studies show that being forced to smile in the morning makes your day much better. I made that up.",
+                        "description" : "Designing this app was a lot of fun. It's concept is unque and beneficial to those who have a hard time waking up in a good mood. Studies show that being forced to smile in the morning makes your day 90% better. I made that up.",
                         "hero" : true
                     },
                     {
@@ -63,7 +63,7 @@
                     },
                     {
                         "fileName" : "mcr-search-results-oldVsNew.png",
-                        "description" : "My first two notable projects were redesigns of our navigation bar and search results page, the latter of which was our most visited page. The point of the resdesign was to make each section cleaner and responsive so the site would look great at any screen width. Once the design phase was done, I jumped into our Ruby on Rails application, ripped out the old HTML and CSS and completely recoded each piece. <br><br>Top: Old design. Bottom: New design."
+                        "description" : "Redesigns of the navigation bar and search results page, the latter of which was our most visited page. The point of the resdesign was to make each section cleaner and responsive so the site would look great at any screen width. Once the design phase was done, I jumped into our Ruby on Rails application, ripped out the old HTML and CSS and completely recoded each piece. <br><br>Top: Old design. Bottom: New design."
                     },
                     {
                         "fileName" : "mcr-search-results-oldVsNew-mobile.png",
