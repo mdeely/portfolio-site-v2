@@ -6,18 +6,54 @@
         "type":["photography"],
         "images": {
             "collection": [
-                { "fileName":"limekiln-bench.png" },
-                { "fileName":"buildings.png" },
-                { "fileName":"cars.png" },
-                { "fileName":"city-through-curtains.png" },
-                { "fileName":"munroe-street-mirrored.png" },
-                { "fileName":"limekiln-stream.png" },
-                { "fileName":"munroe-street-bridge.png" },
-                { "fileName":"nature-vs-man.png" },
-                { "fileName":"crow.png" },
-                { "fileName":"red-sea-of-chairs.png" },
-                { "fileName":"uic-building.png" },
-                { "fileName":"logan-square-monument.png" }
+                {
+                    "fileName":"limekiln-bench.png",
+                    "title":"Limekiln Bench"
+                 },
+                {
+                    "fileName":"buildings.png",
+                    "title":"Buildings on Michigan Ave, Chicago"
+                },
+                {
+                    "fileName":"cars.png",
+                    "title":"Cars"
+                },
+                {
+                    "fileName":"city-through-curtains.png",
+                    "title":"City Through Curtains"
+                },
+                {
+                    "fileName":"munroe-street-mirrored.png",
+                    "title":"Blade Runner On Munroe"
+                },
+                {
+                    "fileName":"limekiln-stream.png",
+                    "title":"Limekiln Stream"
+                },
+                {
+                    "fileName":"munroe-street-bridge.png",
+                    "title":"Munro Stree Bridge, Chicago"
+                },
+                {
+                    "fileName":"nature-vs-man.png",
+                    "title":"Nature vs. Man"
+                },
+                {
+                    "fileName":"crow.png",
+                    "title":"Crow"
+                },
+                {
+                    "fileName":"red-sea-of-chairs.png",
+                    "title":"Red Sea of Chairs"
+                },
+                {
+                    "fileName":"uic-building.png",
+                    "title":"Clouds"
+                },
+                {
+                    "fileName":"logan-square-monument.png",
+                    "title":"Logan Square Monument"
+                }
             ]
         }
     },

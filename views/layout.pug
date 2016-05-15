@@ -4,6 +4,7 @@ doctype
 html
   head
     - var title = title || "Marc Deely"
+    - var desc = desc || "A collection of portfolio work by Marc Deely. Website designed and coded by yours truly!"
     block title
     title #{title}
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
@@ -16,7 +17,8 @@ html
     link(rel='stylesheet' href='/stylesheets/style.css')
     link(href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css')
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    meta(name="description" content="A collection of portfolio work by Marc Deely. Website designed and coded by yours truly!")
+    meta(name="description" content=desc)
+    meta(property="og:image" content="/apple-icon-180x180.png")
   body
 
     block navigation
