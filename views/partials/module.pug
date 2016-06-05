@@ -55,7 +55,7 @@ mixin imageCollection(project)
             each image, index in project.images.collection
                 - var name = project.name
                 - var fileName = image.fileName
-                - var imgTitle = image.title || "Photograph by Marc Deely"
+                - var imgTitle = image.title || "Image by Marc Deely"
 
                 - if (image.hero === true)
                     .collection.hero
@@ -64,9 +64,23 @@ mixin imageCollection(project)
                             span !{image.description}
                 - else
                     .collection(class=(image.end === true ? "end" : ""))
-                        img(draggable="false" title=imgTitle  data-img-index=index class='lazy' data-original='https://s3.amazonaws.com/mdeely-portfolio-assets/images/'+name+'/'+fileName)
+                        img(title=imgTitle  data-img-index=index class='lazy' data-original='https://s3.amazonaws.com/mdeely-portfolio-assets/images/'+name+'/'+fileName)
                         p
                             span !{image.description}
+
+mixin photographyCollection(photos)
+    - if (photos.images.collection && photos.images.collection.length)
+        .collection-container
+            each image, index in photos.images.collection
+                - var name = photos.name
+                - var fileName = image.fileName
+                - var imgTitle = image.title || "Photograph by Marc Deely"
+
+                .responsive-aspect-ratio-wrapper
+                        .collection(class=(image.end === true ? "end" : ""))
+                            img(draggable="false" title=imgTitle  data-img-index=index class='lazy' data-original='https://s3.amazonaws.com/mdeely-portfolio-assets/images/'+name+'/'+fileName)
+                            //- p
+                            //-     span !{image.description}
 
 mixin scrollToTop
     button.scrollToTop Scroll to top
