@@ -8,7 +8,8 @@ block navigation
     +navigation(true, 'photography')
 
 block masthead
-    +masthead(true, photography)
+    .noClick
+        +masthead(false, photography)
 
 block content
     +backgroundMenuFade(photography.theme)

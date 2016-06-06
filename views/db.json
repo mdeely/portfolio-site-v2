@@ -1,11 +1,24 @@
 {
     "photography": {
         "title":"Photography",
-        "theme":"#F9F9F9",
+        "subtitle":"Updated 6.6.2016",
+        "theme":"#525252",
         "name":"photography",
         "type":["photography"],
         "images": {
             "collection": [
+                {
+                    "fileName":"rocks-at-mke-art-museum-campus.jpg",
+                    "title":"Rocks at MKE Art Museum Campus"
+                 },
+                {
+                    "fileName":"tree-bark.jpg",
+                    "title":"Tree Bark"
+                 },
+                {
+                    "fileName":"bundle-of-sticks.jpg",
+                    "title":"Bundle of Sticks"
+                 },
                 {
                     "fileName":"limekiln-bench.png",
                     "title":"Limekiln Bench"
