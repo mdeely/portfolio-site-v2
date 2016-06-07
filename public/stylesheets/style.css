@@ -294,7 +294,7 @@ a {
   z-index: 1001;
   overflow: scroll;
   text-align: center;
-  background-color: #333;
+  background-color: #131313;
   padding: 20px;
   cursor: -webkit-zoom-out;
   color: #888;
@@ -706,9 +706,6 @@ nav.masthead ul li a {
   -o-transition: opacity 0.3s;
   -ms-transition: opacity 0.3s;
   transition: opacity 0.3s;
-}
-.container.photography .fullscreen-image {
-  background-color: #fff;
 }
 .container.photography .fullscreen-image img {
   position: fixed;
