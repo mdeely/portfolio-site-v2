@@ -46,6 +46,7 @@ mixin photography_masthead()
 mixin photography_navigation()
     .side_menu
         img.menu-toggle(src="../images/icons/menu.svg" height="16px" width="auto")
+        +photographyCollection(photography)
 
 mixin listProjects()
     for project in projects
@@ -79,16 +80,16 @@ mixin imageCollection(project)
 
 mixin photographyCollection(photos)
     - if (photos.images.collection && photos.images.collection.length)
-        .collection-container
-            each image, index in photos.images.collection
-                - var name = photos.name
-                - var fileName = image.fileName
-                - var filePath = (name+"/"+fileName)
-                - var imgTitle = image.title || "Photograph by Marc Deely"
+    .photo-drawer
+        each image, index in photos.images.collection
+            - var name = photos.name
+            - var fileName = image.fileName
+            - var filePath = (name+"/"+fileName)
+            - var imgTitle = image.title || "Photograph by Marc Deely"
 
-                .responsive-aspect-ratio-wrapper
-                        .grid-item
-                            img(draggable="false" alt=imgTitle title=imgTitle  data-img-index=index style="100px" src="https://s3.amazonaws.com/mdeely-portfolio-assets/images/"+filePath+"")
+            a(href="#")
+                img(draggable="false" alt=imgTitle title=imgTitle  data-img-index=index style="100px" src="https://s3.amazonaws.com/mdeely-portfolio-assets/images/"+filePath+"")
+
 
 mixin scrollToTop
     button.scrollToTop Scroll to top

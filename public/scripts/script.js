@@ -5,7 +5,6 @@ $(document).ready(function() {
       gatherNodes();
       bindHandlers();
 
-      grid();
       projectListLoadBehavior();
       fullscreenImages();
       scrollToTop(this.$scrollToTop);
@@ -15,30 +14,53 @@ $(document).ready(function() {
     function gatherNodes() {
       // Find all these via main node (which in this case is body?)
       $body = $('body'),
-      this.$menuTrigger    = $('.menu-trigger');
-      this.$menuFader      = $('.menu-fader');
-      this.$projectFilters = $('li.design, li.code');
-      this.$projects       = $('.portfolioLink');
-      this.$images         = $('img');
-      this.$fsImage        = $('.fullscreen-image');
-      this.$scrollToTop    = $(".scrollToTop");
+      this.$menuTrigger     = $('.menu-trigger');
+      this.$menuFader       = $('.menu-fader');
+      this.$projectFilters  = $('li.design, li.code');
+      this.$projects        = $('.portfolioLink');
+      this.$images          = $('img');
+      this.$fsImage         = $('.fullscreen-image');
+      this.$scrollToTop     = $(".scrollToTop");
+      this.$photoDrawerImgs = $('.photo-drawer img');
     }
 
     function bindHandlers() {
-      $( this.$menuTrigger    ).bind( 'click', toggleMenuClasses );
-      $( this.$menuFader      ).bind( 'click', toggleMenuClasses );
-      $( this.$projectFilters ).bind( 'click', filterProjects );
-      $( this.$images         ).bind( 'click', handleImageClick );
-      $( this.$fsImage        ).bind( 'click', handleFsImageClick );
-      $( this.$images         ).bind( 'contextmenu', function(evt) { return false });
+      $( this.$menuTrigger      ).bind( 'click', toggleMenuClasses );
+      $( this.$menuFader        ).bind( 'click', toggleMenuClasses );
+      $( this.$projectFilters   ).bind( 'click', filterProjects );
+      $( this.$images           ).bind( 'click', handleImageClick );
+      $( this.$fsImage          ).bind( 'click', handleFsImageClick );
+      $( this.$images           ).bind( 'contextmenu', function(evt) { return false });
+      $( this.$photoDrawerImgs  ).bind( 'click', showPhoto);
     }
 
-    function grid() {
-      $('.grid').masonry({
-        columnWidth: '.grid-sizer',
-        itemSelector: '.grid-item',
-        percentPosition: true
-      });
+    function showPhoto(image) {
+      var $image = $(image.target)
+      var $containerPhoto = $(".container.photography");
+
+      var src = $image.attr('src');
+
+      if ($image.hasClass("active")) {
+        $image.removeClass("active");
+        $containerPhoto.css({
+          "background-image": "",
+          "background-size": ""
+          });
+      }
+      else {
+        removeActiveClass();
+
+        $image.addClass("active");
+
+        $containerPhoto.css({
+          "background-image": "url('"+src+"')",
+          "background-size": "contain"
+          });
+      }
+    }
+
+    function removeActiveClass() {
+      this.$photoDrawerImgs.removeClass("active");
     }
 
     function filterProjects() {

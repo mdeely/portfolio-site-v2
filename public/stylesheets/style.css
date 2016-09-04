@@ -1164,37 +1164,147 @@ nav.masthead ul li a {
 .no-js .container .portfolioLink {
   display: initial;
 }
+.photography-wrapper {
+  overflow: hidden;
+}
 .photography-wrapper .side_menu {
-  padding: 16px;
   z-index: 10;
-  width: 52px;
+  width: 112px;
+  left: -62px;
   position: fixed;
   top: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.2);
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
+  background-color: rgba(0,0,0,0.1);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #fff;
+  overflow-y: scroll;
+}
+.photography-wrapper .side_menu .photo-drawer {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.2 ease-in-out;
+  -moz-transition: all 0.2 ease-in-out;
+  -o-transition: all 0.2 ease-in-out;
+  -ms-transition: all 0.2 ease-in-out;
+  transition: all 0.2 ease-in-out;
+}
+.photography-wrapper .side_menu:hover {
+  left: 0;
+  background-color: rgba(0,0,0,0.35);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.photography-wrapper .side_menu:hover .menu-toggle {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.photography-wrapper .side_menu:hover .photo-drawer {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .photography-wrapper .side_menu.open {
-  width: 256px;
-  background-color: rgba(0,0,0,0.75);
+  left: 0;
+  background-color: rgba(0,0,0,0.35);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.photography-wrapper .side_menu.open .menu-toggle {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.photography-wrapper .side_menu.open .photo-drawer {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.photography-wrapper .side_menu .photo-drawer {
+  overflow-y: scroll;
+}
+.photography-wrapper .side_menu .photo-drawer a {
+  display: block;
+  margin: 4px 8px;
+}
+.photography-wrapper .side_menu .photo-drawer a:first-child {
+  margin-top: 8px;
+}
+.photography-wrapper .side_menu .photo-drawer a img {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 2px 2px #000;
+  box-shadow: 0 2px 2px #000;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
   -ms-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
+.photography-wrapper .side_menu .photo-drawer a img:hover {
+  -webkit-box-shadow: 0 0px 1px 1px #92c3ff;
+  box-shadow: 0 0px 1px 1px #92c3ff;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.photography-wrapper .side_menu .photo-drawer a img.active {
+  -webkit-box-shadow: 0 0px 1px 1px #2d8bff;
+  box-shadow: 0 0px 1px 1px #2d8bff;
+}
 .photography-wrapper .side_menu .menu-toggle {
-  right: 16px;
+  left: 12px;
   top: 16px;
-  position: absolute;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  position: fixed;
+  -webkit-transition: all 0.2s ease-in-out 0.2s;
+  -moz-transition: all 0.2s ease-in-out 0.2s;
+  -o-transition: all 0.2s ease-in-out 0.2s;
+  -ms-transition: all 0.2s ease-in-out 0.2s;
+  transition: all 0.2s ease-in-out 0.2s;
 }
 .photography-wrapper .masthead {
   background-color: transparent;
   text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background: -moz--webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
   background: -moz--moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
   background: -moz--o-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
@@ -1216,32 +1326,28 @@ nav.masthead ul li a {
   text-transform: uppercase;
   padding: 0;
   margin-left: 12px;
-  font-weight: 100;
+  font-weight: 300;
   letter-spacing: 1.5px;
   vertical-align: super;
 }
 .photography-wrapper .container.photography {
+  background-repeat: no-repeat;
+  background-color: #525252;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   background-position: center;
   background-image: url("https://mdeely-portfolio-assets.s3.amazonaws.com/images/photography/mcgregor-bay-frog.jpg");
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-}
-.photography-wrapper .container.photography .grid-sizer,
-.photography-wrapper .container.photography .grid-item {
-  width: 33.333%;
-}
-.photography-wrapper .container.photography .grid-item {
-  padding: 16px;
-}
-.photography-wrapper .container.photography .grid-item div {
-  height: 100px;
-  background-color: #f00;
+  -webkit-transition: background-image 0.25s ease-in-out, background-size 0.25s ease-in-out;
+  -moz-transition: background-image 0.25s ease-in-out, background-size 0.25s ease-in-out;
+  -o-transition: background-image 0.25s ease-in-out, background-size 0.25s ease-in-out;
+  -ms-transition: background-image 0.25s ease-in-out, background-size 0.25s ease-in-out;
+  transition: background-image 0.25s ease-in-out, background-size 0.25s ease-in-out;
 }
 @-moz-keyframes hover {
   0% {

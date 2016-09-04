@@ -1018,34 +1018,93 @@ nav.masthead {
 }
 
 .photography-wrapper {
+    overflow: hidden;
 
     .side_menu {
-        padding: 16px;
         z-index: 10;
-        width: 52px;
+        width: 112px;
+        left: -62px;
         position: fixed;
         top: 0;
         bottom: 0;
-        background-color: rgba(0,0,0,.2);
-        transition: all .1s ease-in-out;
+        background-color: rgba(0,0,0,.1);
+        transition: all .2s ease-in-out;
+        color: white;
+        overflow-y: scroll;
+
+        .photo-drawer {
+            opacity: 0;
+            transition all .2 ease-in-out;
+        }
+
+        sideMenuOpen() {
+            left: 0;
+            background-color: rgba(0,0,0,.35);
+            transition: all .2s ease-in-out;
+
+            .menu-toggle {
+                opacity: 0;
+                transition all .2s ease-in-out;
+            }
+
+            .photo-drawer {
+                opacity: 1;
+                transition all .2s ease-in-out;
+            }
+        }
+
+        &:hover {
+            sideMenuOpen();
+        }
 
         &.open {
-            width: 256px;
-            background-color: rgba(0,0,0,.75);
-            transition: all .1s ease-in-out;
+            sideMenuOpen();
+        }
+
+        .photo-drawer {
+            overflow-y: scroll;
+
+            a {
+                display: block;
+                margin: 4px 8px;
+
+                &:first-child {
+                    margin-top: 8px;
+                }
+
+                img {
+                    border-radius: 3px;
+                    box-shadow: 0 2px 2px black;
+                    transition: all .1s ease-in-out;
+
+                    &:hover {
+                        box-shadow: 0 0px 1px 1px $blue;
+                        transition: all .1s ease-in-out;
+                    }
+
+                    &.active {
+                        box-shadow: 0 0px 1px 1px #2d8bff;
+                    }
+                }
+            }
         }
 
         .menu-toggle {
-            right: 16px;
+            left: 12px;
             top: 16px;
-            position: absolute;
+            opacity: 1;
+            position: fixed;
+            transition all .2s ease-in-out .2s;
         }
     }
 
     .masthead {
         background-color: transparent;
         text-align: center;
-
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
         background: -moz-linear-gradient(top,  rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
         background: -webkit-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(to bottom,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -1056,34 +1115,23 @@ nav.masthead {
             text-transform: uppercase;
             padding: 0;
             margin-left: 12px;
-            font-weight: 100;
+            font-weight: 300;
             letter-spacing: 1.5px;
             vertical-align: super;
         }
     }
 
     .container.photography {
+        background-repeat: no-repeat;
+        background-color: #525252;
         background-size: cover;
         background-position: center;
         background-image: url('https://mdeely-portfolio-assets.s3.amazonaws.com/images/photography/mcgregor-bay-frog.jpg');
-        position: absolute;
+        position: fixed;
         left: 0;
         right: 0;
         top: 0;
         bottom: 0;
-
-        .grid-sizer,
-        .grid-item {
-            width: 33.333%;
-        }
-
-        .grid-item {
-            padding: 16px;
-
-            div {
-                height: 100px;
-                background-color: red;
-            }
-        }
+        transition: background-image .25s ease-in-out, background-size .25s ease-in-out;
     }
 }
