@@ -1,23 +1,21 @@
-extend layout
+extend layout_alt
 
 block title
     - var title = "Photography | Marc Deely"
     - var desc = "Various photos shot and edited by Marc Deely"
 
-block navigation
-    +navigation(true, 'photography')
+//- block navigation
+//-     +photography_navigation()
 
 block masthead
-    .noClick
-        +masthead(false, photography)
+    +photography_masthead()
 
 block content
     +backgroundMenuFade(photography.theme)
     .container.photography
-        .fullscreen-image
-            .previous
-            .next
-        .project-title(style='color:'+photography.theme)
-            h1 #{photography.title}
-            p #{photography.subtitle}
-        +photographyCollection(photography)
+        .grid
+            .grid-sizer
+            +photographyCollection()
+
+        //- .lr_embed(style='position: relative; padding-bottom: 50%; height: 0; overflow: hidden;')
+        //-     iframe#iframe(src='https://lightroom.adobe.com/embed/shares/2201edb5f3c945fb889c21f836d1aa19/slideshow' frameborder='0' style='width:100%; height:100%; position: absolute; top:0; left:0;')

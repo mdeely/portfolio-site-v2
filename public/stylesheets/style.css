@@ -840,6 +840,9 @@ nav.masthead ul li a {
 .masthead {
   position: relative;
 }
+.masthead.photography {
+  background-color: transparent;
+}
 .masthead.project-header {
   height: 0px;
   position: relative;
@@ -1160,6 +1163,85 @@ nav.masthead ul li a {
 }
 .no-js .container .portfolioLink {
   display: initial;
+}
+.photography-wrapper .side_menu {
+  padding: 16px;
+  z-index: 10;
+  width: 52px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.2);
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.photography-wrapper .side_menu.open {
+  width: 256px;
+  background-color: rgba(0,0,0,0.75);
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.photography-wrapper .side_menu .menu-toggle {
+  right: 16px;
+  top: 16px;
+  position: absolute;
+}
+.photography-wrapper .masthead {
+  background-color: transparent;
+  text-align: center;
+  background: -moz--webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+  background: -moz--moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+  background: -moz--o-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+  background: -moz--ms-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+  background: -moz-linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+  background: -webkit--webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+  background: -webkit--moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+  background: -webkit--o-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+  background: -webkit--ms-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+  background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+  background: -o-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+  background: -ms-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.photography-wrapper .masthead span {
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0;
+  margin-left: 12px;
+  font-weight: 100;
+  letter-spacing: 1.5px;
+  vertical-align: super;
+}
+.photography-wrapper .container.photography {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://mdeely-portfolio-assets.s3.amazonaws.com/images/photography/mcgregor-bay-frog.jpg");
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.photography-wrapper .container.photography .grid-sizer,
+.photography-wrapper .container.photography .grid-item {
+  width: 33.333%;
+}
+.photography-wrapper .container.photography .grid-item {
+  padding: 16px;
+}
+.photography-wrapper .container.photography .grid-item div {
+  height: 100px;
+  background-color: #f00;
 }
 @-moz-keyframes hover {
   0% {

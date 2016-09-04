@@ -5,6 +5,7 @@ $(document).ready(function() {
       gatherNodes();
       bindHandlers();
 
+      grid();
       projectListLoadBehavior();
       fullscreenImages();
       scrollToTop(this.$scrollToTop);
@@ -30,6 +31,14 @@ $(document).ready(function() {
       $( this.$images         ).bind( 'click', handleImageClick );
       $( this.$fsImage        ).bind( 'click', handleFsImageClick );
       $( this.$images         ).bind( 'contextmenu', function(evt) { return false });
+    }
+
+    function grid() {
+      $('.grid').masonry({
+        columnWidth: '.grid-sizer',
+        itemSelector: '.grid-item',
+        percentPosition: true
+      });
     }
 
     function filterProjects() {
