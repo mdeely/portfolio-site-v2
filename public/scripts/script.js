@@ -34,7 +34,8 @@ $(document).ready(function() {
       $( this.$fsImage          ).bind( 'click', handleFsImageClick );
       $( this.$images           ).bind( 'contextmenu', function(evt) { return false });
       $( this.$photoDrawerImgs  ).bind( 'click', showPhoto);
-      $( this.$sideMenu         ).bind( 'click', showSideMenu);
+      $( this.$sideMenu         ).bind( 'click mouseover', showSideMenu);
+      $( this.$sideMenu         ).bind( 'mouseout', hideSideMenu);
       $( this.$heroPhoto        ).bind( 'click', hideSideMenu);
     }
 

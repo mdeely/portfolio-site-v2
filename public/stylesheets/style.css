@@ -1193,6 +1193,38 @@ nav.masthead ul li a {
   -ms-transition: all 0.2 ease-in-out;
   transition: all 0.2 ease-in-out;
 }
+.photography-wrapper .side_menu:hover {
+  left: 0;
+  background-color: rgba(0,0,0,0.35);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.photography-wrapper .side_menu:hover .menu-toggle {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.photography-wrapper .side_menu:hover .photo-drawer {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.photography-wrapper .side_menu:hover .photo-drawer img {
+  pointer-events: initial;
+}
 .photography-wrapper .side_menu.open {
   left: 0;
   background-color: rgba(0,0,0,0.35);
@@ -1323,6 +1355,7 @@ nav.masthead ul li a {
   -o-transition: background-image 0.25s ease-in-out, background-size 0.25s ease-in-out;
   -ms-transition: background-image 0.25s ease-in-out, background-size 0.25s ease-in-out;
   transition: background-image 0.25s ease-in-out, background-size 0.25s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
 }
 @-moz-keyframes hover {
   0% {
