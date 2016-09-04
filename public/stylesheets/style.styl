@@ -1050,12 +1050,16 @@ nav.masthead {
             .photo-drawer {
                 opacity: 1;
                 transition all .2s ease-in-out;
+
+                img {
+                    pointer-events: initial;
+                }
             }
         }
 
-        &:hover {
-            sideMenuOpen();
-        }
+        // &:hover {
+        //     sideMenuOpen();
+        // }
 
         &.open {
             sideMenuOpen();
@@ -1076,6 +1080,7 @@ nav.masthead {
                     border-radius: 3px;
                     box-shadow: 0 2px 2px black;
                     transition: all .1s ease-in-out;
+                    pointer-events: none;
 
                     &:hover {
                         box-shadow: 0 0px 1px 1px $blue;

@@ -22,6 +22,8 @@ $(document).ready(function() {
       this.$fsImage         = $('.fullscreen-image');
       this.$scrollToTop     = $(".scrollToTop");
       this.$photoDrawerImgs = $('.photo-drawer img');
+      this.$sideMenu        = $('.side_menu')
+      this.$heroPhoto       = $('.container.photography');
     }
 
     function bindHandlers() {
@@ -32,6 +34,20 @@ $(document).ready(function() {
       $( this.$fsImage          ).bind( 'click', handleFsImageClick );
       $( this.$images           ).bind( 'contextmenu', function(evt) { return false });
       $( this.$photoDrawerImgs  ).bind( 'click', showPhoto);
+      $( this.$sideMenu         ).bind( 'click', showSideMenu);
+      $( this.$heroPhoto        ).bind( 'click', hideSideMenu);
+    }
+
+    function hideSideMenu() {
+      hideSideMenuFunction();
+    }
+
+    function hideSideMenuFunction() {
+      $(this.$sideMenu).removeClass('open');
+    }
+
+    function showSideMenu(sideMenu) {
+      $(this).addClass('open');
     }
 
     function showPhoto(image) {

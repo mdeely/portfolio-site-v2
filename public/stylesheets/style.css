@@ -1193,35 +1193,6 @@ nav.masthead ul li a {
   -ms-transition: all 0.2 ease-in-out;
   transition: all 0.2 ease-in-out;
 }
-.photography-wrapper .side_menu:hover {
-  left: 0;
-  background-color: rgba(0,0,0,0.35);
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-.photography-wrapper .side_menu:hover .menu-toggle {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-.photography-wrapper .side_menu:hover .photo-drawer {
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
 .photography-wrapper .side_menu.open {
   left: 0;
   background-color: rgba(0,0,0,0.35);
@@ -1251,6 +1222,9 @@ nav.masthead ul li a {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
+.photography-wrapper .side_menu.open .photo-drawer img {
+  pointer-events: initial;
+}
 .photography-wrapper .side_menu .photo-drawer {
   overflow-y: scroll;
 }
@@ -1271,6 +1245,7 @@ nav.masthead ul li a {
   -o-transition: all 0.1s ease-in-out;
   -ms-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
+  pointer-events: none;
 }
 .photography-wrapper .side_menu .photo-drawer a img:hover {
   -webkit-box-shadow: 0 0px 1px 1px #92c3ff;
