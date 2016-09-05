@@ -39,7 +39,6 @@ $(document).ready(function() {
       $( window                 ).bind( 'swipeleft', generateNextIndex);
       $( window                 ).bind( 'swiperight', generatePreviousIndex);
       $( this.$heroPhoto        ).bind( 'click', hideSideMenu);
-      $( this.$heroPhoto        ).bind( 'dblclick', handleBgPhotoDisplay);
       $( this.$bgPhotoDisplay   ).bind( 'click', handleBgPhotoDisplay);
     }
 
@@ -96,14 +95,27 @@ $(document).ready(function() {
     }
 
     function generatePreviousIndex() {
-      var currentIndex = getCurrentIndex() !== undefined ? getCurrentIndex() : getLastIndex();
+      var currentIndex = getCurrentIndex();
+
+      if (currentIndex == 0) {
+        var currentIndex = getLastIndex();
+      }
 
       var previousIndex = --currentIndex;
+
       showPhotoFromIndex(previousIndex);
     }
 
     function generateNextIndex() {
-      var currentIndex = getCurrentIndex() !== undefined ? getCurrentIndex() : -1;
+      var currentIndex = getCurrentIndex();
+      var lastIndex = getLastIndex();
+      var lastIndex = (lastIndex - 1);
+
+      console.log(currentIndex +" : "+lastIndex);
+
+      if ( currentIndex == lastIndex ) {
+        var currentIndex = -1;
+      }
 
       var nextIndex = ++currentIndex;
       showPhotoFromIndex(nextIndex);
@@ -119,6 +131,7 @@ $(document).ready(function() {
     function getLastIndex() {
       var lastIndex = $(this.$sideMenu).find('.photo-drawer a:last img');
       var currentIndex = $(lastIndex).attr("data-img-index");
+      var currentIndex = ++currentIndex
 
       return currentIndex;
 
@@ -164,15 +177,6 @@ $(document).ready(function() {
       var imgIndex = image.attr('data-img-index');
       var src      = srcRaw.replace('-sm','');
 
-      if (image.hasClass("active")) {
-        image.removeClass("active");
-        $containerPhoto.css({
-          "background-image": "",
-          "background-size": ""
-          });
-        updateBgPhotoDisplayIcon("fill-screen");
-      }
-      else {
         removeActiveClass();
 
         image.addClass("active");
@@ -181,7 +185,6 @@ $(document).ready(function() {
         $containerPhoto.css({
           "background-image": "url('"+src+"')"
           });
-      }
     }
 
     function removeActiveClass() {

@@ -88,7 +88,7 @@ mixin photographyCollection(photos)
             - var filePath = (name+"/"+fileName)
             - var imgTitle = image.title || "Photograph by Marc Deely"
 
-            a(href='#'+fileName+'')
+            a(href='#' rel="external" data-ajax="false")
                 img(alt=imgTitle title=imgTitle  data-img-index=index style="100px" src="https://s3.amazonaws.com/mdeely-portfolio-assets/images/"+filePath+"-sm.jpg")
 
 
