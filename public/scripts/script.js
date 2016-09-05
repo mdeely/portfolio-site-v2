@@ -34,9 +34,10 @@ $(document).ready(function() {
       $( this.$projectFilters   ).bind( 'click', filterProjects );
       $( this.$images           ).bind( 'click', handleImageClick );
       $( this.$fsImage          ).bind( 'click', handleFsImageClick );
-      $( this.$images           ).bind( 'contextmenu', function(evt) { return false });
       $( this.$photoDrawerImgs  ).bind( 'click', selectPhoto);
       $( this.$sideMenu         ).bind( 'click', showSideMenu);
+      $( window                 ).bind( 'swipeleft', generateNextIndex);
+      $( window                 ).bind( 'swiperight', generatePreviousIndex);
       $( this.$heroPhoto        ).bind( 'click', hideSideMenu);
       $( this.$bgPhotoDisplay   ).bind( 'click', handleBgPhotoDisplay);
     }
@@ -83,22 +84,28 @@ $(document).ready(function() {
         {
 
           if ($keyPressed == 37 || $keyPressed == 38) {
-
-            var currentIndex = getCurrentIndex() !== undefined ? getCurrentIndex() : getLastIndex();
-
-            var previousIndex = --currentIndex;
-            showPhotoFromIndex(previousIndex);
+            generatePreviousIndex();
           }
           else if ($keyPressed == 39 || $keyPressed == 40) {
-
-            var currentIndex = getCurrentIndex() !== undefined ? getCurrentIndex() : -1;
-
-            var nextIndex = ++currentIndex;
-            showPhotoFromIndex(nextIndex);
+            generateNextIndex();
           }
 
         }
       });
+    }
+
+    function generatePreviousIndex() {
+      var currentIndex = getCurrentIndex() !== undefined ? getCurrentIndex() : getLastIndex();
+
+      var previousIndex = --currentIndex;
+      showPhotoFromIndex(previousIndex);
+    }
+
+    function generateNextIndex() {
+      var currentIndex = getCurrentIndex() !== undefined ? getCurrentIndex() : -1;
+
+      var nextIndex = ++currentIndex;
+      showPhotoFromIndex(nextIndex);
     }
 
     function showPhotoFromIndex(index) {
