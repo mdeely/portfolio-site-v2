@@ -39,7 +39,7 @@ $(document).ready(function() {
       $( this.$sideMenu         ).bind( 'click', showSideMenu);
       $( window                 ).bind( 'swipeleft', generateNextIndex);
       $( window                 ).bind( 'swiperight', generatePreviousIndex);
-      $( this.$heroPhoto        ).bind( 'click', hideSideMenu);
+      $( this.$heroPhoto        ).bind( 'click', handleMenuAndDisplay);
       $( this.$bgPhotoDisplay   ).bind( 'click', handleBgPhotoDisplay);
     }
 
@@ -121,8 +121,6 @@ $(document).ready(function() {
       var lastIndex = getLastIndex();
       var lastIndex = (lastIndex - 1);
 
-      console.log(currentIndex +" : "+lastIndex);
-
       if ( currentIndex == lastIndex ) {
         var currentIndex = -1;
       }
@@ -163,12 +161,18 @@ $(document).ready(function() {
       }
     }
 
-    function hideSideMenu() {
-      hideSideMenuFunction();
+    function handleMenuAndDisplay() {
+      toggleMenuTogglePhotoDisplay();
     }
 
-    function hideSideMenuFunction() {
-      $(this.$sideMenu).removeClass('open');
+    function toggleMenuTogglePhotoDisplay() {
+      if ( $(this.$sideMenu).hasClass('open') ) {
+        $(this.$sideMenu).removeClass('open')
+        return false
+      }
+      else {
+        generateNextIndex();
+      }
     }
 
     function showSideMenu(sideMenu) {
