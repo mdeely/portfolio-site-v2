@@ -39,6 +39,7 @@ $(document).ready(function() {
       $( window                 ).bind( 'swipeleft', generateNextIndex);
       $( window                 ).bind( 'swiperight', generatePreviousIndex);
       $( this.$heroPhoto        ).bind( 'click', hideSideMenu);
+      $( this.$heroPhoto        ).bind( 'dblclick', handleBgPhotoDisplay);
       $( this.$bgPhotoDisplay   ).bind( 'click', handleBgPhotoDisplay);
     }
 

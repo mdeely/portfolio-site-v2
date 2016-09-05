@@ -1179,6 +1179,11 @@ nav.masthead ul li a {
   position: absolute;
   bottom: 0;
   right: 0;
+  -webkit-transition: 0.1s ease-in-out;
+  -moz-transition: 0.1s ease-in-out;
+  -o-transition: 0.1s ease-in-out;
+  -ms-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 .photography-wrapper a.bg-photo-display.fill-screen {
   background-image: url("../images/icons/collapse.svg");
