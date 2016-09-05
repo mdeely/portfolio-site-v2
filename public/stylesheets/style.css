@@ -1167,6 +1167,25 @@ nav.masthead ul li a {
 .photography-wrapper {
   overflow: hidden;
 }
+.photography-wrapper a.bg-photo-display {
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  width: 22px;
+  height: 22px;
+  margin: 16px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.photography-wrapper a.bg-photo-display.fill-screen {
+  background-image: url("../images/icons/collapse.svg");
+}
+.photography-wrapper a.bg-photo-display.show-all {
+  background-image: url("../images/icons/expand.svg");
+}
 .photography-wrapper .side_menu {
   z-index: 10;
   width: 112px;
@@ -1182,6 +1201,7 @@ nav.masthead ul li a {
   transition: all 0.2s ease-in-out;
   color: #fff;
   overflow-y: scroll;
+  cursor: pointer;
 }
 .photography-wrapper .side_menu .photo-drawer {
   opacity: 0;
@@ -1192,6 +1212,9 @@ nav.masthead ul li a {
   -o-transition: all 0.2 ease-in-out;
   -ms-transition: all 0.2 ease-in-out;
   transition: all 0.2 ease-in-out;
+}
+.photography-wrapper .side_menu .photo-drawer a {
+  pointer-events: none;
 }
 .photography-wrapper .side_menu:hover {
   background-color: rgba(0,0,0,0.25);
@@ -1204,6 +1227,7 @@ nav.masthead ul li a {
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  cursor: intial;
 }
 .photography-wrapper .side_menu.open .menu-toggle {
   opacity: 0;
@@ -1225,8 +1249,8 @@ nav.masthead ul li a {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.photography-wrapper .side_menu.open .photo-drawer img {
-  pointer-events: initial;
+.photography-wrapper .side_menu.open .photo-drawer a {
+  pointer-events: all;
 }
 .photography-wrapper .side_menu .photo-drawer {
   overflow-y: scroll;
@@ -1251,7 +1275,6 @@ nav.masthead ul li a {
   -o-transition: all 0.1s ease-in-out;
   -ms-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
-  pointer-events: none;
 }
 .photography-wrapper .side_menu .photo-drawer a img:hover {
   -webkit-box-shadow: 0 0px 1px 1px #92c3ff;

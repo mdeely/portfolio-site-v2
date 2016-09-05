@@ -25,6 +25,7 @@ $(document).ready(function() {
       this.$photoDrawerImgs = $('.photo-drawer img');
       this.$sideMenu        = $('.side_menu')
       this.$heroPhoto       = $('.container.photography');
+      this.$bgPhotoDisplay  = $('a.bg-photo-display');
     }
 
     function bindHandlers() {
@@ -37,13 +38,39 @@ $(document).ready(function() {
       $( this.$photoDrawerImgs  ).bind( 'click', selectPhoto);
       $( this.$sideMenu         ).bind( 'click', showSideMenu);
       $( this.$heroPhoto        ).bind( 'click', hideSideMenu);
+      $( this.$bgPhotoDisplay   ).bind( 'click', handleBgPhotoDisplay);
     }
 
-    // get current active photo
-    // get data-img-index number
-    // add one number
-    // find the element with that data-img-index
-    // show that element
+    function handleBgPhotoDisplay() {
+      if ( bgPhotoDisplayState() === "showing-all") {
+        updateBgPhotoDisplayIcon("fill-screen");
+        photoBgSize("cover")
+      }
+      else if ( bgPhotoDisplayState() === "fullscreened") {
+        updateBgPhotoDisplayIcon("show-all");
+        photoBgSize("contain")
+      }
+    }
+
+    function updateBgPhotoDisplayIcon(klass) {
+      $(this.$bgPhotoDisplay).removeClass().addClass('bg-photo-display ' +klass);
+    }
+
+    function bgPhotoDisplayState() {
+      if ( $(this.$bgPhotoDisplay).hasClass('show-all') ) {
+        return "showing-all"
+      }
+      else {
+        return "fullscreened"
+      }
+    }
+
+    function photoBgSize(property) {
+      $(this.$heroPhoto).css({
+        "background-size": property
+        });
+    }
+
     function detectKeyPressPhotos() {
       $(document).keyup(function(evt) {
         var $keyPressed = evt.keyCode;
@@ -54,43 +81,55 @@ $(document).ready(function() {
             $keyPressed == 40    // down
           )
         {
-          if (checkIfImageActive()) {
-            var currentIndex = getCurrentIndex();
 
-            if ($keyPressed == 37 || $keyPressed == 38) {
-              var previousIndex = --currentIndex;
-              showPhotoFromIndex(previousIndex);
-            }
-            else if ($keyPressed == 39 || $keyPressed == 40) {
-              var nextIndex = ++currentIndex;
-              showPhotoFromIndex(nextIndex);
-            }
+          if ($keyPressed == 37 || $keyPressed == 38) {
+
+            var currentIndex = getCurrentIndex() !== undefined ? getCurrentIndex() : getLastIndex();
+
+            var previousIndex = --currentIndex;
+            showPhotoFromIndex(previousIndex);
           }
+          else if ($keyPressed == 39 || $keyPressed == 40) {
+
+            var currentIndex = getCurrentIndex() !== undefined ? getCurrentIndex() : -1;
+
+            var nextIndex = ++currentIndex;
+            showPhotoFromIndex(nextIndex);
+          }
+
         }
       });
     }
 
     function showPhotoFromIndex(index) {
+      var index = index > 0 ? index : 0;
+
       var image    = $(this.$sideMenu).find('img[data-img-index="'+index+'"]');
       showPhoto(image);
     }
 
+    function getLastIndex() {
+      var lastIndex = $(this.$sideMenu).find('.photo-drawer a:last img');
+      var currentIndex = $(lastIndex).attr("data-img-index");
+
+      return currentIndex;
+
+    }
+
     function getCurrentIndex() {
       var currentImage = $(this.$sideMenu).find(".active");
-      if ( $(currentImage).is(":first") || $(currentImage).is(":last") ) {
+
+      if ( $(currentImage).is(":first") ) {
         return false
+      }
+      else if ( $(currentImage).is(":last") ) {
+        var currentIndex = -1;
+        return currentIndex;
       }
       else {
         var currentIndex = $(currentImage).attr("data-img-index");
         return currentIndex;
       }
-    }
-
-    function checkIfImageActive() {
-      if ($(this.$photoDrawerImgs).hasClass('active')) {
-        return true
-      }
-      return false
     }
 
     function hideSideMenu() {
@@ -123,6 +162,7 @@ $(document).ready(function() {
           "background-image": "",
           "background-size": ""
           });
+        updateBgPhotoDisplayIcon("fill-screen");
       }
       else {
         removeActiveClass();
@@ -131,8 +171,7 @@ $(document).ready(function() {
 
         $containerPhoto.attr("data-image-index", imgIndex);
         $containerPhoto.css({
-          "background-image": "url('"+src+"')",
-          "background-size": "contain"
+          "background-image": "url('"+src+"')"
           });
       }
     }
