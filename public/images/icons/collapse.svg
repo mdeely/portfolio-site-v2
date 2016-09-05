@@ -5,7 +5,7 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-opacity="0.25611413">
-        <g id="collapse" stroke="#979797" fill="#FFFFFF">
+        <g id="collapse" stroke="#000000" fill="#FFFFFF">
             <g id="f311" transform="translate(11.000000, 11.500000) rotate(-315.000000) translate(-11.000000, -11.500000) translate(5.000000, 1.000000)">
                 <path d="M-1.77635684e-15,18.972656 L5.742188,13.230469 L11.484375,18.972656 L9.726562,20.730469 L5.742188,16.746094 L1.757812,20.730469 L-1.77635684e-15,18.972656 Z M11.484375,2.449219 L5.742188,8.191406 L-3.55271368e-15,2.449219 L1.757812,0.691406 L5.742188,4.675781 L9.726562,0.691406 L11.484375,2.449219 Z" id="Shape"></path>
             </g>

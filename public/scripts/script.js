@@ -5,6 +5,7 @@ $(document).ready(function() {
       gatherNodes();
       bindHandlers();
 
+      setDisplayPhoto();
       projectListLoadBehavior();
       // fullscreenImages();
       detectKeyPressPhotos();
@@ -40,6 +41,15 @@ $(document).ready(function() {
       $( window                 ).bind( 'swiperight', generatePreviousIndex);
       $( this.$heroPhoto        ).bind( 'click', hideSideMenu);
       $( this.$bgPhotoDisplay   ).bind( 'click', handleBgPhotoDisplay);
+    }
+
+    function setDisplayPhoto() {
+      var lastIndex = getLastIndex();
+      var lastIndex = --lastIndex;
+
+      var index = Math.floor(Math.random() * lastIndex) + 0;
+
+      showPhotoFromIndex(index);
     }
 
     function handleBgPhotoDisplay() {
