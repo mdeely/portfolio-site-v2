@@ -142,7 +142,6 @@ $(document).ready(function() {
       var currentIndex = ++currentIndex
 
       return currentIndex;
-
     }
 
     function getCurrentIndex() {
