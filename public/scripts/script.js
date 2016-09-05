@@ -34,8 +34,7 @@ $(document).ready(function() {
       $( this.$fsImage          ).bind( 'click', handleFsImageClick );
       $( this.$images           ).bind( 'contextmenu', function(evt) { return false });
       $( this.$photoDrawerImgs  ).bind( 'click', showPhoto);
-      $( this.$sideMenu         ).bind( 'click mouseover', showSideMenu);
-      $( this.$sideMenu         ).bind( 'mouseout', hideSideMenu);
+      $( this.$sideMenu         ).bind( 'click', showSideMenu);
       $( this.$heroPhoto        ).bind( 'click', hideSideMenu);
     }
 
@@ -55,7 +54,8 @@ $(document).ready(function() {
       var $image = $(image.target)
       var $containerPhoto = $(".container.photography");
 
-      var src = $image.attr('src');
+      var srcRaw = $image.attr('src');
+      var src = srcRaw.replace('-sm','');
 
       if ($image.hasClass("active")) {
         $image.removeClass("active");

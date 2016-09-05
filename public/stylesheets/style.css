@@ -1194,36 +1194,7 @@ nav.masthead ul li a {
   transition: all 0.2 ease-in-out;
 }
 .photography-wrapper .side_menu:hover {
-  left: 0;
-  background-color: rgba(0,0,0,0.35);
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-.photography-wrapper .side_menu:hover .menu-toggle {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-.photography-wrapper .side_menu:hover .photo-drawer {
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-.photography-wrapper .side_menu:hover .photo-drawer img {
-  pointer-events: initial;
+  background-color: rgba(0,0,0,0.25);
 }
 .photography-wrapper .side_menu.open {
   left: 0;
@@ -1266,6 +1237,9 @@ nav.masthead ul li a {
 }
 .photography-wrapper .side_menu .photo-drawer a:first-child {
   margin-top: 8px;
+}
+.photography-wrapper .side_menu .photo-drawer a:last-child {
+  margin-bottfom: 16px;
 }
 .photography-wrapper .side_menu .photo-drawer a img {
   -webkit-border-radius: 3px;
