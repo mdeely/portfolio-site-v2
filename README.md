@@ -8,3 +8,7 @@ Images for Photography
 - Create thumbnail
     - Reduce to 10%
     - Quality to 20%
+
+
+TODO:
+- if getIndex is false, stop function altogether

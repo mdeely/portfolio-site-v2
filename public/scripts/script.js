@@ -6,7 +6,8 @@ $(document).ready(function() {
       bindHandlers();
 
       projectListLoadBehavior();
-      fullscreenImages();
+      // fullscreenImages();
+      detectKeyPressPhotos();
       scrollToTop(this.$scrollToTop);
       lazyLoad();
     };
@@ -33,9 +34,63 @@ $(document).ready(function() {
       $( this.$images           ).bind( 'click', handleImageClick );
       $( this.$fsImage          ).bind( 'click', handleFsImageClick );
       $( this.$images           ).bind( 'contextmenu', function(evt) { return false });
-      $( this.$photoDrawerImgs  ).bind( 'click', showPhoto);
+      $( this.$photoDrawerImgs  ).bind( 'click', selectPhoto);
       $( this.$sideMenu         ).bind( 'click', showSideMenu);
       $( this.$heroPhoto        ).bind( 'click', hideSideMenu);
+    }
+
+    // get current active photo
+    // get data-img-index number
+    // add one number
+    // find the element with that data-img-index
+    // show that element
+    function detectKeyPressPhotos() {
+      $(document).keyup(function(evt) {
+        var $keyPressed = evt.keyCode;
+
+        if ($keyPressed == 37 || // left
+            $keyPressed == 38 || // up
+            $keyPressed == 39 || // right
+            $keyPressed == 40    // down
+          )
+        {
+          if (checkIfImageActive()) {
+            var currentIndex = getCurrentIndex();
+
+            if ($keyPressed == 37 || $keyPressed == 38) {
+              var previousIndex = --currentIndex;
+              showPhotoFromIndex(previousIndex);
+            }
+            else if ($keyPressed == 39 || $keyPressed == 40) {
+              var nextIndex = ++currentIndex;
+              showPhotoFromIndex(nextIndex);
+            }
+          }
+        }
+      });
+    }
+
+    function showPhotoFromIndex(index) {
+      var image    = $(this.$sideMenu).find('img[data-img-index="'+index+'"]');
+      showPhoto(image);
+    }
+
+    function getCurrentIndex() {
+      var currentImage = $(this.$sideMenu).find(".active");
+      if ( $(currentImage).is(":first") || $(currentImage).is(":last") ) {
+        return false
+      }
+      else {
+        var currentIndex = $(currentImage).attr("data-img-index");
+        return currentIndex;
+      }
+    }
+
+    function checkIfImageActive() {
+      if ($(this.$photoDrawerImgs).hasClass('active')) {
+        return true
+      }
+      return false
     }
 
     function hideSideMenu() {
@@ -50,15 +105,20 @@ $(document).ready(function() {
       $(this).addClass('open');
     }
 
-    function showPhoto(image) {
+    function selectPhoto(image) {
       var $image = $(image.target)
+      showPhoto($image);
+    }
+
+    function showPhoto(image) {
       var $containerPhoto = $(".container.photography");
 
-      var srcRaw = $image.attr('src');
-      var src = srcRaw.replace('-sm','');
+      var srcRaw   = image.attr('src');
+      var imgIndex = image.attr('data-img-index');
+      var src      = srcRaw.replace('-sm','');
 
-      if ($image.hasClass("active")) {
-        $image.removeClass("active");
+      if (image.hasClass("active")) {
+        image.removeClass("active");
         $containerPhoto.css({
           "background-image": "",
           "background-size": ""
@@ -67,8 +127,9 @@ $(document).ready(function() {
       else {
         removeActiveClass();
 
-        $image.addClass("active");
+        image.addClass("active");
 
+        $containerPhoto.attr("data-image-index", imgIndex);
         $containerPhoto.css({
           "background-image": "url('"+src+"')",
           "background-size": "contain"
@@ -134,19 +195,19 @@ $(document).ready(function() {
       });
     }
 
-    function fullscreenImages() {
-      $(document).keyup(function(evt) {
-        if (evt.keyCode == 39)
-        {
-          imageSlideshow("next");
-        }
+    // function fullscreenImages() {
+    //   $(document).keyup(function(evt) {
+    //     if (evt.keyCode == 39)
+    //     {
+    //       imageSlideshow("next");
+    //     }
 
-        if (evt.keyCode == 37)
-        {
-          imageSlideshow("previous");
-        }
-      });
-    }
+    //     if (evt.keyCode == 37)
+    //     {
+    //       imageSlideshow("previous");
+    //     }
+    //   });
+    // }
 
     // function imageSlideshow(navigation) {
     //   if (navigation == "next") {
