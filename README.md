@@ -11,4 +11,7 @@ Images for Photography
 
 
 TODO:
-- if getIndex is false, stop function altogether
+- SEO enhacments
+- Update images
+- FB Like / Share Button
+- GA

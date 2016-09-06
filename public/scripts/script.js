@@ -27,6 +27,7 @@ $(document).ready(function() {
       this.$sideMenu        = $('.side_menu')
       this.$heroPhoto       = $('.container.photography');
       this.$bgPhotoDisplay  = $('a.bg-photo-display');
+      this.$preloadedImg    = $(".preload-image-container");
     }
 
     function bindHandlers() {
@@ -89,14 +90,17 @@ $(document).ready(function() {
         if ($keyPressed == 37 || // left
             $keyPressed == 38 || // up
             $keyPressed == 39 || // right
-            $keyPressed == 40    // down
+            $keyPressed == 40 || // down
+            $keyPressed == 13 || // enter
+            $keyPressed == 9     // tab
+
           )
         {
 
           if ($keyPressed == 37 || $keyPressed == 38) {
             generatePreviousIndex();
           }
-          else if ($keyPressed == 39 || $keyPressed == 40) {
+          else if ($keyPressed == 39 || $keyPressed == 40 || $keyPressed == 13 || $keyPressed == 9)  {
             generateNextIndex();
           }
 
@@ -132,8 +136,28 @@ $(document).ready(function() {
     function showPhotoFromIndex(index) {
       var index = index > 0 ? index : 0;
 
-      var image    = $(this.$sideMenu).find('img[data-img-index="'+index+'"]');
+      var image = $(this.$sideMenu).find('img[data-img-index="'+index+'"]');
+
       showPhoto(image);
+
+      var nextIndex = ++index;
+
+      preloadNextImageFromIndex(nextIndex);
+    }
+
+    function preloadNextImageFromIndex(index) {
+      $(this.$preloadedImg).empty();
+
+      var image = $(this.$sideMenu).find('img[data-img-index="'+index+'"]');
+
+      var srcRaw   = image.attr('src');
+      var src      = srcRaw.replace('-sm','');
+
+     var img = $('<img />', {
+                   "src" : src
+                });
+
+      $(this.$preloadedImg).append(img);
     }
 
     function getLastIndex() {

@@ -1167,6 +1167,9 @@ nav.masthead ul li a {
 .photography-wrapper {
   overflow: hidden;
 }
+.photography-wrapper .preload-image-container img {
+  display: none;
+}
 .photography-wrapper a.bg-photo-display {
   background-repeat: no-repeat;
   -webkit-background-size: cover;
