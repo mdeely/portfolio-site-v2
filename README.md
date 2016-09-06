@@ -15,3 +15,5 @@ TODO:
 - Update images
 - FB Like / Share Button
 - GA
+- Add black transparent bg to fill-screen/show-all toggle
+- Jquery: on thumbnail hover, load image

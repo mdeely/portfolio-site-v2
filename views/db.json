@@ -56,16 +56,13 @@
                     "title":"Kerry Cove"
                 },
                 {
-                    "fileName":"ireland/CT7A2747",
-                    "title":"Kerry Skull"
-                },
-                {
                     "fileName":"ireland/CT7A2326",
                     "title":"Winding Road, Ireland"
                 },
                 {
                     "fileName":"ireland/CT7A2747",
-                    "title":"Kerry Skull"
+                    "title":"Kerry Skull",
+                    "display":false
                 },
                 {
                     "fileName":"ireland/CT7A2826",
@@ -105,7 +102,8 @@
                 },
                 {
                     "fileName":"paris/CT7A4039",
-                    "title":"Fountain"
+                    "title":"Fountain",
+                    "display":false
                 },
                 {
                     "fileName":"paris/CT7A4610",
@@ -126,10 +124,6 @@
                 {
                     "fileName":"paris/CT7A4111",
                     "title":"Napoleon's Museum - Front"
-                },
-                {
-                    "fileName":"paris/CT7A4039",
-                    "title":"Fountain"
                 },
                 {
                     "fileName":"paris/CT7A4329",
@@ -165,7 +159,8 @@
                 },
                 {
                     "fileName":"paris/CT7A4571",
-                    "title":"Rio Di Rivoli - Repetition"
+                    "title":"Rio Di Rivoli - Repetition",
+                    "display":false
                 },
                 {
                     "fileName":"paris/CT7A4587-Pano",
@@ -305,7 +300,8 @@
                 },
                 {
                     "fileName":"up-north/CT7A5466",
-                    "title":"Morning Smoke - Eagle River"
+                    "title":"Morning Smoke - Eagle River",
+                    "display":false
                 },
                 {
                     "fileName":"up-north/CT7A5456",
@@ -313,7 +309,7 @@
                 },
                 {
                     "fileName":"up-north/CT7A5408",
-                    "title":"Jake & FIre - Eagle River"
+                    "title":"Jack & FIre - Eagle River"
                 }
 
             ]
