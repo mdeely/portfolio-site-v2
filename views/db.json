@@ -18,7 +18,7 @@
                 {
                     "fileName":"mcgregor-bay-frog",
                     "title":"McGregor Bay Frog"
-            },
+                },
                 {
                     "fileName":"ireland/skulleg-from-far",
                     "title":"Skulleg From Afar"
@@ -150,10 +150,6 @@
                 {
                     "fileName":"paris/CT7A4587-Pano",
                     "title":"Parisian Apartments"
-                },
-                {
-                    "fileName":"paris/CT7A4579",
-                    "title":"Parisian Aprtments - Rio Di Rivioli"
                 },
                 {
                     "fileName":"ireland/CT7A2627",
@@ -290,8 +286,19 @@
                 {
                     "fileName":"up-north/CT7A5408",
                     "title":"Jack & FIre - Eagle River"
+                },
+                {
+                    "fileName":"milwuakee/CT7A2038",
+                    "title":"Water & Rocks - Milwuakee"
+                },
+                {
+                    "fileName":"milwuakee/CT7A2119",
+                    "title":"Tree Bark - Milwuakee"
+                },
+                {
+                    "fileName":"milwuakee/CT7A2094",
+                    "title":"Posing Sticks - Milwuakee"
                 }
-
             ]
         }
     },

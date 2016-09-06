@@ -2,6 +2,7 @@
 A personal portfolio website built with Node.js
 
 Images for Photography
+(Best results from Lightroom)
 - Photos
     - Reduce to 50%
     - Quality to 40%
@@ -11,9 +12,26 @@ Images for Photography
 
 
 TODO:
-- SEO enhacments
-- Update images
-- FB Like / Share Button
-- GA
-- Add black transparent bg to fill-screen/show-all toggle
-- Jquery: on thumbnail hover, load image
+- Javascript
+    - Generate image index based on iteration not position in db
+    - Jquery: on thumbnail hover, load image
+    - Change scroll position to active photo
+
+- Other
+    - FB Like / Share Button
+    - SEO enhacments
+    - Update images
+    - GA
+
+- Serverside
+    - Tie URL to a photo
+
+- Styling
+    - Add black transparent bg to fill-screen/show-all toggle
+
+- Photos
+    - CT7A4337 - Ferris Wheel pic is too pink. Colors just off.
+    - CT7A5077 - Street Lamp Milan - Make less pink. More Blue?
+    - CT7A2678-Pano - Kerry Water - Make more colorful
+    - CT7A5701 - Trees - Make straighter if possible
+    - CT7A5656 - Up North Black Water - Maybe use a higher shutter speed pic
