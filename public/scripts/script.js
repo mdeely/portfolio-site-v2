@@ -143,12 +143,12 @@ $(document).ready(function() {
 
       showPhoto(image);
 
-      var nextIndex = ++index;
-
-      preloadNextImageFromIndex(nextIndex);
+      preloadImageFromIndex(index);
     }
 
-    function preloadNextImageFromIndex(index) {
+    function preloadImageFromIndex(index) {
+        var index = ++index;
+
       $(this.$preloadedImg).empty();
 
       var image = $(this.$sideMenu).find('img[data-img-index="'+index+'"]');
