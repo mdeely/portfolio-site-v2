@@ -1176,7 +1176,7 @@ nav.masthead ul li a {
   width: 22px;
   height: 22px;
   margin: 22px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   cursor: pointer;
@@ -1347,6 +1347,7 @@ nav.masthead ul li a {
   -moz-background-size: cover;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
   position: fixed;
   left: 0;
   right: 0;
