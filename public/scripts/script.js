@@ -100,8 +100,11 @@ $(document).ready(function() {
           if ($keyPressed == 37 || $keyPressed == 38) {
             generatePreviousIndex();
           }
-          else if ($keyPressed == 39 || $keyPressed == 40 || $keyPressed == 13 || $keyPressed == 9)  {
+          else if ($keyPressed == 39 || $keyPressed == 40 || $keyPressed == 9)  {
             generateNextIndex();
+          }
+          else if ($keyPressed == 13) {
+            handleBgPhotoDisplay();
           }
 
         }
