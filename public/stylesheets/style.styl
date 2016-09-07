@@ -1028,8 +1028,9 @@ nav.masthead {
 
     a.bg-photo-display {
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: 60%;
         background-position: center;
+        background-color: rgba(0,0,0,.1);
         width: 22px;
         height: 22px;
         margin: 22px;
@@ -1037,7 +1038,9 @@ nav.masthead {
         bottom: 0;
         right: 0;
         cursor: pointer;
-        transition: .1s ease-in-out;
+        padding: 22px;
+        border-radius: 4px;
+
 
         &.fill-screen {
             background-image: url("../images/icons/collapse.svg");
@@ -1101,6 +1104,7 @@ nav.masthead {
 
         .photo-drawer {
             overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
 
             a {
                 display: block;

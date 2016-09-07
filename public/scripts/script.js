@@ -14,7 +14,6 @@ $(document).ready(function() {
     };
 
     function gatherNodes() {
-      // Find all these via main node (which in this case is body?)
       $body = $('body'),
       this.$menuTrigger     = $('.menu-trigger');
       this.$menuFader       = $('.menu-fader');
@@ -42,15 +41,18 @@ $(document).ready(function() {
       $( window                 ).bind( 'swiperight', generatePreviousIndex);
       $( this.$heroPhoto        ).bind( 'click', handleMenuAndDisplay);
       $( this.$bgPhotoDisplay   ).bind( 'click', handleBgPhotoDisplay);
+      $( this.$photoDrawerImgs  ).bind( 'click', selectPhoto);
     }
 
     function setDisplayPhoto() {
-      var lastIndex = getLastIndex();
-      var lastIndex = --lastIndex;
+      if ( $(".photography-wrapper").length ) {
+        var lastIndex = getLastIndex();
+        var lastIndex = --lastIndex;
 
-      var index = Math.floor(Math.random() * lastIndex) + 0;
+        var index = Math.floor(Math.random() * lastIndex) + 0;
 
-      showPhotoFromIndex(index);
+        showPhotoFromIndex(index);
+      }
     }
 
     function handleBgPhotoDisplay() {
@@ -147,18 +149,16 @@ $(document).ready(function() {
     }
 
     function preloadImageFromIndex(index) {
-        var index = ++index;
+      var index = ++index;
 
-      $(this.$preloadedImg).empty();
+      // $(this.$preloadedImg).empty();
 
       var image = $(this.$sideMenu).find('img[data-img-index="'+index+'"]');
 
       var srcRaw   = image.attr('src');
       var src      = srcRaw.replace('-sm','');
 
-     var img = $('<img />', {
-                   "src" : src
-                });
+     var img = $('<img />', {"src" : src});
 
       $(this.$preloadedImg).append(img);
     }
@@ -217,14 +217,17 @@ $(document).ready(function() {
       var imgIndex = image.attr('data-img-index');
       var src      = srcRaw.replace('-sm','');
 
-        removeActiveClass();
+      removeActiveClass();
 
-        image.addClass("active");
+      image.addClass("active");
 
-        $containerPhoto.attr("data-image-index", imgIndex);
-        $containerPhoto.css({
-          "background-image": "url('"+src+"')"
-          });
+      $containerPhoto.attr("data-image-index", imgIndex);
+      $containerPhoto.css({
+        "background-image": "url('"+src+"')"
+        });
+
+      var imgTitle = image.attr('title')
+      ga("send", "event", "Photography", "viewed", src+': '+imgTitle)
     }
 
     function removeActiveClass() {

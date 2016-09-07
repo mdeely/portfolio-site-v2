@@ -26,9 +26,6 @@ TODO:
 - Serverside
     - Tie URL to a photo
 
-- Styling
-    - Add black transparent bg to fill-screen/show-all toggle
-
 - Photos
     - CT7A4337 - Ferris Wheel pic is too pink. Colors just off.
     - CT7A5077 - Street Lamp Milan - Make less pink. More Blue?

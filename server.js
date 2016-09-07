@@ -31,18 +31,10 @@ app.use(express.static(__dirname + '/public'));
 var obj = require('./views/db.json');
 
 // set the home page route
-// TEMPORARILY DISABLED
-// app.get('/', function (req, res) {
-//   res.render( 'index', obj );
-// })
-
- // REMOVE THIS WHEN HOMEPAGE IS FIXED
 app.get('/', function (req, res) {
-  var projectName = req.params.projectName;
-
-  res.locals.projectName = projectName;
-  res.render( 'photography', obj );
+  res.render( 'index', obj );
 })
+
 
 app.get('/about', function (req, res) {
   res.render( 'about' );
