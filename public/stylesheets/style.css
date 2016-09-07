@@ -1256,25 +1256,21 @@ nav.masthead ul li a {
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-}
-.photography-wrapper .side_menu.open .photo-drawer a {
-  pointer-events: all;
-}
-.photography-wrapper .side_menu .photo-drawer {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
 }
-.photography-wrapper .side_menu .photo-drawer a {
+.photography-wrapper .side_menu.open .photo-drawer a {
   display: block;
   margin: 4px 8px;
 }
-.photography-wrapper .side_menu .photo-drawer a:first-child {
+.photography-wrapper .side_menu.open .photo-drawer a:first-child {
   margin-top: 8px;
 }
-.photography-wrapper .side_menu .photo-drawer a:last-child {
+.photography-wrapper .side_menu.open .photo-drawer a:last-child {
   margin-bottom: 64px;
 }
-.photography-wrapper .side_menu .photo-drawer a img {
+.photography-wrapper .side_menu.open .photo-drawer a img {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   -webkit-box-shadow: 0 2px 2px #000;
@@ -1285,7 +1281,7 @@ nav.masthead ul li a {
   -ms-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
-.photography-wrapper .side_menu .photo-drawer a img:hover {
+.photography-wrapper .side_menu.open .photo-drawer a img:hover {
   -webkit-box-shadow: 0 0px 1px 1px #92c3ff;
   box-shadow: 0 0px 1px 1px #92c3ff;
   -webkit-transition: all 0.1s ease-in-out;
@@ -1294,9 +1290,12 @@ nav.masthead ul li a {
   -ms-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
-.photography-wrapper .side_menu .photo-drawer a img.active {
+.photography-wrapper .side_menu.open .photo-drawer a img.active {
   -webkit-box-shadow: 0 0px 1px 1px #2d8bff;
   box-shadow: 0 0px 1px 1px #2d8bff;
+}
+.photography-wrapper .side_menu.open .photo-drawer a {
+  pointer-events: all;
 }
 .photography-wrapper .side_menu .menu-toggle {
   left: 12px;

@@ -1055,7 +1055,7 @@ nav.masthead {
         z-index: 10;
         width: 112px;
         left: -62px;
-        position: fixed;
+        position: absolute;
         top: 0;
         bottom: 0;
         background-color: rgba(0,0,0,.1);
@@ -1087,6 +1087,37 @@ nav.masthead {
             .photo-drawer {
                 opacity: 1;
                 transition all .2s ease-in-out;
+                overflow-y: scroll;
+                -webkit-overflow-scrolling: touch;
+                whitespace: no-wrap;
+
+                a {
+                    display: block;
+                    margin: 4px 8px;
+
+                    &:first-child {
+                        margin-top: 8px;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 64px;
+                    }
+
+                    img {
+                        border-radius: 3px;
+                        box-shadow: 0 2px 2px black;
+                        transition: all .1s ease-in-out;
+
+                        &:hover {
+                            box-shadow: 0 0px 1px 1px $blue;
+                            transition: all .1s ease-in-out;
+                        }
+
+                        &.active {
+                            box-shadow: 0 0px 1px 1px #2d8bff;
+                        }
+                    }
+                }
 
                 a {
                     pointer-events: all;
@@ -1100,40 +1131,6 @@ nav.masthead {
 
         &.open {
             sideMenuOpen();
-        }
-
-        .photo-drawer {
-            overflow-y: scroll;
-            -webkit-overflow-scrolling: touch;
-            whitespace: no-wrap;
-
-            a {
-                display: block;
-                margin: 4px 8px;
-
-                &:first-child {
-                    margin-top: 8px;
-                }
-
-                &:last-child {
-                    margin-bottom: 64px;
-                }
-
-                img {
-                    border-radius: 3px;
-                    box-shadow: 0 2px 2px black;
-                    transition: all .1s ease-in-out;
-
-                    &:hover {
-                        box-shadow: 0 0px 1px 1px $blue;
-                        transition: all .1s ease-in-out;
-                    }
-
-                    &.active {
-                        box-shadow: 0 0px 1px 1px #2d8bff;
-                    }
-                }
-            }
         }
 
         .menu-toggle {
