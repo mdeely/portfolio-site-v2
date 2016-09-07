@@ -44,14 +44,42 @@ $(document).ready(function() {
       $( this.$photoDrawerImgs  ).bind( 'click', selectPhoto);
     }
 
+    function handleUrlHash() {
+      var hash  = getHash();
+      var index = getIndexFromHash(hash);
+      showPhotoFromIndex(index);
+    }
+
+    function getHash(source) {
+      if ( source == "element" ) {
+        // do something
+      }
+      else {
+        var hash = window.location.hash;
+      }
+      return hash;
+    }
+
+    function getIndexFromHash(hash) {
+      var hashEl = "a[href='"+hash+"']";
+      var image = $(this.$sideMenu).find(hashEl).children('img');
+      var index = $(image).attr('data-img-index');
+      return index;
+    }
+
     function setDisplayPhoto() {
       if ( $(".photography-wrapper").length ) {
-        var lastIndex = getLastIndex();
-        var lastIndex = --lastIndex;
+        if ( window.location.hash ) {
+          handleUrlHash();
+        }
+        else {
+          var lastIndex = getLastIndex();
+          var lastIndex = --lastIndex;
 
-        var index = Math.floor(Math.random() * lastIndex) + 0;
+          var index = Math.floor(Math.random() * lastIndex) + 0;
 
-        showPhotoFromIndex(index);
+          showPhotoFromIndex(index);
+        }
       }
     }
 
@@ -227,6 +255,10 @@ $(document).ready(function() {
         });
 
       var imgTitle = image.attr('title')
+
+      var hash = $(image).parent().attr("href");
+      window.location.hash = hash;
+
       ga("send", "event", "Photography", "viewed", src+': '+imgTitle)
     }
 

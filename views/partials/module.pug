@@ -84,13 +84,13 @@ mixin photographyCollection(photos)
     .photo-drawer
         each image, index in photos.images.collection
             - if ( image.display === true || image.display === undefined)
-                - var name = photos.name
+                - var name     = photos.name
                 - var fileName = image.fileName
                 - var filePath = (name+"/"+fileName)
                 - var imgTitle = image.title || "Photograph by Marc Deely"
 
-                a(href='#' rel="external" data-ajax="false")
-                    img(alt=imgTitle title=imgTitle  data-img-index=index style="100px" src="https://s3.amazonaws.com/mdeely-portfolio-assets/images/"+filePath+"-sm.jpg")
+                a(href='#'+fileName rel="external" data-ajax="false")
+                    img(alt=imgTitle title=imgTitle data-img-index=index style="100px" src="https://s3.amazonaws.com/mdeely-portfolio-assets/images/"+filePath+"-sm.jpg")
 
 
 mixin scrollToTop
