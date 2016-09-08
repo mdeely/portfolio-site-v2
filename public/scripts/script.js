@@ -291,6 +291,8 @@ $(document).ready(function() {
 
       history.replaceState(null, imgTitle, newPathname);
 
+      document.title = imgTitle+" | Marc Deely - Photography";
+
       ga("send", "event", "Photography", "viewed", src+': '+imgTitle)
     }
 
