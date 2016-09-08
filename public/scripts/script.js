@@ -41,40 +41,50 @@ $(document).ready(function() {
       $( window                 ).bind( 'swiperight', generatePreviousIndex);
       $( this.$heroPhoto        ).bind( 'click', handleMenuAndDisplay);
       $( this.$bgPhotoDisplay   ).bind( 'click', handleBgPhotoDisplay);
-      $( this.$photoDrawerImgs  ).bind( 'click', selectPhoto);
     }
 
-    function handleUrlHash() {
-      var hash  = getHash();
-      var index = getIndexFromHash(hash);
+    function handlePathname() {
+      var photoName  = getPhotoNameFromPathname();
+      var index      = getIndexFromPhotoName(photoName);
       showPhotoFromIndex(index);
     }
 
-    function getHash(source) {
-      if ( source == "element" ) {
-        // do something
-      }
-      else {
-        var hash = window.location.hash;
-      }
-      return hash;
+    function getPhotoNameFromPathname() {
+      var pathnameString = window.location.pathname;
+      var photoName = pathnameString.replace('/photography/','');
+      return photoName;
     }
 
-    function getIndexFromHash(hash) {
-      var hashEl = "a[href='"+hash+"']";
-      var image = $(this.$sideMenu).find(hashEl).children('img');
-      var index = $(image).attr('data-img-index');
+    function getIndexFromPhotoName(photoName) {
+      var element = "a[href='/"+photoName+"']";
+      console.log(element);
+      var image   = $(this.$sideMenu).find(element).children('img');
+      console.log(image);
+      var index   = $(image).attr('data-img-index');
       return index;
+    }
+
+    function isPhotoNamePresentInUrl() {
+      var origin = window.location.origin;
+      if ( window.location.href === (origin+"/photography") ) {
+        return false
+      }
+      else {
+        return true
+      }
     }
 
     function setDisplayPhoto() {
       if ( $(".photography-wrapper").length ) {
-        if ( window.location.hash ) {
-          handleUrlHash();
+        console.log("photography wrapper detected")
+        if ( isPhotoNamePresentInUrl() ) {
+          handlePathname();
         }
         else {
           var lastIndex = getLastIndex();
           var lastIndex = --lastIndex;
+
+          console.log(lastIndex);
 
           var index = Math.floor(Math.random() * lastIndex) + 0;
 
@@ -122,18 +132,29 @@ $(document).ready(function() {
             $keyPressed == 39 || // right
             $keyPressed == 40 || // down
             $keyPressed == 13 || // enter
-            $keyPressed == 9     // tab
-
+            $keyPressed == 9  || // tab
+            $keyPressed == 87 || // w
+            $keyPressed == 65 || // a
+            $keyPressed == 83 || // s
+            $keyPressed == 68 || // d
+            $keyPressed == 70 || // f
+            $keyPressed == 32    // space
           )
         {
 
-          if ($keyPressed == 37 || $keyPressed == 38) {
+          if ($keyPressed == 37 || $keyPressed == 38 || $keyPressed == 87 || $keyPressed == 65) {
             generatePreviousIndex();
           }
-          else if ($keyPressed == 39 || $keyPressed == 40 || $keyPressed == 9)  {
+          else if ($keyPressed == 39 ||
+                   $keyPressed == 40 ||
+                   $keyPressed == 9  ||
+                   $keyPressed == 83 ||
+                   $keyPressed == 68 ||
+                   $keyPressed == 13)
+          {
             generateNextIndex();
           }
-          else if ($keyPressed == 13) {
+          else if ($keyPressed == 32 || $keyPressed == 70) {
             handleBgPhotoDisplay();
           }
 
@@ -234,8 +255,10 @@ $(document).ready(function() {
     }
 
     function selectPhoto(image) {
-      var $image = $(image.target)
-      showPhoto($image);
+      event.preventDefault();
+
+      var image = $(image.target)
+      showPhoto(image);
     }
 
     function showPhoto(image) {
@@ -256,8 +279,13 @@ $(document).ready(function() {
 
       var imgTitle = image.attr('title')
 
-      var hash = $(image).parent().attr("href");
-      window.location.hash = hash;
+      // update this to use push state
+      var href        = $(image).parent().attr("href");
+      var newPathname = "/photography"+href;
+
+      history.replaceState(null, null, newPathname);
+
+      // window.location.hash = (hash);
 
       ga("send", "event", "Photography", "viewed", src+': '+imgTitle)
     }

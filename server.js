@@ -35,23 +35,31 @@ app.get('/', function (req, res) {
   res.render( 'index', obj );
 })
 
+
 app.get('/about', function (req, res) {
   res.render( 'about' );
 })
 
-app.get('/photography', function (req, res) {
-  var projectName = req.params.projectName;
-
-  res.locals.projectName = projectName;
-  res.render( 'photography', obj );
-})
-
 app.get('/:projectName', function (req, res) {
   var projectName = req.params.projectName;
+  var project     = (projectName == "photography") ? "photography" : "project";
 
   res.locals.projectName = projectName;
-  res.render( 'project', obj );
+
+  // res.status(404).send('Sorry! This page does not exist. Try more random things!');
+  // res.status(500).send({ error: 'Oh...oh wow. This never happens, I swear.' });
+
+  res.render( project, obj );
 })
+
+app.get('/photography/:photoName', function(req, res) {
+    // var photoName = req.params.photoName;
+    // console.log("your photo has a file name of: "+photoName);
+
+    // res.locals.photoName = photoName;
+
+    res.render( "photography", obj );
+});
 
 app.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);
