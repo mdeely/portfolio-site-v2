@@ -56,7 +56,6 @@ app.get('/photography/:photoName', function(req, res) {
     var photoName = req.params.photoName;
 
     res.locals.photoName = photoName;
-
     res.render( "photography", obj );
 });
 
