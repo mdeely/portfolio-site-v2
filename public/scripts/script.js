@@ -41,6 +41,8 @@ $(document).ready(function() {
       $( window                 ).bind( 'swiperight', generatePreviousIndex);
       $( this.$heroPhoto        ).bind( 'click', handleMenuAndDisplay);
       $( this.$bgPhotoDisplay   ).bind( 'click', handleBgPhotoDisplay);
+      $( this.$photoDrawerImgs  ).bind( 'mouseenter', preloadImageOnHover);
+
     }
 
     function handlePathname() {
@@ -192,6 +194,13 @@ $(document).ready(function() {
       preloadImageFromIndex(index);
     }
 
+    function preloadImageOnHover(evt) {
+        var image = evt.target;
+        var index = $(image).attr('data-img-index');
+        var index = --index;
+        preloadImageFromIndex(index);
+    }
+
     function preloadImageFromIndex(index) {
       var index = ++index;
 
@@ -202,9 +211,11 @@ $(document).ready(function() {
       var srcRaw   = image.attr('src');
       var src      = srcRaw.replace('-sm','');
 
-     var img = $('<img />', {"src" : src});
+      var img = $('<img />', {"src" : src});
 
-      $(this.$preloadedImg).append(img);
+      if ( !$(this.$preloadedImg).find('img[src*="'+src+'"]').length ) {
+        $(this.$preloadedImg).append(img);
+      }
     }
 
     function getLastIndex() {

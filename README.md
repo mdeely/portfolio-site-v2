@@ -14,9 +14,9 @@ Images for Photography
 TODO:
 - Javascript
     - Generate image index based on iteration not position in db
-    - Jquery: on thumbnail hover, load image
     - Change scroll position to active photo
     - Update Page attributes based on photo selected (title, meta data, etc);
+    - Preload image on hover but only after hovering over them for a certain period of time
 
 - Other
     - FB Like / Share Button
