@@ -53,10 +53,9 @@ app.get('/:projectName', function (req, res) {
 })
 
 app.get('/photography/:photoName', function(req, res) {
-    // var photoName = req.params.photoName;
-    // console.log("your photo has a file name of: "+photoName);
+    var photoName = req.params.photoName;
 
-    // res.locals.photoName = photoName;
+    res.locals.photoName = photoName;
 
     res.render( "photography", obj );
 });
