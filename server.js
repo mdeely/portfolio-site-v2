@@ -44,7 +44,7 @@ app.get('/:projectName', function (req, res) {
   var projectName = req.params.projectName;
   var project     = (projectName == "photography") ? "photography" : "project";
 
-  res.locals.projectName = projectName;
+  app.locals.projectName = projectName;
 
   // res.status(404).send('Sorry! This page does not exist. Try more random things!');
   // res.status(500).send({ error: 'Oh...oh wow. This never happens, I swear.' });
@@ -53,9 +53,7 @@ app.get('/:projectName', function (req, res) {
 })
 
 app.get('/photography/:photoName', function(req, res) {
-    var photoName = req.params.photoName;
-
-    res.locals.photoName = photoName;
+    res.locals.photoName = req.params.photoName;
     res.render( "photography", obj );
 });
 
