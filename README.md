@@ -24,6 +24,7 @@ TODO:
     - Update images
     - GA
     - Add favicon
+    - Handle bad urls
 
 - Photos
     - CT7A4337 - Ferris Wheel pic is too pink. Colors just off.

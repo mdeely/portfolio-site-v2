@@ -30,12 +30,6 @@ app.use(express.static(__dirname + '/public'));
 
 var obj = require('./views/db.json');
 
-// function testFunctions(req, res, next) {
-//   console.log("this is in testFunctions: "+app.locals.photoName);
-//   // console.log(obj.photography.images.collection.fileName[app.locals.photoName]);
-//   return next();
-// }
-
 // set the home page route
 app.get('/', function (req, res) {
   res.render( 'index', obj );
@@ -54,20 +48,18 @@ app.get('/:projectName', function (req, res) {
 
   // res.status(404).send('Sorry! This page does not exist. Try more random things!');
   // res.status(500).send({ error: 'Oh...oh wow. This never happens, I swear.' });
-
   res.render( project, obj );
 })
 
 app.get('/photography/:photoName', function(req, res, next) {
     app.locals.photoName = req.params.photoName;
     next();
-  }, function (req, res) {
+  },  function (req, res) {
       for(var i = 0; i < obj.photography.images.collection.length; i++) {
-        if(obj.photography.images.collection[i].fileName == app.locals.photoName){
+        if(obj.photography.images.collection[i].fileName == app.locals.photoName) {
           app.locals.photoTitle = obj.photography.images.collection[i].title
-        }
       }
-    console.log(app.locals.photoTitle);
+  }
     res.render( "photography", obj );
 });
 
