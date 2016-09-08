@@ -57,9 +57,7 @@ $(document).ready(function() {
 
     function getIndexFromPhotoName(photoName) {
       var element = "a[href='/"+photoName+"']";
-      console.log(element);
       var image   = $(this.$sideMenu).find(element).children('img');
-      console.log(image);
       var index   = $(image).attr('data-img-index');
       return index;
     }
@@ -76,15 +74,12 @@ $(document).ready(function() {
 
     function setDisplayPhoto() {
       if ( $(".photography-wrapper").length ) {
-        console.log("photography wrapper detected")
         if ( isPhotoNamePresentInUrl() ) {
           handlePathname();
         }
         else {
           var lastIndex = getLastIndex();
           var lastIndex = --lastIndex;
-
-          console.log(lastIndex);
 
           var index = Math.floor(Math.random() * lastIndex) + 0;
 
@@ -283,9 +278,7 @@ $(document).ready(function() {
       var href        = $(image).parent().attr("href");
       var newPathname = "/photography"+href;
 
-      history.replaceState(null, null, newPathname);
-
-      // window.location.hash = (hash);
+      history.replaceState(null, imgTitle, newPathname);
 
       ga("send", "event", "Photography", "viewed", src+': '+imgTitle)
     }

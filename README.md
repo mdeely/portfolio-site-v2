@@ -17,14 +17,6 @@ TODO:
     - Jquery: on thumbnail hover, load image
     - Change scroll position to active photo
     - Update Page attributes based on photo selected (title, meta data, etc);
-    - URL
-        - ?? Pass param form server.js to jade file, updating the background iamge.
-            - Pros: easy
-            - Cons: how to fire off event to update active image and such?
-        - Make param in express to handle filename
-        - Get pathname
-        - Remove /photography/ from pathname
-        - use that filename to generate the next photo
 
 - Other
     - FB Like / Share Button
