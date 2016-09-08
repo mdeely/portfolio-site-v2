@@ -130,23 +130,17 @@ $(document).ready(function() {
             $keyPressed == 40 || // down
             $keyPressed == 13 || // enter
             $keyPressed == 9  || // tab
-            $keyPressed == 87 || // w
-            $keyPressed == 65 || // a
-            $keyPressed == 83 || // s
-            $keyPressed == 68 || // d
             $keyPressed == 70 || // f
             $keyPressed == 32    // space
           )
         {
 
-          if ($keyPressed == 37 || $keyPressed == 38 || $keyPressed == 87 || $keyPressed == 65) {
+          if ($keyPressed == 37 || $keyPressed == 38) {
             generatePreviousIndex();
           }
           else if ($keyPressed == 39 ||
                    $keyPressed == 40 ||
                    $keyPressed == 9  ||
-                   $keyPressed == 83 ||
-                   $keyPressed == 68 ||
                    $keyPressed == 13)
           {
             generateNextIndex();
@@ -291,7 +285,11 @@ $(document).ready(function() {
 
       history.replaceState(null, imgTitle, newPathname);
 
+      // This is mostly for bookmarking. Not for Open Graph or SEO
       document.title = imgTitle+" | Marc Deely - Photography";
+      $('meta[property=og\\:url]').attr('content', (window.location.origin)+"/photography"+href);
+      $('meta[property=og\\:title]').attr('content', imgTitle);
+      $('meta[property=og\\:image]').attr('content', src);
 
       ga("send", "event", "Photography", "viewed", src+': '+imgTitle)
     }
