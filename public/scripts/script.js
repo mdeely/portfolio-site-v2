@@ -302,7 +302,7 @@ $(document).ready(function() {
       $('meta[property=og\\:image]').attr('content', src);
       $(".fb-like").attr( "data-href", url);
 
-
+      $(this.$fbLikeIcon).removeClass('open');
       $('#fb-like-icon').html("<div class='fb-like' data-href='"+url+"', data-layout='box_count', data-action='like', data-size='small', data-show-faces='true', data-share='true'></div>");
       if (typeof FB !== 'undefined') {
           FB.XFBML.parse(document.getElementById('fb-like-icon'));
