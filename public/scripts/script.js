@@ -27,6 +27,7 @@ $(document).ready(function() {
       this.$heroPhoto       = $('.container.photography');
       this.$bgPhotoDisplay  = $('.bg-photo-display');
       this.$preloadedImg    = $(".preload-image-container");
+      this.$fbLikeIcon      = $("#fb-like-icon");
     }
 
     function bindHandlers() {
@@ -42,7 +43,15 @@ $(document).ready(function() {
       $( this.$heroPhoto        ).bind( 'click', handleMenuAndDisplay);
       $( this.$bgPhotoDisplay   ).bind( 'click', handleBgPhotoDisplay);
       $( this.$photoDrawerImgs  ).bind( 'mouseenter', preloadImageOnHover);
+      $( this.$fbLikeIcon       ).bind( 'click', handleFbLikeMenu);
+    }
 
+    function handleFbLikeMenu() {
+      showFbLikeMenu();
+    }
+
+    function showFbLikeMenu() {
+      this.$fbLikeIcon.toggleClass('open');
     }
 
     function handlePathname() {

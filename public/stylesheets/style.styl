@@ -1034,7 +1034,7 @@ nav.masthead {
         .action {
             background-repeat: no-repeat;
             background-position: center;
-            background-color: rgba(0,0,0,.1);
+            background-color: alpha(black, 25%);
             width: 22px;
             height: 22px;
             margin: 22px 22px 22px 11px;
@@ -1046,7 +1046,7 @@ nav.masthead {
             transition: all .1s ease-in-out;
 
             &:hover {
-                background-color: alpha(black, 33%);
+                background-color: alpha(black, 35%);
                 transition: all .1s ease-in-out;
             }
 
@@ -1054,7 +1054,7 @@ nav.masthead {
                 background-image: url("../images/icons/fb-like-icon.svg");
                 position: relative;
 
-                &:hover {
+                fbLikeOpen() {
                     background-color: alpha(#3B5998, 70%);
 
                     .fb-like {
@@ -1062,6 +1062,19 @@ nav.masthead {
                         opacity: 1;
                         transition: all .2s ease-in-out;
                     }
+                }
+
+                &:hover {
+                    fbLikeOpen();
+                }
+
+                &.open {
+                    box-shadow: 0 0 0 2px #3b5998 inset;
+                    fbLikeOpen();
+                }
+
+                &:active {
+                    background-color: alpha(#3B5998, 80%);
                 }
 
                 .fb-like {

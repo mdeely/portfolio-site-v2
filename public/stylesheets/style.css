@@ -1178,7 +1178,7 @@ nav.masthead ul li a {
 .photography-wrapper .action-wrapper .action {
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.25);
   width: 22px;
   height: 22px;
   margin: 22px 22px 22px 11px;
@@ -1197,7 +1197,7 @@ nav.masthead ul li a {
   transition: all 0.1s ease-in-out;
 }
 .photography-wrapper .action-wrapper .action:hover {
-  background-color: rgba(0,0,0,0.33);
+  background-color: rgba(0,0,0,0.35);
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
@@ -1221,6 +1221,25 @@ nav.masthead ul li a {
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+}
+.photography-wrapper .action-wrapper .action#fb-like-icon.open {
+  -webkit-box-shadow: 0 0 0 2px #3b5998 inset;
+  box-shadow: 0 0 0 2px #3b5998 inset;
+  background-color: rgba(59,89,152,0.7);
+}
+.photography-wrapper .action-wrapper .action#fb-like-icon.open .fb-like {
+  top: -75px;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.photography-wrapper .action-wrapper .action#fb-like-icon:active {
+  background-color: rgba(59,89,152,0.8);
 }
 .photography-wrapper .action-wrapper .action#fb-like-icon .fb-like {
   position: absolute;
