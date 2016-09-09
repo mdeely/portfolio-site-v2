@@ -28,6 +28,7 @@ $(document).ready(function() {
       this.$bgPhotoDisplay  = $('.bg-photo-display');
       this.$preloadedImg    = $(".preload-image-container");
       this.$fbLikeIcon      = $("#fb-like-icon");
+      // this.$fbLikeIframe    = $("#fb-like-icon iframe");
     }
 
     function bindHandlers() {
@@ -44,19 +45,19 @@ $(document).ready(function() {
       $( this.$bgPhotoDisplay   ).bind( 'click', handleBgPhotoDisplay);
       $( this.$photoDrawerImgs  ).bind( 'mouseenter', preloadImageOnHover);
       $( this.$fbLikeIcon       ).bind( 'click', handleFbLikeMenu);
-      $( this.$fbLikeIcon       ).bind( 'DOMNodeRemoved', handleFbLikeDisable);
-      $( this.$fbLikeIcon       ).bind( 'DOMNodeInserted', handleFbLikeEnable);
+      // $( this.$fbLikeIcon       ).bind( 'DOMNodeRemoved', disableFbLike);
+      // $( this.$fbLikeIframe     ).bind( 'DOMNodeInserted', enableFbLike);
     }
 
-    function handleFbLikeDisable() {
-      console.log("Adding class disabled");
-      $(this.target).addClass('disabled');
-    }
+    // function disableFbLike() {
+    //   console.log("Adding class disabled");
+    //   $('#fb-like-icon').addClass('disabled');
+    // }
 
-    function handleFbLikeEnable() {
-      console.log("Removing class disabled");
-      $(this.target).removeClass('disabled');
-    }
+    // function enableFbLike() {
+    //   console.log("Removing class disabled");
+    //   $('#fb-like-icon').removeClass('disabled');
+    // }
 
     function handleFbLikeMenu() {
       showFbLikeMenu();
@@ -316,14 +317,13 @@ $(document).ready(function() {
 
       $(this.$fbLikeIcon).removeClass('open');
 
-      handleFbLikeDisable();
       setFbLike(url);
 
       ga("send", "event", "Photography", "viewed", src+': '+imgTitle)
     }
 
     function setFbLike(url) {
-      this.$fbLikeIcon.html("<div class='fb-like' data-href='"+url+"', data-layout='box_count', data-action='like', data-size='small', data-show-faces='true', data-share='true'></div>");
+      $(this.$fbLikeIcon).html("<div class='fb-like' data-href='"+url+"', data-layout='box_count', data-action='like', data-size='small', data-show-faces='true', data-share='true'></div>");
       if (typeof FB !== 'undefined') {
           FB.XFBML.parse(document.getElementById('fb-like-icon'));
       }
