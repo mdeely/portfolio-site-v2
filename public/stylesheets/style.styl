@@ -1064,17 +1064,22 @@ nav.masthead {
                     }
                 }
 
+                &.disabled {
+                    opacity: .5;
+                    pointer-events: none;
+                }
+
                 &:hover {
                     fbLikeOpen();
                 }
 
                 &.open {
-                    box-shadow: 0 0 0 2px #3b5998 inset;
                     fbLikeOpen();
                 }
 
-                &:active {
-                    background-color: alpha(#3B5998, 80%);
+                &:active,
+                &.open {
+                    background-color: alpha(#3B5998, 100%);
                 }
 
                 .fb-like {

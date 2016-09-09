@@ -44,6 +44,18 @@ $(document).ready(function() {
       $( this.$bgPhotoDisplay   ).bind( 'click', handleBgPhotoDisplay);
       $( this.$photoDrawerImgs  ).bind( 'mouseenter', preloadImageOnHover);
       $( this.$fbLikeIcon       ).bind( 'click', handleFbLikeMenu);
+      $( this.$fbLikeIcon       ).bind( 'DOMNodeRemoved', handleFbLikeDisable);
+      $( this.$fbLikeIcon       ).bind( 'DOMNodeInserted', handleFbLikeEnable);
+    }
+
+    function handleFbLikeDisable() {
+      console.log("Adding class disabled");
+      $(this.target).addClass('disabled');
+    }
+
+    function handleFbLikeEnable() {
+      console.log("Removing class disabled");
+      $(this.target).removeClass('disabled');
     }
 
     function handleFbLikeMenu() {
@@ -303,12 +315,18 @@ $(document).ready(function() {
       $(".fb-like").attr( "data-href", url);
 
       $(this.$fbLikeIcon).removeClass('open');
-      $('#fb-like-icon').html("<div class='fb-like' data-href='"+url+"', data-layout='box_count', data-action='like', data-size='small', data-show-faces='true', data-share='true'></div>");
+
+      handleFbLikeDisable();
+      setFbLike(url);
+
+      ga("send", "event", "Photography", "viewed", src+': '+imgTitle)
+    }
+
+    function setFbLike(url) {
+      this.$fbLikeIcon.html("<div class='fb-like' data-href='"+url+"', data-layout='box_count', data-action='like', data-size='small', data-show-faces='true', data-share='true'></div>");
       if (typeof FB !== 'undefined') {
           FB.XFBML.parse(document.getElementById('fb-like-icon'));
       }
-
-      ga("send", "event", "Photography", "viewed", src+': '+imgTitle)
     }
 
     function removeActiveClass() {
