@@ -18,11 +18,6 @@ TODO:
     - Preload image on hover but only after hovering over them for a certain period of time
 
 - Other
-    - FB Like / Share Button
-        - Update facebook button URL on showPhoto
-        - Generate new like button on showPhoto?
-        - Hide Like in menu?
-            - Bring up lil menu with likes and photo title when menu is activated
     - Handle bad urls
 
 - Photos
