@@ -282,14 +282,22 @@ $(document).ready(function() {
       // update this to use push state
       var href        = $(image).parent().attr("href");
       var newPathname = "/photography"+href;
+      var url      = (window.location.origin)+"/photography"+href;
 
       history.replaceState(null, imgTitle, newPathname);
 
       // This is mostly for bookmarking. Not for Open Graph or SEO
       document.title = imgTitle+" | Marc Deely - Photography";
-      $('meta[property=og\\:url]').attr('content', (window.location.origin)+"/photography"+href);
+      $('meta[property=og\\:url]').attr('content', url);
       $('meta[property=og\\:title]').attr('content', imgTitle);
       $('meta[property=og\\:image]').attr('content', src);
+      $(".fb-like").attr( "data-href", url);
+
+
+      $('#fb-like-icon').html("<div class='fb-like' data-href='"+url+"', data-layout='box_count', data-action='like', data-size='small', data-show-faces='true', data-share='true'></div>");
+      if (typeof FB !== 'undefined') {
+          FB.XFBML.parse(document.getElementById('fb-like-icon'));
+      }
 
       ga("send", "event", "Photography", "viewed", src+': '+imgTitle)
     }

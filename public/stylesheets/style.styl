@@ -1026,30 +1026,67 @@ nav.masthead {
         }
     }
 
-    a.bg-photo-display {
-        background-repeat: no-repeat;
-        background-size: 60%;
-        background-position: center;
-        background-color: rgba(0,0,0,.1);
-        width: 22px;
-        height: 22px;
-        margin: 22px;
+    .action-wrapper {
         position: fixed;
         bottom: 0;
         right: 0;
-        cursor: pointer;
-        padding: 22px;
-        border-radius: 4px;
 
+        .action {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: rgba(0,0,0,.1);
+            width: 22px;
+            height: 22px;
+            margin: 22px 22px 22px 11px;
+            padding: 22px;
+            cursor: pointer;
+            border-radius: 4px;
+            display: inline-block;
+            background-size: 60%;
+            transition: all .1s ease-in-out;
 
-        &.fill-screen {
-            background-image: url("../images/icons/collapse.svg");
-        }
+            &:hover {
+                background-color: alpha(black, 33%);
+                transition: all .1s ease-in-out;
+            }
 
-        &.show-all {
-            background-image: url("../images/icons/expand.svg");
+            &#fb-like-icon {
+                background-image: url("../images/icons/fb-like-icon.svg");
+                position: relative;
+
+                &:hover {
+                    background-color: alpha(#3B5998, 70%);
+
+                    .fb-like {
+                        top: -75px;
+                        opacity: 1;
+                        transition: all .2s ease-in-out;
+                    }
+                }
+
+                .fb-like {
+                    position: absolute;
+                    left: 0;
+                    top: -55px;
+                    opacity: 0;
+                    transition: all .2s ease-in-out;
+                }
+            }
+
+            &.bg-photo-display {
+
+                &.fill-screen {
+                    background-image: url("../images/icons/collapse.svg");
+                }
+
+                &.show-all {
+                    background-image: url("../images/icons/expand.svg");
+                }
+            }
         }
     }
+
+
 
     .side_menu {
         z-index: 10;

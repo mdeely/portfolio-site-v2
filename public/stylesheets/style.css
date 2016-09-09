@@ -1170,28 +1170,75 @@ nav.masthead ul li a {
 .photography-wrapper .preload-image-container img {
   display: none;
 }
-.photography-wrapper a.bg-photo-display {
+.photography-wrapper .action-wrapper {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+.photography-wrapper .action-wrapper .action {
   background-repeat: no-repeat;
-  -webkit-background-size: 60%;
-  -moz-background-size: 60%;
-  background-size: 60%;
   background-position: center;
   background-color: rgba(0,0,0,0.1);
   width: 22px;
   height: 22px;
-  margin: 22px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  cursor: pointer;
+  margin: 22px 22px 22px 11px;
   padding: 22px;
+  cursor: pointer;
   -webkit-border-radius: 4px;
   border-radius: 4px;
+  display: inline-block;
+  -webkit-background-size: 60%;
+  -moz-background-size: 60%;
+  background-size: 60%;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
-.photography-wrapper a.bg-photo-display.fill-screen {
+.photography-wrapper .action-wrapper .action:hover {
+  background-color: rgba(0,0,0,0.33);
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.photography-wrapper .action-wrapper .action#fb-like-icon {
+  background-image: url("../images/icons/fb-like-icon.svg");
+  position: relative;
+}
+.photography-wrapper .action-wrapper .action#fb-like-icon:hover {
+  background-color: rgba(59,89,152,0.7);
+}
+.photography-wrapper .action-wrapper .action#fb-like-icon:hover .fb-like {
+  top: -75px;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.photography-wrapper .action-wrapper .action#fb-like-icon .fb-like {
+  position: absolute;
+  left: 0;
+  top: -55px;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.photography-wrapper .action-wrapper .action.bg-photo-display.fill-screen {
   background-image: url("../images/icons/collapse.svg");
 }
-.photography-wrapper a.bg-photo-display.show-all {
+.photography-wrapper .action-wrapper .action.bg-photo-display.show-all {
   background-image: url("../images/icons/expand.svg");
 }
 .photography-wrapper .side_menu {

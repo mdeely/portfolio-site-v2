@@ -3,7 +3,7 @@ include /partials/module
 doctype
 html
   head
-    - var desc = "Shot and developed by Marc Deely"
+    - var desc = "Photo by Marc Deely"
     - var metaDesc = "Photography portfolio - "+desc+""
     - var title = ("Marc Deely - Photography | "+photoName) || "Marc Deely - Photography"
     block title
@@ -29,7 +29,6 @@ html
     meta(property="og:description" content=desc)
     meta(property="og:image" content="https://s3.amazonaws.com/mdeely-portfolio-assets/images/photography/"+photoName+".jpg")
   body.photography-wrapper
-
     block masthead
 
     block navigation
