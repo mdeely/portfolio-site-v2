@@ -25,7 +25,7 @@ $(document).ready(function() {
       this.$photoDrawerImgs = $('.photo-drawer img');
       this.$sideMenu        = $('.side_menu')
       this.$heroPhoto       = $('.container.photography');
-      this.$bgPhotoDisplay  = $('a.bg-photo-display');
+      this.$bgPhotoDisplay  = $('.bg-photo-display');
       this.$preloadedImg    = $(".preload-image-container");
     }
 
@@ -102,7 +102,7 @@ $(document).ready(function() {
     }
 
     function updateBgPhotoDisplayIcon(klass) {
-      $(this.$bgPhotoDisplay).removeClass().addClass('bg-photo-display ' +klass);
+      $(this.$bgPhotoDisplay).removeClass().addClass('action bg-photo-display ' +klass);
     }
 
     function bgPhotoDisplayState() {

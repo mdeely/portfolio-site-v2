@@ -16,6 +16,7 @@ TODO:
     - Generate image index based on iteration not position in db
     - Change scroll position to active photo
     - Preload image on hover but only after hovering over them for a certain period of time
+    - Handle click on a tag not img. Sometimes throws an error.
 
 - Other
     - Handle bad urls
