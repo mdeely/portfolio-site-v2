@@ -20,10 +20,10 @@ TODO:
 
 
 - Must Do Before Announcing:
-    - Handle bad urls
     - Add Contact and Social links
     - Reduce image file sizes
     - Add Copyright info
+    - Handle bad urls
 
     - Photos
         - CT7A4337 - Ferris Wheel pic is too pink. Colors just off.

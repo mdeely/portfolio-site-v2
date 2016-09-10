@@ -66,7 +66,7 @@ $(document).ready(function() {
     function observeFbMenu() {
       var target = document.querySelector('#fb-like-icon');
 
-      var observer = new WebKitMutationObserver(function(mutations) {
+      var observer = new MutationObserver(function(mutations) {
           mutations.forEach(function(mutation) {
 
             if ( mutation.attributeName == "fb-xfbml-state" ) {
