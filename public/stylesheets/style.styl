@@ -1043,16 +1043,17 @@ nav.masthead {
             border-radius: 4px;
             display: inline-block;
             background-size: 60%;
-            transition: all .1s ease-in-out;
+            // transition: all .1s ease-in-out;
 
             &:hover {
                 background-color: alpha(black, 35%);
-                transition: all .1s ease-in-out;
+                transition: background-color .1s ease-in-out;
             }
 
             &#fb-like-icon {
                 background-image: url("../images/icons/fb-like-icon.svg");
                 position: relative;
+                transition: all .2s ease-in-out;
 
                 fbLikeOpen() {
                     background-color: alpha(#3B5998, 70%);
@@ -1067,6 +1068,7 @@ nav.masthead {
                 &.disabled {
                     opacity: .5;
                     pointer-events: none;
+                    transition: all .2s ease-in-out;
                 }
 
                 &:hover {
@@ -1147,6 +1149,7 @@ nav.masthead {
             background-color: rgba(0,0,0,.35);
             transition: all .2s ease-in-out;
             cursor: intial;
+            -webkit-overflow-scrolling: touch;
 
             .menu-toggle {
                 opacity: 0;
@@ -1156,9 +1159,6 @@ nav.masthead {
             .photo-drawer {
                 opacity: 1;
                 transition all .2s ease-in-out;
-                overflow-y: scroll;
-                -webkit-overflow-scrolling: touch;
-                whitespace: no-wrap;
 
                 a {
                     display: block;

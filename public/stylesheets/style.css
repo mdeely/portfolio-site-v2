@@ -1190,29 +1190,34 @@ nav.masthead ul li a {
   -webkit-background-size: 60%;
   -moz-background-size: 60%;
   background-size: 60%;
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
 }
 .photography-wrapper .action-wrapper .action:hover {
   background-color: rgba(0,0,0,0.35);
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
+  -webkit-transition: background-color 0.1s ease-in-out;
+  -moz-transition: background-color 0.1s ease-in-out;
+  -o-transition: background-color 0.1s ease-in-out;
+  -ms-transition: background-color 0.1s ease-in-out;
+  transition: background-color 0.1s ease-in-out;
 }
 .photography-wrapper .action-wrapper .action#fb-like-icon {
   background-image: url("../images/icons/fb-like-icon.svg");
   position: relative;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .photography-wrapper .action-wrapper .action#fb-like-icon.disabled {
   opacity: 0.5;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   filter: alpha(opacity=50);
   pointer-events: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .photography-wrapper .action-wrapper .action#fb-like-icon:hover {
   background-color: rgba(59,89,152,0.7);
@@ -1307,6 +1312,7 @@ nav.masthead ul li a {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   cursor: intial;
+  -webkit-overflow-scrolling: touch;
 }
 .photography-wrapper .side_menu.open .menu-toggle {
   opacity: 0;
@@ -1327,9 +1333,6 @@ nav.masthead ul li a {
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  white-space: nowrap;
 }
 .photography-wrapper .side_menu.open .photo-drawer a {
   display: block;

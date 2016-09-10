@@ -16,8 +16,7 @@ TODO:
     - Generate image index based on iteration not position in db
     - Change scroll position to active photo
     - Preload image on hover but only after hovering over them for a certain period of time
-    - Handle click on anchor tag not img. Throws error if you just click below the thumbnail.
-    - Check to make sure FB Like Menu is appropriately disabled/enabled in prod
+    - On load, pop in Logo, then Side Menu, then Actions
 
 - Other
     - Handle bad urls

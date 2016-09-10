@@ -5,12 +5,16 @@ $(document).ready(function() {
       gatherNodes();
       bindHandlers();
 
+      observeFbMenu();
       setDisplayPhoto();
       projectListLoadBehavior();
       // fullscreenImages();
       detectKeyPressPhotos();
       scrollToTop(this.$scrollToTop);
       lazyLoad();
+
+      // Hides annoying "Loading" text on mobile when swiping up
+      $.mobile.loading().hide();
     };
 
     function gatherNodes() {
@@ -45,19 +49,40 @@ $(document).ready(function() {
       $( this.$bgPhotoDisplay   ).bind( 'click', handleBgPhotoDisplay);
       $( this.$photoDrawerImgs  ).bind( 'mouseenter', preloadImageOnHover);
       $( this.$fbLikeIcon       ).bind( 'click', handleFbLikeMenu);
-      // $( this.$fbLikeIcon       ).bind( 'DOMNodeRemoved', disableFbLike);
-      // $( this.$fbLikeIframe     ).bind( 'DOMNodeInserted', enableFbLike);
     }
 
-    // function disableFbLike() {
-    //   console.log("Adding class disabled");
-    //   $('#fb-like-icon').addClass('disabled');
-    // }
+    function observeFbMenu() {
+      var target = document.querySelector('#fb-like-icon');
 
-    // function enableFbLike() {
-    //   console.log("Removing class disabled");
-    //   $('#fb-like-icon').removeClass('disabled');
-    // }
+      var observer = new WebKitMutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+
+            if ( mutation.attributeName == "fb-xfbml-state" ) {
+              if ( $(".fb-like").attr("fb-xfbml-state") == "rendered" ) {
+                enableFbLike();
+              }
+              else {
+                disableFbLike();
+              }
+            }
+
+          });
+      });
+
+      observer.observe(target, {
+        childList: true,
+        attributes: true,
+        subtree: true
+      });
+    }
+
+    function disableFbLike() {
+      $('#fb-like-icon').addClass('disabled');
+    }
+
+    function enableFbLike() {
+      $('#fb-like-icon').removeClass('disabled');
+    }
 
     function handleFbLikeMenu() {
       showFbLikeMenu();
@@ -80,7 +105,7 @@ $(document).ready(function() {
     }
 
     function getIndexFromPhotoName(photoName) {
-      var element = "a[href='/"+photoName+"']";
+      var element = "a[href='/photography/"+photoName+"']";
       var image   = $(this.$sideMenu).find(element).children('img');
       var index   = $(image).attr('data-img-index');
       return index;
@@ -302,11 +327,10 @@ $(document).ready(function() {
       var imgTitle = image.attr('title')
 
       // update this to use push state
-      var href        = $(image).parent().attr("href");
-      var newPathname = "/photography"+href;
-      var url      = (window.location.origin)+"/photography"+href;
+      var href     = $(image).parent().attr("href");
+      var url      = (window.location.origin)+href;
 
-      history.replaceState(null, imgTitle, newPathname);
+      history.replaceState(null, imgTitle, href);
 
       // This is mostly for bookmarking. Not for Open Graph or SEO
       document.title = imgTitle+" | Marc Deely - Photography";
