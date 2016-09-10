@@ -22,6 +22,7 @@ TODO:
 
 - Other
     - Handle bad urls
+    - Use webkite prefix for animations
 
 - Photos
     - CT7A4337 - Ferris Wheel pic is too pink. Colors just off.

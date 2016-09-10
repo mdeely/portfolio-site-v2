@@ -1452,11 +1452,11 @@ nav.masthead ul li a {
   -o-animation: revealSideMenu 1s forwards;
   -ms-animation: revealSideMenu 1s forwards;
   animation: revealSideMenu 1s forwards;
-  -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s;
-  -o-animation-delay: 1s;
-  -ms-animation-delay: 1s;
-  animation-delay: 1s;
+  -webkit-animation-delay: 0.75s;
+  -moz-animation-delay: 0.75s;
+  -o-animation-delay: 0.75s;
+  -ms-animation-delay: 0.75s;
+  animation-delay: 0.75s;
 }
 .photography-wrapper.animate .action-wrapper {
   bottom: -88px;
@@ -1465,11 +1465,11 @@ nav.masthead ul li a {
   -o-animation: revealActionMenu 2s forwards;
   -ms-animation: revealActionMenu 2s forwards;
   animation: revealActionMenu 2s forwards;
-  -webkit-animation-delay: 2s;
-  -moz-animation-delay: 2s;
-  -o-animation-delay: 2s;
-  -ms-animation-delay: 2s;
-  animation-delay: 2s;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -o-animation-delay: 1s;
+  -ms-animation-delay: 1s;
+  animation-delay: 1s;
 }
 @-moz-keyframes hover {
   0% {
