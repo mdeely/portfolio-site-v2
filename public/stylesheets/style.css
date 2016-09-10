@@ -1284,8 +1284,22 @@ nav.masthead ul li a {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   color: #fff;
-  overflow-y: scroll;
+  overflow-y: hidden;
   cursor: pointer;
+}
+.photography-wrapper .side_menu::-webkit-scrollbar {
+  width: 4px;
+  padding: 10px;
+}
+.photography-wrapper .side_menu::-webkit-scrollbar-track {
+  background-color: transparent;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.photography-wrapper .side_menu::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.5);
 }
 .photography-wrapper .side_menu .photo-drawer {
   opacity: 0;
@@ -1312,6 +1326,7 @@ nav.masthead ul li a {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   cursor: intial;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
 .photography-wrapper .side_menu.open .menu-toggle {
