@@ -17,6 +17,7 @@ TODO:
     - Change scroll position to active photo
     - Preload image on hover but only after hovering over them for a certain period of time
     - On load, pop in Logo, then Side Menu, then Actions
+    - Swap SPACEBAR and ENTER functions
 
 - Other
     - Handle bad urls

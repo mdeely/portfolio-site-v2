@@ -5,16 +5,11 @@ $(document).ready(function() {
       gatherNodes();
       bindHandlers();
 
-      observeFbMenu();
-      setDisplayPhoto();
+      photographyInit();
       projectListLoadBehavior();
       // fullscreenImages();
-      detectKeyPressPhotos();
       scrollToTop(this.$scrollToTop);
       lazyLoad();
-
-      // Hides annoying "Loading" text on mobile when swiping up
-      $.mobile.loading().hide();
     };
 
     function gatherNodes() {
@@ -49,6 +44,16 @@ $(document).ready(function() {
       $( this.$bgPhotoDisplay   ).bind( 'click', handleBgPhotoDisplay);
       $( this.$photoDrawerImgs  ).bind( 'mouseenter', preloadImageOnHover);
       $( this.$fbLikeIcon       ).bind( 'click', handleFbLikeMenu);
+    }
+
+    function photographyInit() {
+      if ( $(".photography-wrapper").length ) {
+        setDisplayPhoto();
+        detectKeyPressPhotos();
+        observeFbMenu();
+        // Hides annoying "Loading" text on mobile when swiping up
+        $.mobile.loading().hide();
+      }
     }
 
     function observeFbMenu() {
