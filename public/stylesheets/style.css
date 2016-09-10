@@ -1172,7 +1172,6 @@ nav.masthead ul li a {
 }
 .photography-wrapper .action-wrapper {
   position: fixed;
-  bottom: 0;
   right: 0;
 }
 .photography-wrapper .action-wrapper .action {
@@ -1273,7 +1272,6 @@ nav.masthead ul li a {
 .photography-wrapper .side_menu {
   z-index: 10;
   width: 112px;
-  left: -62px;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -1372,12 +1370,12 @@ nav.masthead ul li a {
   pointer-events: all;
 }
 .photography-wrapper .side_menu .menu-toggle {
-  left: 12px;
+  right: 14px;
   top: 26px;
   opacity: 1;
   -ms-filter: none;
   filter: none;
-  position: fixed;
+  position: absolute;
   -webkit-transition: all 0.2s ease-in-out 0.2s;
   -moz-transition: all 0.2s ease-in-out 0.2s;
   -o-transition: all 0.2s ease-in-out 0.2s;
@@ -1435,6 +1433,43 @@ nav.masthead ul li a {
   -ms-transition: background-image 0.25s ease-in-out, background-size 0.25s ease-in-out;
   transition: background-image 0.25s ease-in-out, background-size 0.25s ease-in-out;
   -webkit-tap-highlight-color: transparent;
+}
+.photography-wrapper.no-js .side_menu {
+  left: -62px;
+}
+.photography-wrapper.no-js .masthead > * {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+.photography-wrapper.no-js .action-wrapper {
+  bottom: 0px;
+}
+.photography-wrapper.animate .side_menu {
+  left: -112px;
+  -webkit-animation: revealSideMenu 1s forwards;
+  -moz-animation: revealSideMenu 1s forwards;
+  -o-animation: revealSideMenu 1s forwards;
+  -ms-animation: revealSideMenu 1s forwards;
+  animation: revealSideMenu 1s forwards;
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -o-animation-delay: 1s;
+  -ms-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.photography-wrapper.animate .action-wrapper {
+  bottom: -88px;
+  -webkit-animation: revealActionMenu 2s forwards;
+  -moz-animation: revealActionMenu 2s forwards;
+  -o-animation: revealActionMenu 2s forwards;
+  -ms-animation: revealActionMenu 2s forwards;
+  animation: revealActionMenu 2s forwards;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  -o-animation-delay: 2s;
+  -ms-animation-delay: 2s;
+  animation-delay: 2s;
 }
 @-moz-keyframes hover {
   0% {
@@ -1610,5 +1645,69 @@ nav.masthead ul li a {
     -o-transform: translate(0px, 0px);
     -ms-transform: translate(0px, 0px);
     transform: translate(0px, 0px);
+  }
+}
+@-moz-keyframes revealSideMenu {
+  0% {
+    left: -112px;
+  }
+  100% {
+    left: -62px;
+  }
+}
+@-webkit-keyframes revealSideMenu {
+  0% {
+    left: -112px;
+  }
+  100% {
+    left: -62px;
+  }
+}
+@-o-keyframes revealSideMenu {
+  0% {
+    left: -112px;
+  }
+  100% {
+    left: -62px;
+  }
+}
+@keyframes revealSideMenu {
+  0% {
+    left: -112px;
+  }
+  100% {
+    left: -62px;
+  }
+}
+@-moz-keyframes revealActionMenu {
+  0% {
+    bottom: -88px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+@-webkit-keyframes revealActionMenu {
+  0% {
+    bottom: -88px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+@-o-keyframes revealActionMenu {
+  0% {
+    bottom: -88px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+@keyframes revealActionMenu {
+  0% {
+    bottom: -88px;
+  }
+  100% {
+    bottom: 0px;
   }
 }

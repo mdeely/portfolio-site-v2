@@ -53,6 +53,16 @@ navItemStyles() {
     100% { transform: translate(0px,0px); }
 }
 
+@keyframes revealSideMenu {
+    0% { left: -112px; }
+  100% { left: -62px;  }
+}
+
+@keyframes revealActionMenu {
+    0% { bottom: -88px; }
+  100% { bottom: 0px;  }
+}
+
 // Variables
 
 $blue   = #92C3FF;
@@ -1028,7 +1038,6 @@ nav.masthead {
 
     .action-wrapper {
         position: fixed;
-        bottom: 0;
         right: 0;
 
         .action {
@@ -1120,12 +1129,9 @@ nav.masthead {
         }
     }
 
-
-
     .side_menu {
         z-index: 10;
         width: 112px;
-        left: -62px;
         position: fixed;
         top: 0;
         bottom: 0;
@@ -1203,10 +1209,10 @@ nav.masthead {
         }
 
         .menu-toggle {
-            left: 12px;
+            right: 14px;
             top: 26px;
             opacity: 1;
-            position: fixed;
+            position: absolute;
             transition all .2s ease-in-out .2s;
         }
     }
@@ -1221,7 +1227,6 @@ nav.masthead {
         background: -moz-linear-gradient(top,  rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
         background: -webkit-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(to bottom,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
 
         span {
             color: #fff;
@@ -1248,4 +1253,34 @@ nav.masthead {
         transition: background-image .25s ease-in-out, background-size .25s ease-in-out;
         -webkit-tap-highlight-color: transparent;
     }
+}
+
+.photography-wrapper {
+    &.no-js {
+        .side_menu {
+            left: -62px;
+        }
+        .masthead > * {
+            opacity: 1;
+        }
+        .action-wrapper {
+            bottom: -0px;
+        }
+    }
+    &.animate {
+        .side_menu {
+            left: -112px;
+            animation: revealSideMenu 1s forwards;
+            animation-delay: 1s;
+        }
+        // .masthead > * {
+        //     opacity: 0 !important;
+        // }
+        .action-wrapper {
+            bottom: -88px;
+            animation: revealActionMenu 2s forwards;
+            animation-delay: 2s;
+        }
+    }
+
 }

@@ -1,4 +1,7 @@
 $(document).ready(function() {
+    $body = $('body')
+    $body.removeClass("no-js").addClass('animate');
+
     init();
 
     function init() {
@@ -13,7 +16,6 @@ $(document).ready(function() {
     };
 
     function gatherNodes() {
-      $body = $('body'),
       this.$menuTrigger     = $('.menu-trigger');
       this.$menuFader       = $('.menu-fader');
       this.$projectFilters  = $('li.design, li.code');
@@ -47,13 +49,19 @@ $(document).ready(function() {
     }
 
     function photographyInit() {
-      if ( $(".photography-wrapper").length ) {
+      if ( $body.hasClass("photography-wrapper") ) {
+
+        revealMenuItems();
         setDisplayPhoto();
         detectKeyPressPhotos();
         observeFbMenu();
         // Hides annoying "Loading" text on mobile when swiping up
         $.mobile.loading().hide();
       }
+    }
+
+    function revealMenuItems() {
+
     }
 
     function observeFbMenu() {
@@ -86,6 +94,9 @@ $(document).ready(function() {
     }
 
     function enableFbLike() {
+      if ( $('#fb-like-icon').attr('data-state') == 'open' ) {
+        showFbLikeMenu();
+      }
       $('#fb-like-icon').removeClass('disabled');
     }
 
@@ -181,23 +192,20 @@ $(document).ready(function() {
             $keyPressed == 39 || // right
             $keyPressed == 40 || // down
             $keyPressed == 13 || // enter
-            $keyPressed == 9  || // tab
             $keyPressed == 70 || // f
             $keyPressed == 32    // space
           )
         {
-
           if ($keyPressed == 37 || $keyPressed == 38) {
             generatePreviousIndex();
           }
           else if ($keyPressed == 39 ||
                    $keyPressed == 40 ||
-                   $keyPressed == 9  ||
-                   $keyPressed == 13)
+                   $keyPressed == 32)
           {
             generateNextIndex();
           }
-          else if ($keyPressed == 32 || $keyPressed == 70) {
+          else if ($keyPressed == 13 || $keyPressed == 70) {
             handleBgPhotoDisplay();
           }
 
@@ -344,6 +352,12 @@ $(document).ready(function() {
       $('meta[property=og\\:image]').attr('content', src);
       $(".fb-like").attr( "data-href", url);
 
+      if ( $(this.$fbLikeIcon).hasClass('open') ) {
+        $(this.$fbLikeIcon).attr('data-state', 'open');
+      }
+      else {
+        $(this.$fbLikeIcon).attr('data-state', '');
+      }
       $(this.$fbLikeIcon).removeClass('open');
 
       setFbLike(url);
@@ -468,7 +482,7 @@ $(document).ready(function() {
       }
 
     function toggleNoScroll() {
-      $('body').toggleClass('no-scroll');
+      $body.toggleClass('no-scroll');
     }
 
     function toggleMenuClasses() {
