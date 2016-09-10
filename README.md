@@ -17,16 +17,18 @@ TODO:
     - Change scroll position to active photo
     - Preload image on hover but only after hovering over them for a certain period of time
     - On load, pop in Logo, then Side Menu, then Actions
-    - Swap SPACEBAR and ENTER functions
-    - Change width of scrollbar
 
-- Other
+
+- Must Do Before Announcing:
     - Handle bad urls
-    - Use webkite prefix for animations
+    - Add Contact and Social links
+    - Reduce image file sizes
+    - Add Copyright info
 
-- Photos
-    - CT7A4337 - Ferris Wheel pic is too pink. Colors just off.
-    - CT7A5077 - Street Lamp Milan - Make less pink. More Blue?
-    - CT7A2678-Pano - Kerry Water - Make more colorful
-    - CT7A5701 - Trees - Make straighter if possible
-    - CT7A5656 - Up North Black Water - Maybe use a higher shutter speed pic
+    - Photos
+        - CT7A4337 - Ferris Wheel pic is too pink. Colors just off.
+        - CT7A5077 - Street Lamp Milan - Make less pink. More Blue?
+        - CT7A2678-Pano - Kerry Water - Make more colorful
+        - CT7A5701 - Trees - Make straighter if possible
+        - CT7A5656 - Up North Black Water - Maybe use a higher shutter speed pic
+
