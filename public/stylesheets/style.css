@@ -1326,6 +1326,7 @@ nav.masthead ul li a {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   cursor: intial;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
