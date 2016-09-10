@@ -1,6 +1,5 @@
 $(document).ready(function() {
     $body = $('body')
-    $body.removeClass("no-js").addClass('animate');
 
     init();
 
