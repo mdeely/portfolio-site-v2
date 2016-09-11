@@ -1311,6 +1311,7 @@ nav.masthead {
                 font-size: 12px;
                 letter-spacing: 1px;
                 height: 0;
+                -webkit-tap-highlight-color: transparent;
 
                 li  {
                     border-bottom: 1px solid alpha(white, .15);
@@ -1324,6 +1325,12 @@ nav.masthead {
                         padding: 18px;
                         display: block;
                         color: white;
+                        -webkit-tap-highlight-color: transparent;
+                        -webkit-touch-callout: none; /* iOS Safari */
+                        -webkit-user-select: none;   /* Chrome/Safari/Opera */
+                        -khtml-user-select: none;    /* Konqueror */
+                        -moz-user-select: none;      /* Firefox */
+                        -ms-user-select: none;       /* Internet Explorer/Edge */
 
                         &:hover {
                             background-color: alpha(black, .3);
