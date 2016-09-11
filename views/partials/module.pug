@@ -32,17 +32,25 @@ mixin masthead(hero, project)
         nav.masthead.project-header
             .hero(style='background-color:'+project.theme)
     - else
-        nav.masthead
-            ul
+        nav.masthead.nav-header
+            ul.nav-header
                 li.design(data-type="Design"): a
                 li.name(data-type="About"): a(href="/about")
                 li.code(data-type="Code"): a
 
 mixin photography_masthead()
-    nav.masthead
-        a(href="/" data-ajax="false")
+    nav.masthead.photography
+        .logo-container
+            a(href="/" data-ajax="false")
             img(src="../images/icons/name_white.svg" height="24px" width="auto")
-        span Photography
+            span Photography
+            ul.menu
+                li
+                    a(href="https://www.instagram.com/marcusdeely/" target="_blank") Instagram
+                li
+                    a(href="https://www.linkedin.com/in/marcdeely" target="_blank") LinkedIn
+                li
+                    a(href="mailto:themarcusdeely@gmail.com") Contact
 
 mixin photography_navigation()
     .side_menu

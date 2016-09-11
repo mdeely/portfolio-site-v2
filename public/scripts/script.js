@@ -28,6 +28,7 @@ $(document).ready(function() {
       this.$bgPhotoDisplay  = $('.bg-photo-display');
       this.$preloadedImg    = $(".preload-image-container");
       this.$fbLikeIcon      = $("#fb-like-icon");
+      this.$logoContainer   = $(".logo-container");
       // this.$fbLikeIframe    = $("#fb-like-icon iframe");
     }
 
@@ -42,9 +43,21 @@ $(document).ready(function() {
       $( window                 ).bind( 'swipeleft', generateNextIndex);
       $( window                 ).bind( 'swiperight', generatePreviousIndex);
       $( this.$heroPhoto        ).bind( 'click', handleMenuAndDisplay);
+      $( this.$heroPhoto        ).bind( 'click', handleLogoMenu);
       $( this.$bgPhotoDisplay   ).bind( 'click', handleBgPhotoDisplay);
       $( this.$photoDrawerImgs  ).bind( 'mouseenter', preloadImageOnHover);
       $( this.$fbLikeIcon       ).bind( 'click', handleFbLikeMenu);
+      $( this.$logoContainer    ).bind( 'click', openLogoMenu);
+    }
+
+    function handleLogoMenu() {
+      if ( $("ul.menu").hasClass("open") ) {
+        $("ul.menu").removeClass("open");
+      }
+    }
+
+    function openLogoMenu() {
+      $("ul.menu").toggleClass("open");
     }
 
     function photographyInit() {

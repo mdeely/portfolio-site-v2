@@ -17,10 +17,11 @@ TODO:
     - Change scroll position to active photo
     - Preload image on hover but only after hovering over them for a certain period of time
     - On load, pop in Logo, then Side Menu, then Actions
+    - Prevent default not working in Firefox
+    - Also menu on main site doesn't activate in Firefox
 
 
 - Must Do Before Announcing:
-    - Add Contact and Social links
     - Reduce image file sizes
     - Add Copyright info
     - Handle bad urls
