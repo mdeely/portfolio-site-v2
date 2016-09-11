@@ -51,13 +51,13 @@ $(document).ready(function() {
     }
 
     function handleLogoMenu() {
-      if ( $("ul.menu").hasClass("open") ) {
-        $("ul.menu").removeClass("open");
+      if ( $(".logo-container").hasClass("open") ) {
+        $(".logo-container").removeClass("open");
       }
     }
 
     function openLogoMenu() {
-      $("ul.menu").toggleClass("open");
+      $(this).toggleClass("open");
     }
 
     function photographyInit() {
@@ -327,7 +327,7 @@ $(document).ready(function() {
     }
 
     function selectPhoto(image) {
-      event.preventDefault();
+      image.preventDefault();
 
       var image = $(image.target)
       showPhoto(image);

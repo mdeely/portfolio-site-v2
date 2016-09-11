@@ -1453,6 +1453,9 @@ nav.masthead ul.nav-header li a {
   position: absolute;
   top: 0;
   right: -22px;
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
 }
 .photography-wrapper .masthead .logo-container span {
   color: #fff;
@@ -1463,6 +1466,7 @@ nav.masthead ul.nav-header li a {
   letter-spacing: 1.5px;
   vertical-align: super;
 }
+.photography-wrapper .masthead .logo-container.open ul.menu,
 .photography-wrapper .masthead .logo-container:hover ul.menu {
   top: 16px;
   opacity: 1;
@@ -1475,6 +1479,12 @@ nav.masthead ul.nav-header li a {
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+}
+.photography-wrapper .masthead .logo-container.open:after,
+.photography-wrapper .masthead .logo-container:hover:after {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
 }
 .photography-wrapper .masthead .logo-container ul.menu {
   opacity: 0;
@@ -1502,6 +1512,7 @@ nav.masthead ul.nav-header li a {
   font-size: 12px;
   letter-spacing: 1px;
   height: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 .photography-wrapper .masthead .logo-container ul.menu li {
   border-bottom: 1px solid rgba(255,255,255,0.15);
@@ -1514,25 +1525,18 @@ nav.masthead ul.nav-header li a {
   padding: 18px;
   display: block;
   color: #fff;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
 }
 .photography-wrapper .masthead .logo-container ul.menu li a:hover {
   background-color: rgba(0,0,0,0.3);
 }
 .photography-wrapper .masthead .logo-container ul.menu li a:active {
   background-color: rgba(0,0,0,0.4);
-}
-.photography-wrapper .masthead .logo-container ul.menu.open {
-  top: 16px;
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
-  pointer-events: all;
-  height: auto;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
 }
 .photography-wrapper .container.photography {
   background-repeat: no-repeat;

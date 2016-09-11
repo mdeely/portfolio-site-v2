@@ -1268,6 +1268,7 @@ nav.masthead {
                 position: absolute;
                 top: 0;
                 right: -22px;
+                opacity: .6;
             }
 
             span {
@@ -1288,8 +1289,15 @@ nav.masthead {
                 transition: all .2s ease-in-out;
             }
 
-            &:hover ul.menu {
-                logoMenuOpen();
+            &.open,
+            &:hover {
+                ul.menu {
+                    logoMenuOpen();
+                }
+
+                &:after {
+                    opacity: 1;
+                }
             }
 
             ul.menu {
@@ -1340,10 +1348,6 @@ nav.masthead {
                             background-color: alpha(black, .4);
                         }
                     }
-                }
-
-                &.open {
-                    logoMenuOpen();
                 }
             }
         }
