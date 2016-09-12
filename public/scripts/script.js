@@ -128,20 +128,22 @@ $(document).ready(function() {
 
     function getPhotoNameFromPathname() {
       var pathnameString = window.location.pathname;
-      var photoName = pathnameString.replace('/photography/','');
+      var photoName = pathnameString.substr(pathnameString.lastIndexOf('/') + 1);
       return photoName;
     }
 
     function getIndexFromPhotoName(photoName) {
-      var element = "a[href='/photography/"+photoName+"']";
+      var element = "a[href*='"+photoName+"']";
       var image   = $(this.$sideMenu).find(element).children('img');
       var index   = $(image).attr('data-img-index');
       return index;
     }
 
     function isPhotoNamePresentInUrl() {
-      var origin = window.location.origin;
-      if ( window.location.href === (origin+"/photography") ) {
+      var pathName = window.location.pathname;
+      var photoName = pathName.substr(pathName.lastIndexOf('/') + 1);
+
+      if ( photoName === "photography" ) {
         return false
       }
       else {
@@ -226,6 +228,8 @@ $(document).ready(function() {
     }
 
     function generatePreviousIndex() {
+      handleLogoMenu();
+
       var currentIndex = getCurrentIndex();
 
       if (currentIndex == 0) {
@@ -238,6 +242,8 @@ $(document).ready(function() {
     }
 
     function generateNextIndex() {
+      handleLogoMenu();
+
       var currentIndex = getCurrentIndex();
       var lastIndex = getLastIndex();
       var lastIndex = (lastIndex - 1);
@@ -294,16 +300,19 @@ $(document).ready(function() {
 
     function getCurrentIndex() {
       var currentImage = $(this.$sideMenu).find(".active");
+      var currentIndex = $(currentImage).attr('data-img-index');
 
-      if ( $(currentImage).is(":first") ) {
+      var lastIndex = getLastIndex();
+      var lastIndex = --lastIndex;
+
+      if ( currentIndex == 0 ) {
         return false
       }
-      else if ( $(currentImage).is(":last") ) {
+      else if ( currentIndex == lastIndex ) {
         var currentIndex = -1;
         return currentIndex;
       }
       else {
-        var currentIndex = $(currentImage).attr("data-img-index");
         return currentIndex;
       }
     }
@@ -326,10 +335,10 @@ $(document).ready(function() {
       $(this).addClass('open');
     }
 
-    function selectPhoto(image) {
-      image.preventDefault();
+    function selectPhoto(anchor) {
+      anchor.preventDefault();
 
-      var image = $(image.target)
+      var image = $(anchor.target);
       showPhoto(image);
     }
 

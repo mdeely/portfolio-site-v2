@@ -411,7 +411,7 @@ nav.masthead {
             &:nth-child(3n) { animation: hover 20s ease-in-out infinite alternate; }
 
             &.name {
-                background-image: url("../images/icons/name.svg");
+                background-image: url("/images/icons/name.svg");
                 font-size: 2em;
                 margin: 6px 4%;
                 width: 100px;
@@ -453,11 +453,11 @@ nav.masthead {
             }
 
             &.design {
-                background-image: url("../images/icons/design-filter.png");
+                background-image: url("/images/icons/design-filter.png");
             }
 
             &.code {
-                background-image: url("../images/icons/code-filter.png");
+                background-image: url("/images/icons/code-filter.png");
                 background-size: 52%;
             }
 
@@ -1051,7 +1051,7 @@ nav.masthead {
             }
 
             &#fb-like-icon {
-                background-image: url("../images/icons/fb-like-icon.svg");
+                background-image: url("/images/icons/fb-like-icon.svg");
                 position: relative;
                 transition: all .2s ease-in-out;
 
@@ -1096,11 +1096,11 @@ nav.masthead {
             &.bg-photo-display {
 
                 &.fill-screen {
-                    background-image: url("../images/icons/collapse.svg");
+                    background-image: url("/images/icons/collapse.svg");
                 }
 
                 &.show-all {
-                    background-image: url("../images/icons/expand.svg");
+                    background-image: url("/images/icons/expand.svg");
                 }
             }
 
@@ -1120,12 +1120,10 @@ nav.masthead {
         }
     }
 
-
-
     .side_menu {
         z-index: 10;
-        width: 112px;
-        left: -62px;
+        width: 124px;
+        left: -70px;
         position: fixed;
         top: 0;
         bottom: 0;
@@ -1150,6 +1148,16 @@ nav.masthead {
             background-color: alpha(white, .5);
         }
 
+        .album-switcher {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+            margin: 8px;
+            padding: 12px 0 6px 0;
+            border-bottom: 1px solid alpha(white, .5);
+        }
+
+        .album-switcher,
         .photo-drawer {
             opacity: 0;
             transition all .2 ease-in-out;
@@ -1173,6 +1181,7 @@ nav.masthead {
                 transition all .2s ease-in-out;
             }
 
+            .album-switcher,
             .photo-drawer {
                 opacity: 1;
                 transition all .2s ease-in-out;
@@ -1235,6 +1244,7 @@ nav.masthead {
         top: 0;
         left: 0;
         right: 0;
+        pointer-events: none;
 
         &:before {
             content: "";
@@ -1255,12 +1265,13 @@ nav.masthead {
             cursor: pointer;
             position: relative;
             display: inline-block;
+            pointer-events: all;
 
             &:after {
                 content: "";
                 padding: 6px;
                 margin: 6px;
-                background-image: url("../images/icons/dropdown_arrow.svg");
+                background-image: url("/images/icons/dropdown_arrow.svg");
                 background-repeat: no-repeat;
                 background-size: 80%;
                 background-position: center;

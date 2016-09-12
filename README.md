@@ -11,7 +11,7 @@ Images for Photography
     - Quality to 20%
 
 
-TODO:
+## TODO:
 - Javascript
     - Generate image index based on iteration not position in db
     - Change scroll position to active photo
@@ -19,6 +19,24 @@ TODO:
     - On load, pop in Logo, then Side Menu, then Actions
     - Prevent default not working in Firefox
     - Also menu on main site doesn't activate in Firefox
+
+##Albums:
+    - Album names have dashs so remove dashed before displaying
+    - photography/:album
+        - Display all photos in album
+        - Generate all album HTML but hide other albums
+    - photography/:album/:photoname
+        - Set bg to particular photo within album
+        - Generate but hide all other albums
+    - /photography
+        - Show all albums and let random photo get generated from all
+    - Show all albums in drawer and change url to photogrpahy if someone choose "Show All Photos"
+
+    - How do I switch between albums?
+    - How do I know what album I'm currently on?
+    - How do I share albums?
+    - What does FB Share preview look like when sharing albums?
+- Update DB so file name is the "ID" and all othe properties lie within it.
 
 
 - Must Do Before Announcing:

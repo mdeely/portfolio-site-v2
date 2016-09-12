@@ -42,7 +42,7 @@ mixin photography_masthead()
     nav.masthead.photography
         .logo-container
             a(href="/" data-ajax="false")
-            img(src="../images/icons/name_white.svg" height="24px" width="auto")
+            img(src="/images/icons/name_white.svg" height="24px" width="auto")
             span Photography
             ul.menu
                 li
@@ -54,7 +54,8 @@ mixin photography_masthead()
 
 mixin photography_navigation()
     .side_menu
-        img.menu-toggle(src="../images/icons/menu.svg" height="16px" width="auto")
+        img.menu-toggle(src="/images/icons/menu.svg" height="16px" width="auto")
+        .album-switcher #{albumName}
         +photographyCollection(photography)
 
 mixin listProjects()
@@ -90,15 +91,22 @@ mixin imageCollection(project)
 mixin photographyCollection(photos)
     - if (photos.images.collection && photos.images.collection.length)
     .photo-drawer
-        each image, index in photos.images.collection
-            - if ( image.display === true || image.display === undefined)
-                - var name     = photos.name
-                - var fileName = image.fileName
-                - var filePath = (name+"/"+fileName)
-                - var imgTitle = image.title || "Photograph by Marc Deely"
+        - var index = 0
+        each albumName in albumNames
+            - var albumNameFormatted = albumName.replace('-',' ')
+            h3 #{albumNameFormatted}
+            each image in photos.images.collection
+                - var album    = image.album
+                - if (album == albumName)
+                    - var name     = photos.name
+                    - var fileName = image.fileName
+                    - var filePath = (name+"/"+fileName)
+                    - var imgTitle = image.title || "Photograph by Marc Deely"
 
-                a(href='/photography/'+fileName rel="external" data-ajax="false")
-                    img(alt=imgTitle title=imgTitle data-img-index=index style="100px" src="https://s3.amazonaws.com/mdeely-portfolio-assets/images/"+filePath+"-sm.jpg")
+                    a(href='/photography/'+album+'/'+fileName rel="external" data-ajax="false" data-album=album)
+                        img(alt=imgTitle title=imgTitle data-img-index=index style="100px" src="https://s3.amazonaws.com/mdeely-portfolio-assets/images/"+filePath+"-sm.jpg")
+
+                    - var index = ++index
 
 
 mixin scrollToTop

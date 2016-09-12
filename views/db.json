@@ -9,291 +9,363 @@
             "collection": [
                 {
                     "fileName":"ireland-1",
-                    "title":"Cloudy Trail - Ireland"
+                    "title":"Cloudy Trail - Ireland",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"hore-abbey",
-                    "title":"Hore Abbey in Cashel, Ireland"
+                    "title":"Hore Abbey in Cashel, Ireland",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"mcgregor-bay-frog",
-                    "title":"McGregor Bay Frog"
+                    "title":"McGregor Bay Frog",
+                    "album":"canada"
                 },
                 {
                     "fileName":"skellig-from-far",
-                    "title":"Skellig Through Grass"
+                    "title":"Skellig Through Grass",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"splashing-water-ireland",
-                    "title":"Splashing Water, Ireland"
+                    "title":"Splashing Water, Ireland",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"matt-water",
-                    "title":"Beach On Skellig Trail"
+                    "title":"Beach On Skellig Trail",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"CT7A3291",
-                    "title":"Red Basket - Amsterdam"
+                    "title":"Red Basket - Amsterdam",
+                    "album":"amsterdam"
                 },
                 {
                     "fileName":"CT7A3312",
-                    "title":"Cafe Hesp, Amsterdam"
+                    "title":"Cafe Hesp, Amsterdam",
+                    "album":"amsterdam"
                 },
                 {
                     "fileName":"CT7A3792",
-                    "title":"Sacré-Coeur Basilica, Paris"
+                    "title":"Sacré-Coeur Basilica, Paris",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A3776",
-                    "title":"Angels In Sacré-Coeur Basilica"
+                    "title":"Angels In Sacré-Coeur Basilica",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A4660",
-                    "title":"Republique Square, Paris"
+                    "title":"Republique Square, Paris",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A2749",
-                    "title":"Kerry Cove"
+                    "title":"Kerry Cove",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"CT7A2326",
-                    "title":"Winding Road, Ireland"
+                    "title":"Winding Road, Ireland",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"CT7A2826",
-                    "title":"Rocks & Wave"
+                    "title":"Rocks & Wave",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"CT7A2827",
-                    "title":"Jagged Beach Rocks"
+                    "title":"Jagged Beach Rocks",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"CT7A2841",
-                    "title":"Saint In Stone"
+                    "title":"Saint In Stone",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"CT7A2869-Pano",
-                    "title":"Blank Sky"
+                    "title":"Blank Sky",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"CT7A2890-Pano",
-                    "title":"Split Road"
+                    "title":"Split Road",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"CT7A3811",
-                    "title":"Sacré-Coeur Basilica, Paris"
+                    "title":"Sacré-Coeur Basilica, Paris",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A3894",
-                    "title":"Man In Park - Paris"
+                    "title":"Man In Park - Paris",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A3946",
-                    "title":"Underside Of Eiffel Tower"
+                    "title":"Underside Of Eiffel Tower",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A3956",
-                    "title":"Street View - Eiffel Tower"
+                    "title":"Street View - Eiffel Tower",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A4610",
-                    "title":"Parisian Park"
+                    "title":"Parisian Park",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A4165",
-                    "title":"Musée de l'Armée"
+                    "title":"Musée de l'Armée",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A4180",
-                    "title":"Bannister At Musée de l'Armée"
+                    "title":"Bannister At Musée de l'Armée",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A4210",
-                    "title":"Statue In Garden"
+                    "title":"Statue In Garden",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A4111",
-                    "title":"Musée de l'Armée"
+                    "title":"Musée de l'Armée",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A4329",
-                    "title":"Tunnel Under Arc De Triomph"
+                    "title":"Tunnel Under Arc De Triomph",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A4375",
-                    "title":"Statue In Arc De Triomph"
+                    "title":"Statue In Arc De Triomph",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A4379",
-                    "title":"Stairs to Arc De Triomph"
+                    "title":"Stairs to Arc De Triomph",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A4392",
-                    "title":"Engravings in Arc De Triomph"
+                    "title":"Engravings in Arc De Triomph",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A4404",
-                    "title":"Arc De Triomph"
+                    "title":"Arc De Triomph",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A4519",
-                    "title":"Le Louvre Pyramid"
+                    "title":"Le Louvre Pyramid",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A2705",
-                    "title":"Water & Land, Kerry"
+                    "title":"Water & Land, Kerry",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"CT7A3051",
-                    "title":"Irish Landscape"
+                    "title":"Irish Landscape",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"CT7A4587-Pano",
-                    "title":"Parisian Apartments"
+                    "title":"Parisian Apartments",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A2627",
-                    "title":"Looking Out To Skellig Michael"
+                    "title":"Looking Out To Skellig Michael",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"CT7A5179",
-                    "title":"St. Bartholomew, Duomo Di Milano"
+                    "title":"St. Bartholomew, Duomo Di Milano",
+                    "album":"milan"
                 },
                 {
                     "fileName":"CT7A5190",
-                    "title":"Building Adjacent Duomo di Milan"
+                    "title":"Building Adjacent Duomo di Milan",
+                    "album":"milan"
                 },
                 {
                     "fileName":"CT7A3600",
-                    "title":"Bike & Bird"
+                    "title":"Bike & Bird",
+                    "album":"amsterdam"
                 },
                 {
                     "fileName":"CT7A3480",
-                    "title":"Tree In Park - Amsterdam"
+                    "title":"Tree In Park - Amsterdam",
+                    "album":"amsterdam"
                 },
                 {
                     "fileName":"CT7A2397",
-                    "title":"Cows - Ireland"
+                    "title":"Cows - Ireland",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"CT7A3590",
-                    "title":"While My Guitar Gently Weeps - Amsterdam"
+                    "title":"While My Guitar Gently Weeps - Amsterdam",
+                    "album":"amsterdam"
                 },
                 {
                     "fileName":"CT7A3592",
-                    "title":"Marching Bird - Amsterdam"
+                    "title":"Marching Bird - Amsterdam",
+                    "album":"amsterdam"
                 },
                 {
                     "fileName":"CT7A4360",
-                    "title":"View From Arc De Triomph"
+                    "title":"View From Arc De Triomph",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A4353",
-                    "title":"Eiffel Tower from Arc De Triomph"
+                    "title":"Eiffel Tower from Arc De Triomph",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A4337",
-                    "title":"Ferris Wheel from Arc De Triomph"
+                    "title":"Ferris Wheel from Arc De Triomph",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A3607",
-                    "title":"Apartment Stairwell - Amsterdam"
+                    "title":"Apartment Stairwell - Amsterdam",
+                    "album":"amsterdam"
                 },
                 {
                     "fileName":"CT7A5149",
-                    "title":"Stained Glass Windows In Duomo"
+                    "title":"Stained Glass Windows In Duomo",
+                    "album":"milan"
                 },
                 {
                     "fileName":"CT7A4980",
-                    "title":"Aerial View From Duomo"
+                    "title":"Aerial View From Duomo",
+                    "album":"milan"
                 },
                 {
                     "fileName":"CT7A5077",
-                    "title":"Street At Night - Milan"
+                    "title":"Street At Night - Milan",
+                    "album":"milan"
                 },
                 {
                     "fileName":"CT7A5188",
-                    "title":"Stone Carving In Duomo"
+                    "title":"Stone Carving In Duomo",
+                    "album":"milan"
                 },
                 {
                     "fileName":"CT7A5083",
-                    "title":"Bombed Church from Word War II - Milan"
+                    "title":"Bombed Church from Word War II - Milan",
+                    "album":"milan"
                 },
                 {
                     "fileName":"CT7A5207",
-                    "title":"Sunset - Milan"
+                    "title":"Sunset - Milan",
+                    "album":"milan"
                 },
                 {
                     "fileName":"CT7A5260",
-                    "title":"Trolly - Milan"
+                    "title":"Trolly - Milan",
+                    "album":"milan"
                 },
                 {
                     "fileName":"CT7A2686",
-                    "title":"Kerry Cliffs - Ireland"
+                    "title":"Kerry Cliffs - Ireland",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"CT7A2688",
-                    "title":"Water Illusion - Ireland"
+                    "title":"Water Illusion - Ireland",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"CT7A2678-Pano",
-                    "title":"Water At Cliffs Of Kerry - Ireland"
+                    "title":"Water At Cliffs Of Kerry - Ireland",
+                    "album":"ireland"
                 },
                 {
                     "fileName":"CT7A3651",
-                    "title":"Alley - Amsterdam"
+                    "title":"Alley - Amsterdam",
+                    "album":"amsterdam"
                 },
                 {
                     "fileName":"CT7A4369-Pano",
-                    "title":"Basilica From Arc De Triomph"
+                    "title":"Basilica From Arc De Triomph",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A5701",
-                    "title":"Woods - Three Lakes"
+                    "title":"Woods - Three Lakes",
+                    "album":"up-north"
                 },
                 {
                     "fileName":"CT7A5656",
-                    "title":"Black Water - Three Lakes"
+                    "title":"Black Water - Three Lakes",
+                    "album":"up-north"
                 },
                 {
                     "fileName":"CT7A5631",
-                    "title":"Scary Branch - Three Lakes"
+                    "title":"Scary Branch - Three Lakes",
+                    "album":"up-north"
                 },
                 {
                     "fileName":"CT7A5570",
-                    "title":"Lillies - Three Lakes"
+                    "title":"Lillies - Three Lakes",
+                    "album":"up-north"
                 },
                 {
                     "fileName":"CT7A5565",
-                    "title":"Dark Lake - Three Lakes"
+                    "title":"Dark Lake - Three Lakes",
+                    "album":"up-north"
                 },
                 {
                     "fileName":"CT7A5564",
-                    "title":"Canoes - Three Lakes"
+                    "title":"Canoes - Three Lakes",
+                    "album":"up-north"
                 },
                 {
                     "fileName":"CT7A5541",
-                    "title":"Buoy - Three Lakes"
+                    "title":"Buoy - Three Lakes",
+                    "album":"up-north"
                 },
                 {
                     "fileName":"CT7A5456",
-                    "title":"Pat & Smoke - Three Lakes"
+                    "title":"Pat & Smoke - Three Lakes",
+                    "album":"up-north"
                 },
                 {
                     "fileName":"CT7A5408",
-                    "title":"Jack & FIre - Eagle River"
+                    "title":"Jack & FIre - Eagle River",
+                    "album":"up-north"
                 },
                 {
                     "fileName":"CT7A2038",
-                    "title":"Water & Rocks - Milwaukee"
+                    "title":"Water & Rocks - Milwaukee",
+                    "album":"milwaukee"
                 },
                 {
                     "fileName":"CT7A2119",
-                    "title":"Tree Bark - Milwaukee"
+                    "title":"Tree Bark - Milwaukee",
+                    "album":"milwaukee"
                 },
                 {
                     "fileName":"CT7A2094",
-                    "title":"Posing Sticks - Milwaukee"
+                    "title":"Posing Sticks - Milwaukee",
+                    "album":"milwaukee"
                 }
             ]
         }

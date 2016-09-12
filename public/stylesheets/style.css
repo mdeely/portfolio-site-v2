@@ -571,7 +571,7 @@ nav.masthead ul.nav-header li:nth-child(3n) {
   animation: hover 20s ease-in-out infinite alternate;
 }
 nav.masthead ul.nav-header li.name {
-  background-image: url("../images/icons/name.svg");
+  background-image: url("/images/icons/name.svg");
   font-size: 2em;
   margin: 6px 4%;
   width: 100px;
@@ -623,10 +623,10 @@ nav.masthead ul.nav-header li.design:hover:after {
   transition: all 0.2s ease-out;
 }
 nav.masthead ul.nav-header li.design {
-  background-image: url("../images/icons/design-filter.png");
+  background-image: url("/images/icons/design-filter.png");
 }
 nav.masthead ul.nav-header li.code {
-  background-image: url("../images/icons/code-filter.png");
+  background-image: url("/images/icons/code-filter.png");
   -webkit-background-size: 52%;
   -moz-background-size: 52%;
   background-size: 52%;
@@ -1200,7 +1200,7 @@ nav.masthead ul.nav-header li a {
   transition: background-color 0.1s ease-in-out;
 }
 .photography-wrapper .action-wrapper .action#fb-like-icon {
-  background-image: url("../images/icons/fb-like-icon.svg");
+  background-image: url("/images/icons/fb-like-icon.svg");
   position: relative;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -1265,15 +1265,15 @@ nav.masthead ul.nav-header li a {
   transition: all 0.2s ease-in-out;
 }
 .photography-wrapper .action-wrapper .action.bg-photo-display.fill-screen {
-  background-image: url("../images/icons/collapse.svg");
+  background-image: url("/images/icons/collapse.svg");
 }
 .photography-wrapper .action-wrapper .action.bg-photo-display.show-all {
-  background-image: url("../images/icons/expand.svg");
+  background-image: url("/images/icons/expand.svg");
 }
 .photography-wrapper .side_menu {
   z-index: 10;
-  width: 112px;
-  left: -62px;
+  width: 124px;
+  left: -70px;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -1301,6 +1301,15 @@ nav.masthead ul.nav-header li a {
   border-radius: 10px;
   background-color: rgba(255,255,255,0.5);
 }
+.photography-wrapper .side_menu .album-switcher {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+  margin: 8px;
+  padding: 12px 0 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+.photography-wrapper .side_menu .album-switcher,
 .photography-wrapper .side_menu .photo-drawer {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -1311,6 +1320,7 @@ nav.masthead ul.nav-header li a {
   -ms-transition: all 0.2 ease-in-out;
   transition: all 0.2 ease-in-out;
 }
+.photography-wrapper .side_menu .album-switcher a,
 .photography-wrapper .side_menu .photo-drawer a {
   pointer-events: none;
 }
@@ -1340,6 +1350,7 @@ nav.masthead ul.nav-header li a {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
+.photography-wrapper .side_menu.open .album-switcher,
 .photography-wrapper .side_menu.open .photo-drawer {
   opacity: 1;
   -ms-filter: none;
@@ -1350,16 +1361,20 @@ nav.masthead ul.nav-header li a {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
+.photography-wrapper .side_menu.open .album-switcher a,
 .photography-wrapper .side_menu.open .photo-drawer a {
   display: block;
   margin: 4px 8px;
 }
+.photography-wrapper .side_menu.open .album-switcher a:first-child,
 .photography-wrapper .side_menu.open .photo-drawer a:first-child {
   margin-top: 8px;
 }
+.photography-wrapper .side_menu.open .album-switcher a:last-child,
 .photography-wrapper .side_menu.open .photo-drawer a:last-child {
   margin-bottom: 64px;
 }
+.photography-wrapper .side_menu.open .album-switcher a img,
 .photography-wrapper .side_menu.open .photo-drawer a img {
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -1371,6 +1386,7 @@ nav.masthead ul.nav-header li a {
   -ms-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
+.photography-wrapper .side_menu.open .album-switcher a img:hover,
 .photography-wrapper .side_menu.open .photo-drawer a img:hover {
   -webkit-box-shadow: 0 0px 1px 1px #92c3ff;
   box-shadow: 0 0px 1px 1px #92c3ff;
@@ -1380,10 +1396,12 @@ nav.masthead ul.nav-header li a {
   -ms-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
+.photography-wrapper .side_menu.open .album-switcher a img.active,
 .photography-wrapper .side_menu.open .photo-drawer a img.active {
   -webkit-box-shadow: 0 0px 1px 1px #2d8bff;
   box-shadow: 0 0px 1px 1px #2d8bff;
 }
+.photography-wrapper .side_menu.open .album-switcher a,
 .photography-wrapper .side_menu.open .photo-drawer a {
   pointer-events: all;
 }
@@ -1407,6 +1425,7 @@ nav.masthead ul.nav-header li a {
   top: 0;
   left: 0;
   right: 0;
+  pointer-events: none;
 }
 .photography-wrapper .masthead:before {
   content: "";
@@ -1438,12 +1457,13 @@ nav.masthead ul.nav-header li a {
   cursor: pointer;
   position: relative;
   display: inline-block;
+  pointer-events: all;
 }
 .photography-wrapper .masthead .logo-container:after {
   content: "";
   padding: 6px;
   margin: 6px;
-  background-image: url("../images/icons/dropdown_arrow.svg");
+  background-image: url("/images/icons/dropdown_arrow.svg");
   background-repeat: no-repeat;
   -webkit-background-size: 80%;
   -moz-background-size: 80%;
