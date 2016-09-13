@@ -20,13 +20,14 @@ Images for Photography
     - Prevent default not working in Firefox
     - Also menu on main site doesn't activate in Firefox
 
+    -update meta desciption
+
 ##Albums:
     - Album names have dashs so remove dashed before displaying
     - photography/:album
         - Display all photos in album
         - Generate all album HTML but hide other albums
     - photography/:album/:photoname
-        - Set bg to particular photo within album
         - Generate but hide all other albums
     - /photography
         - Show all albums and let random photo get generated from all

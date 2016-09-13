@@ -1272,42 +1272,102 @@ nav.masthead ul.nav-header li a {
 }
 .photography-wrapper .side_menu {
   z-index: 10;
-  width: 124px;
-  left: -70px;
+  width: 172px;
+  left: -122px;
   position: fixed;
   top: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.25);
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   color: #fff;
-  overflow-y: hidden;
   cursor: pointer;
-}
-.photography-wrapper .side_menu::-webkit-scrollbar {
-  width: 4px;
-  padding: 10px;
-}
-.photography-wrapper .side_menu::-webkit-scrollbar-track {
-  background-color: transparent;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
-.photography-wrapper .side_menu::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  background-color: rgba(255,255,255,0.5);
 }
 .photography-wrapper .side_menu .album-switcher {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 13px;
-  margin: 8px;
-  padding: 12px 0 6px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.5);
+  padding: 20px 8px 14px 8px;
+  position: relative;
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.4);
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.4);
+}
+.photography-wrapper .side_menu .album-switcher:after {
+  content: "";
+  background-image: url("/images/icons/dropdown_arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: 50%;
+  -moz-background-size: 50%;
+  background-size: 50%;
+  width: 22px;
+  height: 22px;
+  top: 18px;
+  right: 0;
+  position: absolute;
+  margin-right: 8px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.photography-wrapper .side_menu .album-switcher.open:after {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.photography-wrapper .side_menu .album-switcher.open .album-list-container {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  pointer-events: all;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.photography-wrapper .side_menu .album-switcher.open .album-list-container a {
+  pointer-events: all;
+}
+.photography-wrapper .side_menu .album-switcher .album-list-container {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  pointer-events: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  position: fixed;
+  left: 172px;
+  right: 0;
+  top: 0;
+  width: 148px;
+  bottom: 0;
+  overflow-y: scroll;
+  background-color: rgba(0,0,0,0.55);
+  padding: 12px 0;
+}
+.photography-wrapper .side_menu .album-switcher .album-list-container a {
+  padding: 12px;
+  display: block;
+  color: #fff;
+}
+.photography-wrapper .side_menu .album-switcher .album-list-container a:hover {
+  background-color: rgba(0,0,0,0.65);
 }
 .photography-wrapper .side_menu .album-switcher,
 .photography-wrapper .side_menu .photo-drawer {
@@ -1324,6 +1384,28 @@ nav.masthead ul.nav-header li a {
 .photography-wrapper .side_menu .photo-drawer a {
   pointer-events: none;
 }
+.photography-wrapper .side_menu .photo-drawer {
+  height: 100%;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  overflow-y: scroll;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+}
+.photography-wrapper .side_menu .photo-drawer::-webkit-scrollbar {
+  width: 4px;
+  padding: 10px;
+}
+.photography-wrapper .side_menu .photo-drawer::-webkit-scrollbar-track {
+  background-color: transparent;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.photography-wrapper .side_menu .photo-drawer::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.5);
+}
 .photography-wrapper .side_menu:hover {
   background-color: rgba(0,0,0,0.25);
 }
@@ -1336,19 +1418,17 @@ nav.masthead ul.nav-header li a {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   cursor: intial;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
 }
 .photography-wrapper .side_menu.open .menu-toggle {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.05s ease-in-out;
+  -moz-transition: all 0.05s ease-in-out;
+  -o-transition: all 0.05s ease-in-out;
+  -ms-transition: all 0.05s ease-in-out;
+  transition: all 0.05s ease-in-out;
+  pointer-events: none;
 }
 .photography-wrapper .side_menu.open .album-switcher,
 .photography-wrapper .side_menu.open .photo-drawer {
@@ -1361,21 +1441,21 @@ nav.masthead ul.nav-header li a {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.photography-wrapper .side_menu.open .album-switcher a,
-.photography-wrapper .side_menu.open .photo-drawer a {
+.photography-wrapper .side_menu.open .album-switcher span > a,
+.photography-wrapper .side_menu.open .photo-drawer span > a {
   display: block;
   margin: 4px 8px;
 }
-.photography-wrapper .side_menu.open .album-switcher a:first-child,
-.photography-wrapper .side_menu.open .photo-drawer a:first-child {
-  margin-top: 8px;
+.photography-wrapper .side_menu.open .album-switcher span > a:first-child,
+.photography-wrapper .side_menu.open .photo-drawer span > a:first-child {
+  margin-top: 2px;
 }
-.photography-wrapper .side_menu.open .album-switcher a:last-child,
-.photography-wrapper .side_menu.open .photo-drawer a:last-child {
+.photography-wrapper .side_menu.open .album-switcher span > a:last-child,
+.photography-wrapper .side_menu.open .photo-drawer span > a:last-child {
   margin-bottom: 64px;
 }
-.photography-wrapper .side_menu.open .album-switcher a img,
-.photography-wrapper .side_menu.open .photo-drawer a img {
+.photography-wrapper .side_menu.open .album-switcher span > a img,
+.photography-wrapper .side_menu.open .photo-drawer span > a img {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   -webkit-box-shadow: 0 2px 2px #000;
@@ -1385,9 +1465,11 @@ nav.masthead ul.nav-header li a {
   -o-transition: all 0.1s ease-in-out;
   -ms-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
+  width: 100%;
+  height: auto;
 }
-.photography-wrapper .side_menu.open .album-switcher a img:hover,
-.photography-wrapper .side_menu.open .photo-drawer a img:hover {
+.photography-wrapper .side_menu.open .album-switcher span > a img:hover,
+.photography-wrapper .side_menu.open .photo-drawer span > a img:hover {
   -webkit-box-shadow: 0 0px 1px 1px #92c3ff;
   box-shadow: 0 0px 1px 1px #92c3ff;
   -webkit-transition: all 0.1s ease-in-out;
@@ -1396,18 +1478,28 @@ nav.masthead ul.nav-header li a {
   -ms-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
-.photography-wrapper .side_menu.open .album-switcher a img.active,
-.photography-wrapper .side_menu.open .photo-drawer a img.active {
+.photography-wrapper .side_menu.open .album-switcher span > a img.active,
+.photography-wrapper .side_menu.open .photo-drawer span > a img.active {
   -webkit-box-shadow: 0 0px 1px 1px #2d8bff;
   box-shadow: 0 0px 1px 1px #2d8bff;
 }
-.photography-wrapper .side_menu.open .album-switcher a,
-.photography-wrapper .side_menu.open .photo-drawer a {
+.photography-wrapper .side_menu.open .album-switcher span a,
+.photography-wrapper .side_menu.open .photo-drawer span a {
   pointer-events: all;
 }
 .photography-wrapper .side_menu .menu-toggle {
-  left: 12px;
-  top: 26px;
+  background-image: url("/images/icons/open-drawer.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: 14px;
+  -moz-background-size: 14px;
+  background-size: 14px;
+  pointer-events: initial;
+  width: 44px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
   opacity: 1;
   -ms-filter: none;
   filter: none;

@@ -54,8 +54,13 @@ mixin photography_masthead()
 
 mixin photography_navigation()
     .side_menu
-        img.menu-toggle(src="/images/icons/menu.svg" height="16px" width="auto")
-        .album-switcher #{albumName}
+        .menu-toggle
+        .album-switcher
+            span.current-album #{albumName}
+            .album-list-container
+                each album in albumNames
+                    - var albumNameFormatted = album.replace('-',' ')
+                    a(href="/"+album) #{albumNameFormatted}
         +photographyCollection(photography)
 
 mixin listProjects()
@@ -92,21 +97,36 @@ mixin photographyCollection(photos)
     - if (photos.images.collection && photos.images.collection.length)
     .photo-drawer
         - var index = 0
-        each albumName in albumNames
-            - var albumNameFormatted = albumName.replace('-',' ')
-            h3 #{albumNameFormatted}
-            each image in photos.images.collection
-                - var album    = image.album
-                - if (album == albumName)
-                    - var name     = photos.name
-                    - var fileName = image.fileName
-                    - var filePath = (name+"/"+fileName)
-                    - var imgTitle = image.title || "Photograph by Marc Deely"
+        each album in albumNames
+            - var albumNameFormatted = album.replace('-',' ')
+            - if (album == albumName || album == undefined)
+                span(class=album)
+                    each image in photos.images.collection
+                        - var imgAlbum = image.album
+                        - if (imgAlbum == album)
+                            - var name     = photos.name
+                            - var fileName = image.fileName
+                            - var filePath = (name+"/"+fileName)
+                            - var imgTitle = image.title || "Photograph by Marc Deely"
 
-                    a(href='/photography/'+album+'/'+fileName rel="external" data-ajax="false" data-album=album)
-                        img(alt=imgTitle title=imgTitle data-img-index=index style="100px" src="https://s3.amazonaws.com/mdeely-portfolio-assets/images/"+filePath+"-sm.jpg")
+                            a(href='/photography/'+album+'/'+fileName rel="external" data-ajax="false")
+                                img(alt=imgTitle title=imgTitle data-album=imgAlbum data-img-index=index style="100px" src="https://s3.amazonaws.com/mdeely-portfolio-assets/images/"+filePath+"-sm.jpg")
 
-                    - var index = ++index
+                            - var index = ++index
+            - else
+                span(style="display: none" class=album)
+                    each image in photos.images.collection
+                                        - var imgAlbum = image.album
+                                        - if (imgAlbum == album)
+                                            - var name     = photos.name
+                                            - var fileName = image.fileName
+                                            - var filePath = (name+"/"+fileName)
+                                            - var imgTitle = image.title || "Photograph by Marc Deely"
+
+                                            a(href='/photography/'+album+'/'+fileName rel="external" data-ajax="false")
+                                                img(alt=imgTitle title=imgTitle data-album=imgAlbum data-img-index=index style="100px" src="https://s3.amazonaws.com/mdeely-portfolio-assets/images/"+filePath+"-sm.jpg")
+
+                                            - var index = ++index
 
 
 mixin scrollToTop

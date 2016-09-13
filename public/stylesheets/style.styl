@@ -1120,18 +1120,10 @@ nav.masthead {
         }
     }
 
-    .side_menu {
-        z-index: 10;
-        width: 124px;
-        left: -70px;
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        background-color: rgba(0,0,0,.1);
-        transition: all .2s ease-in-out;
-        color: white;
-        overflow-y: hidden;
-        cursor: pointer;
+    scrollProperties() {
+        overflow-y: scroll;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        -webkit-overflow-scrolling: touch;
 
         &::-webkit-scrollbar {
             width: 4px;
@@ -1147,14 +1139,84 @@ nav.masthead {
             border-radius: 10px;
             background-color: alpha(white, .5);
         }
+    }
+
+    .side_menu {
+        z-index: 10;
+        width: 172px;
+        left: -122px;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,.25);
+        transition: all .2s ease-in-out;
+        color: white;
+        cursor: pointer;
 
         .album-switcher {
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 13px;
-            margin: 8px;
-            padding: 12px 0 6px 0;
-            border-bottom: 1px solid alpha(white, .5);
+            padding: 20px 8px 14px 8px;
+            position: relative;
+            box-shadow: 0 1px 2px 0px rgba(0,0,0,.4);
+
+            &:after {
+                content: "";
+                background-image: url("/images/icons/dropdown_arrow.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 50%;
+                width: 22px;
+                height: 22px;
+                top: 18px;
+                right: 0;
+                position: absolute;
+                margin-right: 8px;
+                transition: all .2s ease-in-out;
+            }
+
+            &.open {
+                &:after {
+                    transition: all .2s ease-in-out;
+                    transform: rotate(-90deg);
+                }
+
+                .album-list-container {
+                    opacity: 1;
+                    pointer-events: all;
+                    transition: all .2s ease-in-out;
+
+                    a {
+                        pointer-events: all;
+                    }
+                }
+            }
+
+            .album-list-container {
+                opacity: 0;
+                pointer-events: none;
+                transition: all .2s ease-in-out;
+                position: fixed;
+                left: 172px;
+                right: 0;
+                top: 0;
+                width: 148px;
+                bottom: 0;
+                overflow-y: scroll;
+                background-color: rgba(0,0,0,.55);
+                padding: 12px 0;
+
+                a {
+                    padding: 12px;
+                    display: block;
+                    color: white;
+
+                    &:hover {
+                        background-color: rgba(0,0,0,.65);
+                    }
+                }
+            }
         }
 
         .album-switcher,
@@ -1167,18 +1229,22 @@ nav.masthead {
             }
         }
 
+        .photo-drawer {
+            height: 100%;
+            border-radius: 4px;
+            scrollProperties();
+        }
+
         sideMenuOpen() {
             left: 0;
             background-color: rgba(0,0,0,.35);
             transition: all .2s ease-in-out;
             cursor: intial;
-            -ms-overflow-style: -ms-autohiding-scrollbar;
-            overflow-y: scroll;
-            -webkit-overflow-scrolling: touch;
 
             .menu-toggle {
                 opacity: 0;
-                transition all .2s ease-in-out;
+                transition all .05s ease-in-out;
+                pointer-events: none;
             }
 
             .album-switcher,
@@ -1186,36 +1252,40 @@ nav.masthead {
                 opacity: 1;
                 transition all .2s ease-in-out;
 
-                a {
-                    display: block;
-                    margin: 4px 8px;
+                span {
+                    > a {
+                        display: block;
+                        margin: 4px 8px;
 
-                    &:first-child {
-                        margin-top: 8px;
-                    }
+                        &:first-child {
+                            margin-top: 2px;
+                        }
 
-                    &:last-child {
-                        margin-bottom: 64px;
-                    }
+                        &:last-child {
+                            margin-bottom: 64px;
+                        }
 
-                    img {
-                        border-radius: 3px;
-                        box-shadow: 0 2px 2px black;
-                        transition: all .1s ease-in-out;
-
-                        &:hover {
-                            box-shadow: 0 0px 1px 1px $blue;
+                        img {
+                            border-radius: 3px;
+                            box-shadow: 0 2px 2px black;
                             transition: all .1s ease-in-out;
-                        }
+                            width: 100%;
+                            height: auto;
 
-                        &.active {
-                            box-shadow: 0 0px 1px 1px #2d8bff;
+                            &:hover {
+                                box-shadow: 0 0px 1px 1px $blue;
+                                transition: all .1s ease-in-out;
+                            }
+
+                            &.active {
+                                box-shadow: 0 0px 1px 1px #2d8bff;
+                            }
                         }
                     }
-                }
 
-                a {
-                    pointer-events: all;
+                    a {
+                        pointer-events: all;
+                    }
                 }
             }
         }
@@ -1229,8 +1299,16 @@ nav.masthead {
         }
 
         .menu-toggle {
-            left: 12px;
-            top: 26px;
+            background-image: url("/images/icons/open-drawer.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 14px;
+            pointer-events: initial;
+            width: 44px;
+            height: 100%;
+            left: 0;
+            top: 0;
+            bottom: 0;
             opacity: 1;
             position: fixed;
             transition all .2s ease-in-out .2s;

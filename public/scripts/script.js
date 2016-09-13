@@ -15,39 +15,83 @@ $(document).ready(function() {
     };
 
     function gatherNodes() {
-      this.$menuTrigger     = $('.menu-trigger');
-      this.$menuFader       = $('.menu-fader');
-      this.$projectFilters  = $('li.design, li.code');
-      this.$projects        = $('.portfolioLink');
-      this.$images          = $('img');
-      this.$fsImage         = $('.fullscreen-image');
-      this.$scrollToTop     = $(".scrollToTop");
-      this.$photoDrawerImgs = $('.photo-drawer img');
-      this.$sideMenu        = $('.side_menu')
-      this.$heroPhoto       = $('.container.photography');
-      this.$bgPhotoDisplay  = $('.bg-photo-display');
-      this.$preloadedImg    = $(".preload-image-container");
-      this.$fbLikeIcon      = $("#fb-like-icon");
-      this.$logoContainer   = $(".logo-container");
-      // this.$fbLikeIframe    = $("#fb-like-icon iframe");
+      this.$menuTrigger        = $('.menu-trigger');
+      this.$menuFader          = $('.menu-fader');
+      this.$projectFilters     = $('li.design, li.code');
+      this.$projects           = $('.portfolioLink');
+      this.$images             = $('img');
+      this.$fsImage            = $('.fullscreen-image');
+      this.$scrollToTop        = $(".scrollToTop");
+      this.$photoDrawerImgs    = $('.photo-drawer img');
+      this.$sideMenu           = $('.side_menu')
+      this.$heroPhoto          = $('.container.photography');
+      this.$bgPhotoDisplay     = $('.bg-photo-display');
+      this.$preloadedImg       = $(".preload-image-container");
+      this.$fbLikeIcon         = $("#fb-like-icon");
+      this.$logoContainer      = $(".logo-container");
+      this.$albumSwitcher      = $(".album-switcher");
+      this.$albumListLinks     = $(".album-list-container a")
     }
 
     function bindHandlers() {
-      $( this.$menuTrigger      ).bind( 'click', toggleMenuClasses );
-      $( this.$menuFader        ).bind( 'click', toggleMenuClasses );
-      $( this.$projectFilters   ).bind( 'click', filterProjects );
-      $( this.$images           ).bind( 'click', handleImageClick );
-      $( this.$fsImage          ).bind( 'click', handleFsImageClick );
-      $( this.$photoDrawerImgs  ).bind( 'click', selectPhoto);
-      $( this.$sideMenu         ).bind( 'click', showSideMenu);
-      $( window                 ).bind( 'swipeleft', generateNextIndex);
-      $( window                 ).bind( 'swiperight', generatePreviousIndex);
-      $( this.$heroPhoto        ).bind( 'click', handleMenuAndDisplay);
-      $( this.$heroPhoto        ).bind( 'click', handleLogoMenu);
-      $( this.$bgPhotoDisplay   ).bind( 'click', handleBgPhotoDisplay);
-      $( this.$photoDrawerImgs  ).bind( 'mouseenter', preloadImageOnHover);
-      $( this.$fbLikeIcon       ).bind( 'click', handleFbLikeMenu);
-      $( this.$logoContainer    ).bind( 'click', openLogoMenu);
+      $( this.$menuTrigger        ).bind( 'click', toggleMenuClasses );
+      $( this.$menuFader          ).bind( 'click', toggleMenuClasses );
+      $( this.$projectFilters     ).bind( 'click', filterProjects );
+      $( this.$images             ).bind( 'click', handleImageClick );
+      $( this.$fsImage            ).bind( 'click', handleFsImageClick );
+      $( this.$photoDrawerImgs    ).bind( 'click', selectPhoto);
+      $( this.$sideMenu           ).bind( 'click', showSideMenu);
+      $( window                   ).bind( 'swipeleft', generatePreviousIndex);
+      $( window                   ).bind( 'swiperight', generateNextIndex);
+      $( this.$heroPhoto          ).bind( 'click', handleMenuAndDisplay);
+      $( this.$heroPhoto          ).bind( 'click', handleLogoMenu);
+      $( this.$bgPhotoDisplay     ).bind( 'click', handleBgPhotoDisplay);
+      $( this.$photoDrawerImgs    ).bind( 'mouseenter', preloadImageOnHover);
+      $( this.$fbLikeIcon         ).bind( 'click', handleFbLikeMenu);
+      $( this.$logoContainer      ).bind( 'click', openLogoMenu);
+      $( this.$albumSwitcher      ).bind( 'click', toggleAlbumSwitcher);
+      $( this.$albumListLinks     ).bind( 'click', handleAlbumLink);
+    }
+
+    function handleAlbumLink(evt) {
+      evt.preventDefault();
+
+      var href = $(this).attr('href')
+      var albumName = href.replace('/', '');
+      var albumNameFormatted = albumName.replace('/','');
+
+      $('.photo-drawer span').hide();
+      $(".photo-drawer span."+albumName).show();
+
+      $(".current-album").text(albumName);
+
+      getCurrentIndexRange();
+
+      handlePathname(albumName);
+
+      // update title + meta,
+      // update display photo
+      // update album switcher display
+      // update url - shouldbe automatic from calling showPhoto?
+    }
+
+    function getCurrentIndexRange() {
+      var first = $('.photo-drawer img:visible:first')
+      var firstIndex = first.attr("data-img-index");
+
+      var last  = $('.photo-drawer img:visible:last')
+      var lastIndex = last.attr("data-img-index");
+
+      indexRange = {
+        "firstIndex" : firstIndex,
+        "lastIndex" : lastIndex,
+      }
+
+      return indexRange
+    }
+
+    function toggleAlbumSwitcher() {
+      $(this).toggleClass('open')
     }
 
     function handleLogoMenu() {
@@ -58,10 +102,14 @@ $(document).ready(function() {
 
     function openLogoMenu() {
       $(this).toggleClass("open");
+      $(".side_menu").removeClass('open');
+      $(".album-switcher").removeClass('open')
+
     }
 
     function photographyInit() {
       if ( $body.hasClass("photography-wrapper") ) {
+        var indexRange = getCurrentIndexRange();
 
         revealMenuItems();
         setDisplayPhoto();
@@ -120,10 +168,14 @@ $(document).ready(function() {
       this.$fbLikeIcon.toggleClass('open');
     }
 
-    function handlePathname() {
-      var photoName  = getPhotoNameFromPathname();
-      var index      = getIndexFromPhotoName(photoName);
-      showPhotoFromIndex(index);
+    function handlePathname(albumName) {
+      if ( albumName ) {
+      }
+      else {
+        var photoName  = getPhotoNameFromPathname();
+        var index      = getIndexFromPhotoName(photoName);
+        showPhotoFromIndex(index);
+      }
     }
 
     function getPhotoNameFromPathname() {
@@ -228,32 +280,35 @@ $(document).ready(function() {
     }
 
     function generatePreviousIndex() {
-      handleLogoMenu();
-
-      var currentIndex = getCurrentIndex();
-
-      if (currentIndex == 0) {
-        var currentIndex = getLastIndex();
-      }
-
-      var previousIndex = --currentIndex;
-
-      showPhotoFromIndex(previousIndex);
+      generateIndex("previous");
     }
 
     function generateNextIndex() {
+      generateIndex("next");
+    }
+
+    function generateIndex(direction) {
       handleLogoMenu();
-
       var currentIndex = getCurrentIndex();
-      var lastIndex = getLastIndex();
-      var lastIndex = (lastIndex - 1);
 
-      if ( currentIndex == lastIndex ) {
-        var currentIndex = -1;
+      if ( direction == "previous" ) {
+        if ( currentIndex <= indexRange.firstIndex ) {
+          var index = indexRange.lastIndex;
+        }
+        else {
+          var index = --currentIndex;
+        }
+      }
+      if ( direction == "next" ) {
+        if ( currentIndex >= indexRange.lastIndex ) {
+          var index = indexRange.firstIndex;
+        }
+        else {
+          var index = ++currentIndex;
+        }
       }
 
-      var nextIndex = ++currentIndex;
-      showPhotoFromIndex(nextIndex);
+      showPhotoFromIndex(index);
     }
 
     function showPhotoFromIndex(index) {
@@ -274,9 +329,15 @@ $(document).ready(function() {
     }
 
     function preloadImageFromIndex(index) {
-      var index = ++index;
-
-      // $(this.$preloadedImg).empty();
+      if ( index <= indexRange.firstIndex ) {
+        index = indexRange.lastIndex
+      }
+      else if ( index >= indexRange.lastIndex) {
+        index = indexRange.firstIndex
+      }
+      else {
+        var index = ++index;
+      }
 
       var image = $(this.$sideMenu).find('img[data-img-index="'+index+'"]');
 
@@ -302,19 +363,7 @@ $(document).ready(function() {
       var currentImage = $(this.$sideMenu).find(".active");
       var currentIndex = $(currentImage).attr('data-img-index');
 
-      var lastIndex = getLastIndex();
-      var lastIndex = --lastIndex;
-
-      if ( currentIndex == 0 ) {
-        return false
-      }
-      else if ( currentIndex == lastIndex ) {
-        var currentIndex = -1;
-        return currentIndex;
-      }
-      else {
-        return currentIndex;
-      }
+      return currentIndex
     }
 
     function handleMenuAndDisplay() {
@@ -322,32 +371,36 @@ $(document).ready(function() {
     }
 
     function toggleMenuTogglePhotoDisplay() {
-      if ( $(this.$sideMenu).hasClass('open') ) {
-        $(this.$sideMenu).removeClass('open')
+      if ( $(this.$sideMenu).hasClass('open') || $(this.$logoContainer).hasClass('open') ) {
+        $(this.$sideMenu).removeClass('open');
+        $(this.$albumSwitcher).removeClass('open');
+        $(this.$logoContainer).removeClass('open');
         return false
       }
       else {
-        generateNextIndex();
+        generateIndex("next");
       }
     }
 
     function showSideMenu(sideMenu) {
       $(this).addClass('open');
+      $(".logo-container").removeClass('open')
     }
 
-    function selectPhoto(anchor) {
-      anchor.preventDefault();
+    function selectPhoto(evt) {
+      evt.preventDefault();
 
-      var image = $(anchor.target);
+      var image = $(evt.target);
       showPhoto(image);
     }
 
     function showPhoto(image) {
       var $containerPhoto = $(".container.photography");
 
-      var srcRaw   = image.attr('src');
-      var imgIndex = image.attr('data-img-index');
-      var src      = srcRaw.replace('-sm','');
+      var srcRaw    = image.attr('src');
+      var imgIndex  = image.attr('data-img-index');
+      var albumName = image.attr('data-album');
+      var src       = srcRaw.replace('-sm','');
 
       removeActiveClass();
 
@@ -381,8 +434,12 @@ $(document).ready(function() {
       }
       $(this.$fbLikeIcon).removeClass('open');
 
+      // Update FB Menu
       setFbLike(url);
 
+      // Update album switcher title
+
+      // Fire off GA event
       ga("send", "event", "Photography", "viewed", src+': '+imgTitle)
     }
 
