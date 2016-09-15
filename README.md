@@ -15,11 +15,11 @@ Images for Photography
 - Javascript
     - Change scroll position to active photo
     - Preload image on hover but only after hovering over them for a certain period of time
-    - On load, pop in Logo, then Side Menu, then Actions
     - Prevent default not working in Firefox
     - Also menu on main site doesn't activate in Firefox
 
-    -update meta desciption
+    - On load, pop in Logo, then Side Menu, then Actions
+    - Hover effect on side menu
 
 - Must Do Before Announcing:
     - Handle bad urls
