@@ -40,29 +40,6 @@ app.get('/about', function (req, res) {
   res.render( 'about' );
 });
 
-app.get('/:projectName', function (req, res) {
-  var projectName = req.params.projectName;
-  var project     = (projectName == "photography") ? "photography" : "project";
-  res.locals.projectName = projectName;
-
-  // res.status(404).send('Sorry! This page does not exist. Try more random things!');
-  // res.status(500).send({ error: 'Oh...oh wow. This never happens, I swear.' });
-  res.render( project, obj );
-});
-
-app.get('/photography/:albumName', function(req, res, next) {
-    app.locals.albumName = req.params.albumName;
-    next();
-    res.render( "photography", obj );
-  },  function (req, res) {
-      for(var i = 0; i < obj.photography.images.collection.length; i++) {
-        if(obj.photography.images.collection[i].fileName == app.locals.albumName) {
-          app.locals.photoTitle = obj.photography.images.collection[i].title
-      }
-    }
-  }
-);
-
 app.get('/photography/:albumName/:photoName', function(req, res, next) {
     app.locals.photoName = req.params.photoName;
     app.locals.albumName = req.params.albumName;
@@ -173,6 +150,16 @@ app.get('/photography', function(req, res, next) {
       return
     }
   );
+
+app.get('/:projectName', function (req, res) {
+  var projectName = req.params.projectName;
+  var project     = (projectName == "photography") ? "photography" : "project";
+  res.locals.projectName = projectName;
+
+  // res.status(404).send('Sorry! This page does not exist. Try more random things!');
+  // res.status(500).send({ error: 'Oh...oh wow. This never happens, I swear.' });
+  res.render( project, obj );
+});
 
 app.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);
