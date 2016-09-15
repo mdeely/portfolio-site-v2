@@ -9,12 +9,12 @@
             "collection": [
                 {
                     "fileName":"ireland-1",
-                    "title":"Cloudy Trail - Ireland",
+                    "title":"Cloudy Trail",
                     "album":"ireland"
                 },
                 {
                     "fileName":"hore-abbey",
-                    "title":"Hore Abbey in Cashel, Ireland",
+                    "title":"Hore Abbey in Cashel",
                     "album":"ireland"
                 },
                 {
@@ -29,7 +29,7 @@
                 },
                 {
                     "fileName":"splashing-water-ireland",
-                    "title":"Splashing Water, Ireland",
+                    "title":"Splashing Water",
                     "album":"ireland"
                 },
                 {
@@ -39,17 +39,17 @@
                 },
                 {
                     "fileName":"CT7A3291",
-                    "title":"Red Basket - Amsterdam",
+                    "title":"Red Basket",
                     "album":"amsterdam"
                 },
                 {
                     "fileName":"CT7A3312",
-                    "title":"Cafe Hesp, Amsterdam",
+                    "title":"Cafe Hesp",
                     "album":"amsterdam"
                 },
                 {
                     "fileName":"CT7A3792",
-                    "title":"Sacré-Coeur Basilica, Paris",
+                    "title":"Sacré-Coeur Basilica",
                     "album":"paris"
                 },
                 {
@@ -59,7 +59,7 @@
                 },
                 {
                     "fileName":"CT7A4660",
-                    "title":"Republique Square, Paris",
+                    "title":"Republique Square",
                     "album":"paris"
                 },
                 {
@@ -69,7 +69,7 @@
                 },
                 {
                     "fileName":"CT7A2326",
-                    "title":"Winding Road, Ireland",
+                    "title":"Winding Road",
                     "album":"ireland"
                 },
                 {
@@ -99,12 +99,12 @@
                 },
                 {
                     "fileName":"CT7A3811",
-                    "title":"Sacré-Coeur Basilica, Paris",
+                    "title":"Sacré-Coeur Basilica",
                     "album":"paris"
                 },
                 {
                     "fileName":"CT7A3894",
-                    "title":"Man In Park - Paris",
+                    "title":"Man In Park",
                     "album":"paris"
                 },
                 {
@@ -209,7 +209,7 @@
                 },
                 {
                     "fileName":"CT7A3480",
-                    "title":"Tree In Park - Amsterdam",
+                    "title":"Tree In Park",
                     "album":"amsterdam"
                 },
                 {
@@ -219,12 +219,12 @@
                 },
                 {
                     "fileName":"CT7A3590",
-                    "title":"While My Guitar Gently Weeps - Amsterdam",
+                    "title":"While My Guitar Gently Weeps",
                     "album":"amsterdam"
                 },
                 {
                     "fileName":"CT7A3592",
-                    "title":"Marching Bird - Amsterdam",
+                    "title":"Marching Bird",
                     "album":"amsterdam"
                 },
                 {
@@ -244,7 +244,7 @@
                 },
                 {
                     "fileName":"CT7A3607",
-                    "title":"Apartment Stairwell - Amsterdam",
+                    "title":"Apartment Stairwell",
                     "album":"amsterdam"
                 },
                 {
@@ -259,7 +259,7 @@
                 },
                 {
                     "fileName":"CT7A5077",
-                    "title":"Street At Night - Milan",
+                    "title":"Street At Night",
                     "album":"milan"
                 },
                 {
@@ -269,37 +269,37 @@
                 },
                 {
                     "fileName":"CT7A5083",
-                    "title":"Bombed Church from Word War II - Milan",
+                    "title":"Bombed Church from Word War II",
                     "album":"milan"
                 },
                 {
                     "fileName":"CT7A5207",
-                    "title":"Sunset - Milan",
+                    "title":"Sunset",
                     "album":"milan"
                 },
                 {
                     "fileName":"CT7A5260",
-                    "title":"Trolly - Milan",
+                    "title":"Trolly",
                     "album":"milan"
                 },
                 {
                     "fileName":"CT7A2686",
-                    "title":"Kerry Cliffs - Ireland",
+                    "title":"Kerry Cliffs",
                     "album":"ireland"
                 },
                 {
                     "fileName":"CT7A2688",
-                    "title":"Water Illusion - Ireland",
+                    "title":"Water Illusion",
                     "album":"ireland"
                 },
                 {
                     "fileName":"CT7A2678-Pano",
-                    "title":"Water At Cliffs Of Kerry - Ireland",
+                    "title":"Water At Cliffs Of Kerry",
                     "album":"ireland"
                 },
                 {
                     "fileName":"CT7A3651",
-                    "title":"Alley - Amsterdam",
+                    "title":"Alley",
                     "album":"amsterdam"
                 },
                 {
@@ -354,17 +354,17 @@
                 },
                 {
                     "fileName":"CT7A2038",
-                    "title":"Water & Rocks - Milwaukee",
+                    "title":"Water & Rocks",
                     "album":"milwaukee"
                 },
                 {
                     "fileName":"CT7A2119",
-                    "title":"Tree Bark - Milwaukee",
+                    "title":"Tree Bark",
                     "album":"milwaukee"
                 },
                 {
                     "fileName":"CT7A2094",
-                    "title":"Posing Sticks - Milwaukee",
+                    "title":"Posing Sticks",
                     "album":"milwaukee"
                 }
             ]

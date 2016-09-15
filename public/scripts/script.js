@@ -53,6 +53,12 @@ $(document).ready(function() {
       $( this.$albumListLinks     ).bind( 'click', handleAlbumLink);
     }
 
+    function showAllPhotos() {
+      $('.photo-drawer span').show();
+      indexRange.firstIndex = indexRange.firstAll;
+      indexRange.lastIndex = indexRange.lastAll;
+    }
+
     function handleAlbumLink(evt) {
       evt.preventDefault();
 
@@ -60,12 +66,21 @@ $(document).ready(function() {
       var albumName = href.replace('/', '');
       var albumNameFormatted = albumName.replace('/','');
 
-      $('.photo-drawer span').hide();
-      $(".photo-drawer span."+albumName).show();
+      if ( $(this).attr('href') == "/all-photos") {
+        $(".current-album").text("all photos");
+        showAllPhotos();
+      }
+      else {
+        $('.photo-drawer span').hide();
+        $(".photo-drawer span."+albumName).show();
 
-      $(".current-album").text(albumName);
+        $(".current-album").text(albumName);
 
-      getCurrentIndexRange();
+        getCurrentIndexRange();
+
+      }
+
+      showPhotoFromIndex(indexRange.firstIndex);
 
       handlePathname(albumName);
 
@@ -75,17 +90,27 @@ $(document).ready(function() {
       // update url - shouldbe automatic from calling showPhoto?
     }
 
-    function getCurrentIndexRange() {
-      var first = $('.photo-drawer img:visible:first')
-      var firstIndex = first.attr("data-img-index");
-
-      var last  = $('.photo-drawer img:visible:last')
-      var lastIndex = last.attr("data-img-index");
+    function setIndexRange() {
+      var lastImg  = $('.photo-drawer img:last')
+      var last = lastImg.attr("data-img-index");
 
       indexRange = {
-        "firstIndex" : firstIndex,
-        "lastIndex" : lastIndex,
+        "firstAll" : 0,
+        "lastAll" : last
       }
+
+      return indexRange
+    }
+
+    function getCurrentIndexRange() {
+      var firstImg = $('.photo-drawer img:visible:first')
+      var firstIndex = firstImg.attr("data-img-index");
+
+      var lastImg  = $('.photo-drawer img:visible:last')
+      var lastIndex = lastImg.attr("data-img-index");
+
+      indexRange.firstIndex = firstIndex;
+      indexRange.lastIndex = lastIndex;
 
       return indexRange
     }
@@ -109,7 +134,9 @@ $(document).ready(function() {
 
     function photographyInit() {
       if ( $body.hasClass("photography-wrapper") ) {
-        var indexRange = getCurrentIndexRange();
+        indexRange = setIndexRange();
+        indexRange = getCurrentIndexRange();
+        console.log(indexRange);
 
         revealMenuItems();
         setDisplayPhoto();
@@ -121,7 +148,9 @@ $(document).ready(function() {
     }
 
     function revealMenuItems() {
-
+      if ( $(".current-album").text("all photos") ) {
+        showAllPhotos();
+      }
     }
 
     function observeFbMenu() {
@@ -548,9 +577,6 @@ $(document).ready(function() {
       var desc = $image.next().contents().text();
 
       populateFullscreenImage(src, desc);
-
-      // nextImg = $image.parent().next(".collection").children('img');
-      // prevImg = $image.parent().prev(".collection").children('img');
     }
 
       function populateFullscreenImage(src, desc) {

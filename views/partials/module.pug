@@ -58,6 +58,7 @@ mixin photography_navigation()
         .album-switcher
             span.current-album #{albumName}
             .album-list-container
+                a(href="/all-photos") all photos
                 each album in albumNames
                     - var albumNameFormatted = album.replace('-',' ')
                     a(href="/"+album) #{albumNameFormatted}
