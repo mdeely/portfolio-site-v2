@@ -23,3 +23,4 @@ Images for Photography
 
 - Must Do Before Announcing:
     - Handle bad urls
+    - Make Amsterdam stairwell picture higher quality

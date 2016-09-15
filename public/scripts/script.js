@@ -590,7 +590,6 @@ $(document).ready(function() {
     }
 
     function toggleMenuClasses() {
-      console.log("triggled toggleMenuClasses function");
       $('.menu-trigger').toggleClass('triggered');
       $('.menu-container').toggleClass('open');
       $(".menu-fader").toggleClass('active');
