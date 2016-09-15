@@ -1287,6 +1287,7 @@ nav.masthead ul.nav-header li a {
   cursor: pointer;
 }
 .photography-wrapper .side_menu .album-switcher {
+  background-color: rgba(0,0,0,0.45);
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 13px;
@@ -1359,7 +1360,7 @@ nav.masthead ul.nav-header li a {
   width: 148px;
   bottom: 0;
   overflow-y: scroll;
-  background-color: rgba(0,0,0,0.55);
+  background-color: rgba(0,0,0,0.65);
   padding: 12px 0;
 }
 .photography-wrapper .side_menu .album-switcher .album-list-container a {
