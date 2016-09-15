@@ -130,7 +130,7 @@ app.get('/photography', function(req, res, next) {
     app.locals.metaOgTitle = "Photography Portfolio";
     app.locals.metaOgUrl = req.originalUrl;
     app.locals.albumName = ["all photos"];
-
+    app.locals.photoName = obj.photography.images.collection[0].fileName;
     next();
 
     res.render( "photography", obj );
@@ -145,7 +145,6 @@ app.get('/photography', function(req, res, next) {
           albumNames.push(obj.photography.images.collection[i].album);
         }
       }
-      app.locals.photoName = obj.photography.images.collection[0].fileName;
       app.locals.albumNames = albumNames;
       return
     }
