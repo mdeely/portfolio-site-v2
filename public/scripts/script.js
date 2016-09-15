@@ -136,7 +136,6 @@ $(document).ready(function() {
       if ( $body.hasClass("photography-wrapper") ) {
         indexRange = setIndexRange();
         indexRange = getCurrentIndexRange();
-        console.log(indexRange);
 
         revealMenuItems();
         setDisplayPhoto();
