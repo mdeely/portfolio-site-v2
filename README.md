@@ -22,14 +22,4 @@ Images for Photography
     -update meta desciption
 
 - Must Do Before Announcing:
-    - Reduce image file sizes
-    - Add Copyright info
     - Handle bad urls
-
-    - Photos
-        - CT7A4337 - Ferris Wheel pic is too pink. Colors just off.
-        - CT7A5077 - Street Lamp Milan - Make less pink. More Blue?
-        - CT7A2678-Pano - Kerry Water - Make more colorful
-        - CT7A5701 - Trees - Make straighter if possible
-        - CT7A5656 - Up North Black Water - Maybe use a higher shutter speed pic
-

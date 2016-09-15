@@ -449,6 +449,7 @@ $(document).ready(function() {
 
       // This is mostly for bookmarking. Not for Open Graph or SEO
       document.title = imgTitle+" | Marc Deely - Photography";
+      $('meta[name=description]').attr('content', (imgTitle+" by Marc Deely"));
       $('meta[property=og\\:url]').attr('content', url);
       $('meta[property=og\\:title]').attr('content', imgTitle);
       $('meta[property=og\\:image]').attr('content', src);
