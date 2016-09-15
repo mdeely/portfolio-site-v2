@@ -41,8 +41,8 @@ $(document).ready(function() {
       $( this.$fsImage            ).bind( 'click', handleFsImageClick );
       $( this.$photoDrawerImgs    ).bind( 'click', selectPhoto);
       $( this.$sideMenu           ).bind( 'click', showSideMenu);
-      $( window                   ).bind( 'swipeleft', generatePreviousIndex);
-      $( window                   ).bind( 'swiperight', generateNextIndex);
+      $( window                   ).bind( 'swipeleft', generateNextIndex);
+      $( window                   ).bind( 'swiperight', generatePreviousIndex);
       $( this.$heroPhoto          ).bind( 'click', handleMenuAndDisplay);
       $( this.$heroPhoto          ).bind( 'click', handleLogoMenu);
       $( this.$bgPhotoDisplay     ).bind( 'click', handleBgPhotoDisplay);
