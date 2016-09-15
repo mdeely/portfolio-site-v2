@@ -147,7 +147,7 @@ $(document).ready(function() {
     }
 
     function revealMenuItems() {
-      if ( $(".current-album").text("all photos") ) {
+      if ( $(".current-album").text() == "all photos" ) {
         showAllPhotos();
       }
     }

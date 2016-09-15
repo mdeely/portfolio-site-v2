@@ -105,9 +105,7 @@ app.get('/photography/:albumName', function(req, res, next) {
 
     next();
 
-
     app.locals.photoName = obj.photography.images.collection[app.locals.albumIndex[0]].fileName;
-
     app.locals.docDesc = (app.locals.albumTitle+" Album by Marc Deely");
     app.locals.photoTitle = (app.locals.albumTitle+" Album");
     app.locals.metaOgTitle = (app.locals.albumTitle+" Album");
