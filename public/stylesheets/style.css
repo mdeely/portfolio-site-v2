@@ -1183,7 +1183,11 @@ nav.masthead ul.nav-header li a {
   pointer-events: none;
 }
 .js.photography-wrapper .side_menu {
-  left: -170px;
+  -webkit-transform: translate(-50px);
+  -moz-transform: translate(-50px);
+  -o-transform: translate(-50px);
+  -ms-transform: translate(-50px);
+  transform: translate(-50px);
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   -o-animation-fill-mode: forwards;
@@ -1194,12 +1198,21 @@ nav.masthead ul.nav-header li a {
   -o-animation: slideRight 0.5s ease-in-out forwards;
   -ms-animation: slideRight 0.5s ease-in-out forwards;
   animation: slideRight 0.5s ease-in-out forwards;
+  -webkit-animation: slideRight 0.5s ease-in-out forwards;
+  -moz-animation: slideRight 0.5s ease-in-out forwards;
   -webkit-animation-delay: 2s;
   -moz-animation-delay: 2s;
   -o-animation-delay: 2s;
   -ms-animation-delay: 2s;
   animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
   pointer-events: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
 }
 .js.photography-wrapper .action-wrapper {
   bottom: -65px;
@@ -1213,11 +1226,15 @@ nav.masthead ul.nav-header li a {
   -o-animation: slideUp 0.5s ease-in-out forwards;
   -ms-animation: slideUp 0.5s ease-in-out forwards;
   animation: slideUp 0.5s ease-in-out forwards;
+  -webkit-animation: slideUp 0.5s ease-in-out forwards;
+  -moz-animation: slideUp 0.5s ease-in-out forwards;
   -webkit-animation-delay: 2.5s;
   -moz-animation-delay: 2.5s;
   -o-animation-delay: 2.5s;
   -ms-animation-delay: 2.5s;
   animation-delay: 2.5s;
+  -webkit-animation-delay: 2.5s;
+  -moz-animation-delay: 2.5s;
   pointer-events: none;
 }
 @-moz-keyframes moveDown {
@@ -1310,34 +1327,66 @@ nav.masthead ul.nav-header li a {
 }
 @-moz-keyframes slideRight {
   from {
-    left: -170px;
+    -webkit-transform: translate(-50px);
+    -moz-transform: translate(-50px);
+    -o-transform: translate(-50px);
+    -ms-transform: translate(-50px);
+    transform: translate(-50px);
   }
   to {
-    left: -122px;
+    -webkit-transform: translate(0px);
+    -moz-transform: translate(0px);
+    -o-transform: translate(0px);
+    -ms-transform: translate(0px);
+    transform: translate(0px);
   }
 }
 @-webkit-keyframes slideRight {
   from {
-    left: -170px;
+    -webkit-transform: translate(-50px);
+    -moz-transform: translate(-50px);
+    -o-transform: translate(-50px);
+    -ms-transform: translate(-50px);
+    transform: translate(-50px);
   }
   to {
-    left: -122px;
+    -webkit-transform: translate(0px);
+    -moz-transform: translate(0px);
+    -o-transform: translate(0px);
+    -ms-transform: translate(0px);
+    transform: translate(0px);
   }
 }
 @-o-keyframes slideRight {
   from {
-    left: -170px;
+    -webkit-transform: translate(-50px);
+    -moz-transform: translate(-50px);
+    -o-transform: translate(-50px);
+    -ms-transform: translate(-50px);
+    transform: translate(-50px);
   }
   to {
-    left: -122px;
+    -webkit-transform: translate(0px);
+    -moz-transform: translate(0px);
+    -o-transform: translate(0px);
+    -ms-transform: translate(0px);
+    transform: translate(0px);
   }
 }
 @keyframes slideRight {
   from {
-    left: -170px;
+    -webkit-transform: translate(-50px);
+    -moz-transform: translate(-50px);
+    -o-transform: translate(-50px);
+    -ms-transform: translate(-50px);
+    transform: translate(-50px);
   }
   to {
-    left: -122px;
+    -webkit-transform: translate(0px);
+    -moz-transform: translate(0px);
+    -o-transform: translate(0px);
+    -ms-transform: translate(0px);
+    transform: translate(0px);
   }
 }
 @-moz-keyframes slideUp {
@@ -1486,11 +1535,6 @@ nav.masthead ul.nav-header li a {
   top: 0;
   bottom: 0;
   background-color: rgba(0,0,0,0.25);
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   color: #fff;
   cursor: pointer;
 }

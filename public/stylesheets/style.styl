@@ -1020,7 +1020,7 @@ nav.masthead {
 .js.photography-wrapper {
 
     @keyframes moveDown   { from { opacity: 0; transform: scale(.9); }  to { opacity: 1; transform: scale(1); } };
-    @keyframes slideRight { from { left: -170px; }  to { left: -122px; } };
+    @keyframes slideRight { from { transform: translate(-50px); }  to { transform: translate(0px); } };
     @keyframes slideUp    { from { bottom: -65px;  }  to { bottom: 0;   }  };
 
     .masthead.photography .logo-container {
@@ -1033,10 +1033,14 @@ nav.masthead {
         pointer-events: none;
     }
     .side_menu {
-        left: -170px;
+        transform: translate(-50px)
         animation-fill-mode: forwards;
         animation: slideRight .5s ease-in-out forwards;
+        -webkit-animation: slideRight .5s ease-in-out forwards;
+        -moz-animation: slideRight .5s ease-in-out forwards;
         animation-delay: 2s;
+        -webkit-animation-delay: 2s;
+        -moz-animation-delay: 2s;
         pointer-events: none;
         transition: none;
     }
@@ -1044,7 +1048,11 @@ nav.masthead {
         bottom: -65px;
         animation-fill-mode: forwards;
         animation: slideUp .5s ease-in-out forwards;
+        -webkit-animation: slideUp .5s ease-in-out forwards;
+        -moz-animation: slideUp .5s ease-in-out forwards;
         animation-delay: 2.5s;
+        -webkit-animation-delay: 2.5s;
+        -moz-animation-delay: 2.5s;
         pointer-events: none;
     }
 }
@@ -1181,7 +1189,7 @@ nav.masthead {
         top: 0;
         bottom: 0;
         background-color: rgba(0,0,0,.25);
-        transition: all .2s ease-in-out;
+        // transition: all .2s ease-in-out;
         color: white;
         cursor: pointer;
 
