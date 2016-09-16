@@ -1675,7 +1675,7 @@ nav.masthead ul.nav-header li a {
   border-radius: 10px;
   background-color: rgba(255,255,255,0.5);
 }
-.photography-wrapper .side_menu .photo-drawer span:not([style*="display: none"]) a:last-child {
+.photography-wrapper .side_menu .photo-drawer span:not([style*="display: none"]):last-child a:last-child {
   margin-bottom: 72px;
 }
 .photography-wrapper .side_menu.open {
