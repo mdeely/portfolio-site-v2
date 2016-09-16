@@ -1,9 +1,8 @@
 $(document).ready(function() {
     $body = $('body');
+    $($body).addClass("js");
 
     init();
-
-    $($body).addClass("js");
 
     function init() {
       gatherNodes();
