@@ -1,6 +1,9 @@
 $(document).ready(function() {
     $body = $('body');
-    $($body).addClass("js");
+    $($body).addClass("js").delay(3200).queue(function(next){
+        $(this).removeClass("js");
+        next();
+    });
 
     init();
 
@@ -76,10 +79,9 @@ $(document).ready(function() {
         $(".photo-drawer span."+albumName).show();
 
         $(".current-album").text(albumName);
-
-        getCurrentIndexRange();
-
       }
+
+      getCurrentIndexRange();
 
       showPhotoFromIndex(indexRange.firstIndex);
 
@@ -134,10 +136,6 @@ $(document).ready(function() {
     }
 
     function photographyInit() {
-      setTimeout( function(){
-        $($body).removeClass('js');
-      }, 3200); // delay 500 ms
-
       if ( $body.hasClass("photography-wrapper") ) {
         indexRange = setIndexRange();
         indexRange = getCurrentIndexRange();
@@ -325,18 +323,21 @@ $(document).ready(function() {
       var currentIndex = getCurrentIndex();
 
       if ( direction == "previous" ) {
-        if ( currentIndex <= indexRange.firstIndex ) {
+        if ( currentIndex < indexRange.firstIndex || currentIndex == indexRange.firstIndex ) {
           var index = indexRange.lastIndex;
         }
         else {
           var index = --currentIndex;
         }
       }
+
       if ( direction == "next" ) {
-        if ( currentIndex >= indexRange.lastIndex ) {
+        if (  currentIndex == indexRange.lastIndex ) {
+          console.log("currentIndex("+currentIndex+") IS equal to lastIndex("+indexRange.lastIndex+")");
           var index = indexRange.firstIndex;
         }
         else {
+          console.log("currentIndex IS NOT equal to lastIndex");
           var index = ++currentIndex;
         }
       }
@@ -411,7 +412,7 @@ $(document).ready(function() {
         return false
       }
       else {
-        generateIndex("next");
+        generateNextIndex();
       }
     }
 
