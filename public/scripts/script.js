@@ -1,7 +1,9 @@
 $(document).ready(function() {
-    $body = $('body')
+    $body = $('body');
 
     init();
+
+    $($body).addClass("js");
 
     function init() {
       gatherNodes();
@@ -133,6 +135,10 @@ $(document).ready(function() {
     }
 
     function photographyInit() {
+      setTimeout( function(){
+        $($body).removeClass('js');
+      }, 3200); // delay 500 ms
+
       if ( $body.hasClass("photography-wrapper") ) {
         indexRange = setIndexRange();
         indexRange = getCurrentIndexRange();
@@ -473,7 +479,7 @@ $(document).ready(function() {
     }
 
     function setFbLike(url) {
-      $(this.$fbLikeIcon).html("<div class='fb-like' data-href='"+url+"', data-layout='box_count', data-action='like', data-size='small', data-show-faces='true', data-share='true'></div>");
+      $(this.$fbLikeIcon).html("<div class='fb-like' data-href='"+url+"', data-layout='box_count', data-action='like', data-size='small', data-show_faces='true', data-share='true'></div>");
       if (typeof FB !== 'undefined') {
           FB.XFBML.parse(document.getElementById('fb-like-icon'));
       }

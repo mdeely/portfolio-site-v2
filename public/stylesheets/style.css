@@ -1164,6 +1164,214 @@ nav.masthead ul.nav-header li a {
 .no-js .container .portfolioLink {
   display: initial;
 }
+.js.photography-wrapper .masthead.photography .logo-container {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation: moveDown 2s ease-in-out forwards;
+  -moz-animation: moveDown 2s ease-in-out forwards;
+  -o-animation: moveDown 2s ease-in-out forwards;
+  -ms-animation: moveDown 2s ease-in-out forwards;
+  animation: moveDown 2s ease-in-out forwards;
+  -moz-animation: moveDown 2s ease-in-out forwards;
+  -webkit-animation: moveDown 2s ease-in-out forwards;
+  pointer-events: none;
+}
+.js.photography-wrapper .side_menu {
+  left: -170px;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation: slideRight 0.5s ease-in-out forwards;
+  -moz-animation: slideRight 0.5s ease-in-out forwards;
+  -o-animation: slideRight 0.5s ease-in-out forwards;
+  -ms-animation: slideRight 0.5s ease-in-out forwards;
+  animation: slideRight 0.5s ease-in-out forwards;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  -o-animation-delay: 2s;
+  -ms-animation-delay: 2s;
+  animation-delay: 2s;
+  pointer-events: none;
+}
+.js.photography-wrapper .action-wrapper {
+  bottom: -65px;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation: slideUp 0.5s ease-in-out forwards;
+  -moz-animation: slideUp 0.5s ease-in-out forwards;
+  -o-animation: slideUp 0.5s ease-in-out forwards;
+  -ms-animation: slideUp 0.5s ease-in-out forwards;
+  animation: slideUp 0.5s ease-in-out forwards;
+  -webkit-animation-delay: 2.5s;
+  -moz-animation-delay: 2.5s;
+  -o-animation-delay: 2.5s;
+  -ms-animation-delay: 2.5s;
+  animation-delay: 2.5s;
+  pointer-events: none;
+}
+@-moz-keyframes moveDown {
+  from {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes moveDown {
+  from {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-o-keyframes moveDown {
+  from {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes moveDown {
+  from {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-moz-keyframes slideRight {
+  from {
+    left: -170px;
+  }
+  to {
+    left: -122px;
+  }
+}
+@-webkit-keyframes slideRight {
+  from {
+    left: -170px;
+  }
+  to {
+    left: -122px;
+  }
+}
+@-o-keyframes slideRight {
+  from {
+    left: -170px;
+  }
+  to {
+    left: -122px;
+  }
+}
+@keyframes slideRight {
+  from {
+    left: -170px;
+  }
+  to {
+    left: -122px;
+  }
+}
+@-moz-keyframes slideUp {
+  from {
+    bottom: -65px;
+  }
+  to {
+    bottom: 0;
+  }
+}
+@-webkit-keyframes slideUp {
+  from {
+    bottom: -65px;
+  }
+  to {
+    bottom: 0;
+  }
+}
+@-o-keyframes slideUp {
+  from {
+    bottom: -65px;
+  }
+  to {
+    bottom: 0;
+  }
+}
+@keyframes slideUp {
+  from {
+    bottom: -65px;
+  }
+  to {
+    bottom: 0;
+  }
+}
 .photography-wrapper {
   overflow: hidden;
 }
@@ -1506,13 +1714,13 @@ nav.masthead ul.nav-header li a {
   pointer-events: initial;
   width: 44px;
   height: 50px;
-  left: 0;
+  right: 5px;
   top: 0;
   bottom: 0;
   opacity: 1;
   -ms-filter: none;
   filter: none;
-  position: fixed;
+  position: absolute;
   -webkit-transition: all 0.2s ease-in-out 0.2s;
   -moz-transition: all 0.2s ease-in-out 0.2s;
   -o-transition: all 0.2s ease-in-out 0.2s;
@@ -1559,6 +1767,16 @@ nav.masthead ul.nav-header li a {
   position: relative;
   display: inline-block;
   pointer-events: all;
+  -webkit-transition-delay: 2s;
+  -moz-transition-delay: 2s;
+  -o-transition-delay: 2s;
+  -ms-transition-delay: 2s;
+  transition-delay: 2s;
+  -webkit-transition: top 0.4s ease-in-out;
+  -moz-transition: top 0.4s ease-in-out;
+  -o-transition: top 0.4s ease-in-out;
+  -ms-transition: top 0.4s ease-in-out;
+  transition: top 0.4s ease-in-out;
 }
 .photography-wrapper .masthead .logo-container:after {
   content: "";

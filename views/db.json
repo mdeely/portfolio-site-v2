@@ -198,6 +198,11 @@
                     "album":"milan"
                 },
                 {
+                    "fileName":"CT7A4337",
+                    "title":"Ferris Wheel from Arc De Triomph",
+                    "album":"paris"
+                },
+                {
                     "fileName":"CT7A3600",
                     "title":"Bike & Bird",
                     "album":"amsterdam"
@@ -233,14 +238,14 @@
                     "album":"paris"
                 },
                 {
-                    "fileName":"CT7A4337",
-                    "title":"Ferris Wheel from Arc De Triomph",
-                    "album":"paris"
-                },
-                {
                     "fileName":"CT7A3607",
                     "title":"Apartment Stairwell",
                     "album":"amsterdam"
+                },
+                {
+                    "fileName":"CT7A4369-Pano",
+                    "title":"Basilica From Arc De Triomph",
+                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A5149",
@@ -296,11 +301,6 @@
                     "fileName":"CT7A3651",
                     "title":"Alley",
                     "album":"amsterdam"
-                },
-                {
-                    "fileName":"CT7A4369-Pano",
-                    "title":"Basilica From Arc De Triomph",
-                    "album":"paris"
                 },
                 {
                     "fileName":"CT7A5701",
