@@ -18,14 +18,7 @@ Images for Photography
     - Prevent default not working in Firefox
     - Also menu on main site doesn't activate in Firefox
 
-    - On load, pop in Logo, then Side Menu, then Actions
     - Hover effect on side menu
-
-    - .no-js
-        - no animation property
-    - .js
-        - has animation property
-        - remove animation property via js after certain time to remove forwards property.
 
 - Must Do Before Announcing:
     - Handle bad urls
