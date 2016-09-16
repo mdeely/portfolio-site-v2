@@ -333,11 +333,9 @@ $(document).ready(function() {
 
       if ( direction == "next" ) {
         if (  currentIndex == indexRange.lastIndex ) {
-          console.log("currentIndex("+currentIndex+") IS equal to lastIndex("+indexRange.lastIndex+")");
           var index = indexRange.firstIndex;
         }
         else {
-          console.log("currentIndex IS NOT equal to lastIndex");
           var index = ++currentIndex;
         }
       }
@@ -439,7 +437,9 @@ $(document).ready(function() {
       removeActiveClass();
 
       image.addClass("active");
+      // scroll image in to view
 
+      // update attribute
       $containerPhoto.attr("data-image-index", imgIndex);
       $containerPhoto.css({
         "background-image": "url('"+src+"')"
