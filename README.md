@@ -1,5 +1,5 @@
-# portfolio-site
-A personal portfolio website built with Node.js
+## My Portfolio Site
+# A personal portfolio website built with Node.js
 
 Images for Photography
 (Best results from Lightroom)
@@ -12,14 +12,11 @@ Images for Photography
 
 
 ## TODO:
-- Javascript
+# Javascript
     - Change scroll position to active photo
-    - Preload image on hover but only after hovering over them for a certain period of time
-    - Prevent default not working in Firefox
-    - Also menu on main site doesn't activate in Firefox
+    - Preload image on hover (done) but only after hovering over them for a certain period of time
 
-    - Hover effect on side menu
+    - Menu on main site doesn't activate in Firefox
 
-- Must Do Before Announcing:
+# Must Do Before Announcing:
     - Handle bad urls
-    - Make Amsterdam stairwell picture higher quality

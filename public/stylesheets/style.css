@@ -1535,11 +1535,11 @@ nav.masthead ul.nav-header li a {
   top: 0;
   bottom: 0;
   background-color: rgba(0,0,0,0.25);
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: left 0.2s ease-in-out;
+  -moz-transition: left 0.2s ease-in-out;
+  -o-transition: left 0.2s ease-in-out;
+  -ms-transition: left 0.2s ease-in-out;
+  transition: left 0.2s ease-in-out;
   color: #fff;
   cursor: pointer;
 }
