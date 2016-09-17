@@ -130,7 +130,8 @@
                 {
                     "fileName":"CT7A4210",
                     "title":"Statue In Garden",
-                    "album":"paris"
+                    "album":"paris",
+                    "display":false
                 },
                 {
                     "fileName":"CT7A4111",
@@ -170,7 +171,8 @@
                 {
                     "fileName":"CT7A2705",
                     "title":"Water & Land, Kerry",
-                    "album":"ireland"
+                    "album":"ireland",
+                    "display":false
                 },
                 {
                     "fileName":"CT7A3051",

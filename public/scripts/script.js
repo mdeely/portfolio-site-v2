@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $body = $('body');
-    $($body).addClass("js").delay(3200).queue(function(next){
+    $($body).addClass("js").delay(5000).queue(function(next){
         $(this).removeClass("js");
         next();
     });
@@ -11,11 +11,15 @@ $(document).ready(function() {
       gatherNodes();
       bindHandlers();
 
-      photographyInit();
-      projectListLoadBehavior();
-      // fullscreenImages();
-      scrollToTop(this.$scrollToTop);
-      lazyLoad();
+      if ( $body.hasClass("photography-wrapper") ) {
+        photographyInit();
+      }
+      else {
+        projectListLoadBehavior();
+        // fullscreenImages();
+        scrollToTop(this.$scrollToTop);
+        lazyLoad();
+      }
     };
 
     function gatherNodes() {
@@ -32,6 +36,7 @@ $(document).ready(function() {
       this.$bgPhotoDisplay     = $('.bg-photo-display');
       this.$preloadedImg       = $(".preload-image-container");
       this.$fbLikeIcon         = $("#fb-like-icon");
+      // this.$fbCommentWrapper   = $("#fb-comment-wrapper");
       this.$logoContainer      = $(".logo-container");
       this.$albumSwitcher      = $(".album-switcher");
       this.$albumListLinks     = $(".album-list-container a")
@@ -52,6 +57,7 @@ $(document).ready(function() {
       $( this.$bgPhotoDisplay     ).bind( 'click', handleBgPhotoDisplay);
       $( this.$photoDrawerImgs    ).bind( 'mouseenter', preloadImageOnHover);
       $( this.$fbLikeIcon         ).bind( 'click', handleFbLikeMenu);
+      // $( this.$fbCommentIcon      ).bind( 'click', handleFbCommentMenu);
       $( this.$logoContainer      ).bind( 'click', openLogoMenu);
       $( this.$albumSwitcher      ).bind( 'click', toggleAlbumSwitcher);
       $( this.$albumListLinks     ).bind( 'click', handleAlbumLink);
@@ -136,17 +142,16 @@ $(document).ready(function() {
     }
 
     function photographyInit() {
-      if ( $body.hasClass("photography-wrapper") ) {
-        indexRange = setIndexRange();
-        indexRange = getCurrentIndexRange();
+      indexRange = setIndexRange();
+      indexRange = getCurrentIndexRange();
 
-        revealMenuItems();
-        setDisplayPhoto();
-        detectKeyPressPhotos();
-        observeFbMenu();
-        // Hides annoying "Loading" text on mobile when swiping up
-        $.mobile.loading().hide();
-      }
+      revealMenuItems();
+      setDisplayPhoto();
+      detectKeyPressPhotos();
+      observeFbLikeMenu();
+      // observeFbCommentMenu();
+      // Hides annoying "Loading" text on mobile when swiping up
+      $.mobile.loading().hide();
     }
 
     function revealMenuItems() {
@@ -155,7 +160,7 @@ $(document).ready(function() {
       }
     }
 
-    function observeFbMenu() {
+    function observeFbLikeMenu() {
       var target = document.querySelector('#fb-like-icon');
 
       var observer = new MutationObserver(function(mutations) {
@@ -169,7 +174,6 @@ $(document).ready(function() {
                 disableFbLike();
               }
             }
-
           });
       });
 
@@ -179,6 +183,30 @@ $(document).ready(function() {
         subtree: true
       });
     }
+
+    // function observeFbCommentMenu() {
+    //   var target = document.querySelector('#fb-comment-wrapper');
+
+    //   var observer = new MutationObserver(function(mutations) {
+    //       mutations.forEach(function(mutation) {
+
+    //         if ( mutation.attributeName == "fb-xfbml-state" ) {
+    //           if ( $(".fb-comments").attr("fb-xfbml-state") == "rendered" ) {
+    //             enableFbComment();
+    //           }
+    //           else {
+    //             disableFbComment();
+    //           }
+    //         }
+    //       });
+    //   });
+    //
+    //   observer.observe(target, {
+    //     childList: true,
+    //     attributes: true,
+    //     subtree: true
+    //   });
+    // }
 
     function disableFbLike() {
       $('#fb-like-icon').addClass('disabled');
@@ -191,13 +219,33 @@ $(document).ready(function() {
       $('#fb-like-icon').removeClass('disabled');
     }
 
+    // function disableFbComment() {
+    //   $('#fb-comment-icon').addClass('disabled');
+    // }
+
+    // function enableFbComment() {
+    //   if ( $('#fb-comment-icon').attr('data-state') == 'open' ) {
+    //     showFbLikeMenu();
+    //   }
+    //   $('#fb-comment-icon').removeClass('disabled');
+    // }
+
+
     function handleFbLikeMenu() {
       showFbLikeMenu();
     }
 
+    // function handleFbCommentMenu() {
+    //   showFbCommentMenu();
+    // }
+
     function showFbLikeMenu() {
       this.$fbLikeIcon.toggleClass('open');
     }
+
+    // function showFbCommentMenu() {
+    //   this.$fbCommentIcon.toggleClass('open');
+    // }
 
     function handlePathname(albumName) {
       if ( albumName ) {
@@ -205,6 +253,7 @@ $(document).ready(function() {
       else {
         var photoName  = getPhotoNameFromPathname();
         var index      = getIndexFromPhotoName(photoName);
+
         showPhotoFromIndex(index);
       }
     }
@@ -429,21 +478,26 @@ $(document).ready(function() {
     function showPhoto(image) {
       var $containerPhoto = $(".container.photography");
 
-      var srcRaw    = image.attr('src');
-      var imgIndex  = image.attr('data-img-index');
-      var albumName = image.attr('data-album');
-      var src       = srcRaw.replace('-sm','');
+      var srcRaw     = image.attr('src');
+      var imgIndex   = image.attr('data-img-index');
+      var albumName  = image.attr('data-album');
+      var src        = srcRaw.replace('-sm','');
+      var src2x      = srcRaw.replace('-sm','@2x');
+      var bgImgUrl   = "url('"+src+"')";
+      var bgImgUrl2x = "-webkit-image-set( url('"+src+"') 1x, url('"+src2x+"') 2x )";
 
       removeActiveClass();
-
       image.addClass("active");
       // scroll image in to view
 
       // update attribute
-      $containerPhoto.attr("data-image-index", imgIndex);
-      $containerPhoto.css({
-        "background-image": "url('"+src+"')"
-        });
+      $containerPhoto.attr({
+        "data-image-index": imgIndex,
+        "data-rjs":"2",
+        "style":"background-image:"+bgImgUrl+""
+        // Disable the following code to enable 1x and 2x images
+        // "style": "background-image:"+bgImgUrl+";background-image:"+bgImgUrl2x+""
+      });
 
       var imgTitle = image.attr('title')
 
@@ -469,10 +523,18 @@ $(document).ready(function() {
       }
       $(this.$fbLikeIcon).removeClass('open');
 
+      if ( $(this.$fbCommentIcon).hasClass('open') ) {
+        $(this.$fbCommentIcon).attr('data-state', 'open');
+      }
+      else {
+        $(this.$fbCommentIcon).attr('data-state', '');
+      }
+      $(this.$fbCommentIcon).removeClass('open');
+
       // Update FB Menu
       setFbLike(url);
 
-      // Update album switcher title
+      // retinajs( $containerPhoto );
 
       // Fire off GA event
       ga("send", "event", "Photography", "viewed", src+': '+imgTitle)
@@ -480,8 +542,11 @@ $(document).ready(function() {
 
     function setFbLike(url) {
       $(this.$fbLikeIcon).html("<div class='fb-like' data-href='"+url+"', data-layout='box_count', data-action='like', data-size='small', data-show_faces='true', data-share='true'></div>");
+      // $(this.$fbCommentWrapper).html("<div class='fb-comments' data-href='"+url+"' data-mobile='true' data-numposts='5'></div>");
+
       if (typeof FB !== 'undefined') {
           FB.XFBML.parse(document.getElementById('fb-like-icon'));
+          // FB.XFBML.parse(document.getElementById('fb-comment-wrapper'));
       }
     }
 

@@ -1030,7 +1030,6 @@ nav.masthead {
         -moz-animation: moveDown 2s ease-in-out forwards;
         -webkit-animation: moveDown 2s ease-in-out forwards;
         // animation-delay: 0s;
-        pointer-events: none;
     }
     .side_menu {
         transform: translate(-50px)
@@ -1041,7 +1040,6 @@ nav.masthead {
         animation-delay: 1.5s;
         -webkit-animation-delay: 1.5s;
         -moz-animation-delay: 1.5s;
-        pointer-events: none;
         transition: none;
     }
     .action-wrapper {
@@ -1053,7 +1051,6 @@ nav.masthead {
         animation-delay: 2s;
         -webkit-animation-delay: 2s;
         -moz-animation-delay: 2s;
-        pointer-events: none;
     }
 }
 
@@ -1098,10 +1095,11 @@ nav.masthead {
                 fbLikeOpen() {
                     background-color: alpha(#3B5998, 70%);
 
-                    .fb-like {
-                        top: -75px;
+                    .fb-like{
+                        top: -85px;
                         opacity: 1;
                         transition: all .2s ease-in-out;
+                        pointer-events: all;
                     }
                 }
 
@@ -1126,10 +1124,15 @@ nav.masthead {
 
                 .fb-like {
                     position: absolute;
-                    left: 0;
-                    top: -55px;
                     opacity: 0;
                     transition: all .2s ease-in-out;
+                    pointer-events: none;
+                    padding: 10px;
+                }
+
+                .fb-like {
+                    left: -10px;
+                    top: -65px;
                 }
             }
 

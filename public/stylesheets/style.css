@@ -1180,7 +1180,6 @@ nav.masthead ul.nav-header li a {
   animation: moveDown 2s ease-in-out forwards;
   -moz-animation: moveDown 2s ease-in-out forwards;
   -webkit-animation: moveDown 2s ease-in-out forwards;
-  pointer-events: none;
 }
 .js.photography-wrapper .side_menu {
   -webkit-transform: translate(-50px);
@@ -1207,7 +1206,6 @@ nav.masthead ul.nav-header li a {
   animation-delay: 1.5s;
   -webkit-animation-delay: 1.5s;
   -moz-animation-delay: 1.5s;
-  pointer-events: none;
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -1235,7 +1233,6 @@ nav.masthead ul.nav-header li a {
   animation-delay: 2s;
   -webkit-animation-delay: 2s;
   -moz-animation-delay: 2s;
-  pointer-events: none;
 }
 @-moz-keyframes moveDown {
   from {
@@ -1480,7 +1477,7 @@ nav.masthead ul.nav-header li a {
   background-color: rgba(59,89,152,0.7);
 }
 .photography-wrapper .action-wrapper .action#fb-like-icon:hover .fb-like {
-  top: -75px;
+  top: -85px;
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -1489,12 +1486,13 @@ nav.masthead ul.nav-header li a {
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  pointer-events: all;
 }
 .photography-wrapper .action-wrapper .action#fb-like-icon.open {
   background-color: rgba(59,89,152,0.7);
 }
 .photography-wrapper .action-wrapper .action#fb-like-icon.open .fb-like {
-  top: -75px;
+  top: -85px;
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -1503,6 +1501,7 @@ nav.masthead ul.nav-header li a {
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  pointer-events: all;
 }
 .photography-wrapper .action-wrapper .action#fb-like-icon:active,
 .photography-wrapper .action-wrapper .action#fb-like-icon.open {
@@ -1510,8 +1509,6 @@ nav.masthead ul.nav-header li a {
 }
 .photography-wrapper .action-wrapper .action#fb-like-icon .fb-like {
   position: absolute;
-  left: 0;
-  top: -55px;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
@@ -1520,6 +1517,12 @@ nav.masthead ul.nav-header li a {
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  pointer-events: none;
+  padding: 10px;
+}
+.photography-wrapper .action-wrapper .action#fb-like-icon .fb-like {
+  left: -10px;
+  top: -65px;
 }
 .photography-wrapper .action-wrapper .action.bg-photo-display.fill-screen {
   background-image: url("/images/icons/collapse.svg");
