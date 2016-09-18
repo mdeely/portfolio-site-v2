@@ -322,7 +322,8 @@
                 {
                     "fileName":"CT7A5570",
                     "title":"Lillies - Three Lakes",
-                    "album":"up-north"
+                    "album":"up-north",
+                    "display":false
                 },
                 {
                     "fileName":"CT7A5565",
