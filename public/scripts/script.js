@@ -491,13 +491,14 @@ $(document).ready(function() {
       // scroll image in to view
 
       // update attribute
-      $containerPhoto.attr({
-        "data-image-index": imgIndex,
-        "data-rjs":"2",
-        "style":"background-image:"+bgImgUrl+""
-        // Disable the following code to enable 1x and 2x images
-        // "style": "background-image:"+bgImgUrl+";background-image:"+bgImgUrl2x+""
-      });
+      // $containerPhoto.attr({
+      //   "data-image-index": imgIndex,
+      //   "data-rjs":"2"
+      //   // Disable the following code to enable 1x and 2x images
+      //   // "style": "background-image:"+bgImgUrl+";background-image:"+bgImgUrl2x+""
+      // });
+
+      $($containerPhoto).css("background-image", bgImgUrl);
 
       var imgTitle = image.attr('title')
 
