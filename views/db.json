@@ -440,8 +440,30 @@
                 ]
             }
         },
+        "albert" : {
+            "id": 3,
+            "title":"Albert",
+            "subtitle":"A tech ed company",
+            "theme":"#F0BF6C",
+            "name":"albert",
+            "type":["design"],
+            "images": {
+                "thumb":"albert-thumb.png",
+                "collection": [
+                    {
+                        "fileName" : "albert-medals.png",
+                        "description" : "",
+                        "hero" : true
+                    },
+                    {
+                        "fileName" : "albert-thumb.png",
+                        "description" : "More coming soon..."
+                    }
+                ]
+            }
+        },
         "moving-company-reviews": {
-            "id" : 6,
+            "id" : 4,
             "title":"Moving Company Reviews",
             "subtitle":"A site that provides verified user reviews for moving companies.",
             "theme":"#99b942",
@@ -533,7 +555,7 @@
             }
         },
         "flyleaf" : {
-            "id": 3,
+            "id": 6,
             "title":"Flyleaf",
             "subtitle":"A service aimed at distributing paper copies of short stories from emerging authors.",
             "theme":"#111111",
@@ -576,7 +598,7 @@
             }
         },
         "mu-optics" : {
-            "id": 4,
+            "id": 7,
             "title":"Mu Optics",
             "subtitle":"Thermal imaging at consumer friendly prices.",
             "theme":"#580061",
@@ -633,7 +655,7 @@
         },
 
         "scrybe" : {
-            "id": 5,
+            "id": 8,
             "title":"Scrybe",
             "subtitle":"A simple app for translating text to various languages",
             "theme":"#464646",
@@ -663,7 +685,7 @@
             }
         },
         "sqipp" : {
-            "id": 6,
+            "id": 9,
             "title":"Sqipp",
             "subtitle":"A mobile app designed to allow a quick ordering experience for pickup.",
             "theme":"#B3291A",
@@ -714,7 +736,7 @@
             }
         },
         "graphics": {
-            "id": 1,
+            "id": 10,
             "title":"Graphics",
             "subtitle":"A collection of various graphic illustrations.",
             "theme":"#463857",

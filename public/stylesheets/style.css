@@ -678,14 +678,11 @@ nav.masthead ul.nav-header li a {
   transition: opacity 0.4s ease-in-out 0.01s, visibility 0s;
   z-index: 998;
 }
-.noClick nav.masthead {
-  pointer-events: none;
-}
-.noClick nav.masthead ul li {
+.about nav.masthead ul li {
   -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.05), -2px 1px 11px rgba(0,0,0,0.05);
   box-shadow: 0px 1px 3px rgba(0,0,0,0.05), -2px 1px 11px rgba(0,0,0,0.05);
 }
-.noClick nav.masthead ul li.name {
+.about nav.masthead ul li.name {
   -webkit-animation-duration: 0s;
   -moz-animation-duration: 0s;
   -o-animation-duration: 0s;
@@ -693,8 +690,8 @@ nav.masthead ul.nav-header li a {
   animation-duration: 0s;
   -webkit-animation-duration: 0s;
 }
-.noClick nav.masthead ul li.design,
-.noClick nav.masthead ul li.code {
+.about nav.masthead ul li.design,
+.about nav.masthead ul li.code {
   display: none;
 }
 .container {
@@ -788,7 +785,7 @@ nav.masthead ul.nav-header li a {
 .container .collection-container .collection.hero img {
   -webkit-box-shadow: none;
   box-shadow: none;
-  max-width: 550px;
+  max-width: 450px;
   width: 100%;
   cursor: auto;
 }
@@ -812,13 +809,13 @@ nav.masthead ul.nav-header li a {
 }
 .container .collection-container .collection img {
   max-width: 400px;
-  width: 33%;
+  width: 25%;
   min-width: 300px;
   cursor: -webkit-zoom-in;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  -webkit-box-shadow: -2px 12px 36px rgba(0,0,0,0.3), -43px 9px 72px rgba(0,0,0,0.25);
-  box-shadow: -2px 12px 36px rgba(0,0,0,0.3), -43px 9px 72px rgba(0,0,0,0.25);
+  -webkit-box-shadow: -2px 12px 36px rgba(0,0,0,0.2), -43px 9px 72px rgba(0,0,0,0.16);
+  box-shadow: -2px 12px 36px rgba(0,0,0,0.2), -43px 9px 72px rgba(0,0,0,0.16);
 }
 .container .collection-container .collection p {
   text-align: center;
@@ -833,6 +830,7 @@ nav.masthead ul.nav-header li a {
   display: inline-block;
   max-width: 480px;
   padding: 0 30px;
+  font-weight: 300;
   font-style: italic;
 }
 .masthead {
@@ -903,9 +901,10 @@ nav.masthead ul.nav-header li a {
 .project-title h1 {
   font-size: 30px;
   text-transform: uppercase;
-  letter-spacing: 8px;
+  letter-spacing: 6px;
   font-weight: bold;
   word-break: break-word;
+  text-indent: 6px;
 }
 .project-title p {
   color: #888;
@@ -1090,7 +1089,7 @@ nav.masthead ul.nav-header li a {
   }
   .project-title {
     margin-top: 8%;
-    margin-bottom: 8%;
+    margin-bottom: 6%;
   }
 }
 @media screen and (min-width: 769px) {

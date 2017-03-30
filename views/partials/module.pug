@@ -28,6 +28,10 @@ mixin navigation(back, page)
             a.email(href="mailto:themarcusdeely@gmail.com")
                 img(src="../images/icons/email.svg" width="24px" height="24px")
 
+mixin aboutMasthead(hero, project)
+    nav.masthead.nav-header
+        ul.nav-header
+            li.name(data-type="Home"): a(href="/")
 
 mixin masthead(hero, project)
     - if (hero)
