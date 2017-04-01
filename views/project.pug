@@ -20,4 +20,4 @@ block content
             h1 #{projects[projectName].title}
             p #{projects[projectName].subtitle}
         +imageCollection(projects[projectName])
-    +footer
+    +footer(projects[projectName].theme)

@@ -44,8 +44,9 @@ mixin masthead(hero, project)
                 li.name(data-type="About"): a(href="/about")
                 li.code(data-type="Code"): a
 
-mixin footer()
-    div#footer
+mixin footer(color)
+    - color = color ||  ''
+    div#footer(style='background-color:'+color)
         p Designed and coded by yours truly.
             a(href="https://nodejs.org/en/" target="_blank")
                 img(src="/images/icons/node-logo.svg")
