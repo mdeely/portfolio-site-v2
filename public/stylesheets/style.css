@@ -555,6 +555,12 @@ nav.masthead ul.nav-header li {
   -o-transition: box-shadow 0.2s ease-in-out;
   -ms-transition: box-shadow 0.2s ease-in-out;
   transition: box-shadow 0.2s ease-in-out;
+/*            &.ui {
+                background-image: url("/images/icons/filter-icon.png");
+            }*/
+/*            &.photos {
+                background-image: url("/images/icons/photos-filter.png");
+            }*/
 }
 nav.masthead ul.nav-header li:nth-child(2n) {
   -webkit-animation: hover 30s ease-in-out infinite reverse;
@@ -582,7 +588,9 @@ nav.masthead ul.nav-header li.name a {
 }
 nav.masthead ul.nav-header li.name,
 nav.masthead ul.nav-header li.code,
-nav.masthead ul.nav-header li.design {
+nav.masthead ul.nav-header li.design,
+nav.masthead ul.nav-header li.ui,
+nav.masthead ul.nav-header li.photos {
   background-position: center;
   -webkit-background-size: 58%;
   -moz-background-size: 58%;
@@ -592,7 +600,9 @@ nav.masthead ul.nav-header li.design {
 }
 nav.masthead ul.nav-header li.name:after,
 nav.masthead ul.nav-header li.code:after,
-nav.masthead ul.nav-header li.design:after {
+nav.masthead ul.nav-header li.design:after,
+nav.masthead ul.nav-header li.ui:after,
+nav.masthead ul.nav-header li.photos:after {
   content: attr(data-type);
   padding: 4px;
   color: #666;
@@ -601,7 +611,7 @@ nav.masthead ul.nav-header li.design:after {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -22px;
+  top: 70px;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-size: 10px;
@@ -611,11 +621,35 @@ nav.masthead ul.nav-header li.design:after {
 }
 nav.masthead ul.nav-header li.name:hover:after,
 nav.masthead ul.nav-header li.code:hover:after,
-nav.masthead ul.nav-header li.design:hover:after {
+nav.masthead ul.nav-header li.design:hover:after,
+nav.masthead ul.nav-header li.ui:hover:after,
+nav.masthead ul.nav-header li.photos:hover:after {
   opacity: 1;
   -ms-filter: none;
   filter: none;
-  bottom: -26px;
+  top: 74px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+nav.masthead ul.nav-header li.name.name:after,
+nav.masthead ul.nav-header li.code.name:after,
+nav.masthead ul.nav-header li.design.name:after,
+nav.masthead ul.nav-header li.ui.name:after,
+nav.masthead ul.nav-header li.photos.name:after {
+  top: 102px;
+}
+nav.masthead ul.nav-header li.name.name:hover:after,
+nav.masthead ul.nav-header li.code.name:hover:after,
+nav.masthead ul.nav-header li.design.name:hover:after,
+nav.masthead ul.nav-header li.ui.name:hover:after,
+nav.masthead ul.nav-header li.photos.name:hover:after {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  top: 108px;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
@@ -810,6 +844,7 @@ nav.masthead ul.nav-header li a {
 }
 .container .collection-container .collection img {
   width: auto;
+  max-width: 400px;
   max-height: 400px;
   cursor: -webkit-zoom-in;
   -webkit-border-radius: 2px;
@@ -1097,7 +1132,9 @@ nav.masthead ul.nav-header li a {
     margin: 6px 7%;
   }
   nav.masthead ul li.design,
-  nav.masthead ul li.code {
+  nav.masthead ul li.code,
+  nav.masthead ul li.ui,
+  nav.masthead ul li.photos {
     width: 65px;
     height: 65px;
   }
@@ -1991,32 +2028,32 @@ nav.masthead ul.nav-header li a {
     transform: translate(0px, 0px);
   }
   20% {
-    -webkit-transform: translate(-3px, 9px);
-    -moz-transform: translate(-3px, 9px);
-    -o-transform: translate(-3px, 9px);
-    -ms-transform: translate(-3px, 9px);
-    transform: translate(-3px, 9px);
+    -webkit-transform: translate(-2px, 8px);
+    -moz-transform: translate(-2px, 8px);
+    -o-transform: translate(-2px, 8px);
+    -ms-transform: translate(-2px, 8px);
+    transform: translate(-2px, 8px);
   }
   40% {
-    -webkit-transform: translate(0px, -8px);
-    -moz-transform: translate(0px, -8px);
-    -o-transform: translate(0px, -8px);
-    -ms-transform: translate(0px, -8px);
-    transform: translate(0px, -8px);
+    -webkit-transform: translate(0px, -7px);
+    -moz-transform: translate(0px, -7px);
+    -o-transform: translate(0px, -7px);
+    -ms-transform: translate(0px, -7px);
+    transform: translate(0px, -7px);
   }
   60% {
-    -webkit-transform: translate(4px, 7px);
-    -moz-transform: translate(4px, 7px);
-    -o-transform: translate(4px, 7px);
-    -ms-transform: translate(4px, 7px);
-    transform: translate(4px, 7px);
+    -webkit-transform: translate(3px, 6px);
+    -moz-transform: translate(3px, 6px);
+    -o-transform: translate(3px, 6px);
+    -ms-transform: translate(3px, 6px);
+    transform: translate(3px, 6px);
   }
   80% {
-    -webkit-transform: translate(-5px, -8px);
-    -moz-transform: translate(-5px, -8px);
-    -o-transform: translate(-5px, -8px);
-    -ms-transform: translate(-5px, -8px);
-    transform: translate(-5px, -8px);
+    -webkit-transform: translate(-4px, -7px);
+    -moz-transform: translate(-4px, -7px);
+    -o-transform: translate(-4px, -7px);
+    -ms-transform: translate(-4px, -7px);
+    transform: translate(-4px, -7px);
   }
   100% {
     -webkit-transform: translate(0px, 0px);
@@ -2035,32 +2072,32 @@ nav.masthead ul.nav-header li a {
     transform: translate(0px, 0px);
   }
   20% {
-    -webkit-transform: translate(-3px, 9px);
-    -moz-transform: translate(-3px, 9px);
-    -o-transform: translate(-3px, 9px);
-    -ms-transform: translate(-3px, 9px);
-    transform: translate(-3px, 9px);
+    -webkit-transform: translate(-2px, 8px);
+    -moz-transform: translate(-2px, 8px);
+    -o-transform: translate(-2px, 8px);
+    -ms-transform: translate(-2px, 8px);
+    transform: translate(-2px, 8px);
   }
   40% {
-    -webkit-transform: translate(0px, -8px);
-    -moz-transform: translate(0px, -8px);
-    -o-transform: translate(0px, -8px);
-    -ms-transform: translate(0px, -8px);
-    transform: translate(0px, -8px);
+    -webkit-transform: translate(0px, -7px);
+    -moz-transform: translate(0px, -7px);
+    -o-transform: translate(0px, -7px);
+    -ms-transform: translate(0px, -7px);
+    transform: translate(0px, -7px);
   }
   60% {
-    -webkit-transform: translate(4px, 7px);
-    -moz-transform: translate(4px, 7px);
-    -o-transform: translate(4px, 7px);
-    -ms-transform: translate(4px, 7px);
-    transform: translate(4px, 7px);
+    -webkit-transform: translate(3px, 6px);
+    -moz-transform: translate(3px, 6px);
+    -o-transform: translate(3px, 6px);
+    -ms-transform: translate(3px, 6px);
+    transform: translate(3px, 6px);
   }
   80% {
-    -webkit-transform: translate(-5px, -8px);
-    -moz-transform: translate(-5px, -8px);
-    -o-transform: translate(-5px, -8px);
-    -ms-transform: translate(-5px, -8px);
-    transform: translate(-5px, -8px);
+    -webkit-transform: translate(-4px, -7px);
+    -moz-transform: translate(-4px, -7px);
+    -o-transform: translate(-4px, -7px);
+    -ms-transform: translate(-4px, -7px);
+    transform: translate(-4px, -7px);
   }
   100% {
     -webkit-transform: translate(0px, 0px);
@@ -2079,32 +2116,32 @@ nav.masthead ul.nav-header li a {
     transform: translate(0px, 0px);
   }
   20% {
-    -webkit-transform: translate(-3px, 9px);
-    -moz-transform: translate(-3px, 9px);
-    -o-transform: translate(-3px, 9px);
-    -ms-transform: translate(-3px, 9px);
-    transform: translate(-3px, 9px);
+    -webkit-transform: translate(-2px, 8px);
+    -moz-transform: translate(-2px, 8px);
+    -o-transform: translate(-2px, 8px);
+    -ms-transform: translate(-2px, 8px);
+    transform: translate(-2px, 8px);
   }
   40% {
-    -webkit-transform: translate(0px, -8px);
-    -moz-transform: translate(0px, -8px);
-    -o-transform: translate(0px, -8px);
-    -ms-transform: translate(0px, -8px);
-    transform: translate(0px, -8px);
+    -webkit-transform: translate(0px, -7px);
+    -moz-transform: translate(0px, -7px);
+    -o-transform: translate(0px, -7px);
+    -ms-transform: translate(0px, -7px);
+    transform: translate(0px, -7px);
   }
   60% {
-    -webkit-transform: translate(4px, 7px);
-    -moz-transform: translate(4px, 7px);
-    -o-transform: translate(4px, 7px);
-    -ms-transform: translate(4px, 7px);
-    transform: translate(4px, 7px);
+    -webkit-transform: translate(3px, 6px);
+    -moz-transform: translate(3px, 6px);
+    -o-transform: translate(3px, 6px);
+    -ms-transform: translate(3px, 6px);
+    transform: translate(3px, 6px);
   }
   80% {
-    -webkit-transform: translate(-5px, -8px);
-    -moz-transform: translate(-5px, -8px);
-    -o-transform: translate(-5px, -8px);
-    -ms-transform: translate(-5px, -8px);
-    transform: translate(-5px, -8px);
+    -webkit-transform: translate(-4px, -7px);
+    -moz-transform: translate(-4px, -7px);
+    -o-transform: translate(-4px, -7px);
+    -ms-transform: translate(-4px, -7px);
+    transform: translate(-4px, -7px);
   }
   100% {
     -webkit-transform: translate(0px, 0px);
@@ -2123,32 +2160,32 @@ nav.masthead ul.nav-header li a {
     transform: translate(0px, 0px);
   }
   20% {
-    -webkit-transform: translate(-3px, 9px);
-    -moz-transform: translate(-3px, 9px);
-    -o-transform: translate(-3px, 9px);
-    -ms-transform: translate(-3px, 9px);
-    transform: translate(-3px, 9px);
+    -webkit-transform: translate(-2px, 8px);
+    -moz-transform: translate(-2px, 8px);
+    -o-transform: translate(-2px, 8px);
+    -ms-transform: translate(-2px, 8px);
+    transform: translate(-2px, 8px);
   }
   40% {
-    -webkit-transform: translate(0px, -8px);
-    -moz-transform: translate(0px, -8px);
-    -o-transform: translate(0px, -8px);
-    -ms-transform: translate(0px, -8px);
-    transform: translate(0px, -8px);
+    -webkit-transform: translate(0px, -7px);
+    -moz-transform: translate(0px, -7px);
+    -o-transform: translate(0px, -7px);
+    -ms-transform: translate(0px, -7px);
+    transform: translate(0px, -7px);
   }
   60% {
-    -webkit-transform: translate(4px, 7px);
-    -moz-transform: translate(4px, 7px);
-    -o-transform: translate(4px, 7px);
-    -ms-transform: translate(4px, 7px);
-    transform: translate(4px, 7px);
+    -webkit-transform: translate(3px, 6px);
+    -moz-transform: translate(3px, 6px);
+    -o-transform: translate(3px, 6px);
+    -ms-transform: translate(3px, 6px);
+    transform: translate(3px, 6px);
   }
   80% {
-    -webkit-transform: translate(-5px, -8px);
-    -moz-transform: translate(-5px, -8px);
-    -o-transform: translate(-5px, -8px);
-    -ms-transform: translate(-5px, -8px);
-    transform: translate(-5px, -8px);
+    -webkit-transform: translate(-4px, -7px);
+    -moz-transform: translate(-4px, -7px);
+    -o-transform: translate(-4px, -7px);
+    -ms-transform: translate(-4px, -7px);
+    transform: translate(-4px, -7px);
   }
   100% {
     -webkit-transform: translate(0px, 0px);

@@ -46,10 +46,10 @@ navItemStyles() {
 
 @keyframes hover {
     0%   { transform: translate(0px,0px); }
-    20%  { transform: translate(-3px,9px); }
-    40%  { transform: translate(0px,-8px); }
-    60%  { transform: translate(4px,7px); }
-    80%  { transform: translate(-5px,-8px); }
+    20%  { transform: translate(-2px,8px); }
+    40%  { transform: translate(0px,-7px); }
+    60%  { transform: translate(3px,6px); }
+    80%  { transform: translate(-4px,-7px); }
     100% { transform: translate(0px,0px); }
 }
 
@@ -424,7 +424,9 @@ nav.masthead {
 
             &.name,
             &.code,
-            &.design {
+            &.design,
+            &.ui,
+            &.photos {
                 background-position: center;
                 background-size: 58%;
                 background-repeat: no-repeat;
@@ -438,7 +440,7 @@ nav.masthead {
                     position: absolute;
                     left: 0;
                     right: 0;
-                    bottom: -22px;
+                    top: 70px;
                     letter-spacing: 2px;
                     text-transform: uppercase;
                     font-size: 10px;
@@ -447,10 +449,27 @@ nav.masthead {
 
                 &:hover:after {
                     opacity: 1;
-                    bottom: -26px;
+                    top: 74px;
                     transition: all .2s ease-out;
                 }
+
+                &.name {
+
+                    &:after {
+                        top: 102px;
+                    }
+
+                    &:hover:after {
+                        opacity: 1;
+                        top: 108px;
+                        transition: all .2s ease-out;
+                    }
+                }
             }
+
+/*            &.ui {
+                background-image: url("/images/icons/filter-icon.png");
+            }*/
 
             &.design {
                 background-image: url("/images/icons/design-filter.png");
@@ -460,6 +479,10 @@ nav.masthead {
                 background-image: url("/images/icons/code-filter.png");
                 background-size: 52%;
             }
+
+/*            &.photos {
+                background-image: url("/images/icons/photos-filter.png");
+            }*/
 
             &.activated {
                 transition: box-shadow .1s ease-in-out;
@@ -638,6 +661,7 @@ nav.masthead {
 
             img {
                 width: auto;
+                max-width: 400px;
                 max-height: 400px;
                 cursor: -webkit-zoom-in;
                 border-radius: 2px;
@@ -918,7 +942,9 @@ nav.masthead {
                 }
 
                 &.design,
-                &.code {
+                &.code,
+                &.ui,
+                &.photos {
                     width: 65px;
                     height: 65px;
                 }
