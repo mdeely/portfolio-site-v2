@@ -809,10 +809,8 @@ nav.masthead ul.nav-header li a {
   text-align: center;
 }
 .container .collection-container .collection img {
-/*                max-width: 400px;*/
   width: auto;
-/*min-width: 300px;*/
-  max-height: 340px;
+  max-height: 400px;
   cursor: -webkit-zoom-in;
   -webkit-border-radius: 2px;
   border-radius: 2px;
