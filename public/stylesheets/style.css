@@ -555,12 +555,6 @@ nav.masthead ul.nav-header li {
   -o-transition: box-shadow 0.2s ease-in-out;
   -ms-transition: box-shadow 0.2s ease-in-out;
   transition: box-shadow 0.2s ease-in-out;
-/*            &.ui {
-                background-image: url("/images/icons/filter-icon.png");
-            }*/
-/*            &.photos {
-                background-image: url("/images/icons/photos-filter.png");
-            }*/
 }
 nav.masthead ul.nav-header li:nth-child(2n) {
   -webkit-animation: hover 30s ease-in-out infinite reverse;
@@ -587,10 +581,10 @@ nav.masthead ul.nav-header li.name a {
   color: transparent;
 }
 nav.masthead ul.nav-header li.name,
-nav.masthead ul.nav-header li.code,
-nav.masthead ul.nav-header li.design,
 nav.masthead ul.nav-header li.ui,
-nav.masthead ul.nav-header li.photos {
+nav.masthead ul.nav-header li.photos,
+nav.masthead ul.nav-header li.design,
+nav.masthead ul.nav-header li.code {
   background-position: center;
   -webkit-background-size: 58%;
   -moz-background-size: 58%;
@@ -599,18 +593,18 @@ nav.masthead ul.nav-header li.photos {
   position: relative;
 }
 nav.masthead ul.nav-header li.name:after,
-nav.masthead ul.nav-header li.code:after,
-nav.masthead ul.nav-header li.design:after,
 nav.masthead ul.nav-header li.ui:after,
-nav.masthead ul.nav-header li.photos:after {
+nav.masthead ul.nav-header li.photos:after,
+nav.masthead ul.nav-header li.design:after,
+nav.masthead ul.nav-header li.code:after {
   content: attr(data-type);
   padding: 4px;
   color: #666;
   -webkit-border-radius: 4px;
   border-radius: 4px;
   position: absolute;
-  left: 0;
-  right: 0;
+  left: -50%;
+  right: -50%;
   top: 70px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -620,10 +614,10 @@ nav.masthead ul.nav-header li.photos:after {
   filter: alpha(opacity=0);
 }
 nav.masthead ul.nav-header li.name:hover:after,
-nav.masthead ul.nav-header li.code:hover:after,
-nav.masthead ul.nav-header li.design:hover:after,
 nav.masthead ul.nav-header li.ui:hover:after,
-nav.masthead ul.nav-header li.photos:hover:after {
+nav.masthead ul.nav-header li.photos:hover:after,
+nav.masthead ul.nav-header li.design:hover:after,
+nav.masthead ul.nav-header li.code:hover:after {
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -635,17 +629,17 @@ nav.masthead ul.nav-header li.photos:hover:after {
   transition: all 0.2s ease-out;
 }
 nav.masthead ul.nav-header li.name.name:after,
-nav.masthead ul.nav-header li.code.name:after,
-nav.masthead ul.nav-header li.design.name:after,
 nav.masthead ul.nav-header li.ui.name:after,
-nav.masthead ul.nav-header li.photos.name:after {
+nav.masthead ul.nav-header li.photos.name:after,
+nav.masthead ul.nav-header li.design.name:after,
+nav.masthead ul.nav-header li.code.name:after {
   top: 102px;
 }
 nav.masthead ul.nav-header li.name.name:hover:after,
-nav.masthead ul.nav-header li.code.name:hover:after,
-nav.masthead ul.nav-header li.design.name:hover:after,
 nav.masthead ul.nav-header li.ui.name:hover:after,
-nav.masthead ul.nav-header li.photos.name:hover:after {
+nav.masthead ul.nav-header li.photos.name:hover:after,
+nav.masthead ul.nav-header li.design.name:hover:after,
+nav.masthead ul.nav-header li.code.name:hover:after {
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -658,6 +652,18 @@ nav.masthead ul.nav-header li.photos.name:hover:after {
 }
 nav.masthead ul.nav-header li.design {
   background-image: url("/images/icons/design-filter.png");
+}
+nav.masthead ul.nav-header li.photos {
+  background-image: url("/images/icons/photos.png");
+  -webkit-background-size: 52%;
+  -moz-background-size: 52%;
+  background-size: 52%;
+}
+nav.masthead ul.nav-header li.ui {
+  background-image: url("/images/icons/ui-filter.png");
+  -webkit-background-size: 46%;
+  -moz-background-size: 46%;
+  background-size: 46%;
 }
 nav.masthead ul.nav-header li.code {
   background-image: url("/images/icons/code-filter.png");
@@ -724,8 +730,10 @@ nav.masthead ul.nav-header li a {
   animation-duration: 0s;
   -webkit-animation-duration: 0s;
 }
-.about nav.masthead ul li.design,
-.about nav.masthead ul li.code {
+.about nav.masthead ul li.photos,
+.about nav.masthead ul li.ui,
+.about nav.masthead ul li.code,
+.about nav.masthead ul li.design {
   display: none;
 }
 .container {
@@ -1131,10 +1139,10 @@ nav.masthead ul.nav-header li a {
   nav.masthead ul li.name {
     margin: 6px 7%;
   }
-  nav.masthead ul li.design,
-  nav.masthead ul li.code,
   nav.masthead ul li.ui,
-  nav.masthead ul li.photos {
+  nav.masthead ul li.photos,
+  nav.masthead ul li.design,
+  nav.masthead ul li.code {
     width: 65px;
     height: 65px;
   }
@@ -2028,32 +2036,32 @@ nav.masthead ul.nav-header li a {
     transform: translate(0px, 0px);
   }
   20% {
-    -webkit-transform: translate(-2px, 8px);
-    -moz-transform: translate(-2px, 8px);
-    -o-transform: translate(-2px, 8px);
-    -ms-transform: translate(-2px, 8px);
-    transform: translate(-2px, 8px);
+    -webkit-transform: translate(-1px, 6px);
+    -moz-transform: translate(-1px, 6px);
+    -o-transform: translate(-1px, 6px);
+    -ms-transform: translate(-1px, 6px);
+    transform: translate(-1px, 6px);
   }
   40% {
-    -webkit-transform: translate(0px, -7px);
-    -moz-transform: translate(0px, -7px);
-    -o-transform: translate(0px, -7px);
-    -ms-transform: translate(0px, -7px);
-    transform: translate(0px, -7px);
+    -webkit-transform: translate(1px, -5px);
+    -moz-transform: translate(1px, -5px);
+    -o-transform: translate(1px, -5px);
+    -ms-transform: translate(1px, -5px);
+    transform: translate(1px, -5px);
   }
   60% {
-    -webkit-transform: translate(3px, 6px);
-    -moz-transform: translate(3px, 6px);
-    -o-transform: translate(3px, 6px);
-    -ms-transform: translate(3px, 6px);
-    transform: translate(3px, 6px);
+    -webkit-transform: translate(1px, 4px);
+    -moz-transform: translate(1px, 4px);
+    -o-transform: translate(1px, 4px);
+    -ms-transform: translate(1px, 4px);
+    transform: translate(1px, 4px);
   }
   80% {
-    -webkit-transform: translate(-4px, -7px);
-    -moz-transform: translate(-4px, -7px);
-    -o-transform: translate(-4px, -7px);
-    -ms-transform: translate(-4px, -7px);
-    transform: translate(-4px, -7px);
+    -webkit-transform: translate(-2px, -5px);
+    -moz-transform: translate(-2px, -5px);
+    -o-transform: translate(-2px, -5px);
+    -ms-transform: translate(-2px, -5px);
+    transform: translate(-2px, -5px);
   }
   100% {
     -webkit-transform: translate(0px, 0px);
@@ -2072,32 +2080,32 @@ nav.masthead ul.nav-header li a {
     transform: translate(0px, 0px);
   }
   20% {
-    -webkit-transform: translate(-2px, 8px);
-    -moz-transform: translate(-2px, 8px);
-    -o-transform: translate(-2px, 8px);
-    -ms-transform: translate(-2px, 8px);
-    transform: translate(-2px, 8px);
+    -webkit-transform: translate(-1px, 6px);
+    -moz-transform: translate(-1px, 6px);
+    -o-transform: translate(-1px, 6px);
+    -ms-transform: translate(-1px, 6px);
+    transform: translate(-1px, 6px);
   }
   40% {
-    -webkit-transform: translate(0px, -7px);
-    -moz-transform: translate(0px, -7px);
-    -o-transform: translate(0px, -7px);
-    -ms-transform: translate(0px, -7px);
-    transform: translate(0px, -7px);
+    -webkit-transform: translate(1px, -5px);
+    -moz-transform: translate(1px, -5px);
+    -o-transform: translate(1px, -5px);
+    -ms-transform: translate(1px, -5px);
+    transform: translate(1px, -5px);
   }
   60% {
-    -webkit-transform: translate(3px, 6px);
-    -moz-transform: translate(3px, 6px);
-    -o-transform: translate(3px, 6px);
-    -ms-transform: translate(3px, 6px);
-    transform: translate(3px, 6px);
+    -webkit-transform: translate(1px, 4px);
+    -moz-transform: translate(1px, 4px);
+    -o-transform: translate(1px, 4px);
+    -ms-transform: translate(1px, 4px);
+    transform: translate(1px, 4px);
   }
   80% {
-    -webkit-transform: translate(-4px, -7px);
-    -moz-transform: translate(-4px, -7px);
-    -o-transform: translate(-4px, -7px);
-    -ms-transform: translate(-4px, -7px);
-    transform: translate(-4px, -7px);
+    -webkit-transform: translate(-2px, -5px);
+    -moz-transform: translate(-2px, -5px);
+    -o-transform: translate(-2px, -5px);
+    -ms-transform: translate(-2px, -5px);
+    transform: translate(-2px, -5px);
   }
   100% {
     -webkit-transform: translate(0px, 0px);
@@ -2116,32 +2124,32 @@ nav.masthead ul.nav-header li a {
     transform: translate(0px, 0px);
   }
   20% {
-    -webkit-transform: translate(-2px, 8px);
-    -moz-transform: translate(-2px, 8px);
-    -o-transform: translate(-2px, 8px);
-    -ms-transform: translate(-2px, 8px);
-    transform: translate(-2px, 8px);
+    -webkit-transform: translate(-1px, 6px);
+    -moz-transform: translate(-1px, 6px);
+    -o-transform: translate(-1px, 6px);
+    -ms-transform: translate(-1px, 6px);
+    transform: translate(-1px, 6px);
   }
   40% {
-    -webkit-transform: translate(0px, -7px);
-    -moz-transform: translate(0px, -7px);
-    -o-transform: translate(0px, -7px);
-    -ms-transform: translate(0px, -7px);
-    transform: translate(0px, -7px);
+    -webkit-transform: translate(1px, -5px);
+    -moz-transform: translate(1px, -5px);
+    -o-transform: translate(1px, -5px);
+    -ms-transform: translate(1px, -5px);
+    transform: translate(1px, -5px);
   }
   60% {
-    -webkit-transform: translate(3px, 6px);
-    -moz-transform: translate(3px, 6px);
-    -o-transform: translate(3px, 6px);
-    -ms-transform: translate(3px, 6px);
-    transform: translate(3px, 6px);
+    -webkit-transform: translate(1px, 4px);
+    -moz-transform: translate(1px, 4px);
+    -o-transform: translate(1px, 4px);
+    -ms-transform: translate(1px, 4px);
+    transform: translate(1px, 4px);
   }
   80% {
-    -webkit-transform: translate(-4px, -7px);
-    -moz-transform: translate(-4px, -7px);
-    -o-transform: translate(-4px, -7px);
-    -ms-transform: translate(-4px, -7px);
-    transform: translate(-4px, -7px);
+    -webkit-transform: translate(-2px, -5px);
+    -moz-transform: translate(-2px, -5px);
+    -o-transform: translate(-2px, -5px);
+    -ms-transform: translate(-2px, -5px);
+    transform: translate(-2px, -5px);
   }
   100% {
     -webkit-transform: translate(0px, 0px);
@@ -2160,32 +2168,32 @@ nav.masthead ul.nav-header li a {
     transform: translate(0px, 0px);
   }
   20% {
-    -webkit-transform: translate(-2px, 8px);
-    -moz-transform: translate(-2px, 8px);
-    -o-transform: translate(-2px, 8px);
-    -ms-transform: translate(-2px, 8px);
-    transform: translate(-2px, 8px);
+    -webkit-transform: translate(-1px, 6px);
+    -moz-transform: translate(-1px, 6px);
+    -o-transform: translate(-1px, 6px);
+    -ms-transform: translate(-1px, 6px);
+    transform: translate(-1px, 6px);
   }
   40% {
-    -webkit-transform: translate(0px, -7px);
-    -moz-transform: translate(0px, -7px);
-    -o-transform: translate(0px, -7px);
-    -ms-transform: translate(0px, -7px);
-    transform: translate(0px, -7px);
+    -webkit-transform: translate(1px, -5px);
+    -moz-transform: translate(1px, -5px);
+    -o-transform: translate(1px, -5px);
+    -ms-transform: translate(1px, -5px);
+    transform: translate(1px, -5px);
   }
   60% {
-    -webkit-transform: translate(3px, 6px);
-    -moz-transform: translate(3px, 6px);
-    -o-transform: translate(3px, 6px);
-    -ms-transform: translate(3px, 6px);
-    transform: translate(3px, 6px);
+    -webkit-transform: translate(1px, 4px);
+    -moz-transform: translate(1px, 4px);
+    -o-transform: translate(1px, 4px);
+    -ms-transform: translate(1px, 4px);
+    transform: translate(1px, 4px);
   }
   80% {
-    -webkit-transform: translate(-4px, -7px);
-    -moz-transform: translate(-4px, -7px);
-    -o-transform: translate(-4px, -7px);
-    -ms-transform: translate(-4px, -7px);
-    transform: translate(-4px, -7px);
+    -webkit-transform: translate(-2px, -5px);
+    -moz-transform: translate(-2px, -5px);
+    -o-transform: translate(-2px, -5px);
+    -ms-transform: translate(-2px, -5px);
+    transform: translate(-2px, -5px);
   }
   100% {
     -webkit-transform: translate(0px, 0px);

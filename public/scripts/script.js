@@ -25,7 +25,7 @@ $(document).ready(function() {
     function gatherNodes() {
       this.$menuTrigger        = $('.menu-trigger');
       this.$menuFader          = $('.menu-fader');
-      this.$projectFilters     = $('li.design, li.code');
+      this.$projectFilters     = $('li.design, li.code, li.ui');
       this.$projects           = $('.portfolioLink');
       this.$images             = $('img');
       this.$fsImage            = $('.fullscreen-image');
@@ -565,7 +565,7 @@ $(document).ready(function() {
         showHiddenProjects();
       }
       else {
-        var filterClass = $(filter).attr('class');
+        var filterClass = $(filter).attr('data-name');
         $( this.$projectFilters ).removeClass('activated');
         $(filter).addClass('activated');
 
@@ -573,7 +573,6 @@ $(document).ready(function() {
         // hide all non-relevant projects
         // show all relevant projects
       }
-
     }
 
     function displayFilteredProjects(filterClass) {

@@ -40,9 +40,11 @@ mixin masthead(hero, project)
     - else
         nav.masthead.nav-header
             ul.nav-header
-                li.design(data-type="Design"): a
+                li.ui(data-type="UI Design" data-name="ui-design"): a
+                li.design(data-type="Graphic Design" data-name="graphic-design"): a
                 li.name(data-type="About"): a(href="/about")
-                li.code(data-type="Code"): a
+                li.code(data-type="Code" data-name="code"): a
+                li.photos(data-type="Photography"): a(href="/photography")
 
 mixin footer(color)
     - color = color ||  ''

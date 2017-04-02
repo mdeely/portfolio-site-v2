@@ -400,7 +400,7 @@
             "subtitle":"An alarm clock app that won't stop until you smile in to the camera.",
             "theme":"#F4964E",
             "name":"rise-and-shine",
-            "type":["design"],
+            "type":["ui-design"],
             "images": {
                 "thumb":"rise-and-shine-thumb.png",
                 "collection" : [
@@ -446,7 +446,7 @@
             "subtitle":"A tech ed company",
             "theme":"#F0BF6C",
             "name":"albert",
-            "type":["design"],
+            "type":["ui-design", "graphic-design"],
             "images": {
                 "thumb":"albert-thumb.png",
                 "collection": [
@@ -468,7 +468,7 @@
             "subtitle":"A site that provides verified user reviews for moving companies.",
             "theme":"#99b942",
             "name":"moving-company-reviews",
-            "type":["design", "code"],
+            "type":["ui-design", "code", "graphic-design"],
             "images": {
                 "thumb" : "mcr-thumb.png",
                 "collection": [
@@ -560,7 +560,7 @@
             "subtitle":"A service aimed at distributing paper copies of short stories from emerging authors.",
             "theme":"#111111",
             "name":"flyleaf",
-            "type":["code"],
+            "type":["code", "graphic-design"],
             "images": {
                 "thumb":"flyleaf-thumb.png",
                 "collection": [
@@ -603,7 +603,7 @@
             "subtitle":"Thermal imaging at consumer friendly prices.",
             "theme":"#580061",
             "name":"mu-optics",
-            "type":["design", "code"],
+            "type":["ui-design", "code", "graphic-design"],
             "images": {
                 "thumb":"mu-thumb.png",
                 "collection": [
@@ -660,7 +660,7 @@
             "subtitle":"A simple app for translating text to various languages",
             "theme":"#464646",
             "name":"scrybe",
-            "type":["design"],
+            "type":["ui-design"],
             "images": {
                 "thumb":"scrybe-thumb.png",
                 "collection": [
@@ -690,7 +690,7 @@
             "subtitle":"A mobile app designed to allow a quick ordering experience for pickup.",
             "theme":"#B3291A",
             "name":"sqipp",
-            "type":["design"],
+            "type":["ui-design", "grahpic-design"],
             "images": {
                 "thumb":"sqipp-thumb.png",
                 "collection": [
@@ -741,7 +741,7 @@
             "subtitle":"A collection of various graphic illustrations.",
             "theme":"#463857",
             "name":"graphics",
-            "type":["design"],
+            "type":["graphic-design"],
             "images": {
                 "thumb":"trois_thumb.png",
                 "collection": [
