@@ -163,7 +163,7 @@ a {
 }
 .nav-item {
   position: fixed;
-  top: 28px;
+  top: 14px;
   right: 14px;
   z-index: 999;
   -webkit-transition: top 0.5s ease-in-out, right 0.5s ease-in-out;
@@ -534,41 +534,17 @@ nav.masthead ul.nav-header {
 nav.masthead ul.nav-header li {
   display: inline-block;
   padding: 6px;
-  margin: 6px 12px;
   font-size: 1em;
   vertical-align: middle;
-  background-color: #fff;
   height: 54px;
   width: 54px;
   -webkit-border-radius: 5em;
   border-radius: 5em;
-  -webkit-animation: hover 9s infinite;
-  -webkit-animation: hover 40s ease-in-out infinite;
-  -moz-animation: hover 40s ease-in-out infinite;
-  -o-animation: hover 40s ease-in-out infinite;
-  -ms-animation: hover 40s ease-in-out infinite;
-  animation: hover 40s ease-in-out infinite;
-  -webkit-box-shadow: -3px 3px 10px rgba(0,0,0,0.1), -10px 5px 29px rgba(0,0,0,0.1);
-  box-shadow: -3px 3px 10px rgba(0,0,0,0.1), -10px 5px 29px rgba(0,0,0,0.1);
   -webkit-transition: box-shadow 0.2s ease-in-out;
   -moz-transition: box-shadow 0.2s ease-in-out;
   -o-transition: box-shadow 0.2s ease-in-out;
   -ms-transition: box-shadow 0.2s ease-in-out;
   transition: box-shadow 0.2s ease-in-out;
-}
-nav.masthead ul.nav-header li:nth-child(2n) {
-  -webkit-animation: hover 30s ease-in-out infinite reverse;
-  -moz-animation: hover 30s ease-in-out infinite reverse;
-  -o-animation: hover 30s ease-in-out infinite reverse;
-  -ms-animation: hover 30s ease-in-out infinite reverse;
-  animation: hover 30s ease-in-out infinite reverse;
-}
-nav.masthead ul.nav-header li:nth-child(3n) {
-  -webkit-animation: hover 20s ease-in-out infinite alternate;
-  -moz-animation: hover 20s ease-in-out infinite alternate;
-  -o-animation: hover 20s ease-in-out infinite alternate;
-  -ms-animation: hover 20s ease-in-out infinite alternate;
-  animation: hover 20s ease-in-out infinite alternate;
 }
 nav.masthead ul.nav-header li.name {
   background-image: url("/images/icons/name.svg");
@@ -579,6 +555,12 @@ nav.masthead ul.nav-header li.name {
 }
 nav.masthead ul.nav-header li.name a {
   color: transparent;
+}
+nav.masthead ul.nav-header li:after {
+  top: 48px;
+}
+nav.masthead ul.nav-header li:hover:after {
+  top: 56px;
 }
 nav.masthead ul.nav-header li.name,
 nav.masthead ul.nav-header li.ui,
@@ -605,7 +587,6 @@ nav.masthead ul.nav-header li.code:after {
   position: absolute;
   left: -50%;
   right: -50%;
-  top: 70px;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-size: 10px;
@@ -621,7 +602,6 @@ nav.masthead ul.nav-header li.code:hover:after {
   opacity: 1;
   -ms-filter: none;
   filter: none;
-  top: 74px;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
@@ -1163,6 +1143,38 @@ nav.masthead ul.nav-header li a {
   }
 }
 @media screen and (min-width: 769px) {
+  nav.masthead ul.nav-header li {
+    background-color: #fff;
+    -webkit-box-shadow: -3px 3px 10px rgba(0,0,0,0.1), -10px 5px 29px rgba(0,0,0,0.1);
+    box-shadow: -3px 3px 10px rgba(0,0,0,0.1), -10px 5px 29px rgba(0,0,0,0.1);
+    margin: 6px 12px;
+    -webkit-animation: hover 9s infinite;
+    -webkit-animation: hover 40s ease-in-out infinite;
+    -moz-animation: hover 40s ease-in-out infinite;
+    -o-animation: hover 40s ease-in-out infinite;
+    -ms-animation: hover 40s ease-in-out infinite;
+    animation: hover 40s ease-in-out infinite;
+  }
+  nav.masthead ul.nav-header li:nth-child(2n) {
+    -webkit-animation: hover 30s ease-in-out infinite reverse;
+    -moz-animation: hover 30s ease-in-out infinite reverse;
+    -o-animation: hover 30s ease-in-out infinite reverse;
+    -ms-animation: hover 30s ease-in-out infinite reverse;
+    animation: hover 30s ease-in-out infinite reverse;
+  }
+  nav.masthead ul.nav-header li:nth-child(3n) {
+    -webkit-animation: hover 20s ease-in-out infinite alternate;
+    -moz-animation: hover 20s ease-in-out infinite alternate;
+    -o-animation: hover 20s ease-in-out infinite alternate;
+    -ms-animation: hover 20s ease-in-out infinite alternate;
+    animation: hover 20s ease-in-out infinite alternate;
+  }
+  nav.masthead ul.nav-header li:after {
+    top: 72px;
+  }
+  nav.masthead ul.nav-header li:hover:after {
+    top: 76px;
+  }
   .container.about p {
     line-height: 2.2;
     font-size: 16px;

@@ -137,7 +137,7 @@ a {
 
 .nav-item {
     position: fixed;
-    top: 28px;
+    top: 14px;
     right: 14px;
     z-index: zIndexMax;
     transition: top .5s ease-in-out, right .5s ease-in-out;
@@ -395,20 +395,12 @@ nav.masthead {
         li {
             display: inline-block;
             padding: 6px;
-            margin: 6px 12px;
             font-size: 1em;
             vertical-align: middle;
-            background-color: white;
             height: 54px;
             width: 54px;
             border-radius: 5em;
-            -webkit-animation: hover 9s infinite;
-            animation: hover 40s ease-in-out infinite;
-            box-shadow: -3px 3px 10px rgba(0,0,0,0.1), -10px 5px 29px rgba(0,0,0,0.1);
             transition: box-shadow .2s ease-in-out;
-
-            &:nth-child(2n) { animation: hover 30s ease-in-out infinite reverse; }
-            &:nth-child(3n) { animation: hover 20s ease-in-out infinite alternate; }
 
             &.name {
                 background-image: url("/images/icons/name.svg");
@@ -420,6 +412,14 @@ nav.masthead {
                 a {
                     color: transparent;
                 }
+            }
+
+            &:after {
+                top: 48px;
+            }
+
+            &:hover:after {
+                top: 56px;
             }
 
             &.name,
@@ -440,7 +440,6 @@ nav.masthead {
                     position: absolute;
                     left: -50%;
                     right: -50%;
-                    top: 70px;
                     letter-spacing: 2px;
                     text-transform: uppercase;
                     font-size: 10px;
@@ -449,7 +448,6 @@ nav.masthead {
 
                 &:hover:after {
                     opacity: 1;
-                    top: 74px;
                     transition: all .2s ease-out;
                 }
 
@@ -941,6 +939,7 @@ nav.masthead {
     nav.masthead {
         ul {
             li {
+
                 &.name {
                     margin: 6px 7%;
                 }
@@ -981,6 +980,28 @@ nav.masthead {
 }
 
 @media screen and (min-width: 769px) {
+
+    nav.masthead ul.nav-header {
+        li {
+            background-color: white;
+            box-shadow: -3px 3px 10px rgba(0,0,0,0.1), -10px 5px 29px rgba(0,0,0,0.1);
+            margin: 6px 12px;
+            -webkit-animation: hover 9s infinite;
+            animation: hover 40s ease-in-out infinite;
+
+            &:nth-child(2n) { animation: hover 30s ease-in-out infinite reverse; }
+            &:nth-child(3n) { animation: hover 20s ease-in-out infinite alternate; }
+
+            &:after {
+                top: 72px;
+            }
+
+            &:hover:after {
+                top: 76px;
+            }
+
+        }
+    }
 
     .container.about {
         p {
