@@ -2,31 +2,31 @@ mixin navigation(back, page)
     - if (back)
         a.nav-item.back(onclick="window.history.go(-1);")
             span
-    button.nav-item.menu
-      .menu-trigger
-        span
-      ul.menu-container
-        - if (page === "home")
-            li: a.current Home
-        - else
-            li: a(href="/") Home
-        - if (page === "about")
-            li: a.current About
-        - else
-            li: a(href="/about") About
-        - if (page === "photography")
-            li: a.current(href="/photography")  Photography
-        - else
-            li: a(onclick='ga("send", "event", "Menu", "click", "Photography")' href="/photography")  Photography
-        li.social
-            a(href="https://dribbble.com/marcusdeely")
-                img(src="../images/icons/dribble.svg" width="24px" height="24px")
-            a(href="https://www.instagram.com/marcusdeely/")
-                img(src="../images/icons/instagram.svg" width="24px" height="24px")
-            a(href="https://www.linkedin.com/in/marcdeely")
-                img(src="../images/icons/linkedin.svg" width="24px" height="24px")
-            a.email(href="mailto:themarcusdeely@gmail.com")
-                img(src="../images/icons/email.svg" width="24px" height="24px")
+    //- button.nav-item.menu
+    //-   .menu-trigger
+    //-     span
+    //-   ul.menu-container
+    //-     - if (page === "home")
+    //-         li: a.current Home
+    //-     - else
+    //-         li: a(href="/") Home
+    //-     - if (page === "about")
+    //-         li: a.current About
+    //-     - else
+    //-         li: a(href="/about") About
+    //-     - if (page === "photography")
+    //-         li: a.current(href="/photography")  Photography
+    //-     - else
+    //-         li: a(onclick='ga("send", "event", "Menu", "click", "Photography")' href="/photography")  Photography
+    //-     li.social
+    //-         a(href="https://dribbble.com/marcusdeely")
+    //-             img(src="../images/icons/dribble.svg" width="24px" height="24px")
+    //-         a(href="https://www.instagram.com/marcusdeely/")
+    //-             img(src="../images/icons/instagram.svg" width="24px" height="24px")
+    //-         a(href="https://www.linkedin.com/in/marcdeely")
+    //-             img(src="../images/icons/linkedin.svg" width="24px" height="24px")
+    //-         a.email(href="mailto:themarcusdeely@gmail.com")
+    //-             img(src="../images/icons/email.svg" width="24px" height="24px")
 
 mixin aboutMasthead(hero, project)
     nav.masthead.nav-header
