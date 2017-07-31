@@ -137,15 +137,18 @@ app.get('/photography', function(req, res, next) {
   },  function (req, res) {
       // initiate albumName array
       var albumNames = [];
+      var albumDisplayNames = [];
 
       // iterate through all images all photography items in db
       for(var i = 0; i < obj.photography.images.collection.length; i++) {
         // if albumName doesn't exist in array, add it to albumName array
         if ( albumNames.indexOf(obj.photography.images.collection[i].album) == -1 ) {
           albumNames.push(obj.photography.images.collection[i].album);
+          albumDisplayNames.push(obj.photography.images.collection[i].albumDisplay);
         }
       }
       app.locals.albumNames = albumNames;
+      app.locals.albumDisplayNames = albumDisplayNames;
       return
     }
   );

@@ -54,32 +54,25 @@ mixin footer(color)
                 img(src="/images/icons/node-logo.svg")
 
 mixin photography_masthead()
-    nav.masthead.photography
-        .logo-container
-            a(href="/" data-ajax="false")
-            img(src="/images/icons/name_white.svg" height="24px" width="auto")
-            span Photography
-            ul.menu
-                li
-                    a(href="/" data-ajax="false") Portfolio
-                li
-                    a(href="https://www.instagram.com/marcusdeely/" target="_blank") Instagram
-                li
-                    a(href="https://www.linkedin.com/in/marcdeely" target="_blank") LinkedIn
-                li
-                    a(href="mailto:themarcusdeely@gmail.com") Contact
+    nav.photo-nav
+        div.album-trigger
+            div.current-album All photos
+        div.logo
+            img()
+        ul.social
+            li.linked-in
+                a
+            li.instagram
+                a
+            li.dribbble
+                a
+            li.email
+                a
 
 mixin photography_navigation()
-    .side_menu
-        .menu-toggle
-        .album-switcher
-            span.current-album #{albumName}
-            .album-list-container
-                a(href="/all-photos") all photos
-                each album in albumNames
-                    - var albumNameFormatted = album.replace('-',' ')
-                    a(href="/"+album) #{albumNameFormatted}
-        +photographyCollection(photography)
+    +photographyCollection(photography)
+    +albumCollection(photography)
+
 
 mixin listProjects()
     for project in projects
@@ -113,45 +106,58 @@ mixin imageCollection(project)
 
 mixin photographyCollection(photos)
     - if (photos.images.collection && photos.images.collection.length)
-    .photo-drawer
+    .photo-collection
+        .preloader
+            img
+        .photo-view-wrapper
+            .slideshow-close 
+                button.slide-action Close
+            .slideshow-controls
+                button.slide-action.fb-like Like
+                // button.slide-action.fillscreen Fill
+                button.slide-action.prev Prev
+                button.slide-action.next Next
+            .photo-view
+                img()
+
         - var index = 0
-        each album in albumNames
-            - var albumNameFormatted = album.replace('-',' ')
-            - if (album == albumName || album == undefined)
-                span(class=album)
-                    each image in photos.images.collection
-                        - if ( image.display == false )
-                            return
-                        - else
-                            - var imgAlbum = image.album
-                            - if (imgAlbum == album)
-                                - var name     = photos.name
-                                - var fileName = image.fileName
-                                - var filePath = (name+"/"+fileName)
-                                - var imgTitle = image.title || "Photograph by Marc Deely"
+        each albumDisplayName in albumDisplayNames
+            each image in photos.images.collection
+                - if ( image.display == false )
+                    return
+                - else
+                    - var albumNameFormatted = albumDisplayName.toLowerCase().replace(' ','-').replace('.','')
+                    - var imgAlbum = image.albumDisplay
+                    - if (imgAlbum == albumDisplayName)
+                        - var name     = photos.name
+                        - var fileName = image.fileName
+                        - var filePath = (name+"/"+fileName)
+                        - var imgTitle = image.title || "Photograph by Marc Deely"
 
-                                a(href='/photography/'+album+'/'+fileName rel="external" data-ajax="false")
-                                    img(alt=imgTitle title=imgTitle data-album=imgAlbum data-img-index=index style="100px" src="https://s3.amazonaws.com/mdeely-portfolio-assets/images/"+filePath+"-sm.jpg")
+                        .photo-wrapper
+                            div.photo-item
+                                a(style='background-image: url("https://s3.amazonaws.com/mdeely-portfolio-assets/images/'+filePath+'-sm.jpg")' href='/photography/'+albumNameFormatted+'/'+fileName rel="external" data-ajax="false" data-alt=imgTitle data-title=imgTitle data-album=albumNameFormatted data-img-index=index data-img-src="https://s3.amazonaws.com/mdeely-portfolio-assets/images/"+filePath+".jpg")
 
-                                - var index = ++index
-            - else
-                span(style="display: none" class=album)
-                    each image in photos.images.collection
-                        - if ( image.display == false )
-                            return
-                        - else
-                            - var imgAlbum = image.album
-                            - if (imgAlbum == album)
-                                - var name     = photos.name
-                                - var fileName = image.fileName
-                                - var filePath = (name+"/"+fileName)
-                                - var imgTitle = image.title || "Photograph by Marc Deely"
+                        - var index = ++index
 
-                                a(href='/photography/'+album+'/'+fileName rel="external" data-ajax="false")
-                                    img(alt=imgTitle title=imgTitle data-album=imgAlbum data-img-index=index style="100px" src="https://s3.amazonaws.com/mdeely-portfolio-assets/images/"+filePath+"-sm.jpg")
+mixin albumCollection(photos)
+    .album-collection
+        ul
+            li.selected
+                a(href="/photography/" data-album-link='All photos') All photos
+                    span
+                    span
+                    span
+            hr
+            - if (photos.images.collection && photos.images.collection.length)
+                - var index = 0
+                each albumDisplayName in albumDisplayNames
+                    - var albumDisplayRef = albumDisplayName.toLowerCase().replace('.','').replace(' ','-')
+                    li
+                        a(href="/photography/"+albumDisplayRef data-album-link=albumDisplayRef) #{albumDisplayName}
+                            span
 
-                                - var index = ++index
-
+                    - var index = ++index
 
 mixin scrollToTop
     button.scrollToTop Scroll to top
