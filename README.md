@@ -25,4 +25,13 @@ Images for Photography
     - Hi-res with image-set with background-image
         - Retina JS is there but not activated
 
+    - show All Photos label when selecting all photos
+
+
+    Aug 3, 2018
+    - Select correct album when defined in url
+    - FIgure out way to fadein or load images in a pleasing way in the single-view
+
+
+
 

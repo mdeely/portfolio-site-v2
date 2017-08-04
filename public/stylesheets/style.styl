@@ -880,14 +880,38 @@ nav.masthead {
 body.photography-wrapper {
     padding: 0;
     margin: 0;
-    margin-top: $nav_height;
     background-color: #f9f9f9;
+    height: 100vh;
+    min-height: 100%;
     
     .ui-loader {
         display: none;
     }
+    
+    &.fullscreen-mode {
+        background-color: #353535;
+        
+        nav.photo-nav {
+            transition: all .2s ease-in-out;
+            top: -($nav_height);
+            box-shadow: none;
+        }
+        
+        .photo-collection.single-view {
+            .photo-view-wrapper {
+                transition: padding .2s ease-in-out;
+                padding: 20px;
+                
+                .slideshow-close {
+                    transition: top .2s ease-in-out;
+                    top: 30px;
+                }
+            }
+        }
+    }
         
     nav.photo-nav {
+        transition: all .2s ease-in-out;
         position: fixed;
         top: 0;
         left: 0;
@@ -1043,6 +1067,7 @@ body.photography-wrapper {
         transition: padding-left .2s ease-in-out;
         width:100%;
         padding: 20px;
+        padding-top: $nav_height + 20px;
         
         .preloader {
             opacity: 0;
@@ -1071,7 +1096,7 @@ body.photography-wrapper {
                 height: 100%;
                 position: relative;
                 transform: scale(.9);
-                max-width: 1400px;
+                max-width: 1024px;
                 margin: 0 auto;
                 // max-width: 100%;
                 // padding: 0px;
@@ -1105,7 +1130,9 @@ body.photography-wrapper {
             }
             
             .slideshow-controls,
-            .slideshow-close {
+            .slideshow-close,
+            .slideshow-album-name,
+            .slideshow-loop {
                 position: absolute;
                 bottom: 30px;
                 right: 30px;
@@ -1133,6 +1160,21 @@ body.photography-wrapper {
                         margin-left: 40px;
                     }
                     
+                    &.fb-like {
+                        border: 0px solid transparent;
+
+                        &:before {
+                            font-family: "FontAwesome";
+                            content: "\f09a";
+                            margin-right: 10px;
+                        } 
+                        
+                        &:hover {
+                            background-color: #3b5998;
+                            border: 0px solid transparent;
+                        }
+                    }
+                    
                     &:hover {
                         transition: none;
                         opacity: 1;
@@ -1150,6 +1192,30 @@ body.photography-wrapper {
             .slideshow-close {
                 top: $nav_height + 30px;
                 bottom: 0px;
+            }
+            
+            .slideshow-album-name,
+            .slideshow-loop {
+                display: none;
+                top: 10px;
+                left: 50%;
+                right: initial;
+                transform: translate(-50%, 0);
+                
+                .slide-action {
+                    opacity: 1;
+                    background-color: rgba(0,0,0,.6);
+                    border: 1px solid rgba(255,255,255,.4);
+                }
+            }
+            
+            .slideshow-loop {
+                .slide-action {
+                    &:before {
+                        content: "\f0e2";
+                        font-family: "FontAwesome";
+                    }
+                }
             }
         }
         

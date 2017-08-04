@@ -1048,13 +1048,48 @@ nav.masthead ul.nav-header li a {
 body.photography-wrapper {
   padding: 0;
   margin: 0;
-  margin-top: 70px;
   background-color: #f9f9f9;
+  height: 100vh;
+  min-height: 100%;
 }
 body.photography-wrapper .ui-loader {
   display: none;
 }
+body.photography-wrapper.fullscreen-mode {
+  background-color: #353535;
+}
+body.photography-wrapper.fullscreen-mode nav.photo-nav {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  top: -70px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+body.photography-wrapper.fullscreen-mode .photo-collection.single-view .photo-view-wrapper {
+  -webkit-transition: padding 0.2s ease-in-out;
+  -moz-transition: padding 0.2s ease-in-out;
+  -o-transition: padding 0.2s ease-in-out;
+  -ms-transition: padding 0.2s ease-in-out;
+  transition: padding 0.2s ease-in-out;
+  padding: 20px;
+}
+body.photography-wrapper.fullscreen-mode .photo-collection.single-view .photo-view-wrapper .slideshow-close {
+  -webkit-transition: top 0.2s ease-in-out;
+  -moz-transition: top 0.2s ease-in-out;
+  -o-transition: top 0.2s ease-in-out;
+  -ms-transition: top 0.2s ease-in-out;
+  transition: top 0.2s ease-in-out;
+  top: 30px;
+}
 body.photography-wrapper nav.photo-nav {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   position: fixed;
   top: 0;
   left: 0;
@@ -1241,6 +1276,7 @@ body.photography-wrapper .photo-collection {
   transition: padding-left 0.2s ease-in-out;
   width: 100%;
   padding: 20px;
+  padding-top: 90px;
 }
 body.photography-wrapper .photo-collection .preloader {
   opacity: 0;
@@ -1284,7 +1320,7 @@ body.photography-wrapper .photo-collection .photo-view-wrapper .photo-view {
   -o-transform: scale(0.9);
   -ms-transform: scale(0.9);
   transform: scale(0.9);
-  max-width: 1400px;
+  max-width: 1024px;
   margin: 0 auto;
 }
 body.photography-wrapper .photo-collection .photo-view-wrapper .photo-view img {
@@ -1317,14 +1353,18 @@ body.photography-wrapper .photo-collection .photo-view-wrapper .photo-view img {
   user-select: none;
 }
 body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-controls,
-body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close {
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-name,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop {
   position: absolute;
   bottom: 30px;
   right: 30px;
   z-index: 9999;
 }
 body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-controls .slide-action,
-body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action {
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-name .slide-action,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .slide-action {
   -webkit-transition: opacity 0.35s ease-in-out, background-color 0.35s ease-in-out;
   -moz-transition: opacity 0.35s ease-in-out, background-color 0.35s ease-in-out;
   -o-transition: opacity 0.35s ease-in-out, background-color 0.35s ease-in-out;
@@ -1349,11 +1389,36 @@ body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close 
   cursor: pointer;
 }
 body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-controls .slide-action.prev,
-body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action.prev {
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action.prev,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-name .slide-action.prev,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .slide-action.prev {
   margin-left: 40px;
 }
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-controls .slide-action.fb-like,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action.fb-like,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-name .slide-action.fb-like,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .slide-action.fb-like {
+  border: 0px solid transparent;
+}
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-controls .slide-action.fb-like:before,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action.fb-like:before,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-name .slide-action.fb-like:before,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .slide-action.fb-like:before {
+  font-family: "FontAwesome";
+  content: "\f09a";
+  margin-right: 10px;
+}
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-controls .slide-action.fb-like:hover,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action.fb-like:hover,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-name .slide-action.fb-like:hover,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .slide-action.fb-like:hover {
+  background-color: #3b5998;
+  border: 0px solid transparent;
+}
 body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-controls .slide-action:hover,
-body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action:hover {
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action:hover,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-name .slide-action:hover,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .slide-action:hover {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -1366,7 +1431,9 @@ body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close 
   border: 1px solid rgba(255,255,255,0.4);
 }
 body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-controls .slide-action:active,
-body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action:active {
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action:active,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-name .slide-action:active,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .slide-action:active {
   -webkit-transform: scale(0.95);
   -moz-transform: scale(0.95);
   -o-transform: scale(0.95);
@@ -1376,6 +1443,30 @@ body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close 
 body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close {
   top: 100px;
   bottom: 0px;
+}
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-name,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop {
+  display: none;
+  top: 10px;
+  left: 50%;
+  right: initial;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-name .slide-action,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .slide-action {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  background-color: rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.4);
+}
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .slide-action:before {
+  content: "\f0e2";
+  font-family: "FontAwesome";
 }
 body.photography-wrapper .photo-collection.single-view {
   -webkit-transition: padding-left 0.2s ease-in-out;

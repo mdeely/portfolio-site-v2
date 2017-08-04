@@ -55,7 +55,7 @@ mixin footer(color)
 
 mixin photography_masthead()
     nav.photo-nav
-        div.album-trigger
+        div.album-trigger.triggered
             div.current-album All photos
         div.logo
             img()
@@ -106,7 +106,7 @@ mixin imageCollection(project)
 
 mixin photographyCollection(photos)
     - if (photos.images.collection && photos.images.collection.length)
-    .photo-collection
+    .photo-collection.open
         .preloader
             img
         .photo-view-wrapper
@@ -114,10 +114,14 @@ mixin photographyCollection(photos)
                 button.slide-action Close
             .slideshow-controls
                 button.slide-action.fb-like Like
-                // button.slide-action.fillscreen Fill
+                button.slide-action.fullscreen Fullscreen
                 button.slide-action.prev Prev
                 button.slide-action.next Next
             .photo-view
+                .slideshow-album-name
+                    .slide-action
+                .slideshow-loop
+                    .slide-action
                 img()
 
         - var index = 0
@@ -141,7 +145,7 @@ mixin photographyCollection(photos)
                         - var index = ++index
 
 mixin albumCollection(photos)
-    .album-collection
+    .album-collection.open
         ul
             li.selected
                 a(href="/photography/" data-album-link='All photos') All photos
