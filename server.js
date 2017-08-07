@@ -53,6 +53,7 @@ app.get('/photography/:albumName/:photoName', function(req, res, next) {
   },  function (req, res) {
       // initiate albumName array
       var albumNames = [];
+      var albumDisplayNames = [];
 
       // iterate through all images all photography items in db
       for(var i = 0; i < obj.photography.images.collection.length; i++) {
@@ -66,9 +67,11 @@ app.get('/photography/:albumName/:photoName', function(req, res, next) {
         // if albumName doesn't exist in array, add it to albumName array
         if ( albumNames.indexOf(obj.photography.images.collection[i].album) == -1 ) {
           albumNames.push(obj.photography.images.collection[i].album);
+          albumDisplayNames.push(obj.photography.images.collection[i].albumDisplay);
         }
       }
       app.locals.albumNames = albumNames;
+      app.locals.albumDisplayNames = albumDisplayNames;
       return
     }
   );
@@ -91,6 +94,7 @@ app.get('/photography/:albumName', function(req, res, next) {
   },  function (req, res) {
       // initiate albumName array
       var albumNames = [];
+      var albumDisplayNames = [];
 
       // iterate through all images all photography items in db
       for(var i = 0; i < obj.photography.images.collection.length; i++) {
@@ -102,6 +106,7 @@ app.get('/photography/:albumName', function(req, res, next) {
         // if albumName doesn't exist in array, add it to albumName array
         if ( albumNames.indexOf(obj.photography.images.collection[i].album) == -1 ) {
           albumNames.push(obj.photography.images.collection[i].album);
+          albumDisplayNames.push(obj.photography.images.collection[i].albumDisplay);
         }
       }
 
@@ -119,6 +124,7 @@ app.get('/photography/:albumName', function(req, res, next) {
       app.locals.docTitle = (albumTitle+" Album | "+app.locals.docTitle);
       app.locals.albumTitle = albumTitle;
       app.locals.albumNames = albumNames;
+      app.locals.albumDisplayNames = albumDisplayNames;
       return
     }
   );

@@ -29,8 +29,15 @@ Images for Photography
 
 
     Aug 3, 2018
-    - Select correct album when defined in url
     - FIgure out way to fadein or load images in a pleasing way in the single-view
+
+    Aug 4, 2018
+    - Make album display look and animate better in nav
+    - Have loop say "beginning" or something to indicate that you're at the start of the slideshow
+    - Fade out slideshow controls until mousemove
+
+    Aug 5, 2018
+    - Make small images that are pre-blurred for background image
 
 
 

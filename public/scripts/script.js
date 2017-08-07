@@ -43,6 +43,7 @@ $(document).ready(function() {
       this.$slideshowNext      = $('.slideshow-controls .slide-action.next');
       this.$slideshowPrev      = $('.slideshow-controls .slide-action.prev');
       this.$slideshowFull      = $('.slideshow-controls .slide-action.fullscreen');
+      this.$sillyidea          = $('.sillyidea');
     }
 
     function bindHandlers() {
@@ -60,6 +61,9 @@ $(document).ready(function() {
       $( this.$logoContainer      ).bind( 'click', openLogoMenu);
       $( this.$albumSwitcher      ).bind( 'click', toggleAlbumSwitcher);
       $( this.$slideshowFull      ).bind( 'click', enableFullscreenMode);
+      $( this.$photo_viewer       ).bind( 'dblclick', enableFullscreenMode);
+
+    
 
       // $( this.$fbCommentIcon      ).bind( 'click', handleFbCommentMenu);
       // $( this.$heroPhoto          ).bind( 'click', handleMenuAndDisplay);
@@ -71,7 +75,6 @@ $(document).ready(function() {
       $( this.$albumMenuLinks     ).bind( 'click', handleAlbumPhotos);
       $( this.$albumMenuTrigger   ).bind( 'click', openAlbumCollection);
       $( this.$imageLinks         ).bind( 'click', handleImageClick );
-      $( this.$albumListLinks     ).bind( 'click', handleAlbumLink);
       $( this.$slideshowClose     ).bind( 'click', handleCloseButton);
       $( this.$slideshowNext      ).bind( 'click', handleNavigation);
       $( this.$slideshowPrev      ).bind( 'click', handleNavigation);
@@ -95,35 +98,54 @@ $(document).ready(function() {
     }
 
     function setDisplayPhoto() {
-      if ( isPhotoNamePresentInUrl() ) {
-        handlePathname();
-        return
-      }
+      isPhotoNamePresentInUrl()
+      // if not then get first index;
     }
 
     function isPhotoNamePresentInUrl() {
-      var pathName = window.location.pathname;
-      var photoName = pathName.substr(pathName.lastIndexOf('/') + 1);
+      var pathName       = window.location.pathname;
+      var pathArray      = pathName.split('/');
+      var objectFromUrl  = [];
 
-      if ( photoName === "photography" ) {
-        return false
+      if ( pathArray.length == 4 ) {
+        // is a photo
+        var photoName = pathArray[3];
+
+        objectFromUrl = {
+          type: "photo",
+          name: photoName
+        }
+
+        handlePathname(objectFromUrl);
+        return
+      }
+      else if ( pathArray.length == 3) {
+        // is an album
+        var albumName = pathArray[2];
+
+        var albumLinkElement = $(".album-collection a[data-album-link="+albumName+"]");
+        
+        showAlbumPhotos(albumLinkElement);
+
+        return
       }
       else {
-        return true
+        objectFromUrl = {
+          type: "none",
+          name: "photogrpahy"
+        }
+
       }
     }
 
-    function handlePathname(albumName) {
-      if ( albumName ) {
-      }
-      else {
-        var photoName  = getPhotoNameFromPathname();
-        var index      = getIndexFromPhotoName(photoName);
+    function handlePathname(objectFromUrl) {
+      var index = "";
 
-        getImageAttributes(index);
-        setSlideshowImage(imgAttributes);
-        handleSingleViewDisplay();
-      }
+      index = getIndexFromPhotoName(objectFromUrl);
+
+      getImageAttributes(index);
+      setSlideshowImage(imgAttributes);
+      handleSingleViewDisplay();
     }
 
     function showPhotoFromIndex(index) {
@@ -142,8 +164,8 @@ $(document).ready(function() {
       return photoName;
     }
 
-    function getIndexFromPhotoName(photoName) {
-      var element = ".photo-wrapper a[href*='"+photoName+"']";
+    function getIndexFromPhotoName(objectFromUrl) {
+      var element = ".photo-wrapper a[href*='"+objectFromUrl.name+"']";
       var index   = $(element).data("img-index");
       return index;
     }
@@ -189,7 +211,7 @@ $(document).ready(function() {
     }
 
     function showLoop() {
-      $(".slideshow-loop").show().fadeOut('slow');
+      $(".slideshow-loop").show().delay(100).fadeOut('slow');
     }
 
     function requestImage(direction) {
@@ -230,6 +252,8 @@ $(document).ready(function() {
     }
 
     function getImageAttributes(desiredIndex) {
+      var urlOrigin = window.location.origin;
+
       var imageLink = $(".photo-wrapper a[data-img-index="+desiredIndex+"]");
 
       var imgPath = $(imageLink).css('background-image');
@@ -240,7 +264,8 @@ $(document).ready(function() {
         alt      : $(imageLink).data('alt'),
         title    : $(imageLink).data('title'),
         imgIndex : $(imageLink).data('img-index'),
-        href     : $(imageLink).attr("href"),
+        href     : urlOrigin + $(imageLink).attr("href"),
+        album    : $(imageLink).attr("data-album"),
         imgPath  : imgPath
       };
 
@@ -255,22 +280,32 @@ $(document).ready(function() {
         "data-img-index" : imgAttributes.imgIndex,
       });
 
+      var path = imgAttributes.imgPath;
+      var path = path.replace('.jpg','-sm.jpg');
+
+      this.$sillyidea.css({
+        "background-image" : "url('"+path+"')",
+      });
+
       preloadNextImage( imgAttributes.imgIndex );
     }
 
     function handleAlbumPhotos(evt) {
       evt.preventDefault();
 
+      var albumLinkElement = $(evt.target);
+
       handleSingleViewDisplay("close");
-      showAlbumPhotos(evt);
+      showAlbumPhotos(albumLinkElement);
+      setUrl( imgAttributes );
     }
 
-    function showAlbumPhotos(evt) {
-      var albumName = $(evt.target).data('album-link');
-      var albumDisplay = $(evt.target).text();
+    function showAlbumPhotos(albumLinkElement) {
+      var albumName = $(albumLinkElement).data('album-link');
+      var albumDisplay = $(albumLinkElement).text();
 
       $('.album-collection li').removeClass('selected');
-      $(evt.target).parent().addClass('selected');
+      $(albumLinkElement).parent().addClass('selected');
 
       $('.current-album').text(albumDisplay);
 
@@ -278,6 +313,11 @@ $(document).ready(function() {
         $(".photo-wrapper").show();
 
         getCurrentIndexRange();
+        getImageAttributes(indexRange.firstAll );
+
+        imgAttributes["title"]   = "All photos";
+        imgAttributes["album"]   = "All photos";
+        imgAttributes["href"]    = window.location.origin + "/photography";
       }
       else { 
         this.$imageLinks.each( function(index, link) {
@@ -293,7 +333,9 @@ $(document).ready(function() {
         // $(".slideshow-album-name").show().delay(2000).fadeOut();
 
         getCurrentIndexRange();
-        getImageAttributes( indexRange.firstIndex );
+        getImageAttributes(indexRange.firstIndex );
+
+        imgAttributes["href"]    = window.location.origin + "/photography/"+albumName;
 
         setTimeout(function() { setSlideshowImage(imgAttributes); }, 500);
       }
@@ -399,13 +441,7 @@ $(document).ready(function() {
     }
 
     function handleCloseButton() {
-      if ( $($body).hasClass("fullscreen-mode") ) {
-        enableFullscreenMode(false);
-        return
-      }
-
       handleSingleViewDisplay();
-
     }
 
     function handleImageClick(image) {
@@ -424,6 +460,8 @@ $(document).ready(function() {
     function setUrl(imgAttributes) {
       // var url      = (window.location.origin)+href;
 
+      console.log( imgAttributes );
+
       history.replaceState(null, imgAttributes.title, imgAttributes.href);
 
       // This is mostly for bookmarking. Not for Open Graph or SEO
@@ -437,15 +475,15 @@ $(document).ready(function() {
       // ga("send", "event", "Photography", "viewed", imgAttributes.href+': '+imgAttributes.title)
     }
 
-    function enableFullscreenMode(open = true) {
-      if ( open == false ) {
+    function enableFullscreenMode() {
+      if ( $($body).hasClass("fullscreen-mode") ) {
         $($body).removeClass("fullscreen-mode");
-        openAlbumCollection();
+        console.log(this.$slideshowFull);
+        $($slideshowClose).show();
+        return
       }
-      else {
-        $($body).addClass("fullscreen-mode");
-        openAlbumCollection(false);
-      }
+      $($body).addClass("fullscreen-mode");
+      $($slideshowClose).hide();
     }
 
 

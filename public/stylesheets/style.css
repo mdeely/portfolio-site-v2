@@ -145,7 +145,7 @@ body.no-scroll {
 }
 hr {
   border-top: 0px solid transparent;
-  border-color: #f2f2f2;
+  border-color: rgba(255,255,255,0.15);
 }
 h1 {
   font-size: 44px;
@@ -1052,6 +1052,21 @@ body.photography-wrapper {
   height: 100vh;
   min-height: 100%;
 }
+body.photography-wrapper .sillyidea {
+  filter: blur(20px) brightness(0.5);
+  position: fixed;
+  top: -40px;
+  left: -40px;
+  right: -40px;
+  bottom: -40px;
+  background-color: #353535;
+  background-image: url("https://s3.amazonaws.com/mdeely-portfolio-assets/images/photography/CT7A3219-sm.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
 body.photography-wrapper .ui-loader {
   display: none;
 }
@@ -1076,6 +1091,9 @@ body.photography-wrapper.fullscreen-mode .photo-collection.single-view .photo-vi
   transition: padding 0.2s ease-in-out;
   padding: 20px;
 }
+body.photography-wrapper.fullscreen-mode .photo-collection.single-view .photo-view-wrapper .photo-view {
+  max-width: 1400px;
+}
 body.photography-wrapper.fullscreen-mode .photo-collection.single-view .photo-view-wrapper .slideshow-close {
   -webkit-transition: top 0.2s ease-in-out;
   -moz-transition: top 0.2s ease-in-out;
@@ -1083,6 +1101,9 @@ body.photography-wrapper.fullscreen-mode .photo-collection.single-view .photo-vi
   -ms-transition: top 0.2s ease-in-out;
   transition: top 0.2s ease-in-out;
   top: 30px;
+}
+body.photography-wrapper.fullscreen-mode .album-collection {
+  left: -320px !important;
 }
 body.photography-wrapper nav.photo-nav {
   -webkit-transition: all 0.2s ease-in-out;
@@ -1096,9 +1117,6 @@ body.photography-wrapper nav.photo-nav {
   right: 0;
   height: 70px;
   padding: 20px 40px;
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.18);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.18);
   z-index: 9999;
 }
 body.photography-wrapper nav.photo-nav .album-trigger {
@@ -1113,6 +1131,7 @@ body.photography-wrapper nav.photo-nav .album-trigger {
   position: relative;
   padding-right: 30px;
   cursor: pointer;
+  color: #d4d4d4;
 }
 body.photography-wrapper nav.photo-nav .album-trigger:before,
 body.photography-wrapper nav.photo-nav .album-trigger:after {
@@ -1132,7 +1151,7 @@ body.photography-wrapper nav.photo-nav .album-trigger:after {
   -o-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  background-color: rgba(51,51,51,0.5);
+  background-color: #92c3ff;
   -webkit-border-radius: 6px;
   border-radius: 6px;
 }
@@ -1157,6 +1176,7 @@ body.photography-wrapper nav.photo-nav .album-trigger.triggered:after {
   height: 14px;
   top: 9px;
   right: 14px;
+  background-color: #333;
 }
 body.photography-wrapper .album-collection {
   -webkit-transition: 0.2s left ease-in-out;
@@ -1167,16 +1187,17 @@ body.photography-wrapper .album-collection {
   position: fixed;
   width: 320px;
   height: 100%;
-  top: 70px;
+  top: 0;
   left: -320px;
   right: 0;
   bottom: 0;
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.18);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+  background-color: rgba(0,0,0,0.12);
+  -webkit-box-shadow: 0 2px 1px rgba(0,0,0,0.18);
+  box-shadow: 0 2px 1px rgba(0,0,0,0.18);
   z-index: 9998;
   overflow: scroll;
   padding-bottom: 100px;
+  padding-top: 70px;
 }
 body.photography-wrapper .album-collection.open {
   -webkit-transition: 0.2s left ease-in-out;
@@ -1217,7 +1238,7 @@ body.photography-wrapper .album-collection ul li:after {
   transition: opacity 0.2s ease-in-out;
 }
 body.photography-wrapper .album-collection ul li:hover {
-  background-color: #f2f2f2;
+  background-color: rgba(0,0,0,0.15);
 }
 body.photography-wrapper .album-collection ul li.selected {
   font-weight: bold;
@@ -1237,7 +1258,7 @@ body.photography-wrapper .album-collection ul li a {
   height: 100%;
   display: block;
   padding: 0 20px;
-  color: #333;
+  color: rgba(255,255,255,0.7);
   position: relative;
   text-indent: 40px;
 }
@@ -1248,7 +1269,7 @@ body.photography-wrapper .album-collection ul li a span {
   height: 26px;
   width: 36px;
   display: inline-block;
-  background-color: #f2f2f2;
+  background-color: rgba(0,0,0,0.3);
   -webkit-border-radius: 3px;
   border-radius: 3px;
   -webkit-background-size: cover;
@@ -1320,7 +1341,7 @@ body.photography-wrapper .photo-collection .photo-view-wrapper .photo-view {
   -o-transform: scale(0.9);
   -ms-transform: scale(0.9);
   transform: scale(0.9);
-  max-width: 1024px;
+  max-width: 800px;
   margin: 0 auto;
 }
 body.photography-wrapper .photo-collection .photo-view-wrapper .photo-view img {
@@ -1513,6 +1534,7 @@ body.photography-wrapper .photo-collection.single-view .photo-wrapper {
   -o-transform: scale(0.9);
   -ms-transform: scale(0.9);
   transform: scale(0.9);
+  pointer-events: none;
 }
 body.photography-wrapper .photo-collection.open {
   -webkit-transition: padding-left 0.2s ease-in-out;
@@ -1545,14 +1567,14 @@ body.photography-wrapper .photo-collection .photo-wrapper {
   display: -ms-inline-flexbox;
   display: inline-box;
   display: inline-flex;
-  width: 25%;
+  width: 20%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   background-position: center;
   vertical-align: top;
   padding: 20px;
-  max-height: 300px;
+  max-height: 180px;
   overflow: hidden;
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -1595,7 +1617,7 @@ body.photography-wrapper .photo-collection .photo-wrapper .photo-item {
 }
 body.photography-wrapper .photo-collection .photo-wrapper .photo-item a {
   display: block;
-  height: 260px;
+  height: 180px;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
