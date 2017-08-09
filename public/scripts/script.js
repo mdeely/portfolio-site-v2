@@ -43,7 +43,7 @@ $(document).ready(function() {
       this.$slideshowNext      = $('.slideshow-controls .slide-action.next');
       this.$slideshowPrev      = $('.slideshow-controls .slide-action.prev');
       this.$slideshowFull      = $('.slideshow-controls .slide-action.fullscreen');
-      this.$sillyidea          = $('.sillyidea');
+      this.$bgImg              = $('.bgImg');
     }
 
     function bindHandlers() {
@@ -117,6 +117,7 @@ $(document).ready(function() {
         }
 
         handlePathname(objectFromUrl);
+        openAlbumCollection(false);
         return
       }
       else if ( pathArray.length == 3) {
@@ -240,6 +241,7 @@ $(document).ready(function() {
       } 
 
       getImageAttributes(desiredIndex);
+      setUrl(imgAttributes);
       setSlideshowImage(imgAttributes);
     }
 
@@ -280,14 +282,18 @@ $(document).ready(function() {
         "data-img-index" : imgAttributes.imgIndex,
       });
 
-      var path = imgAttributes.imgPath;
-      var path = path.replace('.jpg','-sm.jpg');
-
-      this.$sillyidea.css({
-        "background-image" : "url('"+path+"')",
-      });
+      setBgHeroImage(imgAttributes);
 
       preloadNextImage( imgAttributes.imgIndex );
+    }
+
+    function setBgHeroImage(imgAttributes) {
+      var path = imgAttributes.imgPath;
+      var path = path.replace('.jpg','-sm-blurred.jpg');
+
+      this.$bgImg.css({
+        "background-image" : "url('"+path+"')",
+      });
     }
 
     function handleAlbumPhotos(evt) {
@@ -309,11 +315,14 @@ $(document).ready(function() {
 
       $('.current-album').text(albumDisplay);
 
+
       if  ( albumName == "All photos") {
         $(".photo-wrapper").show();
 
         getCurrentIndexRange();
         getImageAttributes(indexRange.firstAll );
+        setSlideshowImage(imgAttributes);
+        setBgHeroImage(imgAttributes);
 
         imgAttributes["title"]   = "All photos";
         imgAttributes["album"]   = "All photos";
@@ -337,6 +346,7 @@ $(document).ready(function() {
 
         imgAttributes["href"]    = window.location.origin + "/photography/"+albumName;
 
+        setBgHeroImage(imgAttributes);
         setTimeout(function() { setSlideshowImage(imgAttributes); }, 500);
       }
     }
@@ -366,12 +376,20 @@ $(document).ready(function() {
     }
 
     function preloadImage(imgAttributes) {
-      $('.preloader').children('img').attr({
+      var img1 = $("<img></>");
+      var img2 = $("<img></>");
+      $(img1).attr({
         "src"            : imgAttributes.src,
         "title"          : imgAttributes.title,
         "alt"            : imgAttributes.alt,
         "data-img-index" : imgAttributes.imgIndex,
       });
+
+      $(img2).attr({
+        "src"            : imgAttributes.src.replace('.jpg','-sm-blurred.jpg')
+      });
+
+    $(".preloader").append(img1,img2);
     }
 
     function setAlbumThumbnailsInit() {
@@ -459,9 +477,6 @@ $(document).ready(function() {
 
     function setUrl(imgAttributes) {
       // var url      = (window.location.origin)+href;
-
-      console.log( imgAttributes );
-
       history.replaceState(null, imgAttributes.title, imgAttributes.href);
 
       // This is mostly for bookmarking. Not for Open Graph or SEO
@@ -478,11 +493,15 @@ $(document).ready(function() {
     function enableFullscreenMode() {
       if ( $($body).hasClass("fullscreen-mode") ) {
         $($body).removeClass("fullscreen-mode");
-        console.log(this.$slideshowFull);
         $($slideshowClose).show();
+        $('.fa.fa-expand').toggle();
+        $('.fa.fa-compress').toggle();
+
         return
       }
       $($body).addClass("fullscreen-mode");
+      $('.fa.fa-expand').toggle();
+      $('.fa.fa-compress').toggle();
       $($slideshowClose).hide();
     }
 

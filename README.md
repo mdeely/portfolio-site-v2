@@ -28,16 +28,21 @@ Images for Photography
     - show All Photos label when selecting all photos
 
 
-    Aug 3, 2018
+    Aug 3, 2017
     - FIgure out way to fadein or load images in a pleasing way in the single-view
 
-    Aug 4, 2018
-    - Make album display look and animate better in nav
-    - Have loop say "beginning" or something to indicate that you're at the start of the slideshow
+    Aug 4, 2017
     - Fade out slideshow controls until mousemove
 
-    Aug 5, 2018
+    Aug 5, 2017
     - Make small images that are pre-blurred for background image
+    - Add in social icons
+
+    Aug 7, 2017
+    - Maybe put hamburger menu by logo on mobile
+    - Better close method for single image view (maybe not...tyler found it just fine)
+    - If there is only one photo in an album, launch single image view and disable prev/next
+    - when path has a image in it, don't shwo album collection
 
 
 
