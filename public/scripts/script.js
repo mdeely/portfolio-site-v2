@@ -37,7 +37,7 @@ $(document).ready(function() {
       this.$photo_collection   = $('.photo-collection');
       this.$photo_viewer       = $('.photo-collection .photo-view');
       this.$imageLinks         = $('.photo-wrapper .photo-item a');
-      this.$albumMenuTrigger   = $('.album-trigger');
+      this.$albumMenuTrigger   = $('.logo, .current-album-wrapper');
       this.$albumMenuLinks     = $('.album-collection a');
       this.$slideshowClose     = $('.slideshow-close .slide-action');
       this.$slideshowNext      = $('.slideshow-controls .slide-action.next');
@@ -294,6 +294,18 @@ $(document).ready(function() {
       this.$bgImg.css({
         "background-image" : "url('"+path+"')",
       });
+
+      this.$body.css({
+        "background-image" : "url('"+path+"')",
+      });
+
+      // this.$bgImg.css({
+      //   "background-image" : "url('https://s3.amazonaws.com/mdeely-portfolio-assets/images/photography/CT7A2841-sm-blurred.jpg')",
+      // });     
+
+      // this.$body.css({
+      //   "background-image" : "url('https://s3.amazonaws.com/mdeely-portfolio-assets/images/photography/CT7A2841-sm-blurred.jpg')",
+      // });   
     }
 
     function handleAlbumPhotos(evt) {
@@ -334,12 +346,16 @@ $(document).ready(function() {
             $(link).closest('.photo-wrapper').hide();
           }
           else {
-            $(link).closest('.photo-wrapper').show();
+            $(link).closest('.photo-wrapper').css('display', 'inline-flex');
           }
         });
 
         // $(".slideshow-album-name .slide-action").text(albumDisplay);
         // $(".slideshow-album-name").show().delay(2000).fadeOut();
+
+        if ( $( window ).width() < 550 ) {
+          openAlbumCollection(false);
+        }
 
         getCurrentIndexRange();
         getImageAttributes(indexRange.firstIndex );
@@ -375,9 +391,20 @@ $(document).ready(function() {
 
     }
 
-    function preloadImage(imgAttributes) {
-      var img1 = $("<img></>");
+    function preloadImage(imgAttributes, blurredOnly = false) {
       var img2 = $("<img></>");
+
+      $(img2).attr({
+        "src"            : imgAttributes.src.replace('.jpg','-sm-blurred.jpg')
+      });
+
+      $(".preloader").append(img2);
+
+      if ( blurredOnly ) {
+        return
+      }
+
+      var img1 = $("<img></>");
       $(img1).attr({
         "src"            : imgAttributes.src,
         "title"          : imgAttributes.title,
@@ -385,11 +412,7 @@ $(document).ready(function() {
         "data-img-index" : imgAttributes.imgIndex,
       });
 
-      $(img2).attr({
-        "src"            : imgAttributes.src.replace('.jpg','-sm-blurred.jpg')
-      });
-
-    $(".preloader").append(img1,img2);
+      $(".preloader").append(img1);
     }
 
     function setAlbumThumbnailsInit() {
@@ -402,12 +425,24 @@ $(document).ready(function() {
           $(link).children('span:first').css("background-image", "url("+src+")");
           $(link).children('span:nth-child(2)').css("background-image", "url("+src2+")");
           $(link).children('span:last').css("background-image", "url("+src3+")");
+
+          imgAttributes = {
+            src      : src,
+          };
+
+          preloadImage(imgAttributes, true);
         }
         else {
           var linkAlbum = $(link).data('album-link');
           var match = $(".photo-wrapper a[data-album='"+linkAlbum+"']:first");
           var src = $(match).data('img-src');
           $(link).children('span').css("background-image", "url("+src+")");
+
+          imgAttributes = {
+            src      : src,
+          };
+
+          preloadImage(imgAttributes, true);
         }
       });
     }

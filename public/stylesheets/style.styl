@@ -878,6 +878,11 @@ nav.masthead {
     }
 }
 
+.hideByOpacity {
+    transition: .2s ease-in-out;
+    opacity: 0;
+}
+
 body.photography-wrapper {
     padding: 0;
     margin: 0;
@@ -957,6 +962,10 @@ body.photography-wrapper {
         .current-album-wrapper,
         .logo {
             display: inline-block;
+            
+            &:hover + .logo {
+                display: none;
+            }
         }
         
         .logo {
@@ -974,6 +983,7 @@ body.photography-wrapper {
                 
                 &.triggered {
                     opacity: 1;
+                    color: $blue;
                 }
             }
             
@@ -988,7 +998,7 @@ body.photography-wrapper {
                 padding-right: 10px;
             }
             
-            span {
+            > span {
                 vertical-align: super;
                 text-transform: uppercase;
                 letter-spacing: 1.1px;
@@ -1013,7 +1023,7 @@ body.photography-wrapper {
             cursor: pointer;
             color: #d4d4d4;
             vertical-align: top;
-            font-weight: 200;
+            font-weight: 300;
             font-size: 20px;
             
             // &:before,
@@ -1054,7 +1064,7 @@ body.photography-wrapper {
         transition: .2s left ease-in-out;
         position: fixed;
         width: $album_menu_width;
-        top: 80px;
+        top: 90px;
         left: -($album_menu_width);
         right: 0;
         bottom: 20px;
@@ -1111,7 +1121,7 @@ body.photography-wrapper {
                     font-weight: bold;
                     
                     &:hover {
-                        font-weight: initial;
+                        font-weight: bold;
                     }
                     
                     &:after {
@@ -1167,7 +1177,7 @@ body.photography-wrapper {
     .photo-collection {
         transition: padding-left .2s ease-in-out;
         width:100%;
-        padding: 50px 20px 20px 10px;
+        padding: 60px 20px 20px 10px;
         opacity: 1;
         
         .preloader {
@@ -1376,9 +1386,13 @@ body.photography-wrapper {
             padding-left: $album_menu_width + 40px;
             opacity: 1;
             
+            .photo-wrapper {
+                width: 25%;
+            }
+            
             .photo-view-wrapper {
                 transition: opacity .2s ease-in-out 0s, padding-left .2s ease-in-out;
-                padding-left: $album_menu_width + 20;
+                padding-left: $album_menu_width + 40;
             }
         }
         
@@ -1391,7 +1405,7 @@ body.photography-wrapper {
             background-position: center;
             vertical-align: top;
             padding: 30px;
-            max-height: 260px;
+            // max-height: 260px;
             overflow: hidden;
             transform: scale(1);
             z-index: 9997;
@@ -1421,7 +1435,9 @@ body.photography-wrapper {
                 a {                        
                     display: block;
                     // padding: 20px;
-                    height: 200px;
+                    // height: 200px;
+                    padding-bottom: 86.66%;
+                    width: 100%;    
                     background-repeat: no-repeat;
                     background-size: cover;
                     background-position: center;
@@ -1431,15 +1447,201 @@ body.photography-wrapper {
         }
     }
     
-    @media screen and (max-width: 480px) {
-        .photo-wrapper {
-            width: 50% !important;
-            max-height: 150px !important;
-            padding: 14px !important;
+    // @media screen and (max-width: 480px) {
+    //     .photo-collection {
+    //         .photo-wrapper {
+    //             width: 50% !important;
+    //             max-height: 150px !important;
+    //             padding: 14px !important;
+    //         }
+    //     }
+    // }
+        
+    @media screen and (max-width: 1200px) {
+        .photo-collection {
+            &.open {
+                .photo-wrapper {
+                    width: 33.33%;
+                }
+            }
+            
+            .photo-wrapper {
+                width: 20%;
+            }
         }
     }
-
-
+    
+    @media screen and (max-width: 968px) {
+        .photo-collection {
+            &.open {
+                .photo-wrapper {
+                    width: 50%;
+                }
+            }
+            
+            .photo-wrapper {
+                width: 25%;
+            }
+        }
+    }
+    
+    @media screen and (max-width: 728px) {
+        .photo-collection {
+            &.open {
+                .photo-wrapper {
+                    width: 100%;
+                }
+            }
+            
+            .photo-wrapper {
+                width: 33.33%;
+            }
+        }
+    }
+    
+    @media screen and (max-width: 550px) {
+        nav.photo-nav  {
+            padding-left: 30px;
+            
+            .logo {       
+                
+                img {
+                    padding-right: 0px;
+                }         
+                
+                > span {                    
+                    &:after {
+                        margin: 0 12px;
+                    }
+                    
+                    span {
+                        display: none;
+                    }
+                }
+            }  
+            .current-album-wrapper {
+                // font-size: 10px;
+            }
+        }
+        
+        .photo-collection {
+            transition: opacity .1s ease-out;
+            padding: 70px 10px 20px 10px;
+            
+            .photo-view-wrapper {
+                
+                .slideshow-close {
+                    top: 90px;
+                }
+            }
+            
+            &.open {
+                transition: opacity .1s ease-out;
+                opacity: 0;
+                padding-left: 20px;
+                
+                .photo-view-wrapper {
+                    padding-left: 20px;
+                }
+                
+                .photo-wrapper {
+                    width: 50%;
+                }
+            }
+            
+            .photo-wrapper {
+                width: 50%;
+            }
+        }
+        
+        .album-collection {
+            transition: opacity .1s ease-in-out, left 0s ease-in-out;
+            
+            &.open {
+                transition: opacity .1s ease-in-out, left 0s ease-in-out;
+                right:20px
+                width: initial;
+            }
+        }
+    }
+    
+    // iPad in landscape mode
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) { 
+        .photo-collection {
+            .photo-wrapper {
+            }
+            
+            &.open {
+                .photo-wrapper {
+                    width: 33.333% !important;
+                }
+            }
+        }
+    }
+    
+    // iPad in portrait mode
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { 
+        .photo-collection {
+            .photo-wrapper {
+                width: 33.333%
+            }
+            
+            &.open {
+                .photo-wrapper {
+                    width: 50% !important;
+                    padding: 14px;
+                }
+            }
+        }
+    }
+    
+    // iPhone Landscape
+    @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape) { 
+        .photo-collection {
+            .photo-wrapper {
+                width: 33.333%
+                padding: 20px;
+            }
+            
+            &.open {
+                .photo-wrapper {
+                    width: 50% !important;
+                    padding: 14px;
+                }
+            }
+        }
+    }
+    // iPhone portrait
+    @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : portrait) {   
+        // nav.photo-nav {
+        //     padding-left: 20px;
+            
+        //     .logo {
+        //         > span {
+        //             &:after {
+        //                 margin: 0 10px 0 0px;
+        //             }
+        //             span {
+        //                 display: none;
+        //             }
+        //         }
+        //     }
+        // }    
+          
+        .photo-collection {
+            .photo-wrapper {
+                width: 50%;
+                padding: 12px;
+            }
+            
+            &.open {
+                .photo-wrapper {
+                    width: 50%;
+                    padding: 14px;
+                }
+            }
+        }
+    }
 }
 
 .scrollToTop {

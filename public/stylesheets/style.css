@@ -1045,6 +1045,16 @@ nav.masthead ul.nav-header li a {
   -ms-transform: scale(0.99);
   transform: scale(0.99);
 }
+.hideByOpacity {
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
 body.photography-wrapper {
   padding: 0;
   margin: 0;
@@ -1132,6 +1142,10 @@ body.photography-wrapper nav.photo-nav .current-album-wrapper,
 body.photography-wrapper nav.photo-nav .logo {
   display: inline-block;
 }
+body.photography-wrapper nav.photo-nav .current-album-wrapper:hover + .logo,
+body.photography-wrapper nav.photo-nav .logo:hover + .logo {
+  display: none;
+}
 body.photography-wrapper nav.photo-nav .logo {
   color: #fff;
 }
@@ -1156,6 +1170,7 @@ body.photography-wrapper nav.photo-nav .logo .album-trigger.triggered {
   opacity: 1;
   -ms-filter: none;
   filter: none;
+  color: #92c3ff;
 }
 body.photography-wrapper nav.photo-nav .logo i {
   margin-right: 20px;
@@ -1166,14 +1181,14 @@ body.photography-wrapper nav.photo-nav .logo i {
 body.photography-wrapper nav.photo-nav .logo img {
   padding-right: 10px;
 }
-body.photography-wrapper nav.photo-nav .logo span {
+body.photography-wrapper nav.photo-nav .logo > span {
   vertical-align: super;
   text-transform: uppercase;
   letter-spacing: 1.1px;
 /* font-weight: 100; */
   font-size: 12px;
 }
-body.photography-wrapper nav.photo-nav .logo span:after {
+body.photography-wrapper nav.photo-nav .logo > span:after {
   content: "|";
   opacity: 0.5;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
@@ -1194,7 +1209,7 @@ body.photography-wrapper nav.photo-nav .current-album-wrapper {
   cursor: pointer;
   color: #d4d4d4;
   vertical-align: top;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 20px;
 }
 body.photography-wrapper .album-collection {
@@ -1205,7 +1220,7 @@ body.photography-wrapper .album-collection {
   transition: 0.2s left ease-in-out;
   position: fixed;
   width: 320px;
-  top: 80px;
+  top: 90px;
   left: -320px;
   right: 0;
   bottom: 20px;
@@ -1268,7 +1283,7 @@ body.photography-wrapper .album-collection ul li.selected {
   font-weight: bold;
 }
 body.photography-wrapper .album-collection ul li.selected:hover {
-  font-weight: initial;
+  font-weight: bold;
 }
 body.photography-wrapper .album-collection ul li.selected:after {
   opacity: 1;
@@ -1324,7 +1339,7 @@ body.photography-wrapper .photo-collection {
   -ms-transition: padding-left 0.2s ease-in-out;
   transition: padding-left 0.2s ease-in-out;
   width: 100%;
-  padding: 50px 20px 20px 10px;
+  padding: 60px 20px 20px 10px;
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -1586,13 +1601,16 @@ body.photography-wrapper .photo-collection.open {
   -ms-filter: none;
   filter: none;
 }
+body.photography-wrapper .photo-collection.open .photo-wrapper {
+  width: 25%;
+}
 body.photography-wrapper .photo-collection.open .photo-view-wrapper {
   -webkit-transition: opacity 0.2s ease-in-out 0s, padding-left 0.2s ease-in-out;
   -moz-transition: opacity 0.2s ease-in-out 0s, padding-left 0.2s ease-in-out;
   -o-transition: opacity 0.2s ease-in-out 0s, padding-left 0.2s ease-in-out;
   -ms-transition: opacity 0.2s ease-in-out 0s, padding-left 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out 0s, padding-left 0.2s ease-in-out;
-  padding-left: 340px;
+  padding-left: 360px;
 }
 body.photography-wrapper .photo-collection .photo-wrapper {
   -webkit-transition: all 0.4s ease-in-out;
@@ -1616,7 +1634,6 @@ body.photography-wrapper .photo-collection .photo-wrapper {
   background-position: center;
   vertical-align: top;
   padding: 30px;
-  max-height: 260px;
   overflow: hidden;
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -1659,7 +1676,8 @@ body.photography-wrapper .photo-collection .photo-wrapper .photo-item {
 }
 body.photography-wrapper .photo-collection .photo-wrapper .photo-item a {
   display: block;
-  height: 200px;
+  padding-bottom: 86.66%;
+  width: 100%;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -1667,11 +1685,123 @@ body.photography-wrapper .photo-collection .photo-wrapper .photo-item a {
   background-position: center;
   -webkit-tap-highlight-color: rgba(255,255,255,0);
 }
-@media screen and (max-width: 480px) {
-  body.photography-wrapper .photo-wrapper {
+@media screen and (max-width: 1200px) {
+  body.photography-wrapper .photo-collection.open .photo-wrapper {
+    width: 33.33%;
+  }
+  body.photography-wrapper .photo-collection .photo-wrapper {
+    width: 20%;
+  }
+}
+@media screen and (max-width: 968px) {
+  body.photography-wrapper .photo-collection.open .photo-wrapper {
+    width: 50%;
+  }
+  body.photography-wrapper .photo-collection .photo-wrapper {
+    width: 25%;
+  }
+}
+@media screen and (max-width: 728px) {
+  body.photography-wrapper .photo-collection.open .photo-wrapper {
+    width: 100%;
+  }
+  body.photography-wrapper .photo-collection .photo-wrapper {
+    width: 33.33%;
+  }
+}
+@media screen and (max-width: 550px) {
+  body.photography-wrapper nav.photo-nav {
+    padding-left: 30px;
+  }
+  body.photography-wrapper nav.photo-nav .logo img {
+    padding-right: 0px;
+  }
+  body.photography-wrapper nav.photo-nav .logo > span:after {
+    margin: 0 12px;
+  }
+  body.photography-wrapper nav.photo-nav .logo > span span {
+    display: none;
+  }
+  body.photography-wrapper .photo-collection {
+    -webkit-transition: opacity 0.1s ease-out;
+    -moz-transition: opacity 0.1s ease-out;
+    -o-transition: opacity 0.1s ease-out;
+    -ms-transition: opacity 0.1s ease-out;
+    transition: opacity 0.1s ease-out;
+    padding: 70px 10px 20px 10px;
+  }
+  body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close {
+    top: 90px;
+  }
+  body.photography-wrapper .photo-collection.open {
+    -webkit-transition: opacity 0.1s ease-out;
+    -moz-transition: opacity 0.1s ease-out;
+    -o-transition: opacity 0.1s ease-out;
+    -ms-transition: opacity 0.1s ease-out;
+    transition: opacity 0.1s ease-out;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    padding-left: 20px;
+  }
+  body.photography-wrapper .photo-collection.open .photo-view-wrapper {
+    padding-left: 20px;
+  }
+  body.photography-wrapper .photo-collection.open .photo-wrapper {
+    width: 50%;
+  }
+  body.photography-wrapper .photo-collection .photo-wrapper {
+    width: 50%;
+  }
+  body.photography-wrapper .album-collection {
+    -webkit-transition: opacity 0.1s ease-in-out, left 0s ease-in-out;
+    -moz-transition: opacity 0.1s ease-in-out, left 0s ease-in-out;
+    -o-transition: opacity 0.1s ease-in-out, left 0s ease-in-out;
+    -ms-transition: opacity 0.1s ease-in-out, left 0s ease-in-out;
+    transition: opacity 0.1s ease-in-out, left 0s ease-in-out;
+  }
+  body.photography-wrapper .album-collection.open {
+    -webkit-transition: opacity 0.1s ease-in-out, left 0s ease-in-out;
+    -moz-transition: opacity 0.1s ease-in-out, left 0s ease-in-out;
+    -o-transition: opacity 0.1s ease-in-out, left 0s ease-in-out;
+    -ms-transition: opacity 0.1s ease-in-out, left 0s ease-in-out;
+    transition: opacity 0.1s ease-in-out, left 0s ease-in-out;
+    right: 20px;
+    width: initial;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  body.photography-wrapper .photo-collection.open .photo-wrapper {
+    width: 33.333% !important;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  body.photography-wrapper .photo-collection .photo-wrapper {
+    width: 33.333%;
+  }
+  body.photography-wrapper .photo-collection.open .photo-wrapper {
     width: 50% !important;
-    max-height: 150px !important;
-    padding: 14px !important;
+    padding: 14px;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
+  body.photography-wrapper .photo-collection .photo-wrapper {
+    width: 33.333%;
+    padding: 20px;
+  }
+  body.photography-wrapper .photo-collection.open .photo-wrapper {
+    width: 50% !important;
+    padding: 14px;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+  body.photography-wrapper .photo-collection .photo-wrapper {
+    width: 50%;
+    padding: 12px;
+  }
+  body.photography-wrapper .photo-collection.open .photo-wrapper {
+    width: 50%;
+    padding: 14px;
   }
 }
 .scrollToTop {
