@@ -28,22 +28,14 @@ Images for Photography
     - show All Photos label when selecting all photos
 
 
-    Aug 3, 2017
-    - FIgure out way to fadein or load images in a pleasing way in the single-view
-
     Aug 4, 2017
-    - Fade out slideshow controls until mousemove
+    - Fade out slideshow controls until mousemove in fullscreen mode
 
     Aug 5, 2017
-    - Make small images that are pre-blurred for background image
     - Add in social icons
 
     Aug 7, 2017
-    - Maybe put hamburger menu by logo on mobile
-    - Better close method for single image view (maybe not...tyler found it just fine)
-    - If there is only one photo in an album, launch single image view and disable prev/next
-    - when path has a image in it, don't shwo album collection
-
-
-
-
+    - clicking on an album when in single image view is clunky transition experience
+    - better loading experience when hitting a url that contains a single image
+    - update thumbnail images
+    - remove images in preloaded area

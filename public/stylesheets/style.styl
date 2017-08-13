@@ -978,6 +978,7 @@ body.photography-wrapper {
                 opacity: .5;
                 
                 &:hover {
+                    transition: opacity .2s ease-in-out;
                     opacity: 1;
                 }
                 
@@ -1078,6 +1079,10 @@ body.photography-wrapper {
         // background-position: center;
         // background-size: cover;
         // background-repeat: no-repeat;
+            
+        &::-webkit-scrollbar {
+            display: none;
+        }
         
         &.open {
             transition: .2s left ease-in-out;
@@ -1434,14 +1439,28 @@ body.photography-wrapper {
                 
                 a {                        
                     display: block;
+                    position: relative;
                     // padding: 20px;
                     // height: 200px;
                     padding-bottom: 86.66%;
-                    width: 100%;    
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    background-position: center;
+                    width: 100%;  
+                    height: 200px; 
+                    background-image: none !important; 
+                    // background-repeat: no-repeat;
+                    // background-size: cover;
+                    // background-position: center;
                     -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+                    
+                    img {
+                        object-fit: cover;
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                    }
                 }
             }            
         }
@@ -1597,7 +1616,7 @@ body.photography-wrapper {
     
     // iPhone Landscape
     @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape) { 
-        .photo-collection {
+        .photo-collection {            
             .photo-wrapper {
                 width: 33.333%
                 padding: 20px;
@@ -1610,24 +1629,13 @@ body.photography-wrapper {
                 }
             }
         }
+        
+        .album-collection {
+            top: 70px;
+        }
     }
     // iPhone portrait
-    @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : portrait) {   
-        // nav.photo-nav {
-        //     padding-left: 20px;
-            
-        //     .logo {
-        //         > span {
-        //             &:after {
-        //                 margin: 0 10px 0 0px;
-        //             }
-        //             span {
-        //                 display: none;
-        //             }
-        //         }
-        //     }
-        // }    
-          
+    @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : portrait) {             
         .photo-collection {
             .photo-wrapper {
                 width: 50%;

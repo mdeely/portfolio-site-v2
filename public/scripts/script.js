@@ -61,14 +61,11 @@ $(document).ready(function() {
       $( this.$logoContainer      ).bind( 'click', openLogoMenu);
       $( this.$albumSwitcher      ).bind( 'click', toggleAlbumSwitcher);
       $( this.$slideshowFull      ).bind( 'click', enableFullscreenMode);
-      $( this.$photo_viewer       ).bind( 'dblclick', enableFullscreenMode);
-
     
 
       // $( this.$fbCommentIcon      ).bind( 'click', handleFbCommentMenu);
       // $( this.$heroPhoto          ).bind( 'click', handleMenuAndDisplay);
       // $( this.$heroPhoto          ).bind( 'click', handleLogoMenu);
-
 
 
       // PHOTOGRAPHY BIND HANDLERS
@@ -78,16 +75,28 @@ $(document).ready(function() {
       $( this.$slideshowClose     ).bind( 'click', handleCloseButton);
       $( this.$slideshowNext      ).bind( 'click', handleNavigation);
       $( this.$slideshowPrev      ).bind( 'click', handleNavigation);
+      $( window                   ).bind( 'swipeleft', requestNextImage);
+      $( window                   ).bind( 'swiperight', requestPreviousImage);
     }
 
     function photographyInit() {
       indexRange = setIndexRangeInit();
 
-      getImageAttributes( indexRange.firstIndex );
-      setSlideshowImage(  imgAttributes         );
       setAlbumThumbnailsInit();
-      detectKeyPressPhotos();
       setDisplayPhoto();
+      detectKeyPressPhotos();
+
+      if ( ! Modernizr.objectfit ) {
+        $('.photo-wrapper').each(function () {
+          var $container = $(this),
+              imgUrl = $container.find('img').prop('src');
+          if (imgUrl) {
+            $container
+              .css('backgroundImage', 'url(' + imgUrl + ')')
+              .addClass('object-fit-fallback');
+          }  
+        });
+      }
 
       // revealMenuItems();
       // observeFbLikeMenu();
@@ -104,11 +113,20 @@ $(document).ready(function() {
 
     function isPhotoNamePresentInUrl() {
       var pathName       = window.location.pathname;
-      var pathArray      = pathName.split('/');
+      var pathArray      = pathName.split('/', 4).map(function(item) { return item.trim() });
       var objectFromUrl  = [];
 
-      if ( pathArray.length == 4 ) {
-        // is a photo
+      if ( !pathArray[3] && !pathArray[2] ) {
+        // Root
+        objectFromUrl = {
+          type: "none",
+          name: "photogrpahy"
+        }
+
+        getImageAttributes( indexRange.firstIndex );
+        setSlideshowImage(  imgAttributes         );
+      } else if ( pathArray[3] && pathArray[2] ) {
+        // Photo
         var photoName = pathArray[3];
 
         objectFromUrl = {
@@ -118,24 +136,17 @@ $(document).ready(function() {
 
         handlePathname(objectFromUrl);
         openAlbumCollection(false);
-        return
-      }
-      else if ( pathArray.length == 3) {
-        // is an album
-        var albumName = pathArray[2];
+      } else {
+          // Album
+          var albumName = pathArray[2];
+          var albumLinkElement = $(".album-collection a[data-album-link="+albumName+"]");
 
-        var albumLinkElement = $(".album-collection a[data-album-link="+albumName+"]");
-        
-        showAlbumPhotos(albumLinkElement);
+          objectFromUrl = {
+            type: "album",
+            name: albumName
+          }
 
-        return
-      }
-      else {
-        objectFromUrl = {
-          type: "none",
-          name: "photogrpahy"
-        }
-
+          showAlbumPhotos(albumLinkElement);
       }
     }
 
@@ -203,11 +214,11 @@ $(document).ready(function() {
       getCurrentIndex();
 
       if ( control.hasClass('next') ) {
-        requestImage("next");
+        requestNextImage();
       }
 
       if ( control.hasClass('prev') ) {
-        requestImage("previous");
+        requestPreviousImage();
       }
     }
 
@@ -215,21 +226,15 @@ $(document).ready(function() {
       $(".slideshow-loop").show().delay(100).fadeOut('slow');
     }
 
-    function requestImage(direction) {
-      getCurrentIndex();
+    function requestImage(desiredIndex) {
+      getImageAttributes(desiredIndex);
+      setUrl(imgAttributes);
+      setSlideshowImage(imgAttributes);
+    }
 
-      if ( direction == "next" ) {
-        if (  indexRange.currentIndex == indexRange.lastIndex ) {
-          var desiredIndex = indexRange.firstIndex;
-          showLoop();
-        }
-        else {
-          indexRange.currentIndex++;
-          var desiredIndex = indexRange.currentIndex;
-        }
-      }
+    function requestPreviousImage() {
+        getCurrentIndex();
 
-      if ( direction == "previous" ) {
         if (  indexRange.currentIndex == indexRange.firstIndex ) {
           var desiredIndex = indexRange.lastIndex;
           showLoop();
@@ -238,11 +243,22 @@ $(document).ready(function() {
           indexRange.currentIndex--;
           var desiredIndex = indexRange.currentIndex;
         }
-      } 
 
-      getImageAttributes(desiredIndex);
-      setUrl(imgAttributes);
-      setSlideshowImage(imgAttributes);
+        requestImage(desiredIndex);
+    }
+
+    function requestNextImage() {
+      getCurrentIndex();
+
+      if (  indexRange.currentIndex == indexRange.lastIndex ) {
+        var desiredIndex = indexRange.firstIndex;
+        showLoop();
+      }
+      else {
+        indexRange.currentIndex++;
+        var desiredIndex = indexRange.currentIndex;
+      }
+      requestImage(desiredIndex);
     }
 
     function getCurrentIndex() {      
@@ -288,23 +304,23 @@ $(document).ready(function() {
     }
 
     function setBgHeroImage(imgAttributes) {
-      var path = imgAttributes.imgPath;
-      var path = path.replace('.jpg','-sm-blurred.jpg');
+      var urlPath = imgAttributes.src;
+      var urlPath = urlPath.replace('.jpg','-sm-blurred.jpg');
 
       this.$bgImg.css({
-        "background-image" : "url('"+path+"')",
+        "background-image" : "url('"+urlPath+"')",
       });
 
       this.$body.css({
-        "background-image" : "url('"+path+"')",
+        "background-image" : "url('"+urlPath+"')",
       });
 
       // this.$bgImg.css({
-      //   "background-image" : "url('https://s3.amazonaws.com/mdeely-portfolio-assets/images/photography/CT7A2841-sm-blurred.jpg')",
+      //   "background-image" : "url('https://s3.amazonaws.com/mdeely-portfolio-assets/images/photography/5B2C9837-sm-blurred.jpg')",
       // });     
 
       // this.$body.css({
-      //   "background-image" : "url('https://s3.amazonaws.com/mdeely-portfolio-assets/images/photography/CT7A2841-sm-blurred.jpg')",
+      //   "background-image" : "url('https://s3.amazonaws.com/mdeely-portfolio-assets/images/photography/5B2C9837-sm-blurred.jpg')",
       // });   
     }
 
@@ -332,9 +348,14 @@ $(document).ready(function() {
         $(".photo-wrapper").show();
 
         getCurrentIndexRange();
-        getImageAttributes(indexRange.firstAll );
-        setSlideshowImage(imgAttributes);
+        getImageAttributes(indexRange.firstAll);
+
+        if ( $( window ).width() < 550 ) {
+          openAlbumCollection(false);
+        }
+
         setBgHeroImage(imgAttributes);
+        setSlideshowImage(imgAttributes);
 
         imgAttributes["title"]   = "All photos";
         imgAttributes["album"]   = "All photos";
@@ -461,13 +482,13 @@ $(document).ready(function() {
           )
         {
           if ($keyPressed == 37 || $keyPressed == 38) {
-            requestImage("previous");
+            requestPreviousImage();
           }
           else if ($keyPressed == 39 ||
                    $keyPressed == 40 ||
                    $keyPressed == 32)
           {
-            requestImage("next");
+            requestNextImage();
           }
           // else if ($keyPressed == 13 || $keyPressed == 70) {
           //   handleBgPhotoDisplay();

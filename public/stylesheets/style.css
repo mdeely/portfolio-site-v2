@@ -1162,6 +1162,11 @@ body.photography-wrapper nav.photo-nav .logo .album-trigger {
   filter: alpha(opacity=50);
 }
 body.photography-wrapper nav.photo-nav .logo .album-trigger:hover {
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -1233,6 +1238,9 @@ body.photography-wrapper .album-collection {
   border-radius: 10px;
   border: 1px solid rgba(255,255,255,0.05);
   -webkit-overflow-scrolling: touch;
+}
+body.photography-wrapper .album-collection::-webkit-scrollbar {
+  display: none;
 }
 body.photography-wrapper .album-collection.open {
   -webkit-transition: 0.2s left ease-in-out;
@@ -1676,14 +1684,22 @@ body.photography-wrapper .photo-collection .photo-wrapper .photo-item {
 }
 body.photography-wrapper .photo-collection .photo-wrapper .photo-item a {
   display: block;
+  position: relative;
   padding-bottom: 86.66%;
   width: 100%;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: center;
+  height: 200px;
+  background-image: none !important;
   -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+body.photography-wrapper .photo-collection .photo-wrapper .photo-item a img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 @media screen and (max-width: 1200px) {
   body.photography-wrapper .photo-collection.open .photo-wrapper {
@@ -1792,6 +1808,9 @@ body.photography-wrapper .photo-collection .photo-wrapper .photo-item a {
   body.photography-wrapper .photo-collection.open .photo-wrapper {
     width: 50% !important;
     padding: 14px;
+  }
+  body.photography-wrapper .album-collection {
+    top: 70px;
   }
 }
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
