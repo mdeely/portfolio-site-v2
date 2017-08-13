@@ -890,6 +890,14 @@ body.photography-wrapper {
     height: 100vh;
     min-height: 100%;
     
+    &.js {
+        .photo-nav,
+        .photo-collection,
+        .album-collection {
+            opacity: 0;
+        }
+    }
+    
     .bgImg {
         background-repeat: no-repeat;
         background-position: top;
@@ -1283,9 +1291,10 @@ body.photography-wrapper {
                         margin-left: 40px;
                     }
                     
-                    &.fb-like {
-                        border: 0px solid transparent;
-
+                    &.fb-like-container {
+                        border: 1px solid transparent;
+                        position: relative;
+                        
                         &:before {
                             font-family: "FontAwesome";
                             content: "\f09a";
@@ -1293,8 +1302,23 @@ body.photography-wrapper {
                         } 
                         
                         &:hover {
-                            background-color: #3b5998;
-                            border: 0px solid transparent;
+                            
+                            .fb-like {
+                                transition: all .2s ease-in-out;
+                                bottom: 34px;
+                                opacity: 1;
+                                pointer-events: initial;
+                            }
+                        }
+                        
+                        .fb-like {
+                            transition: all .2s ease-in-out;
+                            position: absolute;
+                            padding: 10px;
+                            bottom: 30px;
+                            left: -3px;
+                            opacity: 0;
+                            pointer-events: none;
                         }
                     }
                     
@@ -1429,6 +1453,20 @@ body.photography-wrapper {
                 }
             }
             
+            &.object-fit-fallback {
+                
+                .photo-item {
+                    a {
+                        background-size: cover;
+                        
+                        img {
+                            opacity: 0;
+                        }
+                    }
+                }
+                
+            }
+            
             .photo-item {
                 transition: box-shadow .1s ease-in-out;
                 width: 100%;
@@ -1445,7 +1483,6 @@ body.photography-wrapper {
                     padding-bottom: 86.66%;
                     width: 100%;  
                     height: 200px; 
-                    background-image: none !important; 
                     // background-repeat: no-repeat;
                     // background-size: cover;
                     // background-position: center;

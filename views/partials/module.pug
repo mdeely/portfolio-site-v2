@@ -109,7 +109,7 @@ mixin imageCollection(project)
 
 mixin photographyCollection(photos)
     - if (photos.images.collection && photos.images.collection.length)
-    .photo-collection.open
+    .photo-collection.open(style="opacity:0;")
         .preloader
             img
         .photo-view-wrapper
@@ -117,7 +117,7 @@ mixin photographyCollection(photos)
                 button.slide-action
                     i.fa.fa-times
             .slideshow-controls
-                div.slide-action.fb-like Like
+                div.slide-action.fb-like-container Like
                 div.slide-action.fullscreen
                     i.fa.fa-expand
                     i.fa.fa-compress(style="display:none")
@@ -148,13 +148,13 @@ mixin photographyCollection(photos)
 
                         .photo-wrapper
                             div.photo-item
-                                a(style='background-image: url("https://s3.amazonaws.com/mdeely-portfolio-assets/images/'+filePath+'-sm.jpg")' href='/photography/'+albumNameFormatted+'/'+fileName rel="external" data-ajax="false" data-alt=imgTitle data-title=imgTitle data-album=albumNameFormatted data-img-index=index data-img-src="https://s3.amazonaws.com/mdeely-portfolio-assets/images/"+filePath+".jpg")
-                                    img(src='https://s3.amazonaws.com/mdeely-portfolio-assets/images/'+filePath+'.jpg')
+                                a(href='/photography/'+albumNameFormatted+'/'+fileName rel="external" data-ajax="false" data-img-index=index)
+                                    img(src='https://s3.amazonaws.com/mdeely-portfolio-assets/images/'+filePath+'-md.jpg' alt=imgTitle title=imgTitle data-album=albumNameFormatted data-img-index=index)
 
                         - var index = ++index
 
 mixin albumCollection(photos)
-    .album-collection.open
+    .album-collection.open(style="opacity:0;")
         ul
             li.selected
                 a(href="/photography/" data-album-link='All photos') All photos

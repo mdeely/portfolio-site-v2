@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $body = $('body');
-    $($body).addClass("js").delay(5000).queue(function(next){
+    $($body).addClass("js").delay(3000).queue(function(next){
         $(this).removeClass("js");
         next();
     });
@@ -13,6 +13,10 @@ $(document).ready(function() {
 
       if ( $body.hasClass("photography-wrapper") ) {
         photographyInit();
+
+        $(".photo-collection").delay( 1000 ).fadeTo("slow", 1);
+        $(".album-collection").delay( 1000 ).fadeTo("slow", 1);
+        $(".photo-nav").delay( 1000 ).fadeTo("slow", 1);
       }
       else {
         projectListLoadBehavior();
@@ -44,6 +48,7 @@ $(document).ready(function() {
       this.$slideshowPrev      = $('.slideshow-controls .slide-action.prev');
       this.$slideshowFull      = $('.slideshow-controls .slide-action.fullscreen');
       this.$bgImg              = $('.bgImg');
+      this.$fbLikeIcon         = $('.slide-action.fb-like-container');
     }
 
     function bindHandlers() {
@@ -92,7 +97,7 @@ $(document).ready(function() {
               imgUrl = $container.find('img').prop('src');
           if (imgUrl) {
             $container
-              .css('backgroundImage', 'url(' + imgUrl + ')')
+              .find('a').css('backgroundImage', 'url(' + imgUrl + ')')
               .addClass('object-fit-fallback');
           }  
         });
@@ -125,6 +130,7 @@ $(document).ready(function() {
 
         getImageAttributes( indexRange.firstIndex );
         setSlideshowImage(  imgAttributes         );
+
       } else if ( pathArray[3] && pathArray[2] ) {
         // Photo
         var photoName = pathArray[3];
@@ -183,7 +189,7 @@ $(document).ready(function() {
     }
 
     function setIndexRangeInit() {
-      var lastImg  = $('.photo-wrapper:last a')
+      var lastImg  = $('.photo-wrapper:last a img')
       var last     = lastImg.attr("data-img-index");
 
       indexRange = {
@@ -197,10 +203,10 @@ $(document).ready(function() {
     }
 
     function getCurrentIndexRange() {
-      var firstImg   = $('.photo-wrapper:visible:first a')
+      var firstImg   = $('.photo-wrapper:visible:first a img')
       var firstIndex = firstImg.attr("data-img-index");
 
-      var lastImg  = $('.photo-wrapper:visible:last a')
+      var lastImg  = $('.photo-wrapper:visible:last a img')
       var lastIndex = lastImg.attr("data-img-index");
 
       indexRange.firstIndex = firstIndex;
@@ -272,17 +278,17 @@ $(document).ready(function() {
     function getImageAttributes(desiredIndex) {
       var urlOrigin = window.location.origin;
 
-      var imageLink = $(".photo-wrapper a[data-img-index="+desiredIndex+"]");
+      var imageLink = $(".photo-wrapper a img[data-img-index="+desiredIndex+"]");
 
-      var imgPath = $(imageLink).css('background-image');
-      imgPath = imgPath.replace('url("','').replace('")','').replace('-sm','');
+      var imgPath = $(imageLink).attr('src');
+      imgPath = imgPath.replace('-md','');
 
       imgAttributes = {
-        src      : $(imageLink).data('img-src'),
-        alt      : $(imageLink).data('alt'),
-        title    : $(imageLink).data('title'),
+        src      : imgPath,
+        alt      : $(imageLink).attr('alt'),
+        title    : $(imageLink).attr('title'),
         imgIndex : $(imageLink).data('img-index'),
-        href     : urlOrigin + $(imageLink).attr("href"),
+        href     : urlOrigin + $(imageLink).parent().attr("href"),
         album    : $(imageLink).attr("data-album"),
         imgPath  : imgPath
       };
@@ -298,8 +304,8 @@ $(document).ready(function() {
         "data-img-index" : imgAttributes.imgIndex,
       });
 
+      setFbLike(imgAttributes.href);
       setBgHeroImage(imgAttributes);
-
       preloadNextImage( imgAttributes.imgIndex );
     }
 
@@ -314,14 +320,6 @@ $(document).ready(function() {
       this.$body.css({
         "background-image" : "url('"+urlPath+"')",
       });
-
-      // this.$bgImg.css({
-      //   "background-image" : "url('https://s3.amazonaws.com/mdeely-portfolio-assets/images/photography/5B2C9837-sm-blurred.jpg')",
-      // });     
-
-      // this.$body.css({
-      //   "background-image" : "url('https://s3.amazonaws.com/mdeely-portfolio-assets/images/photography/5B2C9837-sm-blurred.jpg')",
-      // });   
     }
 
     function handleAlbumPhotos(evt) {
@@ -331,7 +329,7 @@ $(document).ready(function() {
 
       handleSingleViewDisplay("close");
       showAlbumPhotos(albumLinkElement);
-      setUrl( imgAttributes );
+      setUrl(imgAttributes);
     }
 
     function showAlbumPhotos(albumLinkElement) {
@@ -343,7 +341,6 @@ $(document).ready(function() {
 
       $('.current-album').text(albumDisplay);
 
-
       if  ( albumName == "All photos") {
         $(".photo-wrapper").show();
 
@@ -354,7 +351,7 @@ $(document).ready(function() {
           openAlbumCollection(false);
         }
 
-        setBgHeroImage(imgAttributes);
+        // setBgHeroImage(imgAttributes);
         setSlideshowImage(imgAttributes);
 
         imgAttributes["title"]   = "All photos";
@@ -363,7 +360,7 @@ $(document).ready(function() {
       }
       else { 
         this.$imageLinks.each( function(index, link) {
-          if ( $(link).data( 'album' ) !== albumName  ) {
+          if ( $(link).find('img').data( 'album' ) !== albumName  ) {
             $(link).closest('.photo-wrapper').hide();
           }
           else {
@@ -371,8 +368,9 @@ $(document).ready(function() {
           }
         });
 
-        // $(".slideshow-album-name .slide-action").text(albumDisplay);
-        // $(".slideshow-album-name").show().delay(2000).fadeOut();
+        if ( $('.photo-wrapper:visible').length == 1 ) {
+          handleSingleViewDisplay();
+        }
 
         if ( $( window ).width() < 550 ) {
           openAlbumCollection(false);
@@ -381,10 +379,9 @@ $(document).ready(function() {
         getCurrentIndexRange();
         getImageAttributes(indexRange.firstIndex );
 
+        // setBgHeroImage(imgAttributes);
+        setSlideshowImage(imgAttributes);
         imgAttributes["href"]    = window.location.origin + "/photography/"+albumName;
-
-        setBgHeroImage(imgAttributes);
-        setTimeout(function() { setSlideshowImage(imgAttributes); }, 500);
       }
     }
 
@@ -416,7 +413,7 @@ $(document).ready(function() {
       var img2 = $("<img></>");
 
       $(img2).attr({
-        "src"            : imgAttributes.src.replace('.jpg','-sm-blurred.jpg')
+        "src"            : imgAttributes.src.replace('-md','-sm-blurred')
       });
 
       $(".preloader").append(img2);
@@ -439,28 +436,34 @@ $(document).ready(function() {
     function setAlbumThumbnailsInit() {
       this.$albumMenuLinks.each( function(index, link) {
         if ( $(link).data('album-link') == "All photos" ) {
-          var src = $(".photo-wrapper:eq(51) a").data("img-src");
-          var src2 = $(".photo-wrapper:last a").data("img-src");
-          var src3 = $(".photo-wrapper:first a").data("img-src");
+          var ogSrc = $(".photo-wrapper:eq(51) img").attr("src");
+          var ogSrc2 = $(".photo-wrapper:last img").attr("src");
+          var ogSrc3 = $(".photo-wrapper:first img").attr("src");
+
+          var src  = ogSrc.replace("-md", "-xs");
+          var src2 = ogSrc2.replace("-md", "-xs");
+          var src3 = ogSrc3.replace("-md", "-xs");
 
           $(link).children('span:first').css("background-image", "url("+src+")");
           $(link).children('span:nth-child(2)').css("background-image", "url("+src2+")");
           $(link).children('span:last').css("background-image", "url("+src3+")");
 
           imgAttributes = {
-            src      : src,
+            src      : ogSrc,
           };
 
           preloadImage(imgAttributes, true);
         }
         else {
           var linkAlbum = $(link).data('album-link');
-          var match = $(".photo-wrapper a[data-album='"+linkAlbum+"']:first");
-          var src = $(match).data('img-src');
+          var match = $(".photo-wrapper a img[data-album='"+linkAlbum+"']:first");
+          var ogSrc = $(match).attr('src');
+          var src = ogSrc.replace('-md','-xs');
+
           $(link).children('span').css("background-image", "url("+src+")");
 
           imgAttributes = {
-            src      : src,
+            src      : ogSrc,
           };
 
           preloadImage(imgAttributes, true);
@@ -559,6 +562,16 @@ $(document).ready(function() {
       $('.fa.fa-expand').toggle();
       $('.fa.fa-compress').toggle();
       $($slideshowClose).hide();
+    }
+
+    function setFbLike(url) {
+      $(this.$fbLikeIcon).html("Like<div class='fb-like' data-href='"+url+"', data-layout='box_count', data-action='like', data-size='small', data-show_faces='true', data-share='true'></div>");
+      // $(this.$fbCommentWrapper).html("<div class='fb-comments' data-href='"+url+"' data-mobile='true' data-numposts='5'></div>");
+
+      if (typeof FB !== 'undefined') {
+          FB.XFBML.parse(document.getElementById('fb-like-icon'));
+          // FB.XFBML.parse(document.getElementById('fb-comment-wrapper'));
+      }
     }
 
 
@@ -937,16 +950,6 @@ $(document).ready(function() {
       // retinajs( $containerPhoto );
 
       // Fire off GA event
-    }
-
-    function setFbLike(url) {
-      $(this.$fbLikeIcon).html("<div class='fb-like' data-href='"+url+"', data-layout='box_count', data-action='like', data-size='small', data-show_faces='true', data-share='true'></div>");
-      // $(this.$fbCommentWrapper).html("<div class='fb-comments' data-href='"+url+"' data-mobile='true' data-numposts='5'></div>");
-
-      if (typeof FB !== 'undefined') {
-          FB.XFBML.parse(document.getElementById('fb-like-icon'));
-          // FB.XFBML.parse(document.getElementById('fb-comment-wrapper'));
-      }
     }
 
     function removeActiveClass() {

@@ -1062,6 +1062,13 @@ body.photography-wrapper {
   height: 100vh;
   min-height: 100%;
 }
+body.photography-wrapper.js .photo-nav,
+body.photography-wrapper.js .photo-collection,
+body.photography-wrapper.js .album-collection {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
 body.photography-wrapper .bgImg {
   background-repeat: no-repeat;
   background-position: top;
@@ -1476,26 +1483,53 @@ body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-
 body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .slide-action.prev {
   margin-left: 40px;
 }
-body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-controls .slide-action.fb-like,
-body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action.fb-like,
-body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-name .slide-action.fb-like,
-body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .slide-action.fb-like {
-  border: 0px solid transparent;
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-controls .slide-action.fb-like-container,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action.fb-like-container,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-name .slide-action.fb-like-container,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .slide-action.fb-like-container {
+  border: 1px solid transparent;
+  position: relative;
 }
-body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-controls .slide-action.fb-like:before,
-body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action.fb-like:before,
-body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-name .slide-action.fb-like:before,
-body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .slide-action.fb-like:before {
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-controls .slide-action.fb-like-container:before,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action.fb-like-container:before,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-name .slide-action.fb-like-container:before,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .slide-action.fb-like-container:before {
   font-family: "FontAwesome";
   content: "\f09a";
   margin-right: 10px;
 }
-body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-controls .slide-action.fb-like:hover,
-body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action.fb-like:hover,
-body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-name .slide-action.fb-like:hover,
-body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .slide-action.fb-like:hover {
-  background-color: #3b5998;
-  border: 0px solid transparent;
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-controls .slide-action.fb-like-container:hover .fb-like,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action.fb-like-container:hover .fb-like,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-name .slide-action.fb-like-container:hover .fb-like,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .slide-action.fb-like-container:hover .fb-like {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  bottom: 34px;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  pointer-events: initial;
+}
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-controls .slide-action.fb-like-container .fb-like,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action.fb-like-container .fb-like,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-album-name .slide-action.fb-like-container .fb-like,
+body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .slide-action.fb-like-container .fb-like {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  padding: 10px;
+  bottom: 30px;
+  left: -3px;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  pointer-events: none;
 }
 body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-controls .slide-action:hover,
 body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close .slide-action:hover,
@@ -1668,6 +1702,16 @@ body.photography-wrapper .photo-collection .photo-wrapper:active .photo-item {
   -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.1);
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
+body.photography-wrapper .photo-collection .photo-wrapper.object-fit-fallback .photo-item a {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+body.photography-wrapper .photo-collection .photo-wrapper.object-fit-fallback .photo-item a img {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
 body.photography-wrapper .photo-collection .photo-wrapper .photo-item {
   -webkit-transition: box-shadow 0.1s ease-in-out;
   -moz-transition: box-shadow 0.1s ease-in-out;
@@ -1688,7 +1732,6 @@ body.photography-wrapper .photo-collection .photo-wrapper .photo-item a {
   padding-bottom: 86.66%;
   width: 100%;
   height: 200px;
-  background-image: none !important;
   -webkit-tap-highlight-color: rgba(255,255,255,0);
 }
 body.photography-wrapper .photo-collection .photo-wrapper .photo-item a img {
