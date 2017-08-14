@@ -235,6 +235,7 @@ $(document).ready(function() {
     function requestImage(desiredIndex) {
       getImageAttributes(desiredIndex);
       setUrl(imgAttributes);
+
       setSlideshowImage(imgAttributes);
     }
 
@@ -304,6 +305,8 @@ $(document).ready(function() {
         "data-img-index" : imgAttributes.imgIndex,
       });
 
+      this.$photo_viewer.fadeTo('slow', 1);
+
       setFbLike(imgAttributes.href);
       setBgHeroImage(imgAttributes);
       preloadNextImage( imgAttributes.imgIndex );
@@ -335,6 +338,8 @@ $(document).ready(function() {
     function showAlbumPhotos(albumLinkElement) {
       var albumName = $(albumLinkElement).data('album-link');
       var albumDisplay = $(albumLinkElement).text();
+      var albumPoster = $(albumLinkElement).children('span').css('background-image');
+      var albumPoster = albumPoster.replace('url("',"").replace('")','').replace("-xs","");
 
       $('.album-collection li').removeClass('selected');
       $(albumLinkElement).parent().addClass('selected');
@@ -359,6 +364,8 @@ $(document).ready(function() {
         imgAttributes["href"]    = window.location.origin + "/photography";
       }
       else { 
+        handleSingleViewDisplay("close");
+
         this.$imageLinks.each( function(index, link) {
           if ( $(link).find('img').data( 'album' ) !== albumName  ) {
             $(link).closest('.photo-wrapper').hide();
@@ -368,16 +375,19 @@ $(document).ready(function() {
           }
         });
 
-        if ( $('.photo-wrapper:visible').length == 1 ) {
-          handleSingleViewDisplay();
-        }
+        // if ( $('.photo-wrapper:visible').length == 1 ) {
+        //   handleSingleViewDisplay();
+        // }
 
         if ( $( window ).width() < 550 ) {
           openAlbumCollection(false);
         }
+        
 
         getCurrentIndexRange();
         getImageAttributes(indexRange.firstIndex );
+
+        imgAttributes["src"]    = albumPoster;
 
         // setBgHeroImage(imgAttributes);
         setSlideshowImage(imgAttributes);
@@ -406,31 +416,31 @@ $(document).ready(function() {
 
       getImageAttributes(index);
       preloadImage(imgAttributes);
-
     }
 
     function preloadImage(imgAttributes, blurredOnly = false) {
-      var img2 = $("<img></>");
+      var imgBlurred = $("<img></>");
 
-      $(img2).attr({
-        "src"            : imgAttributes.src.replace('-md','-sm-blurred')
+      $(imgBlurred).attr({
+        "src"            : imgAttributes.src.replace('.jpg','-sm-blurred.jpg')
       });
 
-      $(".preloader").append(img2);
+      $(".preloader").append(imgBlurred);
 
-      if ( blurredOnly ) {
+      if ( blurredOnly == true ) {
         return
       }
 
-      var img1 = $("<img></>");
-      $(img1).attr({
+      var imgOg = $("<img></>");
+
+      $(imgOg).attr({
         "src"            : imgAttributes.src,
         "title"          : imgAttributes.title,
         "alt"            : imgAttributes.alt,
         "data-img-index" : imgAttributes.imgIndex,
       });
 
-      $(".preloader").append(img1);
+      $(".preloader").append(imgOg);  
     }
 
     function setAlbumThumbnailsInit() {
@@ -449,21 +459,26 @@ $(document).ready(function() {
           $(link).children('span:last').css("background-image", "url("+src3+")");
 
           imgAttributes = {
-            src      : ogSrc,
+            src      : ogSrc.replace('-md',''),
           };
 
           preloadImage(imgAttributes, true);
         }
         else {
           var linkAlbum = $(link).data('album-link');
-          var match = $(".photo-wrapper a img[data-album='"+linkAlbum+"']:first");
+          if ( $(".photo-wrapper a img[data-album='"+linkAlbum+"'][data-poster='true']:first").length !== 0 )  {
+            var match = $(".photo-wrapper a img[data-album='"+linkAlbum+"'][data-poster='true']:first");
+          }
+          else {
+            var match = $(".photo-wrapper a img[data-album='"+linkAlbum+"']:first");
+          }
           var ogSrc = $(match).attr('src');
           var src = ogSrc.replace('-md','-xs');
 
           $(link).children('span').css("background-image", "url("+src+")");
 
           imgAttributes = {
-            src      : ogSrc,
+            src      : ogSrc.replace('-md',''),
           };
 
           preloadImage(imgAttributes, true);
@@ -503,6 +518,7 @@ $(document).ready(function() {
 
     function handleSingleViewDisplay(action) {
       if ( action == "close" ) {
+        this.$photo_viewer.fadeTo(0, 0);
         this.$photo_collection.removeClass("single-view");
 
         toggleNoScroll("close");

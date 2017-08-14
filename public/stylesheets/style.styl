@@ -889,6 +889,8 @@ body.photography-wrapper {
     background-color: #f9f9f9;
     height: 100vh;
     min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
     
     &.js {
         .photo-nav,
@@ -912,11 +914,13 @@ body.photography-wrapper {
         right: 0px;
         bottom: 0px;
         background-color: #353535;
-        background-image: url(https://s3.amazonaws.com/mdeely-portfolio-assets/images/photography/CT7A3219-sm.jpg);
         background-size: cover;
         height: 100%;
         height: 100vh;
         overflow: hidden;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility:    hidden;
+        -ms-backface-visibility:     hidden;
     }
     
     .ui-loader {
@@ -1221,7 +1225,7 @@ body.photography-wrapper {
                 position: relative;
                 transform: scale(.9);
                 // max-width: 1024px;
-                    max-width: 800px;
+                max-width: 800px;
                 margin: 0 auto;
                 // max-width: 100%;
                 // padding: 0px;
@@ -1251,6 +1255,11 @@ body.photography-wrapper {
                     -moz-user-select: none;
                     -ms-user-select: none;
                     user-select: none;
+                    z-index: 1;
+                    
+                    &.slideshow-preload {
+                        z-index: 0
+                    }
                 }
             }
             
@@ -1497,24 +1506,17 @@ body.photography-wrapper {
                         left: 0;
                         right: 0;
                         bottom: 0;
+                        text-align: center;
                     }
                 }
             }            
         }
     }
-    
-    // @media screen and (max-width: 480px) {
-    //     .photo-collection {
-    //         .photo-wrapper {
-    //             width: 50% !important;
-    //             max-height: 150px !important;
-    //             padding: 14px !important;
-    //         }
-    //     }
-    // }
         
     @media screen and (max-width: 1200px) {
         .photo-collection {
+            padding-top: 70px;
+            
             &.open {
                 .photo-wrapper {
                     width: 33.33%;
@@ -1523,6 +1525,14 @@ body.photography-wrapper {
             
             .photo-wrapper {
                 width: 20%;
+                padding: 20px;
+                
+                
+                .photo-item {
+                    a {
+                        height: 120px;
+                    }
+                }
             }
         }
     }
@@ -1593,7 +1603,7 @@ body.photography-wrapper {
             
             &.open {
                 transition: opacity .1s ease-out;
-                opacity: 0;
+                opacity: 0 !important;
                 padding-left: 20px;
                 
                 .photo-view-wrapper {
@@ -1621,72 +1631,72 @@ body.photography-wrapper {
         }
     }
     
-    // iPad in landscape mode
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) { 
-        .photo-collection {
-            .photo-wrapper {
-            }
+    // // iPad in landscape mode
+    // @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) { 
+    //     .photo-collection {
+    //         .photo-wrapper {
+    //         }
             
-            &.open {
-                .photo-wrapper {
-                    width: 33.333% !important;
-                }
-            }
-        }
-    }
+    //         &.open {
+    //             .photo-wrapper {
+    //                 width: 33.333% !important;
+    //             }
+    //         }
+    //     }
+    // }
     
-    // iPad in portrait mode
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { 
-        .photo-collection {
-            .photo-wrapper {
-                width: 33.333%
-            }
+    // // iPad in portrait mode
+    // @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { 
+    //     .photo-collection {
+    //         .photo-wrapper {
+    //             width: 33.333%
+    //         }
             
-            &.open {
-                .photo-wrapper {
-                    width: 50% !important;
-                    padding: 14px;
-                }
-            }
-        }
-    }
+    //         &.open {
+    //             .photo-wrapper {
+    //                 width: 50% !important;
+    //                 padding: 14px;
+    //             }
+    //         }
+    //     }
+    // }
     
-    // iPhone Landscape
-    @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape) { 
-        .photo-collection {            
-            .photo-wrapper {
-                width: 33.333%
-                padding: 20px;
-            }
+    // // iPhone Landscape
+    // @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape) { 
+    //     .photo-collection {            
+    //         .photo-wrapper {
+    //             width: 33.333%
+    //             padding: 20px;
+    //         }
             
-            &.open {
-                .photo-wrapper {
-                    width: 50% !important;
-                    padding: 14px;
-                }
-            }
-        }
+    //         &.open {
+    //             .photo-wrapper {
+    //                 width: 50% !important;
+    //                 padding: 14px;
+    //             }
+    //         }
+    //     }
         
-        .album-collection {
-            top: 70px;
-        }
-    }
-    // iPhone portrait
-    @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : portrait) {             
-        .photo-collection {
-            .photo-wrapper {
-                width: 50%;
-                padding: 12px;
-            }
+    //     .album-collection {
+    //         top: 70px;
+    //     }
+    // }
+    // // iPhone portrait
+    // @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : portrait) {             
+    //     .photo-collection {
+    //         .photo-wrapper {
+    //             width: 50%;
+    //             padding: 12px;
+    //         }
             
-            &.open {
-                .photo-wrapper {
-                    width: 50%;
-                    padding: 14px;
-                }
-            }
-        }
-    }
+    //         &.open {
+    //             .photo-wrapper {
+    //                 width: 50%;
+    //                 padding: 14px;
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 .scrollToTop {

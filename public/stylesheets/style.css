@@ -1061,6 +1061,10 @@ body.photography-wrapper {
   background-color: #f9f9f9;
   height: 100vh;
   min-height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 body.photography-wrapper.js .photo-nav,
 body.photography-wrapper.js .photo-collection,
@@ -1081,13 +1085,15 @@ body.photography-wrapper .site-background {
   right: 0px;
   bottom: 0px;
   background-color: #353535;
-  background-image: url("https://s3.amazonaws.com/mdeely-portfolio-assets/images/photography/CT7A3219-sm.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   height: 100%;
   height: 100vh;
   overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
 }
 body.photography-wrapper .ui-loader {
   display: none;
@@ -1432,6 +1438,10 @@ body.photography-wrapper .photo-collection .photo-view-wrapper .photo-view img {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  z-index: 1;
+}
+body.photography-wrapper .photo-collection .photo-view-wrapper .photo-view img.slideshow-preload {
+  z-index: 0;
 }
 body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-controls,
 body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close,
@@ -1743,13 +1753,21 @@ body.photography-wrapper .photo-collection .photo-wrapper .photo-item a img {
   left: 0;
   right: 0;
   bottom: 0;
+  text-align: center;
 }
 @media screen and (max-width: 1200px) {
+  body.photography-wrapper .photo-collection {
+    padding-top: 70px;
+  }
   body.photography-wrapper .photo-collection.open .photo-wrapper {
     width: 33.33%;
   }
   body.photography-wrapper .photo-collection .photo-wrapper {
     width: 20%;
+    padding: 20px;
+  }
+  body.photography-wrapper .photo-collection .photo-wrapper .photo-item a {
+    height: 120px;
   }
 }
 @media screen and (max-width: 968px) {
@@ -1798,9 +1816,9 @@ body.photography-wrapper .photo-collection .photo-wrapper .photo-item a img {
     -o-transition: opacity 0.1s ease-out;
     -ms-transition: opacity 0.1s ease-out;
     transition: opacity 0.1s ease-out;
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
+    opacity: 0 !important;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)" !important;
+    filter: alpha(opacity=0) !important;
     padding-left: 20px;
   }
   body.photography-wrapper .photo-collection.open .photo-view-wrapper {
@@ -1827,43 +1845,6 @@ body.photography-wrapper .photo-collection .photo-wrapper .photo-item a img {
     transition: opacity 0.1s ease-in-out, left 0s ease-in-out;
     right: 20px;
     width: initial;
-  }
-}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  body.photography-wrapper .photo-collection.open .photo-wrapper {
-    width: 33.333% !important;
-  }
-}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  body.photography-wrapper .photo-collection .photo-wrapper {
-    width: 33.333%;
-  }
-  body.photography-wrapper .photo-collection.open .photo-wrapper {
-    width: 50% !important;
-    padding: 14px;
-  }
-}
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
-  body.photography-wrapper .photo-collection .photo-wrapper {
-    width: 33.333%;
-    padding: 20px;
-  }
-  body.photography-wrapper .photo-collection.open .photo-wrapper {
-    width: 50% !important;
-    padding: 14px;
-  }
-  body.photography-wrapper .album-collection {
-    top: 70px;
-  }
-}
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
-  body.photography-wrapper .photo-collection .photo-wrapper {
-    width: 50%;
-    padding: 12px;
-  }
-  body.photography-wrapper .photo-collection.open .photo-wrapper {
-    width: 50%;
-    padding: 14px;
   }
 }
 .scrollToTop {

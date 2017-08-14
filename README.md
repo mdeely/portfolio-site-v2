@@ -28,14 +28,9 @@ Images for Photography
     - show All Photos label when selecting all photos
 
 
-    Aug 4, 2017
-    - Fade out slideshow controls until mousemove in fullscreen mode
-
     Aug 5, 2017
     - Add in social icons
 
     Aug 7, 2017
-    - clicking on an album when in single image view is clunky transition experience
-    - better loading experience when hitting a url that contains a single image
-    - update thumbnail images
-    - remove images in preloaded area
+    - Remove "open" class when loading single image views
+    - When clicking on an album poster, the bg doesn't set on iphone

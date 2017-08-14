@@ -89,7 +89,8 @@
                     "fileName":"CT7A2826",
                     "title":"Rocks & Wave",
                     "album":"ireland",
-                    "albumDisplay":"Ireland"
+                    "albumDisplay":"Ireland",
+                    "albumPoster":true
                 },
                 {
                     "fileName":"CT7A2827",
@@ -143,7 +144,8 @@
                     "fileName":"CT7A4165",
                     "title":"Musée de l'Armée",
                     "album":"paris",
-                    "albumDisplay":"Paris"
+                    "albumDisplay":"Paris",
+                    "albumPoster":true
                 },
                 {
                     "fileName":"CT7A4180",
@@ -198,7 +200,8 @@
                     "fileName":"CT7A4519",
                     "title":"Le Louvre Pyramid",
                     "album":"paris",
-                    "albumDisplay":"Paris"
+                    "albumDisplay":"Paris",
+                    "albumPoster":false
                 },
                 {
                     "fileName":"CT7A2705",
@@ -265,7 +268,8 @@
                     "fileName":"CT7A3590",
                     "title":"While My Guitar Gently Weeps",
                     "album":"amsterdam",
-                    "albumDisplay":"Amsterdam"
+                    "albumDisplay":"Amsterdam",
+                    "albumPoster":true
                 },
                 {
                     "fileName":"CT7A3592",
@@ -331,7 +335,8 @@
                     "fileName":"CT7A5207",
                     "title":"Sunset",
                     "album":"milan",
-                    "albumDisplay":"Milan"
+                    "albumDisplay":"Milan",
+                    "albumPoster":true
                 },
                 {
                     "fileName":"CT7A5260",
@@ -410,7 +415,8 @@
                     "fileName":"CT7A5456",
                     "title":"Pat & Smoke - Three Lakes",
                     "album":"up-north",
-                    "albumDisplay":"Up North"
+                    "albumDisplay":"Up North",
+                    "albumPoster":true
                 },
                 {
                     "fileName":"CT7A5408",
@@ -458,7 +464,8 @@
                     "fileName":"CT7A7626",
                     "title":"Water Meter",
                     "album":"washington-dc",
-                    "albumDisplay":"Washington D.C"
+                    "albumDisplay":"Washington D.C",
+                    "albumPoster":true
                 },
                 {
                     "fileName":"CT7A7663",
