@@ -521,7 +521,7 @@ ul.menu-container li.social a:hover {
   transition-duration: 0.2s;
 }
 nav.masthead {
-  padding: 24px;
+  padding: 24px 6px;
   color: transparent;
   background-color: #f9f9f9;
   position: relative;
@@ -536,8 +536,8 @@ nav.masthead ul.nav-header li {
   padding: 6px;
   font-size: 1em;
   vertical-align: middle;
-  height: 54px;
-  width: 54px;
+  height: 44px;
+  width: 44px;
   -webkit-border-radius: 5em;
   border-radius: 5em;
   -webkit-transition: box-shadow 0.2s ease-in-out;
@@ -549,7 +549,7 @@ nav.masthead ul.nav-header li {
 nav.masthead ul.nav-header li.name {
   background-image: url("/images/icons/name.svg");
   font-size: 2em;
-  margin: 6px 4%;
+  margin: 6px 2%;
   width: 100px;
   height: 100px;
 }
@@ -1117,7 +1117,7 @@ nav.masthead ul.nav-header li a {
 }
 @media screen and (min-width: 480px) {
   nav.masthead ul li.name {
-    margin: 6px 7%;
+    margin: 6px 4%;
   }
   nav.masthead ul li.ui,
   nav.masthead ul li.photos,
