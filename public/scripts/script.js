@@ -333,13 +333,18 @@ $(document).ready(function() {
       handleSingleViewDisplay("close");
       showAlbumPhotos(albumLinkElement);
       setUrl(imgAttributes);
+
+      $("body").animate({ scrollTop: "0" });
     }
 
     function showAlbumPhotos(albumLinkElement) {
       var albumName = $(albumLinkElement).data('album-link');
       var albumDisplay = $(albumLinkElement).text();
       var albumPoster = $(albumLinkElement).children('span').css('background-image');
-      var albumPoster = albumPoster.replace('url("',"").replace('")','').replace("-xs","");
+      var albumPoster = albumPoster.replace("url(","");
+      var albumPoster = albumPoster.replace(")","");
+      var albumPoster = albumPoster.replace('"','').replace('"','');
+      var albumPoster = albumPoster.replace("-xs",'');
 
       $('.album-collection li').removeClass('selected');
       $(albumLinkElement).parent().addClass('selected');
@@ -538,6 +543,7 @@ $(document).ready(function() {
     }
 
     function handleImageClick(image) {
+      $(this.$photo_viewer).children('img').fadeTo(0,0);
       image.preventDefault();
 
       var image_target     = $(image.target);

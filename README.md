@@ -33,4 +33,4 @@ Images for Photography
 
     Aug 7, 2017
     - Remove "open" class when loading single image views
-    - When clicking on an album poster, the bg doesn't set on iphone
+    - When clicking on an album poster, the bg doesn't set on iphone/ipad (same url formatting issue as a couple days ago)

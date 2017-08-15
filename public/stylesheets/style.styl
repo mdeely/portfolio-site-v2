@@ -970,6 +970,8 @@ body.photography-wrapper {
         z-index: $zIndexMax;
         background-size: cover; 
         background-position: top center;
+        background-color: alpha(black, .3);
+        background-image: none !important;
             
         .current-album-wrapper,
         .logo {
@@ -1198,14 +1200,16 @@ body.photography-wrapper {
         opacity: 1;
         
         .preloader {
-            opacity: 0;
-            visibility: hidden;
-            width: 0;
-            height: 0;
+            position: absolute;
+            left:-9999px;
+            top: -9999px;
+            height: 1;
+            width: 1;
+            overflow: hidden;
         }
         
         .photo-view-wrapper {
-            transition: opacity .2s ease-in-out;
+            transition: opacity .2s ease-in-out, padding .2s ease-in-out;
             position: fixed;
             top: 0;
             bottom: 0;
@@ -1311,6 +1315,9 @@ body.photography-wrapper {
                         } 
                         
                         &:hover {
+                            background-color: rgba(0,0,0,.1);
+                            color: rgba(255,255,255,.1);
+                            border: 1px solid rgba(255,255,255,.1);
                             
                             .fb-like {
                                 transition: all .2s ease-in-out;
@@ -1346,6 +1353,7 @@ body.photography-wrapper {
             }
             
             .slideshow-close {
+                transition: top .2s ease-in-out;
                 top: 70px;
                 bottom: initial;
                 z-index: $zIndexMax + 1;
@@ -1380,7 +1388,7 @@ body.photography-wrapper {
             transition: padding-left .2s ease-in-out;
             
             .photo-view-wrapper {
-                transition: opacity .2s ease-in-out .2s, padding-left .2s ease-in-out;
+                transition: opacity .2s ease-in-out .2s, padding .2s ease-in-out;
                 opacity: 1;
                 z-index: 9997;
                 pointer-events: initial;
@@ -1429,7 +1437,7 @@ body.photography-wrapper {
             }
             
             .photo-view-wrapper {
-                transition: opacity .2s ease-in-out 0s, padding-left .2s ease-in-out;
+                transition: opacity .2s ease-in-out 0s, padding .2s ease-in-out;
                 padding-left: $album_menu_width + 40;
             }
         }
@@ -1491,7 +1499,6 @@ body.photography-wrapper {
                     // height: 200px;
                     padding-bottom: 86.66%;
                     width: 100%;  
-                    height: 200px; 
                     // background-repeat: no-repeat;
                     // background-size: cover;
                     // background-position: center;
@@ -1517,20 +1524,20 @@ body.photography-wrapper {
         .photo-collection {
             padding-top: 70px;
             
-            &.open {
-                .photo-wrapper {
-                    width: 33.33%;
-                }
-            }
+            // &.open {
+            //     .photo-wrapper {
+            //         width: 33.33%;
+            //     }
+            // }
             
             .photo-wrapper {
-                width: 20%;
+                // width: 20%;
                 padding: 20px;
                 
                 
                 .photo-item {
                     a {
-                        height: 120px;
+                        // height: 120px;
                     }
                 }
             }
@@ -1541,12 +1548,12 @@ body.photography-wrapper {
         .photo-collection {
             &.open {
                 .photo-wrapper {
-                    width: 50%;
+                    width: 33.333%;
                 }
             }
             
             .photo-wrapper {
-                width: 25%;
+                width: 33.333%;
             }
         }
     }
@@ -1555,12 +1562,12 @@ body.photography-wrapper {
         .photo-collection {
             &.open {
                 .photo-wrapper {
-                    width: 100%;
+                    width: 50%;
                 }
             }
             
             .photo-wrapper {
-                width: 33.33%;
+                width: 50%;
             }
         }
     }
@@ -1592,7 +1599,7 @@ body.photography-wrapper {
         
         .photo-collection {
             transition: opacity .1s ease-out;
-            padding: 70px 10px 20px 10px;
+            padding: 50px 10px 20px 10px;
             
             .photo-view-wrapper {
                 
@@ -1622,6 +1629,7 @@ body.photography-wrapper {
         
         .album-collection {
             transition: opacity .1s ease-in-out, left 0s ease-in-out;
+            top: 70px;
             
             &.open {
                 transition: opacity .1s ease-in-out, left 0s ease-in-out;
