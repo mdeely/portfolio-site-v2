@@ -1864,6 +1864,12 @@ body.photography-wrapper .photo-collection .photo-wrapper .photo-item a img {
   body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close {
     top: 90px;
   }
+  body.photography-wrapper .photo-collection .photo-view-wrapper .slide-action.fullscreen span {
+    display: none;
+  }
+  body.photography-wrapper .photo-collection .photo-view-wrapper .slide-action.fullscreen i.fa {
+    margin-left: 0 !important;
+  }
   body.photography-wrapper .photo-collection.open {
     -webkit-transition: opacity 0.1s ease-out;
     -moz-transition: opacity 0.1s ease-out;
@@ -1884,6 +1890,7 @@ body.photography-wrapper .photo-collection .photo-wrapper .photo-item a img {
   }
   body.photography-wrapper .photo-collection .photo-wrapper {
     width: 50%;
+    padding: 10px;
   }
   body.photography-wrapper .album-collection {
     -webkit-transition: opacity 0.1s ease-in-out, left 0s ease-in-out;
