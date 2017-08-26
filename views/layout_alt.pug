@@ -7,12 +7,14 @@ html
     title #{docTitle}
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
     script(src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js")
+    script(src="/scripts/modernizr.js")
     script(src="/scripts/googleAnalytics.js")
     script(src="/scripts/script.js")
     link(rel="icon" type="image/png" href="../images/favicon.png")
     link(rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png")
     link(rel='stylesheet' href='/stylesheets/style.css')
     link(href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css')
+    link(rel="stylesheet" href="/fonts/css/font-awesome.min.css")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     meta(name="description" content=docDesc)
     meta(property="fb:admins" content="marcus.deely")
@@ -24,6 +26,7 @@ html
     meta(property="og:description" content=metaOgDesc)
     meta(property="og:image" content="https://s3.amazonaws.com/mdeely-portfolio-assets/images/photography/"+photoName+".jpg")
   body.photography-wrapper
+    div.site-background.bgImg(aria-hidden="true")
     block masthead
 
     block navigation
