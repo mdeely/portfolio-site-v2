@@ -13,7 +13,6 @@ $(document).ready(function() {
 
       if ( $body.hasClass("photography-wrapper") ) {
         photographyInit();
-
         $(".photo-collection").delay( 1000 ).fadeTo("slow", 1);
         $(".album-collection").delay( 1000 ).fadeTo("slow", 1);
         $(".photo-nav").delay( 1000 ).fadeTo("slow", 1);
@@ -40,9 +39,10 @@ $(document).ready(function() {
       // PHOTOGRAPHY VARS
       this.$photo_collection   = $('.photo-collection');
       this.$photo_viewer       = $('.photo-collection .photo-view');
-      this.$imageLinks         = $('.photo-wrapper .photo-item a');
-      this.$albumMenuTrigger   = $('.logo, .current-album-wrapper');
+      $imageLinks         = $('.photo-wrapper .photo-item a');
       this.$albumMenuLinks     = $('.album-collection a');
+      $albumPosters       = $('.photo-wrapper a img[data-poster]');
+      this.$albumMenuTrigger   = $('.logo, .current-album-wrapper');
       this.$slideshowClose     = $('.slideshow-close .slide-action');
       this.$slideshowNext      = $('.slideshow-controls .slide-action.next');
       this.$slideshowPrev      = $('.slideshow-controls .slide-action.prev');
@@ -56,12 +56,12 @@ $(document).ready(function() {
       $( this.$menuFader          ).bind( 'click', toggleMenuClasses );
       $( this.$projectFilters     ).bind( 'click', filterProjects );
       $( this.$fsImage            ).bind( 'click', handleFsImageClick );
-      $( this.$photoDrawerImgs    ).bind( 'click', selectPhoto);
+      // $( this.$photoDrawerImgs    ).bind( 'click', selectPhoto);
       $( this.$sideMenu           ).bind( 'click', showSideMenu);
-      $( window                   ).bind( 'swipeleft', generateNextIndex);
-      $( window                   ).bind( 'swiperight', generatePreviousIndex);
+      // $( window                   ).bind( 'swipeleft', generateNextIndex);
+      // $( window                   ).bind( 'swiperight', generatePreviousIndex);
       $( this.$bgPhotoDisplay     ).bind( 'click', handleBgPhotoDisplay);
-      $( this.$photoDrawerImgs    ).bind( 'mouseenter', preloadImageOnHover);
+      // $( this.$photoDrawerImgs    ).bind( 'mouseenter', preloadImageOnHover);
       $( this.$fbLikeIcon         ).bind( 'click', handleFbLikeMenu);
       $( this.$logoContainer      ).bind( 'click', openLogoMenu);
       $( this.$albumSwitcher      ).bind( 'click', toggleAlbumSwitcher);
@@ -76,7 +76,7 @@ $(document).ready(function() {
       // PHOTOGRAPHY BIND HANDLERS
       $( this.$albumMenuLinks     ).bind( 'click', handleAlbumPhotos);
       $( this.$albumMenuTrigger   ).bind( 'click', openAlbumCollection);
-      $( this.$imageLinks         ).bind( 'click', handleImageClick );
+      $( $imageLinks              ).bind( 'click', handleImageClick );
       $( this.$slideshowClose     ).bind( 'click', handleCloseButton);
       $( this.$slideshowNext      ).bind( 'click', handleNavigation);
       $( this.$slideshowPrev      ).bind( 'click', handleNavigation);
@@ -145,6 +145,7 @@ $(document).ready(function() {
       } else {
           // Album
           var albumName = pathArray[2];
+
           var albumLinkElement = $(".album-collection a[data-album-link="+albumName+"]");
 
           objectFromUrl = {
@@ -153,7 +154,13 @@ $(document).ready(function() {
           }
 
           showAlbumPhotos(albumLinkElement);
+          getImageAttributes( indexRange.firstIndex );
+          setBgHeroImage(imgAttributes);
       }
+    }
+
+    function setFirstImageAsBg(imgAttributes) {
+
     }
 
     function handlePathname(objectFromUrl) {
@@ -298,17 +305,14 @@ $(document).ready(function() {
     }
 
     function setSlideshowImage(imgAttributes) {
-      $(this.$photo_viewer).children('img').attr({
-        "src"            : imgAttributes.src,
-        "title"          : imgAttributes.title,
-        "alt"            : imgAttributes.alt,
-        "data-img-index" : imgAttributes.imgIndex,
+      $(this.$photo_viewer).children('img').remove();
+
+      $('<img src="'+ imgAttributes.src +'" title="'+ imgAttributes.title +'"alt="'+ imgAttributes.alt +'"data-img-index="'+ imgAttributes.imgIndex +'">').load(function() {
+        $(this).appendTo('.photo-view');
+        setBgHeroImage(imgAttributes);
       });
 
-      this.$photo_viewer.fadeTo('slow', 1);
-
       setFbLike(imgAttributes.href);
-      setBgHeroImage(imgAttributes);
       preloadNextImage( imgAttributes.imgIndex );
     }
 
@@ -332,9 +336,10 @@ $(document).ready(function() {
 
       handleSingleViewDisplay("close");
       showAlbumPhotos(albumLinkElement);
+      setBgHeroImage(imgAttributes);
       setUrl(imgAttributes);
 
-      $("body").animate({ scrollTop: "0" });
+      $(".photo-collection").animate({ scrollTop: "0px" }, 600);
     }
 
     function showAlbumPhotos(albumLinkElement) {
@@ -364,14 +369,18 @@ $(document).ready(function() {
         // setBgHeroImage(imgAttributes);
         setSlideshowImage(imgAttributes);
 
+        getImageAttributes( indexRange.firstIndex );
+
         imgAttributes["title"]   = "All photos";
         imgAttributes["album"]   = "All photos";
         imgAttributes["href"]    = window.location.origin + "/photography";
+
+        setBgHeroImage(imgAttributes);
       }
       else { 
         handleSingleViewDisplay("close");
 
-        this.$imageLinks.each( function(index, link) {
+        $imageLinks.each( function(index, link) {
           if ( $(link).find('img').data( 'album' ) !== albumName  ) {
             $(link).closest('.photo-wrapper').hide();
           }
@@ -388,14 +397,15 @@ $(document).ready(function() {
           openAlbumCollection(false);
         }
         
-
         getCurrentIndexRange();
         getImageAttributes(indexRange.firstIndex );
 
-        imgAttributes["src"]    = albumPoster;
+        imgAttributes["src"]     = albumPoster;
+        imgAttributes["title"]   = albumDisplay+" Album";
+        imgAttributes["imgPath"] = albumPoster.replace('xs','md');
 
         // setBgHeroImage(imgAttributes);
-        setSlideshowImage(imgAttributes);
+        // setSlideshowImage(imgAttributes);
         imgAttributes["href"]    = window.location.origin + "/photography/"+albumName;
       }
     }
@@ -449,11 +459,25 @@ $(document).ready(function() {
     }
 
     function setAlbumThumbnailsInit() {
+      var halfAmountOfImgs   = $imageLinks.length / 2;
+      var albumPostersLength = $albumPosters.length
+
+      var lastPoster         = $albumPosters[albumPostersLength - 1];
+      var lastPosterSrc      = $(lastPoster).attr('src');
+
+      var firstPoster       = $albumPosters[0];
+      var firstPosterSrc    = $(firstPoster).attr('src');
+
+      var middlePoster      = $albumPosters[albumPostersLength/2];
+      var middlePosterSrc   = $(middlePoster).attr('src');
+
       this.$albumMenuLinks.each( function(index, link) {
+        var albumName = $(link).data('album-link');
+
         if ( $(link).data('album-link') == "All photos" ) {
-          var ogSrc = $(".photo-wrapper:eq(51) img").attr("src");
-          var ogSrc2 = $(".photo-wrapper:last img").attr("src");
-          var ogSrc3 = $(".photo-wrapper:first img").attr("src");
+          var ogSrc  = middlePosterSrc;
+          var ogSrc2 = lastPosterSrc;
+          var ogSrc3 = firstPosterSrc;
 
           var src  = ogSrc.replace("-md", "-xs");
           var src2 = ogSrc2.replace("-md", "-xs");
@@ -480,7 +504,7 @@ $(document).ready(function() {
           var ogSrc = $(match).attr('src');
           var src = ogSrc.replace('-md','-xs');
 
-          $(link).children('span').css("background-image", "url("+src+")");
+          $(link).children('span:first').css("background-image", "url("+src+")");
 
           imgAttributes = {
             src      : ogSrc.replace('-md',''),
@@ -521,10 +545,21 @@ $(document).ready(function() {
       });
     }
 
+    function handleNavBackground(addOrRemove) {
+      if ( addOrRemove == "add" ) {
+        console.log("Adding nav background");
+        $('.photo-nav').removeClass('noBg');
+      } else if ( addOrRemove == "remove" ) {
+        console.log("Removing nav background");
+        $('.photo-nav').addClass('noBg');
+      }
+    }
+
     function handleSingleViewDisplay(action) {
       if ( action == "close" ) {
-        this.$photo_viewer.fadeTo(0, 0);
+        // this.$photo_viewer.children('img').attr('src','');
         this.$photo_collection.removeClass("single-view");
+        handleNavBackground("add");
 
         toggleNoScroll("close");
         return
@@ -532,14 +567,51 @@ $(document).ready(function() {
 
       if ( this.$photo_collection.hasClass("single-view") ) {
         this.$photo_collection.removeClass("single-view");
+        handleNavBackground("add");
+        // this.$photo_viewer.children('img').attr('src','');
       } else {
         this.$photo_collection.addClass("single-view");
+        handleNavBackground("remove");
       }
+
       toggleNoScroll();
     }
 
     function handleCloseButton() {
-      handleSingleViewDisplay();
+      handleSingleViewDisplay('close');
+
+      var pageAttributes = {};
+
+      // var pathName       = window.location.pathname;
+      // var pathArray      = pathName.split('/', 4).map(function(item) { return item.trim() });
+
+      // var albumName = pathArray[2];
+      // var albumLinkElement = $(".album-collection a[data-album-link="+albumName+"]");
+      // var albumPoster = $(albumLinkElement).children('span').css('background-image');
+      // var albumPoster = albumPoster.replace("url(","");
+      // var albumPoster = albumPoster.replace(")","");
+      // var albumPoster = albumPoster.replace('"','').replace('"','');
+      // var albumPoster = albumPoster.replace("-xs",'');
+
+      var albumAnchor = $('.album-collection li.selected a');
+      var albumLink   = $(albumAnchor).data('album-link');
+      var albumPoster = $(".photo-wrapper a img[data-album='"+albumLink+"'][data-poster='true']").attr('src').replace('-md','-large');
+
+
+      if ( albumLink === "All photos" ) {
+        var albumLink = $('.album-collection li:nth-child(2n) a').data('album-link');
+        var albumPoster = $(".photo-wrapper a img[data-album='"+albumLink+"'][data-poster='true']").attr('src').replace('-md','-large');
+      }
+
+      var pageAttributes= {
+        title: $(albumAnchor).text()+" Album",
+        href: $(albumAnchor).attr('href'),
+        imgPath: albumPoster
+      }
+
+      console.log(pageAttributes);
+
+      setUrl(pageAttributes);
     }
 
     function handleImageClick(image) {
@@ -556,19 +628,19 @@ $(document).ready(function() {
       handleSingleViewDisplay();
     }
 
-    function setUrl(imgAttributes) {
+    function setUrl(pageAttributes) {
       // var url      = (window.location.origin)+href;
-      history.replaceState(null, imgAttributes.title, imgAttributes.href);
+      history.replaceState(null, pageAttributes.title, pageAttributes.href);
 
       // This is mostly for bookmarking. Not for Open Graph or SEO
-      document.title = imgAttributes.title+" | Marc Deely - Photography";
-      $('meta[name=description]').attr('content', (imgAttributes.title+" by Marc Deely"));
-      $('meta[property=og\\:url]').attr('content', imgAttributes.href);
-      $('meta[property=og\\:title]').attr('content', imgAttributes.title);
-      $('meta[property=og\\:image]').attr('content', imgAttributes.imgPath);
-      $(".fb-like").attr( "data-href", imgAttributes.href);
+      document.title = pageAttributes.title+" | Marc Deely - Photography";
+      $('meta[name=description]').attr('content', (pageAttributes.title+" by Marc Deely"));
+      $('meta[property=og\\:url]').attr('content', pageAttributes.href);
+      $('meta[property=og\\:title]').attr('content', pageAttributes.title);
+      $('meta[property=og\\:image]').attr('content', pageAttributes.imgPath);
+      $(".fb-like").attr( "data-href", pageAttributes.href);
 
-      // ga("send", "event", "Photography", "viewed", imgAttributes.href+': '+imgAttributes.title)
+      // ga("send", "event", "Photography", "viewed", pageAttributes.href+': '+pageAttributes.title)
     }
 
     function enableFullscreenMode() {

@@ -902,7 +902,7 @@ body.photography-wrapper {
     
     .bgImg {
         background-repeat: no-repeat;
-        background-position: top;
+        background-position: center;
     }
     
     .site-background {
@@ -949,6 +949,13 @@ body.photography-wrapper {
                     transition: top .2s ease-in-out;
                     top: 30px;
                 }
+                
+                .slide-action {
+                    &.fullscreen {
+                        transition: none;
+                        border: 1px solid rgba(255,255,255,.4);
+                    }
+                }
             }
         }
         
@@ -970,8 +977,13 @@ body.photography-wrapper {
         z-index: $zIndexMax;
         background-size: cover; 
         background-position: top center;
-        background-color: alpha(black, .3);
+        background-color: alpha(black, .12);
         background-image: none !important;
+        
+        &.noBg {
+            transition: all .2s ease-in-out;
+            background-color: transparent;
+        }
             
         .current-album-wrapper,
         .logo {
@@ -1196,15 +1208,22 @@ body.photography-wrapper {
     .photo-collection {
         transition: padding-left .2s ease-in-out;
         width:100%;
-        padding: 60px 20px 20px 10px;
+        padding: 0px 20px 20px 10px;
         opacity: 1;
+        text-align: center;
+        position: fixed;
+        top: $nav_height;
+        bottom: 0;
+        left:0;
+        right:0;
+        overflow: scroll;
         
         .preloader {
             position: absolute;
             left:-9999px;
             top: -9999px;
-            height: 1;
-            width: 1;
+            height: 1px;
+            width: 1px;
             overflow: hidden;
         }
         
@@ -1219,7 +1238,7 @@ body.photography-wrapper {
             opacity: 0;
             width: 100%;
             height: 100%;
-            padding: $nav_height 20px 20px 20px;
+            padding: ($nav_height+20px) 20px 40px 20px;
             pointer-events: none;
             
             .photo-view {
@@ -1240,6 +1259,7 @@ body.photography-wrapper {
                 // vertical-align: middle;
                         
                 img {
+                    transition: opacity .2s ease-in-out;
                     height: auto;
                     max-width: 100%;
                     min-width: initial;
@@ -1260,6 +1280,7 @@ body.photography-wrapper {
                     -ms-user-select: none;
                     user-select: none;
                     z-index: 1;
+                    opacity: 0;
                     
                     &.slideshow-preload {
                         z-index: 0
@@ -1302,6 +1323,12 @@ body.photography-wrapper {
                     
                     &.prev {
                         margin-left: 40px;
+                    }
+                    
+                    &.fullscreen {
+                        i {
+                            margin-left: 10px;
+                        }
                     }
                     
                     &.fb-like-container {
@@ -1396,11 +1423,16 @@ body.photography-wrapper {
                 .photo-view {
                     transition: transform .4s ease-in-out;
                     transform: scale(1);
+                    
+                   img {
+                        transition: opacity .2s ease-in-out;
+                        opacity: 1;
+                    }
                 }
             }
             
             .photo-wrapper { 
-                    transition: all .4s ease-in-out;
+                    transition: all .2s ease-in-out;
                     opacity: 0;
                     transform: scale(.9);
                     pointer-events:none;
@@ -1433,7 +1465,7 @@ body.photography-wrapper {
             opacity: 1;
             
             .photo-wrapper {
-                width: 25%;
+                width: 33.333%;
             }
             
             .photo-view-wrapper {
@@ -1443,10 +1475,11 @@ body.photography-wrapper {
         }
         
         .photo-wrapper {
-            transition: all .4s ease-in-out;
+            transition: all .2s ease-in-out;
             opacity: 1;
             display: inline-flex;
-            width: 25%;
+            width: 33.333%;
+            max-width: 360px
             background-size: cover;
             background-position: center;
             vertical-align: top;
@@ -1514,6 +1547,8 @@ body.photography-wrapper {
                         right: 0;
                         bottom: 0;
                         text-align: center;
+                        background-color: #565656;
+                        color: white;
                     }
                 }
             }            
@@ -1522,7 +1557,7 @@ body.photography-wrapper {
         
     @media screen and (max-width: 1200px) {
         .photo-collection {
-            padding-top: 70px;
+            // padding-top: 70px;
             
             // &.open {
             //     .photo-wrapper {
@@ -1532,7 +1567,7 @@ body.photography-wrapper {
             
             .photo-wrapper {
                 // width: 20%;
-                padding: 20px;
+                // padding: 20px;
                 
                 
                 .photo-item {
@@ -1546,9 +1581,12 @@ body.photography-wrapper {
     
     @media screen and (max-width: 968px) {
         .photo-collection {
+            top: 80px;
+            
             &.open {
                 .photo-wrapper {
                     width: 33.333%;
+                    padding: 10px;
                 }
             }
             
@@ -1599,7 +1637,8 @@ body.photography-wrapper {
         
         .photo-collection {
             transition: opacity .1s ease-out;
-            padding: 50px 10px 20px 10px;
+            padding: 10px 10px 20px 10px;
+            top: 70px;  
             
             .photo-view-wrapper {
                 
@@ -1619,6 +1658,7 @@ body.photography-wrapper {
                 
                 .photo-wrapper {
                     width: 50%;
+                    padding: 30px;
                 }
             }
             
@@ -1629,7 +1669,7 @@ body.photography-wrapper {
         
         .album-collection {
             transition: opacity .1s ease-in-out, left 0s ease-in-out;
-            top: 70px;
+            // top: 70px;
             
             &.open {
                 transition: opacity .1s ease-in-out, left 0s ease-in-out;

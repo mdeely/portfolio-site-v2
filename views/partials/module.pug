@@ -54,7 +54,7 @@ mixin footer(color)
                 img(src="/images/icons/node-logo.svg")
 
 mixin photography_masthead()
-    nav.photo-nav.bgImg(style="opacity:0;")
+    nav.photo-nav(style="opacity:0;")
         div.logo
             i.fa.fa-navicon.album-trigger.triggered
             img(src="/images/icons/name_white.svg" height="24px" wdith="auto")
@@ -118,7 +118,7 @@ mixin photographyCollection(photos)
                     i.fa.fa-times
             .slideshow-controls
                 div.slide-action.fb-like-container Like
-                div.slide-action.fullscreen
+                div.slide-action.fullscreen Fullscreen
                     i.fa.fa-expand
                     i.fa.fa-compress(style="display:none")
                 div.slide-action.prev
@@ -130,7 +130,6 @@ mixin photographyCollection(photos)
                     .slide-action
                 .slideshow-loop
                     .slide-action
-                img()
 
         - var index = 0
         each albumDisplayName in albumDisplayNames
