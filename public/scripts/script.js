@@ -518,6 +518,7 @@ $(document).ready(function() {
     function detectKeyPressPhotos() {
       $(document).keyup(function(evt) {
         var $keyPressed = evt.keyCode;
+        console.log($keyPressed);
 
         if ($keyPressed == 37 || // left
             $keyPressed == 38 || // up
@@ -541,6 +542,15 @@ $(document).ready(function() {
           //   handleBgPhotoDisplay();
           // }
 
+        }
+        if ( $keyPressed == 27 ) {
+          openAlbumCollection(false);
+        }
+        if ( $keyPressed == 70 ) {
+          enableFullscreenMode();
+        }
+        if ( $keyPressed == 13 ) {
+          requestNextImage();
         }
       });
     }

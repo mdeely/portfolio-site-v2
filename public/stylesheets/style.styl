@@ -948,6 +948,9 @@ body.photography-wrapper {
         }
         
         .photo-collection.single-view {
+            transition: top .2s ease-in-out;
+            top: 0;
+            
             .photo-view-wrapper {
                 transition: padding .2s ease-in-out;
                 padding: 20px;
@@ -1213,12 +1216,11 @@ body.photography-wrapper {
                     }
                 }
             }
-
         }
     }
     
     .photo-collection {
-        transition: padding-left .2s ease-in-out;
+        transition: padding-left .2s ease-in-out, top .2s ease-in-out;
         width:100%;
         padding: 0px 20px 20px 10px;
         opacity: 1;
@@ -1229,6 +1231,12 @@ body.photography-wrapper {
         left:0;
         right:0;
         overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
         
         .preloader {
             position: absolute;
@@ -1393,7 +1401,7 @@ body.photography-wrapper {
             
             .slideshow-close {
                 transition: top .2s ease-in-out;
-                top: 70px;
+                top: 80px;
                 bottom: initial;
                 z-index: $zIndexMax + 1;
             }
@@ -1424,7 +1432,7 @@ body.photography-wrapper {
         }
         
         &.single-view {
-            transition: padding-left .2s ease-in-out;
+            transition: padding-left .2s ease-in-out, top .2s ease-in-out;
             
             .photo-view-wrapper {
                 transition: opacity .2s ease-in-out .2s, padding .2s ease-in-out;
@@ -1593,7 +1601,7 @@ body.photography-wrapper {
     
     @media screen and (max-width: 968px) {
         .photo-collection {
-            top: 80px;
+            // top: 80px;
             
             &.open {
                 .photo-wrapper {
@@ -1648,7 +1656,7 @@ body.photography-wrapper {
         }
         
         .photo-collection {
-            transition: opacity .1s ease-out;
+            transition: opacity .1s ease-out, top .2s ease-in-out;
             padding: 10px 10px 20px 10px;
             top: 70px;  
             

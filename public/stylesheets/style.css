@@ -1111,6 +1111,14 @@ body.photography-wrapper.fullscreen-mode nav.photo-nav {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+body.photography-wrapper.fullscreen-mode .photo-collection.single-view {
+  -webkit-transition: top 0.2s ease-in-out;
+  -moz-transition: top 0.2s ease-in-out;
+  -o-transition: top 0.2s ease-in-out;
+  -ms-transition: top 0.2s ease-in-out;
+  transition: top 0.2s ease-in-out;
+  top: 0;
+}
 body.photography-wrapper.fullscreen-mode .photo-collection.single-view .photo-view-wrapper {
   -webkit-transition: padding 0.2s ease-in-out;
   -moz-transition: padding 0.2s ease-in-out;
@@ -1372,11 +1380,11 @@ body.photography-wrapper .album-collection ul li a span:nth-child(3) {
   z-indeX: 3;
 }
 body.photography-wrapper .photo-collection {
-  -webkit-transition: padding-left 0.2s ease-in-out;
-  -moz-transition: padding-left 0.2s ease-in-out;
-  -o-transition: padding-left 0.2s ease-in-out;
-  -ms-transition: padding-left 0.2s ease-in-out;
-  transition: padding-left 0.2s ease-in-out;
+  -webkit-transition: padding-left 0.2s ease-in-out, top 0.2s ease-in-out;
+  -moz-transition: padding-left 0.2s ease-in-out, top 0.2s ease-in-out;
+  -o-transition: padding-left 0.2s ease-in-out, top 0.2s ease-in-out;
+  -ms-transition: padding-left 0.2s ease-in-out, top 0.2s ease-in-out;
+  transition: padding-left 0.2s ease-in-out, top 0.2s ease-in-out;
   width: 100%;
   padding: 0px 20px 20px 10px;
   opacity: 1;
@@ -1389,6 +1397,15 @@ body.photography-wrapper .photo-collection {
   left: 0;
   right: 0;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 body.photography-wrapper .photo-collection .preloader {
   position: absolute;
@@ -1619,7 +1636,7 @@ body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-close 
   -o-transition: top 0.2s ease-in-out;
   -ms-transition: top 0.2s ease-in-out;
   transition: top 0.2s ease-in-out;
-  top: 70px;
+  top: 80px;
   bottom: initial;
   z-index: 10000;
 }
@@ -1648,11 +1665,11 @@ body.photography-wrapper .photo-collection .photo-view-wrapper .slideshow-loop .
   font-family: "FontAwesome";
 }
 body.photography-wrapper .photo-collection.single-view {
-  -webkit-transition: padding-left 0.2s ease-in-out;
-  -moz-transition: padding-left 0.2s ease-in-out;
-  -o-transition: padding-left 0.2s ease-in-out;
-  -ms-transition: padding-left 0.2s ease-in-out;
-  transition: padding-left 0.2s ease-in-out;
+  -webkit-transition: padding-left 0.2s ease-in-out, top 0.2s ease-in-out;
+  -moz-transition: padding-left 0.2s ease-in-out, top 0.2s ease-in-out;
+  -o-transition: padding-left 0.2s ease-in-out, top 0.2s ease-in-out;
+  -ms-transition: padding-left 0.2s ease-in-out, top 0.2s ease-in-out;
+  transition: padding-left 0.2s ease-in-out, top 0.2s ease-in-out;
 }
 body.photography-wrapper .photo-collection.single-view .photo-view-wrapper {
   -webkit-transition: opacity 0.2s ease-in-out 0.2s, padding 0.2s ease-in-out;
@@ -1820,9 +1837,6 @@ body.photography-wrapper .photo-collection .photo-wrapper .photo-item a img {
   color: #fff;
 }
 @media screen and (max-width: 968px) {
-  body.photography-wrapper .photo-collection {
-    top: 80px;
-  }
   body.photography-wrapper .photo-collection.open .photo-wrapper {
     width: 33.333%;
     padding: 10px;
@@ -1853,11 +1867,11 @@ body.photography-wrapper .photo-collection .photo-wrapper .photo-item a img {
     display: none;
   }
   body.photography-wrapper .photo-collection {
-    -webkit-transition: opacity 0.1s ease-out;
-    -moz-transition: opacity 0.1s ease-out;
-    -o-transition: opacity 0.1s ease-out;
-    -ms-transition: opacity 0.1s ease-out;
-    transition: opacity 0.1s ease-out;
+    -webkit-transition: opacity 0.1s ease-out, top 0.2s ease-in-out;
+    -moz-transition: opacity 0.1s ease-out, top 0.2s ease-in-out;
+    -o-transition: opacity 0.1s ease-out, top 0.2s ease-in-out;
+    -ms-transition: opacity 0.1s ease-out, top 0.2s ease-in-out;
+    transition: opacity 0.1s ease-out, top 0.2s ease-in-out;
     padding: 10px 10px 20px 10px;
     top: 70px;
   }

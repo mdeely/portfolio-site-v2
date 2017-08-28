@@ -36,4 +36,4 @@ Images for Photography
     - When clicking on an album poster, the bg doesn't set on iphone/ipad (same url formatting issue as a couple days ago)
     - Add home icon to social icons
     - Consider making photo collection stop before nav so there's no scroll-behind
-    - closing out of single view should reflect the album url...make sure all urls are gtg
+    - Update fullscreen mode not to clip at the top    
