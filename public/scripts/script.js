@@ -459,7 +459,7 @@ $(document).ready(function() {
     }
 
     function setAlbumThumbnailsInit() {
-      var halfAmountOfImgs      = $imageLinks.length / 2;
+      var halfAmountOfImgs      = Math.round($imageLinks.length / 2);
       var albumPostersLength    = Math.round($albumPosters.length);
       var albumPosterHalfLength = Math.round(albumPostersLength / 2);
 
