@@ -8,10 +8,23 @@
         "images": {
             "collection": [
                 {
+                    "fileName":"5B2C9603",
+                    "title":"Bay shore",
+                    "album":"canada",
+                    "albumDisplay":"Canada"
+                },
+                {
                     "fileName":"5B2C9837",
                     "title":"McGregor Bay Frog",
                     "album":"canada",
                     "albumDisplay":"Canada"
+                },
+                {
+                    "fileName":"5B2C9650",
+                    "title":"Yellow Flower",
+                    "album":"canada",
+                    "albumDisplay":"Canada",
+                    "albumPoster":true
                 },
                 {
                     "fileName":"CT7A2602",

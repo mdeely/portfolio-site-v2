@@ -39,9 +39,9 @@ $(document).ready(function() {
       // PHOTOGRAPHY VARS
       this.$photo_collection   = $('.photo-collection');
       this.$photo_viewer       = $('.photo-collection .photo-view');
-      $imageLinks         = $('.photo-wrapper .photo-item a');
+      $imageLinks              = $('.photo-wrapper .photo-item a');
       this.$albumMenuLinks     = $('.album-collection a');
-      $albumPosters       = $('.photo-wrapper a img[data-poster]');
+      $albumPosters            = $('.photo-wrapper a img[data-poster]');
       this.$albumMenuTrigger   = $('.logo, .current-album-wrapper');
       this.$slideshowClose     = $('.slideshow-close .slide-action');
       this.$slideshowNext      = $('.slideshow-controls .slide-action.next');
@@ -459,8 +459,9 @@ $(document).ready(function() {
     }
 
     function setAlbumThumbnailsInit() {
-      var halfAmountOfImgs   = $imageLinks.length / 2;
-      var albumPostersLength = $albumPosters.length
+      var halfAmountOfImgs      = $imageLinks.length / 2;
+      var albumPostersLength    = Math.round($albumPosters.length);
+      var albumPosterHalfLength = Math.round(albumPostersLength / 2);
 
       var lastPoster         = $albumPosters[albumPostersLength - 1];
       var lastPosterSrc      = $(lastPoster).attr('src');
@@ -468,7 +469,7 @@ $(document).ready(function() {
       var firstPoster       = $albumPosters[0];
       var firstPosterSrc    = $(firstPoster).attr('src');
 
-      var middlePoster      = $albumPosters[albumPostersLength/2];
+      var middlePoster      = $albumPosters[albumPosterHalfLength];
       var middlePosterSrc   = $(middlePoster).attr('src');
 
       this.$albumMenuLinks.each( function(index, link) {
@@ -518,7 +519,6 @@ $(document).ready(function() {
     function detectKeyPressPhotos() {
       $(document).keyup(function(evt) {
         var $keyPressed = evt.keyCode;
-        console.log($keyPressed);
 
         if ($keyPressed == 37 || // left
             $keyPressed == 38 || // up
@@ -557,10 +557,8 @@ $(document).ready(function() {
 
     function handleNavBackground(addOrRemove) {
       if ( addOrRemove == "add" ) {
-        console.log("Adding nav background");
         $('.photo-nav').removeClass('noBg');
       } else if ( addOrRemove == "remove" ) {
-        console.log("Removing nav background");
         $('.photo-nav').addClass('noBg');
       }
     }
@@ -618,8 +616,6 @@ $(document).ready(function() {
         href: $(albumAnchor).attr('href'),
         imgPath: albumPoster
       }
-
-      console.log(pageAttributes);
 
       setUrl(pageAttributes);
     }
