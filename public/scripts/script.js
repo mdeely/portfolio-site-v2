@@ -19,43 +19,45 @@ $(document).ready(function() {
       }
       else {
         projectListLoadBehavior();
-        // fullscreenImages();
         scrollToTop(this.$scrollToTop);
         lazyLoad();
       }
     };
 
     function gatherNodes() {
-      this.$menuTrigger        = $('.menu-trigger');
-      this.$menuFader          = $('.menu-fader');
-      this.$projectFilters     = $('li.design, li.code, li.ui');
-      this.$projects           = $('.portfolioLink');
-      this.$fsImage            = $('.fullscreen-image');
-      this.$scrollToTop        = $(".scrollToTop");
-      // this.$photoDrawerImgs    = $('.photo-drawer img');
-      // this.$sideMenu           = $('.side_menu');
-
+      this.$menuTrigger         = $('.menu-trigger');
+      this.$menuFader           = $('.menu-fader');
+      this.$projectFilters      = $('li.design, li.code, li.ui');
+      this.$projects            = $('.portfolioLink');
+      this.$scrollToTop         = $(".scrollToTop");
+      this.$projectImgs         = $(".collection img");
+      this.$fullscreenContainer = $(".fullscreen-image");
+      // this.$photoDrawerImgs     = $('.photo-drawer img');
+      // this.$sideMenu            = $('.side_menu');
 
       // PHOTOGRAPHY VARS
-      this.$photo_collection   = $('.photo-collection');
-      this.$photo_viewer       = $('.photo-collection .photo-view');
-      $imageLinks              = $('.photo-wrapper .photo-item a');
-      this.$albumMenuLinks     = $('.album-collection a');
-      $albumPosters            = $('.photo-wrapper a img[data-poster]');
-      this.$albumMenuTrigger   = $('.logo, .current-album-wrapper');
-      this.$slideshowClose     = $('.slideshow-close .slide-action');
-      this.$slideshowNext      = $('.slideshow-controls .slide-action.next');
-      this.$slideshowPrev      = $('.slideshow-controls .slide-action.prev');
-      this.$slideshowFull      = $('.slideshow-controls .slide-action.fullscreen');
-      this.$bgImg              = $('.bgImg');
-      this.$fbLikeIcon         = $('.slide-action.fb-like-container');
+      this.$photo_collection    = $('.photo-collection');
+      this.$photo_viewer        = $('.photo-collection .photo-view');
+      $imageLinks               = $('.photo-wrapper .photo-item a');
+      this.$albumMenuLinks      = $('.album-collection a');
+      $albumPosters             = $('.photo-wrapper a img[data-poster]');
+      this.$albumMenuTrigger    = $('.logo, .current-album-wrapper');
+      this.$slideshowClose      = $('.slideshow-close .slide-action');
+      this.$slideshowNext       = $('.slideshow-controls .slide-action.next');
+      this.$slideshowPrev       = $('.slideshow-controls .slide-action.prev');
+      this.$slideshowFull       = $('.slideshow-controls .slide-action.fullscreen');
+      this.$bgImg               = $('.bgImg');
+      this.$fbLikeIcon          = $('.slide-action.fb-like-container');
     }
 
     function bindHandlers() {
       $( this.$menuTrigger        ).bind( 'click', toggleMenuClasses );
       $( this.$menuFader          ).bind( 'click', toggleMenuClasses );
       $( this.$projectFilters     ).bind( 'click', filterProjects );
-      $( this.$fsImage            ).bind( 'click', handleFsImageClick );
+      $( this.$projectImgs        ).bind( 'click', fsImage );
+      $( this.$fullscreenContainer).bind( 'click', closeFsImage );
+
+
       // $( this.$photoDrawerImgs    ).bind( 'click', selectPhoto);
       $( this.$sideMenu           ).bind( 'click', showSideMenu);
       // $( window                   ).bind( 'swipeleft', generateNextIndex);
@@ -553,6 +555,17 @@ $(document).ready(function() {
           requestNextImage();
         }
       });
+    }
+
+    function fsImage(image) {
+      var src = $(image.target).attr("src");
+      $(".fullscreen-image").append("<img src="+src+" wdith='auto'/>");
+      $(".fullscreen-image").addClass("open");
+    }
+
+    function closeFsImage(el) {
+      $(el.target).removeClass("open");
+      $(".fullscreen-image img").remove();
     }
 
     function handleNavBackground(addOrRemove) {
@@ -1108,42 +1121,6 @@ $(document).ready(function() {
         effect : 'fadeIn'
       });
     }
-
-    // function fullscreenImages() {
-    //   $(document).keyup(function(evt) {
-    //     if (evt.keyCode == 39)
-    //     {
-    //       imageSlideshow("next");
-    //     }
-
-    //     if (evt.keyCode == 37)
-    //     {
-    //       imageSlideshow("previous");
-    //     }
-    //   });
-    // }
-
-    // function imageSlideshow(navigation) {
-    //   if (navigation == "next") {
-    //     alert("you pressed next!");
-    //   }
-    //   else if (navigation == "previous") {
-    //     alert("you pressed previous!");
-    //   }
-    // }
-
-    function handleFsImageClick(fsImage) {
-      var $fsImage = $(fsImage.target);
-
-      $fsImage.empty().fadeOut(300);
-      toggleNoScroll();
-    }
-
-      function populateFullscreenImage(src, desc) {
-        $(this.$fsImage).append('<img src='+src+'><p>'+desc+'</p>');
-        $(this.$fsImage).fadeIn(200);
-        toggleNoScroll();
-      }
 
     function toggleNoScroll(action) {
       if ( action == "close" ) {

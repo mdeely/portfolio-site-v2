@@ -42,7 +42,8 @@
                     "fileName":"CT7A2777",
                     "title":"Beach On Skellig Trail",
                     "album":"ireland",
-                    "albumDisplay":"Ireland"
+                    "albumDisplay":"Ireland",
+                    "display":false
                 },
                 {
                     "fileName":"CT7A3312",
@@ -54,7 +55,8 @@
                     "fileName":"CT7A3291",
                     "title":"Red Basket",
                     "album":"amsterdam",
-                    "albumDisplay":"Amsterdam"
+                    "albumDisplay":"Amsterdam",
+                    "display":false
                 },
                 {
                     "fileName":"CT7A3946",
@@ -177,7 +179,8 @@
                     "fileName":"CT7A3219",
                     "title":"Hore Abbey in Cashel",
                     "album":"ireland",
-                    "albumDisplay":"Ireland"
+                    "albumDisplay":"Ireland",
+                    "display":false
                 },
                 {
                     "fileName":"CT7A4329",

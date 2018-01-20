@@ -169,7 +169,7 @@ a {
   position: fixed;
   top: 14px;
   right: 14px;
-  z-index: zIndexMax;
+  z-index: 999;
   -webkit-transition: top 0.5s ease-in-out, right 0.5s ease-in-out;
   -moz-transition: top 0.5s ease-in-out, right 0.5s ease-in-out;
   -o-transition: top 0.5s ease-in-out, right 0.5s ease-in-out;
@@ -188,6 +188,7 @@ a {
   background-color: #f9f9f9;
   -webkit-box-shadow: none;
   box-shadow: none;
+  cursor: pointer;
 }
 .nav-item.back,
 .nav-item .menu-trigger {
@@ -295,7 +296,7 @@ a {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  z-index: zIndexMax2;
+  z-index: 1000;
   overflow: scroll;
   text-align: center;
   background-color: #131313;
@@ -310,11 +311,17 @@ a {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   background-color: #f9f9f9;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
 }
 .fullscreen-image p {
   font-weight: 200;
   margin: 32px auto;
   max-width: 550px;
+}
+.fullscreen-image.open {
+  display: block;
 }
 .menu .menu-trigger.triggered {
   -webkit-box-shadow: none;
@@ -986,8 +993,8 @@ nav.masthead ul.nav-header li a {
 .portfolioLink .item-content {
   position: relative;
   background-color: #f9f9f9;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
   overflow: hidden;
   -webkit-box-shadow: -5px 3px 26px -7px rgba(0,0,0,0.5), -27px 10px 59px rgba(0,0,0,0.2);
   box-shadow: -5px 3px 26px -7px rgba(0,0,0,0.5), -27px 10px 59px rgba(0,0,0,0.2);
@@ -2070,7 +2077,7 @@ body.photography-wrapper .photo-collection .photo-wrapper .photo-item a img {
     width: 25%;
   }
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1500px) {
   .portfolioLink {
     width: 20%;
     padding: 65px;

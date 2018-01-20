@@ -156,12 +156,13 @@ a {
     position: fixed;
     top: 14px;
     right: 14px;
-    z-index: zIndexMax;
+    z-index: 999;
     transition: top .5s ease-in-out, right .5s ease-in-out;
     transition-delay: .6s;
     navItemStyles();
     background-color: $backgroundColor;
     box-shadow: none;
+    cursor: pointer;
 
     &.back,
     .menu-trigger {
@@ -248,7 +249,7 @@ a {
     right: 0;
     background-attachment: scroll;
     background-size: cover;
-    z-index: zIndexMax + 2;
+    z-index: 1000;
     overflow: scroll;
     text-align: center;
     background-color: #131313;
@@ -261,12 +262,19 @@ a {
         box-shadow: 0 2px 4px rgba(black, .5);
         border-radius: 3px;
         background-color: $backgroundColor;
+        width: 100%;
+        height: auto;
+        max-width: 800px;
     }
 
     p {
         font-weight: 200;
         margin: 32px auto;
         max-width: 550px;
+    }
+    
+    &.open {
+        display: block;
     }
 }
 
@@ -842,7 +850,7 @@ nav.masthead {
     .item-content {
         position: relative;
         background-color: $backgroundColor;
-        border-radius: 3px;
+        border-radius: 10px;
         overflow: hidden;
         box-shadow: -5px 3px 26px -7px rgba(0,0,0,0.5), -27px 10px 59px rgba(0,0,0,0.2);
         z-index: 1;
@@ -1958,7 +1966,7 @@ body.photography-wrapper {
     }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1500px) {
     .portfolioLink {
         width: 20%;
         padding: 65px;
